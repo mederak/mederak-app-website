@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Security | Worklog Rollup for Jira</title>
+    <meta name="description" content="Security practices for Worklog Rollup for Jira, an Atlassian Forge app for Jira Cloud.">
+    <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/security.html">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl">Contact security</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Security practices</span>
+      <h1>Security</h1>
+      <p class="lead">Worklog Rollup for Jira is designed as an Atlassian Forge app for Jira Cloud.</p>
+
+      <div class="legal-grid">
+        <div class="legal-card"><b>Platform</b><p>Atlassian Forge and Jira Cloud.</p></div>
+        <div class="legal-card"><b>Scopes</b><p><code>read:jira-work</code> and <code>storage:app</code>.</p></div>
+        <div class="legal-card"><b>Data read</b><p>Issue hierarchy and Jira time tracking fields needed for calculation.</p></div>
+        <div class="legal-card"><b>Cache</b><p>Short-lived Forge Storage cache for calculation results.</p></div>
+      </div>
+
+      <h2>Architecture</h2>
+      <p>The app renders a Jira issue panel and calls a Forge resolver to retrieve issue data through Jira APIs. It does not use Tempo APIs and does not calculate rates or costs.</p>
+
+      <h2>Permissions</h2>
+      <p><code>read:jira-work</code> is used to read issue data. <code>storage:app</code> is used for app-scoped cache.</p>
+
+      <h2>Support contact</h2>
+      <p>Report security questions to <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Worklog Rollup for Jira.</span><div class="footer-links"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="subprocessors.html">Sub-processors</a></div></div></footer>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
+

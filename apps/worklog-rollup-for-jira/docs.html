@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation | Worklog Rollup for Jira</title>
+    <meta name="description" content="Documentation for Worklog Rollup for Jira, a Forge app that shows logged time across Jira issue hierarchies.">
+    <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/docs.html">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl">Ask a question</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">User guide</span>
+      <h1>Documentation</h1>
+      <p class="lead">Worklog Rollup for Jira shows logged time for the current issue and its descendants.</p>
+
+      <h2>Quick start</h2>
+      <ol>
+        <li>Open a Jira Cloud issue.</li>
+        <li>Open the Worklog Rollup panel. In Jira it may be labeled Worklog Rollup.</li>
+        <li>Review total logged time in MH and MD.</li>
+        <li>Check the details table to see included issues with logged time.</li>
+        <li>Use Refresh when you want to recalculate after recent worklog changes.</li>
+      </ol>
+
+      <h2>What is included</h2>
+      <p>The app reads logged time from the current issue and descendant issues found through Jira's standard parent relationship. It uses Jira time tracking fields such as <code>timespent</code> and <code>timetracking.timeSpentSeconds</code>.</p>
+
+      <h2>What is not included</h2>
+      <p>The app does not calculate costs, rates, billing amounts or Tempo data. It is focused on Jira worklog time visibility.</p>
+
+      <h2>Units</h2>
+      <p>Time is shown in MH and MD. In the current product model, 1 MD equals 8 MH.</p>
+
+      <h2>Refresh and cache</h2>
+      <p>The app may use short-lived Forge Storage cache to avoid repeated calculations during normal page refreshes. The Refresh action requests a fresh calculation.</p>
+
+      <h2>Large hierarchies</h2>
+      <p>For very large issue trees, the app may stop at safety limits and show that the result was truncated. The summary then reflects the retrieved data.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Worklog Rollup for Jira.</span><div class="footer-links"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></div></footer>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
+
+

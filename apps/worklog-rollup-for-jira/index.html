@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Worklog Rollup for Jira | Logged time across issue hierarchies</title>
+    <meta name="description" content="Worklog Rollup for Jira shows logged time for a Jira issue and its descendant issues in a Forge-hosted issue panel.">
+    <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/">
+    <meta property="og:title" content="Worklog Rollup for Jira">
+    <meta property="og:description" content="See logged time for a Jira issue and its descendants directly in Jira Cloud.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mederak.pl/apps/worklog-rollup-for-jira/">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+            <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span>Menu</span>
+          </button>
+          <div class="nav-links" id="main-menu">
+            <a href="../../index.html">Mederak Apps</a>
+            <a href="../index.html">Apps</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#workflow">How it works</a>
+            <a href="security.html">Security</a>
+            <a class="button primary" href="mailto:support.jira@mederak.pl?subject=Worklog%20Rollup%20early%20access">Early access</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <span class="eyebrow">Atlassian Forge app for Jira Cloud</span>
+            <h1>See rolled-up logged time without leaving the issue.</h1>
+            <p class="hero-copy">
+              Worklog Rollup for Jira adds a Jira issue panel that summarizes logged time for the current issue and its descendant issues through Jira's standard parent relationship.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:support.jira@mederak.pl?subject=Worklog%20Rollup%20early%20access">Join early access</a>
+              <a class="button" href="docs.html">Read docs</a>
+              <a class="button" href="#views">Product views</a>
+            </div>
+            <div class="trust-row" aria-label="Product highlights">
+              <span>Jira Cloud</span>
+              <span>Forge issue panel</span>
+              <span>Parent hierarchy</span>
+              <span>MH and MD totals</span>
+            </div>
+          </div>
+          <div class="product-shot" aria-label="Product screenshot">
+            <div class="browser-frame">
+              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+              <div class="screenshot-panel">
+                <div class="asset-card">
+                  <strong>Main panel screenshot</strong>
+                  <span>Use <code>assets/screen-main-panel.png</code><br>Recommended: 1600 x 1100 px</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Value highlights">
+          <div class="metric"><strong>Total</strong><span>Logged time from the current issue and all retrieved descendants.</span></div>
+          <div class="metric"><strong>5 min</strong><span>Short Forge Storage cache helps avoid repeat calculations during normal page refreshes.</span></div>
+          <div class="metric"><strong>1 MD</strong><span>Displayed as 8 MH, alongside man-hour totals.</span></div>
+        </section>
+
+        <section id="benefits" class="section">
+          <div class="section-heading">
+            <h2>Simple time visibility for Jira hierarchies.</h2>
+            <p>Designed for teams that log time on child issues but need a quick total at a parent, epic, story or task level.</p>
+          </div>
+          <div class="showcase-grid">
+            <article class="showcase-card"><div class="icon-tile">01</div><b>Current issue total</b><p>Shows work logged directly on the Jira issue being viewed.</p></article>
+            <article class="showcase-card"><div class="icon-tile">02</div><b>Descendant rollup</b><p>Adds time from child issues and deeper descendants using Jira parent links.</p></article>
+            <article class="showcase-card"><div class="icon-tile">03</div><b>Compact details</b><p>Lists included issues with logged time, issue key, summary and time values.</p></article>
+            <article class="showcase-card"><div class="icon-tile">04</div><b>Manual refresh</b><p>Users can refresh the calculation when issue time data changes.</p></article>
+          </div>
+        </section>
+
+        <section id="workflow" class="section alt">
+          <div class="section-inner">
+            <div class="section-heading">
+              <h2>How the panel works.</h2>
+              <p>The app stays inside Jira and reads standard Jira time tracking fields.</p>
+            </div>
+            <div class="workflow">
+              <article class="workflow-step"><span>1</span><h3>Open an issue</h3><p>The panel reads the current Jira issue context.</p></article>
+              <article class="workflow-step"><span>2</span><h3>Find descendants</h3><p>Jira issues are retrieved through the standard parent relationship.</p></article>
+              <article class="workflow-step"><span>3</span><h3>Add time</h3><p>The app totals Jira timespent and timetracking values.</p></article>
+              <article class="workflow-step"><span>4</span><h3>Review details</h3><p>Users see total MH/MD and the issues included in the calculation.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="views" class="section">
+          <div class="section-heading">
+            <h2>Designed for the Jira issue view.</h2>
+            <p>The panel focuses on the numbers users need while keeping the issue context visible.</p>
+          </div>
+          <div class="screen-row">
+            <div class="browser-frame">
+              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+              <div class="screenshot-panel"><div class="asset-card"><strong>Issue panel</strong><span>Use <code>assets/screen-main-panel.png</code><br>Recommended: 1600 x 1100 px</span></div></div>
+            </div>
+            <div class="browser-frame">
+              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+              <div class="screenshot-panel"><div class="asset-card"><strong>Details table</strong><span>Use <code>assets/screen-details.png</code><br>Recommended: 1600 x 1000 px</span></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <div class="forge-banner">
+              <div>
+                <span class="eyebrow">Data model</span>
+                <h3>Uses Jira work data and Forge Storage cache.</h3>
+                <p>The app reads issue hierarchy and time tracking fields from Jira Cloud. It uses Forge Storage for short-lived calculation cache.</p>
+              </div>
+              <div class="forge-points">
+                <span><b>&check;</b> Standard Jira fields: <code>timespent</code> and <code>timetracking.timeSpentSeconds</code>.</span>
+                <span><b>&check;</b> Jira parent relationship for descendants.</span>
+                <span><b>&check;</b> No Tempo data, rates, costs or billing calculations.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta">
+          <div class="cta-box">
+            <div>
+              <h2>Ask about early access.</h2>
+              <p>If the Marketplace listing is not yet public, contact us from a company email address and tell us which Jira Cloud site you want to use for evaluation.</p>
+            </div>
+            <a class="button" href="mailto:support.jira@mederak.pl?subject=Worklog%20Rollup%20early%20access">Email support.jira@mederak.pl</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a>
+            <p>Forge app for Jira Cloud. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p>
+            <p class="footer-credit">A Mederak Apps product.</p>
+          </div>
+          <div class="footer-links">
+            <a href="../../index.html">Mederak Apps</a>
+            <a href="../index.html">Apps</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security</a>
+            <a href="support.html">Support</a>
+            <a href="docs.html">Docs</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
+
+
