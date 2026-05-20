@@ -74,6 +74,19 @@ a {
   box-shadow: 0 8px 20px rgba(12, 102, 228, 0.22);
 }
 
+.brand.logo-brand img {
+  width: auto;
+  height: 42px;
+  max-width: 220px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.footer .brand.logo-brand img {
+  height: 46px;
+  max-width: 240px;
+}
+
 .brand-mark {
   width: 36px;
   height: 36px;
