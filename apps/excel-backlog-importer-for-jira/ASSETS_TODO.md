@@ -16,6 +16,21 @@ Replace these first for the strongest Google Ads landing page:
 | `screen-import-preview.png` | 1600 x 1000 | PNG/WebP | Visual band, workflow | Show rows that will become Jira issues before the import is run. |
 | `screen-import-report.png` | 1600 x 1000 | PNG/WebP | Visual band, workflow | Show completed import results and export/report controls. |
 
+## Rendered dimensions on the current landing page
+
+These are the approximate visible sizes on a standard desktop viewport with the current `1180px` layout. Prepare images at the recommended source sizes above; the browser will scale them down to these display areas.
+
+| Landing page area | Files | Display size before zoom |
+| --- | --- | --- |
+| Hero main screenshot | `screen-hero.png` | about 665 x 440 px |
+| Hero mini screenshots | `screen-upload-workbook.png`, `screen-column-mapping.png`, `screen-validation-results.png` | about 214 x 134 px each |
+| Visual band wide screenshot | `screen-import-preview.png` | about 602 x 376 px |
+| Visual band small screenshots | `screen-import-report.png`, `screen-import-history.png` | about 294 x 184 px each |
+| Workflow cards | `screen-upload-workbook.png`, `screen-worksheet-selection.png`, `screen-column-mapping.png`, `screen-validation-results.png`, `screen-import-preview.png`, `screen-create-update-mode.png`, `screen-import-report.png` | about 581 x 363 px each |
+| Key screen cards | `screen-column-mapping.png`, `screen-validation-results.png`, `screen-hierarchy-mapping.png`, `screen-update-existing-issues.png` | about 526 x 329 px each |
+
+On mobile, these same assets render mostly as single-column cards around 330-390 px wide, depending on device width. Keep text and UI controls readable after downscaling to about 526 px wide, because that is the most important repeated product-card size.
+
 ## Full screenshot set
 
 These give enough visuals for the current page and future ad variants:
