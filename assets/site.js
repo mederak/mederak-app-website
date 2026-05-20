@@ -1,9 +1,10 @@
-const lightbox = document.querySelector('#image-lightbox');
+﻿const lightbox = document.querySelector('#image-lightbox');
 const lightboxImage = lightbox?.querySelector('img');
 const lightboxClose = lightbox?.querySelector('.lightbox-close');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainMenu = document.querySelector('#main-menu');
 const carousels = document.querySelectorAll('[data-carousel]');
+const siteConfig = window.MEDERAK_PRODUCT_CONFIG || {};
 
 function closeMenu() {
   if (!menuToggle || !mainMenu) return;
@@ -67,6 +68,16 @@ document.addEventListener('keydown', (event) => {
   closeMenu();
 });
 
+document.querySelectorAll('[data-config-url]').forEach((link) => {
+  const key = link.dataset.configUrl;
+  if (key && siteConfig[key]) link.setAttribute('href', siteConfig[key]);
+});
+
+document.querySelectorAll('[data-config-label]').forEach((element) => {
+  const key = element.dataset.configLabel;
+  if (key && siteConfig[key]) element.textContent = siteConfig[key];
+});
+
 carousels.forEach((carousel) => {
   const slides = [...carousel.querySelectorAll('[data-carousel-slide]')];
   const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
@@ -94,3 +105,4 @@ carousels.forEach((carousel) => {
   });
   showSlide(activeIndex);
 });
+

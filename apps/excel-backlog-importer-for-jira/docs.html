@@ -4,81 +4,104 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Documentation | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="User documentation for Excel Backlog Importer for Jira.">
+    <meta name="description" content="Documentation for importing Excel XLSX backlog files into Jira Cloud with mapping, validation, updates, hierarchy planning and import reports.">
+    <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html">
+    <meta property="og:title" content="Excel Backlog Importer for Jira Documentation">
+    <meta property="og:description" content="Prepare Excel files, map Jira fields, validate imports and update existing Jira issues from XLSX files.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.pl/"},{"@type":"ListItem","position":2,"name":"Excel Backlog Importer for Jira","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/"},{"@type":"ListItem","position":3,"name":"Documentation","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html"}]}</script>
   </head>
   <body>
-    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel Backlog Importer</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="support.html">Support</a><a href="security.html">Security</a><a class="button primary" href="mailto:support.jira@mederak.pl">Ask a question</a></div></nav></header>
+    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel Backlog Importer</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html">Product</a><a href="excel-to-jira-vs-csv-import.html">Excel vs CSV</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="excel-backlog-importer-for-jira">Request access</a></div></nav></header>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="index.html">Excel Backlog Importer</a> / Documentation</nav>
     <main class="content-page">
       <span class="eyebrow">User guide</span>
       <h1>Documentation</h1>
-      <p class="lead">A practical guide for project managers, analysts and Scrum Masters importing Excel backlogs into Jira Cloud.</p>
+      <p class="lead">A practical guide for preparing Excel backlog files and importing them into Jira Cloud with controlled mapping, validation and reporting.</p>
 
-      <h2>Quick start</h2>
-      <ol>
-        <li>Open the app from a Jira project.</li>
-        <li>Upload a .xlsx workbook.</li>
-        <li>Select the worksheet and header row.</li>
-        <li>Map Excel columns to Jira fields.</li>
-        <li>Choose duplicate handling, import mode and optional parent issue.</li>
-        <li>Validate rows and import only selected valid rows.</li>
-        <li>Review the report and export CSV or JSON if needed.</li>
-      </ol>
+      <h2>Overview</h2>
+      <p>Excel Backlog Importer for Jira helps teams create or update Jira issues from structured XLSX files. It is designed for project managers, analysts, Scrum Masters and Jira admins who receive backlog data in spreadsheets.</p>
 
-      <h2>Creating new Jira issues from Excel</h2>
-      <p>Use the standard import flow when rows in the spreadsheet should become new Jira issues. The app reads the selected worksheet, uses the header row you choose, lets you map Excel columns to Jira fields, validates the data and then creates only the selected valid rows.</p>
-      <p>This is useful for discovery workshop outputs, accepted commercial estimates, implementation task lists, client-provided requirements and initial project backlog setup.</p>
-
-      <h2>Updating existing Jira issues from Excel</h2>
-      <p>Excel Backlog Importer is not limited to creating new Jira issues. When the same Excel file is uploaded again, the app can recognize previously imported rows and update the matching Jira issues instead of creating duplicates.</p>
-      <p>For recurring updates, keep the same file name and use a stable row identity column such as ID, Feature ID, External ID, Requirement ID or Backlog ID. During import, choose an update mode when existing Jira issues should be refreshed instead of creating new ones.</p>
-      <p>Typical update scenarios include refined requirement descriptions after a client workshop, corrected time estimates after technical analysis, changed priorities or planned dates, and added labels, components or owner information.</p>
-
-      <h2>Importing under a parent issue</h2>
-      <p>You can import backlog items directly under a selected parent issue. This is useful when your backlog is organized by Epics, modules, delivery phases, work packages or change requests. Instead of importing everything into a flat project backlog, you can run multiple focused imports and place each Excel backlog exactly where it belongs in the Jira hierarchy.</p>
-      <p>The user selects a parent issue during import. Imported issues are then created as children of that parent where the relationship is supported by the Jira project configuration, issue type hierarchy and user permissions. Epics are a common example, but they are not the only possible parent type.</p>
-
-      <h2>Recommended workflow for parent-based imports</h2>
-      <ol>
-        <li>Prepare or choose the parent issue, for example an Epic, phase, package, module or change request.</li>
-        <li>Prepare the Excel file with backlog items for that scope.</li>
-        <li>Select the parent issue during import.</li>
-        <li>Review mapped fields and validation results in the preview.</li>
-        <li>Create the selected issues as children of the chosen parent.</li>
-        <li>Repeat the process for later sheets, estimates, phases or work packages.</li>
-      </ol>
-
-      <h2>Interaction with update mode</h2>
-      <p>Parent-based imports can also be used together with update mode. The first import can create issues under a selected parent. Later, the same Excel file can be uploaded again and the app can update matching child issues instead of creating duplicates.</p>
-
-      <h2>Recommended Excel structure</h2>
-      <p>The app does not require one rigid template, but import is easiest when every row represents one potential Jira issue and the file includes clear headers such as Summary, Description, Issue Type, Estimate, Assignee, Priority and External ID.</p>
-      <p>For repeat imports and updates, add a stable identity column such as ID, Feature ID, External ID, Requirement ID or Backlog ID. A stable identifier helps the app recognize rows that were already imported from the same source file.</p>
-
-      <h2>Saved setup</h2>
-      <p>When you import the same file name again, the app can reuse the saved setup: worksheet, header row, mapping, hierarchy settings and duplicate handling.</p>
-
-      <h2>Duplicate handling</h2>
-      <p>For recurring imports, choose a stable Record identity column such as ID, Feature ID or External ID. Duplicate handling helps avoid creating the same Jira issue twice and supports update mode by matching Excel rows to issues created earlier.</p>
-      <p>If you intentionally want every selected valid row to become a new Jira issue, choose Ignore duplicate checking.</p>
-
-      <h2>Field mapping notes</h2>
+      <h2>Before you start</h2>
       <ul>
-        <li>Summary is required for Jira issue creation.</li>
-        <li>Description is converted to Jira-compatible document format.</li>
-        <li>Labels can be separated with commas, semicolons or new lines.</li>
-        <li>User fields can be resolved by account ID, email address or display name where Jira permits lookup.</li>
-        <li>Time tracking supports common hour/day formats and Jira duration text.</li>
+        <li>Confirm the target Jira project and issue types.</li>
+        <li>Check that you have Jira permissions to create or update issues.</li>
+        <li>Prepare a workbook where each row represents a work item or hierarchy row.</li>
+        <li>Use stable identifiers if you plan to update existing Jira issues later.</li>
       </ul>
+
+      <h2>Preparing your Excel file</h2>
+      <p>Use clear column names, one header row and consistent values. Avoid merged cells in the import area. Keep issue type, summary and parent/grouping columns explicit.</p>
+
+      <h2>Supported file format</h2>
+      <p>The product is built around Excel <code>.xlsx</code> workbooks. CSV conversion is not required for the core Excel import workflow.</p>
+
+      <h2>Recommended columns</h2>
+      <table class="sample-table">
+        <thead><tr><th>Column</th><th>Recommended use</th></tr></thead>
+        <tbody>
+          <tr><td>Issue Type</td><td>Epic, Story, Task, Sub-task or another issue type supported by the Jira project.</td></tr>
+          <tr><td>Summary</td><td>Required short title for the Jira issue.</td></tr>
+          <tr><td>Description</td><td>Longer requirement, scope or implementation text.</td></tr>
+          <tr><td>Epic Name</td><td>Grouping value for structured backlog imports where supported.</td></tr>
+          <tr><td>Parent</td><td>Parent issue key, parent name or grouping value depending on the import setup.</td></tr>
+          <tr><td>Estimate</td><td>Time or effort value mapped to the relevant Jira field.</td></tr>
+          <tr><td>Priority</td><td>Jira priority value.</td></tr>
+          <tr><td>Assignee</td><td>User reference where Jira lookup permits it.</td></tr>
+          <tr><td>Labels</td><td>Labels separated consistently, for example by comma.</td></tr>
+          <tr><td>Component</td><td>Jira component value if used in the project.</td></tr>
+          <tr><td>External ID</td><td>Stable row identity for duplicate handling and repeat imports.</td></tr>
+          <tr><td>Jira Issue Key</td><td>Existing issue key for update workflows where supported.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Mapping Excel columns to Jira fields</h2>
+      <p>During import, map spreadsheet headers to Jira fields. Keep mappings focused on the fields you actually need. Saved setup can help repeat imports with the same file structure.</p>
+
+      <h2>Working with custom fields</h2>
+      <p>The app is designed to support Jira fields and supported custom field types. Exact behavior depends on Jira configuration, field type and permissions.</p>
+
+      <h2>Importing epics, stories and sub-tasks</h2>
+      <p>Structured hierarchy imports depend on Jira project configuration and product rollout. Use explicit issue type and parent/grouping columns, then validate the relationship before import.</p>
+
+      <h2>Updating existing issues</h2>
+      <p>For update workflows, use a stable identity such as Jira Issue Key, External ID, Requirement ID or Backlog ID. Repeated uploads can update matching Jira issues instead of creating duplicate work where the import setup supports the match.</p>
+
+      <h2>Import history</h2>
+      <p>Import metadata and reports help teams review what happened, support duplicate handling and troubleshoot later questions.</p>
+
+      <h2>Exporting import reports</h2>
+      <p>After an import, export the result report where available. Reports are useful for project records and post-import review.</p>
+
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>Missing summaries usually mean the mapped Summary column is empty for selected rows.</li>
+        <li>Invalid select values usually mean the spreadsheet value does not match Jira project configuration.</li>
+        <li>User lookup issues can depend on Atlassian account visibility and permissions.</li>
+        <li>Hierarchy errors often come from unsupported parent-child relationships in the Jira project.</li>
+      </ul>
+
+      <h2>Limitations</h2>
+      <ul>
+        <li>Hierarchy behavior depends on Jira project configuration, issue type hierarchy and permissions.</li>
+        <li>Custom field support depends on the field type and Jira configuration.</li>
+        <li>Marketplace trial and pricing depend on the public Atlassian Marketplace listing.</li>
+      </ul>
+
+      <h2>Support</h2>
+      <p>For help, contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>. Include your Jira site URL, target project, import goal and a short description of the spreadsheet structure. If you request early access, use a company email address.</p>
     </main>
-    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak. Excel Backlog Importer for Jira.</span><div class="footer-links"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></div></footer>
+    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Excel Backlog Importer for Jira.</span><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></div></footer>
+    <script src="assets/site-config.js"></script>
     <script src="assets/site.js"></script>
   </body>
 </html>
-
 
 

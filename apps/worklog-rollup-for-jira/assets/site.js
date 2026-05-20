@@ -1,8 +1,10 @@
-const lightbox = document.querySelector('#image-lightbox');
+﻿const lightbox = document.querySelector('#image-lightbox');
 const lightboxImage = lightbox?.querySelector('img');
 const lightboxClose = lightbox?.querySelector('.lightbox-close');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainMenu = document.querySelector('#main-menu');
+const carousels = document.querySelectorAll('[data-carousel]');
+const siteConfig = window.MEDERAK_PRODUCT_CONFIG || {};
 
 function closeMenu() {
   if (!menuToggle || !mainMenu) return;
@@ -65,3 +67,42 @@ document.addEventListener('keydown', (event) => {
   closeLightbox();
   closeMenu();
 });
+
+document.querySelectorAll('[data-config-url]').forEach((link) => {
+  const key = link.dataset.configUrl;
+  if (key && siteConfig[key]) link.setAttribute('href', siteConfig[key]);
+});
+
+document.querySelectorAll('[data-config-label]').forEach((element) => {
+  const key = element.dataset.configLabel;
+  if (key && siteConfig[key]) element.textContent = siteConfig[key];
+});
+
+carousels.forEach((carousel) => {
+  const slides = [...carousel.querySelectorAll('[data-carousel-slide]')];
+  const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
+  const previous = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('active')));
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      slide.classList.toggle('active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === activeIndex);
+    });
+  }
+
+  previous?.addEventListener('click', () => showSlide(activeIndex - 1));
+  next?.addEventListener('click', () => showSlide(activeIndex + 1));
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener('click', () => showSlide(dotIndex));
+  });
+  showSlide(activeIndex);
+});
+

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mederak.pl/sitemap.xml
+Sitemap: https://mederak.pl/apps/excel-backlog-importer-for-jira/sitemap.xml

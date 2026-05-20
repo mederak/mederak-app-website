@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Import Epics, Stories and Sub-tasks from Excel to Jira</title>
+    <meta name="description" content="Plan structured Jira imports from Excel. Map spreadsheet rows into Epics, Stories and Sub-tasks with validation and controlled import flow.">
+    <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/import-epics-stories-subtasks-from-excel.html">
+    <meta property="og:title" content="Import Epics, Stories and Sub-tasks from Excel to Jira">
+    <meta property="og:description" content="Plan structured Jira imports from Excel with mapping, validation and controlled review.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/import-epics-stories-subtasks-from-excel.html">
+    <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/screen-hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.pl/"},{"@type":"ListItem","position":2,"name":"Excel Backlog Importer for Jira","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/"},{"@type":"ListItem","position":3,"name":"Import Epics, Stories and Sub-tasks from Excel","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/import-epics-stories-subtasks-from-excel.html"}]}</script>
+  </head>
+  <body>
+    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel Backlog Importer</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-product="excel-backlog-importer-for-jira">Request access</a></div></nav></header>
+    <main class="content-page seo-page">
+      <span class="eyebrow">Structured backlog imports</span>
+      <h1>Import Epics, Stories and Sub-tasks from Excel to Jira</h1>
+      <p class="lead">Structured Jira imports are harder than flat issue creation. Excel Backlog Importer is designed for structured backlog imports such as Epic to Story to Sub-task workflows where Jira configuration and product rollout support the hierarchy.</p>
+
+      <h2>The hierarchy problem</h2>
+      <p>Backlogs often arrive as grouped spreadsheet rows: epics, stories and implementation tasks in one workbook. Manual import can lose context when parent names, issue types and relationships are not validated before Jira changes.</p>
+
+      <h2>Example spreadsheet columns</h2>
+      <table class="sample-table">
+        <thead><tr><th>Column</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Epic Name</td><td>Name used to group related stories.</td></tr>
+          <tr><td>Story Summary</td><td>Summary for the story-level Jira issue.</td></tr>
+          <tr><td>Sub-task Summary</td><td>Summary for task-level rows where supported.</td></tr>
+          <tr><td>Issue Type</td><td>Jira issue type to create or update.</td></tr>
+          <tr><td>Description</td><td>Requirement or implementation detail.</td></tr>
+          <tr><td>Estimate</td><td>Time estimate or effort value supported by the target field.</td></tr>
+          <tr><td>Assignee</td><td>User reference where Jira lookup and permissions allow it.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How mapping helps</h2>
+      <p>Mapping lets you connect each spreadsheet column to the Jira field it should populate. For hierarchy, the important part is using stable parent or grouping columns so the import flow can validate relationships before issue creation.</p>
+
+      <h2>Risks to validate</h2>
+      <ul>
+        <li>Missing issue type or summary.</li>
+        <li>Parent names that do not match expected rows.</li>
+        <li>Unsupported parent-child relationships in the Jira project.</li>
+        <li>Invalid users, estimates, priorities, components or custom field values.</li>
+      </ul>
+
+      <div class="inline-cta">
+        <h2>Plan a controlled hierarchy import</h2>
+        <p>Review the main workflow and request access if you want to evaluate structured Excel imports for Jira Cloud.</p>
+        <div class="hero-actions"><a class="button primary" href="index.html">View product</a><a class="button" href="#" data-config-url="DEMO_URL" data-config-label="CTA_SECONDARY_LABEL">Request access</a></div>
+      </div>
+    </main>
+    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Excel Backlog Importer for Jira.</span><div class="footer-links"><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="support.html">Support</a></div></div></footer>
+    <script src="assets/site-config.js"></script>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
+
+
+
