@@ -1,15 +1,56 @@
 # Screenshot and media assets to replace manually
 
-Use final Marketplace-ready screenshots or short GIF/video captures for:
+The landing page now references real asset filenames in `apps/excel-backlog-importer-for-jira/assets/`.
+Temporary image files are present so the page does not break before final screenshots are ready.
 
-- Hero screenshot: guided importer inside Jira Cloud.
-- Upload workbook screen.
-- Worksheet selection screen.
-- Mapping screen.
-- Validation screen.
-- Preview screen.
-- Import report screen.
-- Import history screen.
-- Hierarchy mapping screen.
+## Highest priority assets
 
-Do not add visible technical placeholder text to the public pages. Use the existing UI-style placeholders until final screenshots are available.
+Replace these first for the strongest Google Ads landing page:
+
+| File | Recommended size | Format | Where it appears | Capture guidance |
+| --- | --- | --- | --- | --- |
+| `screen-hero.png` | 1600 x 1060 | PNG/WebP | Hero | Full importer wizard inside Jira Cloud, clean project, realistic data. |
+| `showreel_en.mp4` | 1920 x 1080 or 1662 x 966 | MP4 | Video section | 45-75 seconds: upload, worksheet, mapping, validation, preview, report. |
+| `screen-column-mapping.png` | 1600 x 1000 | PNG/WebP | Hero mini card, workflow, key screens | Excel columns on one side, Jira fields on the other, several mapped fields. |
+| `screen-validation-results.png` | 1600 x 1000 | PNG/WebP | Hero mini card, workflow, key screens | Show a mostly successful validation with a few useful warnings/errors. |
+| `screen-import-preview.png` | 1600 x 1000 | PNG/WebP | Visual band, workflow | Show rows that will become Jira issues before the import is run. |
+| `screen-import-report.png` | 1600 x 1000 | PNG/WebP | Visual band, workflow | Show completed import results and export/report controls. |
+
+## Full screenshot set
+
+These give enough visuals for the current page and future ad variants:
+
+| File | Recommended size | Format | Purpose |
+| --- | --- | --- | --- |
+| `screen-upload-workbook.png` | 1600 x 1000 | PNG/WebP | Upload XLSX step. |
+| `screen-worksheet-selection.png` | 1600 x 1000 | PNG/WebP | Worksheet and header row selection. |
+| `screen-column-mapping.png` | 1600 x 1000 | PNG/WebP | Mapping Excel columns to Jira fields. |
+| `screen-validation-results.png` | 1600 x 1000 | PNG/WebP | Validation before import. |
+| `screen-import-preview.png` | 1600 x 1000 | PNG/WebP | Preview before Jira changes. |
+| `screen-create-update-mode.png` | 1600 x 1000 | PNG/WebP | Create or update choice for repeated uploads. |
+| `screen-import-report.png` | 1600 x 1000 | PNG/WebP | Post-import report. |
+| `screen-import-history.png` | 1600 x 1000 | PNG/WebP | Import history view. |
+| `screen-update-existing-issues.png` | 1600 x 1000 | PNG/WebP | Updating matching Jira issues from Excel. |
+| `screen-hierarchy-mapping.png` | 1600 x 1000 | PNG/WebP | Structured Epic, Story and Sub-task import setup. |
+| `screen-epic-story-subtask-import.png` | 1600 x 1000 | PNG/WebP | Example hierarchy import preview or report. |
+| `screen-custom-fields-mapping.png` | 1600 x 1000 | PNG/WebP | Custom field mapping detail for a later section or ad variant. |
+| `screen-duplicate-handling.png` | 1600 x 1000 | PNG/WebP | Duplicate handling or repeated upload detection. |
+| `og-excel-backlog-importer.png` | 1200 x 630 | PNG/WebP | Open Graph and social sharing image. |
+
+## Optional campaign assets
+
+| File | Recommended size | Format | Purpose |
+| --- | --- | --- | --- |
+| `workflow-upload-to-preview.gif` | 1600 x 1000 | GIF/WebP animation | Short silent animation for ad landing page tests. |
+| `marketplace-card.png` | 1200 x 900 | PNG/WebP | Atlassian Marketplace listing visual when public. |
+| `spreadsheet-before.png` | 1400 x 900 | PNG/WebP | Example source workbook before import. |
+| `jira-backlog-after.png` | 1400 x 900 | PNG/WebP | Jira backlog after import. |
+
+## Capture rules
+
+- Use English UI content and realistic B2B backlog examples.
+- Avoid personal data, real client names, production Jira URLs and private issue keys.
+- Keep browser chrome minimal or crop to the Jira app surface.
+- Prefer light theme screenshots unless the final Marketplace listing uses dark visuals.
+- Export sharp PNG/WebP files; avoid JPEG compression for UI text.
+- Keep visual density high enough that mapping, validation and reports are readable on desktop.

@@ -829,17 +829,17 @@ a {
   font-size: 14px;
 }
 
-.compare-table th:nth-child(2) {
+.compare-table th:nth-child(3) {
   background: #e6fcf5;
   color: #164b35;
 }
 
-.compare-table td:nth-child(2) {
+.compare-table td:nth-child(3) {
   background: linear-gradient(90deg, rgba(230, 252, 245, 0.9), rgba(255, 255, 255, 0.96));
   border-left: 3px solid #22a06b;
 }
 
-.compare-table td:nth-child(3) {
+.compare-table td:nth-child(2) {
   color: var(--muted);
   background: #fbfcfe;
 }
@@ -1170,6 +1170,187 @@ a {
   align-items: center;
 }
 
+.visual-hero {
+  grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.22fr);
+  align-items: center;
+}
+
+.hero-media-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.media-card {
+  margin: 0;
+  border: 1px solid rgba(12, 102, 228, 0.18);
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 18px 46px rgba(16, 32, 51, 0.11);
+}
+
+.media-card img,
+.media-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f7faff;
+}
+
+.hero-media-card img {
+  aspect-ratio: 16 / 10.6;
+}
+
+.media-card figcaption {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.mini-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.mini-screen-grid figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(16, 32, 51, 0.08);
+}
+
+.mini-screen-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.mini-screen-grid figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.visual-band .split {
+  align-items: start;
+}
+
+.compact-list {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.compact-list li {
+  border-left: 4px solid var(--blue);
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 12px 14px;
+  color: var(--muted);
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(16, 32, 51, 0.05);
+}
+
+.media-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.media-mosaic .wide {
+  grid-column: 1 / -1;
+}
+
+.video-showcase {
+  border: 1px solid rgba(12, 102, 228, 0.18);
+  border-radius: 22px;
+  background: #071322;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.video-showcase video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #071322;
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tour-step {
+  display: grid;
+  gap: 12px;
+}
+
+.tour-step p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.feature-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.feature-visual {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 16px;
+  box-shadow: 0 12px 36px rgba(16, 32, 51, 0.07);
+}
+
+.feature-visual h3 {
+  margin: 18px 4px 8px;
+  font-size: 24px;
+  line-height: 1.16;
+}
+
+.feature-visual p {
+  margin: 0 4px 4px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.feature-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feature-chip-grid span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 10px 13px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 850;
+  box-shadow: 0 8px 24px rgba(16, 32, 51, 0.04);
+}
+
 .clean-shot {
   min-height: 420px;
   padding: 26px;
@@ -1481,6 +1662,11 @@ a {
   .benefit-grid,
   .showcase-grid,
   .app-card,
+  .visual-hero,
+  .mini-screen-grid,
+  .media-mosaic,
+  .tour-grid,
+  .feature-showcase,
   .feature-matrix,
   .role-grid,
   .usecase-grid,
@@ -1582,6 +1768,12 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .media-card img,
+  .media-card video,
+  .mini-screen-grid img {
+    aspect-ratio: 4 / 3;
+  }
+
   .section {
     padding: 46px 16px;
   }
@@ -1616,18 +1808,18 @@ a {
   }
 
   .compare-table td:nth-child(2)::before {
-    content: "Excel Backlog Importer";
-    display: block;
-    margin-bottom: 8px;
-    color: #164b35;
-    font-weight: 900;
-  }
-
-  .compare-table td:nth-child(3)::before {
     content: "Standard Jira CSV import";
     display: block;
     margin-bottom: 8px;
     color: var(--ink);
+    font-weight: 900;
+  }
+
+  .compare-table td:nth-child(3)::before {
+    content: "Excel Backlog Importer";
+    display: block;
+    margin-bottom: 8px;
+    color: #164b35;
     font-weight: 900;
   }
 
