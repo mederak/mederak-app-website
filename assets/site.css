@@ -1365,6 +1365,293 @@ a {
   box-shadow: 0 8px 24px rgba(16, 32, 51, 0.04);
 }
 
+.product-hero {
+  max-width: 1500px;
+  min-height: 760px;
+  grid-template-columns: minmax(380px, 0.45fr) minmax(760px, 1fr);
+  gap: 28px;
+  padding-top: 58px;
+  padding-bottom: 54px;
+  overflow: hidden;
+}
+
+.hero-copy-panel {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+}
+
+.product-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.product-lockup img {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  box-shadow: 0 16px 34px rgba(12, 102, 228, 0.16);
+}
+
+.product-hero h1 {
+  max-width: 520px;
+  margin-top: 56px;
+  font-size: clamp(52px, 5.4vw, 78px);
+  line-height: 0.98;
+}
+
+.product-hero h1 span {
+  color: var(--blue);
+}
+
+.product-hero .hero-copy {
+  max-width: 520px;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.hero-benefits {
+  display: grid;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.hero-benefits article {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.hero-benefits b {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.hero-benefits p {
+  margin: 0;
+  color: #4d6382;
+  line-height: 1.45;
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 14px 28px rgba(16, 32, 51, 0.16);
+}
+
+.benefit-icon.green {
+  background: #22a06b;
+}
+
+.benefit-icon.blue {
+  background: #2684ff;
+}
+
+.benefit-icon.gold {
+  background: #f5b700;
+}
+
+.benefit-icon.jira {
+  background: #0c66e4;
+}
+
+.hero-composition {
+  position: relative;
+  min-height: 700px;
+  align-self: center;
+  isolation: isolate;
+}
+
+.hero-composition::before {
+  content: "";
+  position: absolute;
+  inset: 120px -140px -50px 80px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 45% 45%, rgba(12, 102, 228, 0.13), transparent 38%),
+    radial-gradient(circle at 65% 65%, rgba(34, 160, 107, 0.14), transparent 34%);
+  filter: blur(2px);
+  z-index: -2;
+}
+
+.hero-composition::after {
+  content: "";
+  position: absolute;
+  left: 70px;
+  right: 40px;
+  bottom: 40px;
+  height: 340px;
+  border: 3px dashed rgba(38, 132, 255, 0.42);
+  border-top-color: rgba(34, 160, 107, 0.42);
+  border-radius: 50%;
+  transform: rotate(8deg);
+  z-index: -1;
+}
+
+.hero-progress {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  left: 240px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(70px, 1fr));
+  gap: 8px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.hero-progress span {
+  position: relative;
+  padding-top: 42px;
+}
+
+.hero-progress span::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 6px 18px rgba(16, 32, 51, 0.14);
+  transform: translateX(-50%);
+}
+
+.hero-progress span::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: calc(50% + 18px);
+  right: calc(-50% + 18px);
+  height: 2px;
+  background: #cfe3ef;
+}
+
+.hero-progress span:last-child::before {
+  background: var(--blue);
+}
+
+.hero-progress span:last-child::after {
+  display: none;
+}
+
+.hero-screen {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: 1px solid rgba(12, 102, 228, 0.16);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 26px 70px rgba(16, 32, 51, 0.16);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.hero-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-screen-upload {
+  top: 80px;
+  left: 60px;
+  width: 520px;
+  aspect-ratio: 16 / 10;
+}
+
+.hero-screen-sheet {
+  top: 80px;
+  right: -90px;
+  width: 520px;
+  aspect-ratio: 16 / 10;
+}
+
+.hero-screen-validate {
+  top: 300px;
+  left: 10px;
+  width: 560px;
+  aspect-ratio: 16 / 10;
+  z-index: 3;
+}
+
+.hero-screen-hierarchy {
+  top: 330px;
+  right: 70px;
+  width: 420px;
+  aspect-ratio: 16 / 10;
+  z-index: 2;
+}
+
+.hero-screen-report {
+  right: -20px;
+  bottom: 0;
+  width: 420px;
+  aspect-ratio: 16 / 10;
+  z-index: 4;
+}
+
+.hero-flow-icons {
+  position: absolute;
+  left: 0;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  z-index: 5;
+}
+
+.excel-badge,
+.jira-badge,
+.flow-arrow {
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 18px 38px rgba(16, 32, 51, 0.2);
+}
+
+.excel-badge,
+.jira-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  font-size: 34px;
+}
+
+.excel-badge {
+  background: #22a06b;
+}
+
+.jira-badge,
+.flow-arrow {
+  background: var(--blue);
+}
+
+.flow-arrow {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  font-size: 22px;
+}
+
 .clean-shot {
   min-height: 420px;
   padding: 26px;
@@ -1786,6 +2073,61 @@ a {
   .media-card video,
   .mini-screen-grid img {
     aspect-ratio: 4 / 3;
+  }
+
+  .product-hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    padding-top: 34px;
+  }
+
+  .product-hero h1 {
+    margin-top: 34px;
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .hero-composition {
+    min-height: 860px;
+  }
+
+  .hero-progress {
+    position: static;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 18px;
+  }
+
+  .hero-progress span::after {
+    display: none;
+  }
+
+  .hero-screen {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+  .hero-screen-upload,
+  .hero-screen-sheet,
+  .hero-screen-validate,
+  .hero-screen-hierarchy,
+  .hero-screen-report {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .hero-flow-icons {
+    position: static;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .hero-composition::before,
+  .hero-composition::after {
+    display: none;
   }
 
   .section {
