@@ -75,16 +75,16 @@ a {
 }
 
 .brand.logo-brand img {
-  width: 190px;
+  width: 280px;
   height: auto;
-  max-width: 38vw;
+  max-width: 42vw;
   border-radius: 0;
   box-shadow: none;
 }
 
 .footer .brand.logo-brand img {
-  width: 220px;
-  max-width: 52vw;
+  width: 320px;
+  max-width: 60vw;
   height: auto;
 }
 
@@ -1858,8 +1858,8 @@ a {
   }
 
   .brand.logo-brand img {
-    width: 158px;
-    max-width: 48vw;
+    width: 230px;
+    max-width: 58vw;
   }
 
   .hero,
