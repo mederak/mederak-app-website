@@ -1648,6 +1648,211 @@ a {
   font-size: 22px;
 }
 
+.importer-page {
+  background:
+    radial-gradient(circle at top right, rgba(12, 102, 228, 0.10), transparent 34rem),
+    radial-gradient(circle at 10% 48%, rgba(34, 160, 107, 0.08), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 44%, #ffffff 100%);
+}
+
+.importer-page .breadcrumb {
+  max-width: 1400px;
+}
+
+.importer-page .section {
+  max-width: 1320px;
+  padding: 88px 28px;
+}
+
+.importer-page .section.alt {
+  max-width: none;
+  background:
+    linear-gradient(135deg, rgba(247, 251, 255, 0.96), rgba(239, 248, 255, 0.96)),
+    #f7fbff;
+}
+
+.importer-page .section-inner {
+  max-width: 1320px;
+}
+
+.importer-page .section-heading {
+  max-width: 880px;
+  margin-bottom: 38px;
+}
+
+.importer-page .section-heading h2 {
+  font-size: clamp(38px, 4.3vw, 58px);
+  line-height: 1.02;
+}
+
+.importer-page .section-heading p {
+  max-width: 760px;
+  color: #4d6382;
+  font-size: 20px;
+}
+
+.importer-page .split {
+  grid-template-columns: minmax(380px, 0.72fr) minmax(620px, 1fr);
+  gap: 54px;
+}
+
+.importer-page .media-card,
+.importer-page .feature-visual,
+.importer-page .role-grid article,
+.importer-page .usecase-grid article,
+.importer-page .faq-item,
+.importer-page .problem-list li,
+.importer-page .check-list li {
+  border-color: rgba(12, 102, 228, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 22px 60px rgba(16, 32, 51, 0.10);
+}
+
+.importer-page .media-card img,
+.importer-page .media-card video {
+  aspect-ratio: 16 / 10;
+}
+
+.importer-page .media-card figcaption {
+  min-height: 54px;
+  padding: 14px 18px;
+  color: #23466f;
+  font-size: 14px;
+}
+
+.importer-page .media-mosaic {
+  gap: 18px;
+}
+
+.importer-page .video-showcase {
+  border-radius: 26px;
+  box-shadow: 0 30px 80px rgba(16, 32, 51, 0.16);
+}
+
+.importer-page .tour-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.importer-page .tour-step {
+  gap: 14px;
+}
+
+.importer-page .tour-step p {
+  padding: 0 4px;
+  color: #4d6382;
+  font-size: 17px;
+}
+
+.importer-page .feature-showcase {
+  gap: 28px;
+}
+
+.importer-page .feature-visual {
+  padding: 18px;
+}
+
+.importer-page .feature-visual h3 {
+  margin-top: 22px;
+  font-size: 29px;
+}
+
+.importer-page .feature-visual p {
+  color: #4d6382;
+  font-size: 17px;
+}
+
+.importer-page .feature-chip-grid {
+  gap: 12px;
+}
+
+.importer-page .feature-chip-grid span {
+  border-color: rgba(12, 102, 228, 0.16);
+  border-radius: 14px;
+  padding: 13px 16px;
+  color: #12365f;
+  box-shadow: 0 14px 34px rgba(16, 32, 51, 0.07);
+}
+
+.importer-page .compare-table {
+  border-radius: 24px;
+  box-shadow: 0 28px 70px rgba(16, 32, 51, 0.11);
+}
+
+.importer-page .compare-table th,
+.importer-page .compare-table td {
+  padding: 22px;
+  line-height: 1.5;
+}
+
+.importer-page .usecase-grid,
+.importer-page .role-grid,
+.importer-page .faq-grid {
+  gap: 20px;
+}
+
+.importer-page .usecase-grid article,
+.importer-page .role-grid article,
+.importer-page .faq-item {
+  padding: 24px;
+}
+
+.importer-page .usecase-grid b,
+.importer-page .role-grid b {
+  color: #0c1f3d;
+  font-size: 20px;
+}
+
+.importer-page .usecase-grid p,
+.importer-page .role-grid p,
+.importer-page .faq-item p {
+  color: #4d6382;
+  font-size: 16px;
+}
+
+.importer-page .forge-banner {
+  border-color: rgba(34, 160, 107, 0.20);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(34, 160, 107, 0.15), transparent 26rem),
+    linear-gradient(135deg, #ffffff, #f1fff8);
+  padding: 34px;
+  box-shadow: 0 24px 70px rgba(16, 32, 51, 0.10);
+}
+
+.importer-page .forge-banner h3 {
+  font-size: 34px;
+}
+
+.importer-page .forge-points span {
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.importer-page .check-list li,
+.importer-page .problem-list li {
+  padding: 17px 18px;
+  color: #4d6382;
+}
+
+.importer-page .cta {
+  max-width: 1320px;
+  margin-top: 74px;
+}
+
+.importer-page .cta-box {
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.22), transparent 18rem),
+    linear-gradient(135deg, #0c66e4, #0b5ed0 48%, #22a06b);
+  padding: 56px;
+  box-shadow: 0 34px 88px rgba(12, 102, 228, 0.25);
+}
+
+.importer-page .cta-box h2 {
+  font-size: clamp(38px, 4.5vw, 58px);
+}
+
 .clean-shot {
   min-height: 420px;
   padding: 26px;
@@ -2124,6 +2329,33 @@ a {
   .hero-composition::before,
   .hero-composition::after {
     display: none;
+  }
+
+  .importer-page .section {
+    padding: 58px 16px;
+  }
+
+  .importer-page .split,
+  .importer-page .tour-grid,
+  .importer-page .feature-showcase,
+  .importer-page .usecase-grid,
+  .importer-page .role-grid,
+  .importer-page .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .importer-page .section-heading h2 {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .importer-page .section-heading p,
+  .importer-page .tour-step p {
+    font-size: 16px;
+  }
+
+  .importer-page .cta-box {
+    padding: 34px;
+    border-radius: 24px;
   }
 
   .section {
