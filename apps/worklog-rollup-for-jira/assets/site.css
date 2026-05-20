@@ -1371,6 +1371,7 @@ a {
   grid-template-columns: minmax(380px, 0.45fr) minmax(760px, 1fr);
   gap: 28px;
   padding-top: 58px;
+  padding-right: 48px;
   padding-bottom: 54px;
   overflow: hidden;
 }
@@ -1460,12 +1461,14 @@ a {
 .hero-composition::before {
   content: "";
   position: absolute;
-  inset: 120px -140px -50px 80px;
+  inset: 120px 0 -50px 80px;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 45% 45%, rgba(12, 102, 228, 0.13), transparent 38%),
-    radial-gradient(circle at 65% 65%, rgba(34, 160, 107, 0.14), transparent 34%);
+    radial-gradient(circle at 42% 45%, rgba(12, 102, 228, 0.13), transparent 38%),
+    radial-gradient(circle at 58% 66%, rgba(34, 160, 107, 0.14), transparent 34%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 94%);
   filter: blur(2px);
+  mask-image: linear-gradient(90deg, #000 0%, #000 78%, transparent 100%);
   z-index: -2;
 }
 
@@ -1486,7 +1489,7 @@ a {
 .hero-progress {
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 72px;
   left: 240px;
   display: grid;
   grid-template-columns: repeat(8, minmax(70px, 1fr));
@@ -1523,7 +1526,7 @@ a {
   left: calc(50% + 18px);
   right: calc(-50% + 18px);
   height: 2px;
-  background: #cfe3ef;
+  background: linear-gradient(90deg, #cfe3ef 0%, rgba(207, 227, 239, 0.18) 100%);
 }
 
 .hero-progress span:last-child::before {
@@ -1546,6 +1549,15 @@ a {
   cursor: zoom-in;
 }
 
+.hero-screen::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.18));
+}
+
 .hero-screen img {
   display: block;
   width: 100%;
@@ -1562,7 +1574,7 @@ a {
 
 .hero-screen-sheet {
   top: 80px;
-  right: -90px;
+  right: 4px;
   width: 520px;
   aspect-ratio: 16 / 10;
 }
@@ -1584,11 +1596,12 @@ a {
 }
 
 .hero-screen-report {
-  right: -20px;
+  right: 12px;
   bottom: 0;
   width: 420px;
   aspect-ratio: 16 / 10;
   z-index: 4;
+  box-shadow: 0 22px 58px rgba(16, 32, 51, 0.13);
 }
 
 .hero-flow-icons {
