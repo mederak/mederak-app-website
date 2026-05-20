@@ -1381,26 +1381,9 @@ a {
   align-self: center;
 }
 
-.product-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 900;
-}
-
-.product-lockup img {
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
-  box-shadow: 0 16px 34px rgba(12, 102, 228, 0.16);
-}
-
 .product-hero h1 {
   max-width: 520px;
-  margin-top: 56px;
+  margin-top: 0;
   font-size: clamp(52px, 5.4vw, 78px);
   line-height: 0.98;
 }
