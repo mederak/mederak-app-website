@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Import Excel Files into Jira Cloud | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="Import Excel files into Jira Cloud without rebuilding them as CSV. Create and update Jira issues from XLSX files with mapping, validation, previews and reports.">
+    <meta name="description" content="Import Excel files into Jira Cloud without rebuilding them as CSV. Create Jira issues from XLSX files with mapping, duplicate handling, validation and reports.">
     <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
     <meta property="og:title" content="Import Excel files into Jira Cloud without CSV">
-    <meta property="og:description" content="Create and update Jira issues from XLSX files with reusable mappings, validation, previews and import reports.">
+    <meta property="og:description" content="Create Jira issues from XLSX files with reusable mappings, duplicate handling, validation and import reports.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
     <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/og-excel-backlog-importer.png">
@@ -24,7 +24,7 @@
         "name": "Excel Backlog Importer for Jira",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Jira Cloud",
-        "description": "Import Excel XLSX backlog files into Jira Cloud with mapping, validation, previews and controlled issue creation or updates.",
+        "description": "Import Excel XLSX backlog files into Jira Cloud with mapping, duplicate handling, validation and controlled issue creation.",
         "url": "https://mederak.pl/apps/excel-backlog-importer-for-jira/",
         "softwareHelp": "https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html",
         "publisher": {
@@ -51,8 +51,8 @@
         "@type": "FAQPage",
         "mainEntity": [
           {"@type": "Question", "name": "Can Jira import Excel files directly?", "acceptedAnswer": {"@type": "Answer", "text": "Jira's native import workflow is commonly CSV-based. Excel Backlog Importer is designed for teams that want to work from XLSX files without rebuilding them as CSV first."}},
-          {"@type": "Question", "name": "Why use this app instead of Jira CSV import?", "acceptedAnswer": {"@type": "Answer", "text": "Jira CSV import is powerful. A dedicated Excel importer can be faster for recurring spreadsheet handovers because it adds guided mapping, validation, preview and import history around the XLSX workflow."}},
-          {"@type": "Question", "name": "Can I update existing Jira issues from Excel?", "acceptedAnswer": {"@type": "Answer", "text": "The product is designed for repeated Excel uploads that can update matching Jira issues where the import setup and row identity allow it."}},
+          {"@type": "Question", "name": "Why use this app instead of Jira CSV import?", "acceptedAnswer": {"@type": "Answer", "text": "Jira CSV import is powerful. A dedicated Excel importer can be faster for recurring spreadsheet handovers because it adds guided mapping, duplicate handling, validation and reports around the XLSX workflow."}},
+          {"@type": "Question", "name": "Can I preview rows before importing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The validation screen shows mapped columns, row-level messages and selected valid rows before importing them into Jira."}},
           {"@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing and trial availability are handled through Atlassian Marketplace. Use the Marketplace listing to start evaluation for your Jira Cloud site."}}
         ]
       }
@@ -83,7 +83,7 @@
           <div>
             <span class="eyebrow">Excel to Jira Cloud importer</span>
             <h1>Import Excel files into Jira Cloud - without rebuilding them as CSV</h1>
-            <p class="hero-copy">Create and update Jira issues from XLSX files with reusable field mappings, validation, previews and import reports.</p>
+            <p class="hero-copy">Create Jira issues from XLSX files with reusable field mappings, duplicate handling, validation and import reports.</p>
             <div class="hero-actions">
               <a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="excel-backlog-importer-for-jira">Try on Atlassian Marketplace</a>
               <a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL" data-analytics-event="cta_pricing_click" data-product="excel-backlog-importer-for-jira">View pricing</a>
@@ -99,15 +99,15 @@
           </div>
           <div class="hero-media-stack" aria-label="Excel Backlog Importer wizard inside Jira Cloud">
             <figure class="media-card hero-media-card">
-              <button class="image-zoom" type="button" data-lightbox-src="assets/screen-hero.png" aria-label="Open Excel Backlog Importer screenshot">
-                <img src="assets/screen-hero.png" alt="Excel Backlog Importer wizard inside Jira Cloud" loading="eager">
+              <button class="image-zoom" type="button" data-lightbox-src="assets/screen-01-upload-workbook.png" aria-label="Open Excel Backlog Importer start screenshot">
+                <img src="assets/screen-01-upload-workbook.png" alt="Excel Backlog Importer start screen inside Jira Cloud" loading="eager">
               </button>
-              <figcaption>Guided import wizard inside Jira Cloud</figcaption>
+              <figcaption>Start the Excel to Jira import flow inside Jira Cloud</figcaption>
             </figure>
             <div class="mini-screen-grid" aria-label="Product workflow preview">
-              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/screen-upload-workbook.png" aria-label="Open upload workbook screenshot"><img src="assets/screen-upload-workbook.png" alt="Upload an Excel workbook to Jira Cloud" loading="lazy"></button><figcaption>Upload XLSX</figcaption></figure>
-              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/screen-column-mapping.png" aria-label="Open column mapping screenshot"><img src="assets/screen-column-mapping.png" alt="Map Excel columns to Jira fields" loading="lazy"></button><figcaption>Map fields</figcaption></figure>
-              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/screen-validation-results.png" aria-label="Open validation results screenshot"><img src="assets/screen-validation-results.png" alt="Validate Excel rows before creating Jira issues" loading="lazy"></button><figcaption>Validate rows</figcaption></figure>
+              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload workbook screenshot"><img src="assets/step-2-upload-1600x1000.png" alt="Upload an Excel workbook to Jira Cloud" loading="lazy"></button><figcaption>Upload XLSX</figcaption></figure>
+              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open field mapping screenshot"><img src="assets/step-5-mapping-1-1600x1000.png" alt="Map Excel columns to Jira fields" loading="lazy"></button><figcaption>Map fields</figcaption></figure>
+              <figure><button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation results screenshot"><img src="assets/screen-07-validate.png" alt="Validate Excel rows before importing to Jira" loading="lazy"></button><figcaption>Validate rows</figcaption></figure>
             </div>
           </div>
         </section>
@@ -121,27 +121,27 @@
               <ul class="compact-list">
                 <li>Keep the workbook as the starting point.</li>
                 <li>Review mapping and validation before Jira changes.</li>
-                <li>Use import history and reports for operational review.</li>
+                <li>Use validation and reports for operational review.</li>
               </ul>
             </div>
             <div class="media-mosaic">
               <figure class="media-card wide">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-preview.png" aria-label="Open import preview screenshot">
-                  <img src="assets/screen-import-preview.png" alt="Preview Jira issues before import from Excel" loading="lazy">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot">
+                  <img src="assets/screen-03-worksheet-selection.png" alt="Select worksheet and header row before importing Excel to Jira" loading="lazy">
                 </button>
-                <figcaption>Preview rows before import</figcaption>
+                <figcaption>Select worksheet and header row</figcaption>
               </figure>
               <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-report.png" aria-label="Open import report screenshot">
-                  <img src="assets/screen-import-report.png" alt="Excel Backlog Importer import report after Jira issue creation" loading="lazy">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/step-4-template-1600x1000.png" aria-label="Open column recognition screenshot">
+                  <img src="assets/step-4-template-1600x1000.png" alt="Recognize Excel columns before mapping to Jira fields" loading="lazy">
                 </button>
-                <figcaption>Import report</figcaption>
+                <figcaption>Recognize Excel columns</figcaption>
               </figure>
               <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-history.png" aria-label="Open import history screenshot">
-                  <img src="assets/screen-import-history.png" alt="Excel Backlog Importer import history in Jira Cloud" loading="lazy">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screenshot">
+                  <img src="assets/step-8-report-1-1600x1000.png" alt="Excel Backlog Importer import report after Jira issue creation" loading="lazy">
                 </button>
-                <figcaption>Import history</figcaption>
+                <figcaption>Export the import report</figcaption>
               </figure>
             </div>
           </div>
@@ -164,37 +164,41 @@
           <div class="section-inner">
             <div class="section-heading">
               <span class="eyebrow">Workflow</span>
-              <h2>From spreadsheet to Jira backlog in a controlled flow</h2>
-              <p>Each step has a dedicated screen so teams can see what will happen before Jira issues are created or updated.</p>
+              <h2>The real eight-screen import flow</h2>
+              <p>These are the actual app screens: start, upload, worksheet selection, column recognition, mapping, hierarchy and duplicate controls, validation, and report.</p>
             </div>
             <div class="tour-grid">
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-upload-workbook.png" aria-label="Open upload XLSX screenshot"><img src="assets/screen-upload-workbook.png" alt="Upload XLSX workbook in Excel Backlog Importer" loading="lazy"></button><figcaption>1. Upload XLSX</figcaption></figure>
-                <p>Start from the workbook your team already uses.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-01-upload-workbook.png" aria-label="Open start screen screenshot"><img src="assets/screen-01-upload-workbook.png" alt="Start Excel Backlog Importer flow inside Jira Cloud" loading="lazy"></button><figcaption>1. Start the importer</figcaption></figure>
+                <p>Open the app in Jira Cloud and confirm that nothing is created until validation and import confirmation.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-worksheet-selection.png" aria-label="Open worksheet selection screenshot"><img src="assets/screen-worksheet-selection.png" alt="Select worksheet and header row for Excel import into Jira" loading="lazy"></button><figcaption>2. Choose worksheet</figcaption></figure>
-                <p>Select the sheet and header row that contain backlog data.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload XLSX screenshot"><img src="assets/step-2-upload-1600x1000.png" alt="Upload XLSX workbook in Excel Backlog Importer" loading="lazy"></button><figcaption>2. Upload XLSX</figcaption></figure>
+                <p>Drop a modern `.xlsx` workbook or choose it from disk. CSV import is intentionally outside this flow.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-column-mapping.png" aria-label="Open map columns screenshot"><img src="assets/screen-column-mapping.png" alt="Map Excel columns to Jira fields and custom fields" loading="lazy"></button><figcaption>3. Map columns</figcaption></figure>
-                <p>Connect Excel columns to Jira fields and supported custom fields.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot"><img src="assets/screen-03-worksheet-selection.png" alt="Select worksheet and header row for Excel import into Jira" loading="lazy"></button><figcaption>3. Choose worksheet</figcaption></figure>
+                <p>Select the sheet, header row and saved setup when the workbook is recognized.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-validation-results.png" aria-label="Open validate rows screenshot"><img src="assets/screen-validation-results.png" alt="Validation results before importing Excel rows into Jira" loading="lazy"></button><figcaption>4. Validate rows</figcaption></figure>
-                <p>Catch missing fields, invalid values and duplicate signals before import.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-4-template-1600x1000.png" aria-label="Open column recognition screenshot"><img src="assets/step-4-template-1600x1000.png" alt="Recognize Excel columns before field mapping" loading="lazy"></button><figcaption>4. Recognize columns</figcaption></figure>
+                <p>Review detected headers and auto-map common names before detailed field mapping.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-preview.png" aria-label="Open preview import screenshot"><img src="assets/screen-import-preview.png" alt="Preview Jira issue changes before import" loading="lazy"></button><figcaption>5. Preview import</figcaption></figure>
-                <p>Review the rows and planned Jira changes before the run.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open field mapping screenshot"><img src="assets/step-5-mapping-1-1600x1000.png" alt="Map Excel columns to Jira fields and import defaults" loading="lazy"></button><figcaption>5. Map fields and defaults</figcaption></figure>
+                <p>Choose the default issue type, optional parent and Jira field mappings for the selected project.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-create-update-mode.png" aria-label="Open create or update screenshot"><img src="assets/screen-create-update-mode.png" alt="Choose create or update mode for Jira issues imported from Excel" loading="lazy"></button><figcaption>6. Create or update</figcaption></figure>
-                <p>Create new issues or update matching issues from repeated uploads.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot"><img src="assets/step-6-hierarchy-1600x1000.png" alt="Configure hierarchy information and duplicate handling for Excel imports" loading="lazy"></button><figcaption>6. Review hierarchy and duplicates</figcaption></figure>
+                <p>Use the current hierarchy information screen and configure duplicate detection for repeated workbook imports.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-report.png" aria-label="Open export report screenshot"><img src="assets/screen-import-report.png" alt="Export import report after Excel to Jira import" loading="lazy"></button><figcaption>7. Export report</figcaption></figure>
-                <p>Keep a report for review, handover and troubleshooting.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot"><img src="assets/screen-07-validate.png" alt="Validate Excel rows and import selected rows into Jira" loading="lazy"></button><figcaption>7. Validate and import selected rows</figcaption></figure>
+                <p>Review row-level messages, select valid rows and import only what passed validation.</p>
+              </article>
+              <article class="tour-step">
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screenshot"><img src="assets/step-8-report-1-1600x1000.png" alt="Import report with created Jira issue keys and export controls" loading="lazy"></button><figcaption>8. Review and export report</figcaption></figure>
+                <p>See created, updated, skipped and failed rows, open Jira issue keys and export CSV or JSON.</p>
               </article>
             </div>
           </div>
@@ -204,48 +208,48 @@
           <div class="section-heading">
             <span class="eyebrow">Key screens</span>
             <h2>Built around the moments that make imports risky</h2>
-            <p>The landing page should sell the product visually: mapping, validation, hierarchy and repeat imports are the screens worth showing first.</p>
+            <p>The product screens focus on the decisions that matter: worksheet choice, mapping, duplicate handling, validation and final reporting.</p>
           </div>
           <div class="feature-showcase">
             <article class="feature-visual">
               <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-column-mapping.png" aria-label="Open mapping screenshot">
-                  <img src="assets/screen-column-mapping.png" alt="Excel column mapping to Jira fields" loading="lazy">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet screenshot">
+                  <img src="assets/screen-03-worksheet-selection.png" alt="Select worksheet and saved setup for Excel import" loading="lazy">
                 </button>
-                <figcaption>Reusable field mapping</figcaption>
+                <figcaption>Worksheet and saved setup</figcaption>
               </figure>
-              <h3>Map Excel columns to Jira fields</h3>
-              <p>Show the buyer that the app understands Jira fields, supported custom fields and repeat handovers.</p>
+              <h3>Start from the right sheet</h3>
+              <p>Pick the worksheet and header row before any Jira changes are possible.</p>
             </article>
             <article class="feature-visual">
               <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-validation-results.png" aria-label="Open validation screenshot">
-                  <img src="assets/screen-validation-results.png" alt="Validation results for Excel rows before Jira import" loading="lazy">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open mapping screenshot">
+                  <img src="assets/step-5-mapping-1-1600x1000.png" alt="Map Excel columns to Jira fields and defaults" loading="lazy">
+                </button>
+                <figcaption>Mapping and import defaults</figcaption>
+              </figure>
+              <h3>Map columns and defaults</h3>
+              <p>Set issue type, optional parent and supported Jira field mappings in one place.</p>
+            </article>
+            <article class="feature-visual">
+              <figure class="media-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot">
+                  <img src="assets/step-6-hierarchy-1600x1000.png" alt="Hierarchy information and duplicate handling settings" loading="lazy">
+                </button>
+                <figcaption>Hierarchy information and duplicate handling</figcaption>
+              </figure>
+              <h3>Control repeat imports</h3>
+              <p>The current hierarchy screen is informational, while duplicate detection helps avoid creating the same work twice.</p>
+            </article>
+            <article class="feature-visual">
+              <figure class="media-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot">
+                  <img src="assets/screen-07-validate.png" alt="Validation results and selected rows before import" loading="lazy">
                 </button>
                 <figcaption>Validation before import</figcaption>
               </figure>
-              <h3>Catch risky rows early</h3>
-              <p>Validation makes the import feel controlled before anything changes in Jira.</p>
-            </article>
-            <article class="feature-visual">
-              <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-hierarchy-mapping.png" aria-label="Open hierarchy mapping screenshot">
-                  <img src="assets/screen-hierarchy-mapping.png" alt="Structured Epic Story Sub-task mapping from Excel to Jira" loading="lazy">
-                </button>
-                <figcaption>Structured backlog imports</figcaption>
-              </figure>
-              <h3>Designed for hierarchy-aware handovers</h3>
-              <p>Use visuals to explain Epic, Story and Sub-task planning where Jira configuration supports it.</p>
-            </article>
-            <article class="feature-visual">
-              <figure class="media-card">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-update-existing-issues.png" aria-label="Open update existing issues screenshot">
-                  <img src="assets/screen-update-existing-issues.png" alt="Update existing Jira issues from repeated Excel uploads" loading="lazy">
-                </button>
-                <figcaption>Repeat imports and updates</figcaption>
-              </figure>
-              <h3>Update matching Jira issues</h3>
-              <p>Show how repeated uploads can update existing work instead of creating duplicates.</p>
+              <h3>Import only selected valid rows</h3>
+              <p>Review row-level messages and block invalid rows before importing selected work into Jira.</p>
             </article>
           </div>
         </section>
@@ -266,8 +270,8 @@
               <span>Required field validation</span>
               <span>Parent-based imports</span>
               <span>Duplicate handling</span>
-              <span>Update existing issues</span>
-              <span>Import history</span>
+              <span>Duplicate handling</span>
+              <span>Validation before import</span>
               <span>Exportable report</span>
               <span>Forge app for Jira Cloud</span>
             </div>
@@ -288,8 +292,8 @@
               <tr><td>Validation before import</td><td>Available in the import flow, but not tailored to recurring Excel handovers.</td><td>Guided validation before selected rows are imported.</td></tr>
               <tr><td>Preview</td><td>Works in an admin-oriented import process.</td><td>Preview and row selection are central to the product flow.</td></tr>
               <tr><td>Hierarchy import</td><td>Possible with careful CSV preparation and Jira configuration.</td><td>Designed for controlled parent-based and structured backlog imports where supported.</td></tr>
-              <tr><td>Updating existing issues</td><td>Possible with careful identifiers and admin process.</td><td>Designed for repeat uploads that update matching Jira issues.</td></tr>
-              <tr><td>Import history</td><td>Usually handled outside the import workflow.</td><td>Import metadata and reports support review and troubleshooting.</td></tr>
+              <tr><td>Duplicate handling</td><td>Requires careful file discipline and external tracking.</td><td>Includes import mode and record identity settings for repeated workbook uploads.</td></tr>
+              <tr><td>Import result review</td><td>Usually handled outside the import workflow.</td><td>The report lists processed rows, statuses and Jira issue keys.</td></tr>
               <tr><td>Report export</td><td>Depends on process and admin handling.</td><td>Designed to provide an import report after the run.</td></tr>
             </tbody>
           </table>
@@ -307,8 +311,8 @@
               <article><b>Sales estimate to Jira backlog</b><p>Turn accepted estimate rows into delivery work when a project starts.</p></article>
               <article><b>Spreadsheet migration</b><p>Move teams away from spreadsheet-based tracking into a structured Jira backlog.</p></article>
               <article><b>Bulk issue creation</b><p>Create many issues in a controlled flow with validation and preview.</p></article>
-              <article><b>Scope updates after review</b><p>Refresh descriptions, estimates, priorities or labels after stakeholder review.</p></article>
-              <article><b>Epic to Story to Sub-task planning</b><p>Designed for structured backlog imports where hierarchy rules and Jira configuration support the intended relationships.</p></article>
+              <article><b>Repeated workbook handovers</b><p>Use duplicate handling and record identity settings when the same workbook returns with reviewed rows.</p></article>
+              <article><b>Hierarchy planning checks</b><p>Review the current hierarchy information screen before importing files that contain parent or grouping columns.</p></article>
             </div>
           </div>
         </section>
@@ -329,7 +333,7 @@
             <div>
               <span class="eyebrow">Security and data handling</span>
               <h3>Designed for Jira Cloud and Atlassian Forge.</h3>
-              <p>The app is designed as an Atlassian Forge app. It avoids storing full Excel files and stores only operational metadata needed for import history, duplicate detection, saved mapping setup and reporting.</p>
+              <p>The app is designed as an Atlassian Forge app. It avoids storing full Excel files and stores only operational metadata needed for duplicate detection, saved mapping setup and reporting.</p>
             </div>
             <div class="forge-points">
               <span><b>&check;</b> Works with Jira Cloud and Jira REST APIs through Forge.</span>
@@ -342,7 +346,7 @@
         <section class="section">
           <div class="section-heading"><h2>Current limitations</h2><p>We prefer precise expectations over inflated claims.</p></div>
           <ul class="check-list">
-            <li>Hierarchy imports depend on Jira project configuration, issue type hierarchy and user permissions.</li>
+            <li>The current hierarchy screen is informational in the captured app flow; imports run as a flat backlog with selected defaults and optional parent setup.</li>
             <li>Supported Jira custom fields depend on product implementation and Jira field type behavior.</li>
             <li>Marketplace pricing and free trial availability depend on the public Atlassian Marketplace listing.</li>
           </ul>
@@ -353,9 +357,9 @@
             <div class="section-heading"><h2>FAQ</h2><p>Short answers for teams evaluating Excel to Jira imports.</p></div>
             <div class="faq-grid">
               <article class="faq-item"><h3>Can Jira import Excel files directly?</h3><p>Jira's native import workflow is commonly CSV-based. This app is designed for XLSX files so teams do not have to rebuild Excel backlogs as CSV first.</p></article>
-              <article class="faq-item"><h3>Why use this app instead of Jira CSV import?</h3><p>Use it when your team receives recurring Excel backlogs and needs guided mapping, validation, preview and import history around that workflow.</p></article>
-              <article class="faq-item"><h3>Can I import epics, stories and sub-tasks?</h3><p>The product is designed for structured backlog imports such as Epic to Story to Sub-task workflows where Jira configuration and product rollout support the hierarchy.</p></article>
-              <article class="faq-item"><h3>Can I update existing Jira issues from Excel?</h3><p>Yes, repeat imports can update matching Jira issues when the file identity and row identity allow the app to recognize existing work.</p></article>
+              <article class="faq-item"><h3>Why use this app instead of Jira CSV import?</h3><p>Use it when your team receives recurring Excel backlogs and needs guided mapping, duplicate handling, validation and reports around that workflow.</p></article>
+              <article class="faq-item"><h3>Can I import epics, stories and sub-tasks?</h3><p>The current captured flow presents hierarchy options as informational. Use selected defaults and optional parent setup for the import flow shown on this page.</p></article>
+              <article class="faq-item"><h3>Can it handle repeated Excel uploads?</h3><p>Yes. The flow includes duplicate handling and record identity settings for repeated workbook imports.</p></article>
               <article class="faq-item"><h3>Does it support custom fields?</h3><p>The app is designed to map supported Jira fields and supported custom field types. Exact support depends on Jira field configuration.</p></article>
               <article class="faq-item"><h3>Can I save mappings for future imports?</h3><p>Saved setup can help reuse worksheet, header row and mapping choices for repeated imports.</p></article>
               <article class="faq-item"><h3>Can I preview the import before creating issues?</h3><p>Yes. Preview and validation are central to the controlled import flow.</p></article>
