@@ -49,7 +49,7 @@ a {
 }
 
 .nav {
-  max-width: 1180px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 14px 22px;
   display: flex;
@@ -75,17 +75,17 @@ a {
 }
 
 .brand.logo-brand img {
-  width: 280px;
-  height: auto;
+  width: auto;
+  height: 46px;
   max-width: 42vw;
   border-radius: 0;
   box-shadow: none;
 }
 
 .footer .brand.logo-brand img {
-  width: 160px;
+  width: auto;
+  height: 44px;
   max-width: 42vw;
-  height: auto;
 }
 
 .brand-mark {
@@ -1853,6 +1853,107 @@ a {
   font-size: clamp(38px, 4.5vw, 58px);
 }
 
+.vendor-page {
+  background:
+    radial-gradient(circle at top right, rgba(12, 102, 228, 0.10), transparent 34rem),
+    radial-gradient(circle at 10% 46%, rgba(34, 160, 107, 0.08), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 46%, #ffffff 100%);
+}
+
+.vendor-page .product-hero {
+  max-width: 1500px;
+  padding-top: 58px;
+  padding-right: 48px;
+  padding-bottom: 54px;
+}
+
+.vendor-page .product-hero h1 span {
+  color: var(--blue);
+}
+
+.vendor-page .section {
+  max-width: 1320px;
+  padding: 88px 28px;
+}
+
+.vendor-page .section.alt {
+  max-width: none;
+  background:
+    linear-gradient(135deg, rgba(247, 251, 255, 0.96), rgba(239, 248, 255, 0.96)),
+    #f7fbff;
+}
+
+.vendor-page .section-inner {
+  max-width: 1320px;
+}
+
+.vendor-page .section-heading {
+  max-width: 880px;
+  margin-bottom: 38px;
+}
+
+.vendor-page .section-heading h2 {
+  font-size: clamp(38px, 4.3vw, 58px);
+  line-height: 1.02;
+}
+
+.vendor-page .section-heading p {
+  max-width: 760px;
+  color: #4d6382;
+  font-size: 20px;
+}
+
+.vendor-page .showcase-grid {
+  gap: 20px;
+}
+
+.vendor-page .showcase-card,
+.vendor-page .app-card {
+  border-color: rgba(12, 102, 228, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 22px 60px rgba(16, 32, 51, 0.10);
+}
+
+.vendor-page .showcase-card {
+  padding: 26px;
+}
+
+.vendor-page .showcase-card b,
+.vendor-page .app-card h3 {
+  color: #0c1f3d;
+}
+
+.vendor-page .showcase-card p,
+.vendor-page .app-card p {
+  color: #4d6382;
+  font-size: 16px;
+}
+
+.vendor-page .icon-tile {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(38, 132, 255, 0.14), rgba(34, 160, 107, 0.14));
+}
+
+.vendor-page .cta {
+  max-width: 1320px;
+  margin-top: 74px;
+}
+
+.vendor-page .cta-box {
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.22), transparent 18rem),
+    linear-gradient(135deg, #0c66e4, #0b5ed0 48%, #22a06b);
+  padding: 56px;
+  box-shadow: 0 34px 88px rgba(12, 102, 228, 0.25);
+}
+
+.vendor-page .cta-box h2 {
+  font-size: clamp(38px, 4.5vw, 58px);
+}
+
 .clean-shot {
   min-height: 420px;
   padding: 26px;
@@ -2358,6 +2459,28 @@ a {
     border-radius: 24px;
   }
 
+  .vendor-page .section {
+    padding: 58px 16px;
+  }
+
+  .vendor-page .product-hero {
+    padding-top: 34px;
+    padding-right: 16px;
+  }
+
+  .vendor-page .section-heading h2 {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .vendor-page .section-heading p {
+    font-size: 16px;
+  }
+
+  .vendor-page .cta-box {
+    padding: 34px;
+    border-radius: 24px;
+  }
+
   .section {
     padding: 46px 16px;
   }
@@ -2428,7 +2551,8 @@ a {
   }
 
   .brand.logo-brand img {
-    width: 230px;
+    width: auto;
+    height: 38px;
     max-width: 58vw;
   }
 

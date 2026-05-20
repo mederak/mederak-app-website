@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
   </head>
-  <body>
+  <body class="vendor-page">
     <div class="site-shell">
       <header class="topbar">
         <nav class="nav" aria-label="Main navigation">
@@ -35,28 +35,45 @@
       </header>
 
       <main>
-        <section class="hero ad-hero">
-          <div>
+        <section class="hero product-hero vendor-product-hero">
+          <div class="hero-copy-panel">
             <span class="eyebrow">Excel Backlog Importer for Jira</span>
-            <h1>Import Excel backlogs into Jira Cloud without CSV cleanup</h1>
-            <p class="hero-copy">Excel Backlog Importer helps project managers, analysts and Jira admins turn XLSX files into structured Jira issues with mapping, validation and controlled imports.</p>
+            <h1>Turn Excel backlogs into <span>Jira issues</span></h1>
+            <p class="hero-copy">Upload a workbook, map your columns, validate your data, and import selected Jira issues with confidence. Everything you need, from Excel to Jira.</p>
             <div class="hero-actions">
               <a class="button primary" href="apps/excel-backlog-importer-for-jira/" data-analytics-event="cta_marketplace_click" data-product="excel-backlog-importer-for-jira">Try Excel Backlog Importer</a>
               <a class="button" href="apps/excel-backlog-importer-for-jira/#workflow" data-analytics-event="cta_docs_click" data-product="excel-backlog-importer-for-jira">See how it works</a>
             </div>
-            <div class="trust-row" aria-label="Product highlights">
-              <span>XLSX import</span>
-              <span>Jira Cloud</span>
-              <span>Validation before import</span>
-              <span>Atlassian Forge</span>
+            <div class="hero-benefits" aria-label="Product highlights">
+              <article><span class="benefit-icon green">+</span><div><b>Upload your Excel backlog</b><p>Start with a modern .xlsx file.</p></div></article>
+              <article><span class="benefit-icon blue">#</span><div><b>Map columns to Jira fields</b><p>Auto-detect and customize mappings.</p></div></article>
+              <article><span class="benefit-icon gold">!</span><div><b>Validate with confidence</b><p>Catch issues early and import clean data.</p></div></article>
+              <article><span class="benefit-icon jira">J</span><div><b>Import to Jira</b><p>Create selected valid Jira issues.</p></div></article>
             </div>
           </div>
-          <div class="product-shot" aria-label="Excel Backlog Importer wizard inside Jira Cloud">
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel has-image">
-                <img src="apps/excel-backlog-importer-for-jira/assets/screen-hero.png" alt="Excel Backlog Importer wizard inside Jira Cloud" loading="eager">
-              </div>
+          <div class="hero-composition" aria-label="Excel Backlog Importer workflow preview">
+            <div class="hero-progress" aria-label="Import flow steps">
+              <span>Upload</span><span>Sheet</span><span>Template</span><span>Mapping</span><span>Hierarchy</span><span>Validate</span><span>Import</span><span>Report</span>
+            </div>
+            <a class="hero-screen hero-screen-upload" href="apps/excel-backlog-importer-for-jira/">
+              <img src="apps/excel-backlog-importer-for-jira/assets/step-2-upload-1600x1000.png" alt="Upload an Excel workbook in Excel Backlog Importer" loading="eager">
+            </a>
+            <a class="hero-screen hero-screen-sheet" href="apps/excel-backlog-importer-for-jira/">
+              <img src="apps/excel-backlog-importer-for-jira/assets/screen-03-worksheet-selection.png" alt="Select worksheet and header row in Excel Backlog Importer" loading="eager">
+            </a>
+            <a class="hero-screen hero-screen-validate" href="apps/excel-backlog-importer-for-jira/">
+              <img src="apps/excel-backlog-importer-for-jira/assets/screen-07-validate.png" alt="Validate rows before importing selected Jira issues" loading="eager">
+            </a>
+            <a class="hero-screen hero-screen-hierarchy" href="apps/excel-backlog-importer-for-jira/">
+              <img src="apps/excel-backlog-importer-for-jira/assets/step-6-hierarchy-1600x1000.png" alt="Review hierarchy information and duplicate handling" loading="lazy">
+            </a>
+            <a class="hero-screen hero-screen-report" href="apps/excel-backlog-importer-for-jira/">
+              <img src="apps/excel-backlog-importer-for-jira/assets/step-8-report-1-1600x1000.png" alt="Import report with created Jira issues" loading="lazy">
+            </a>
+            <div class="hero-flow-icons" aria-hidden="true">
+              <span class="excel-badge">X</span>
+              <span class="flow-arrow">-></span>
+              <span class="jira-badge">J</span>
             </div>
           </div>
         </section>
