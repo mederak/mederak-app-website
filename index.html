@@ -13,10 +13,7 @@
     <meta property="og:image" content="https://mederak.pl/assets/mederak-apps-logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="apps/excel-backlog-importer-for-jira/assets/icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/home.css">
   </head>
   <body class="vendor-page">
     <div class="site-shell">
@@ -61,7 +58,7 @@
                 <p>Move structured XLSX backlogs into Jira with mapping, validation, duplicate handling and import reports.</p>
               </div>
               <div class="vendor-product-visual">
-                <img src="apps/excel-backlog-importer-for-jira/assets/screen-03-worksheet-selection.png" alt="Excel Backlog Importer worksheet selection screen">
+                <img src="assets/home-excel-backlog-importer.jpg" width="900" height="562" fetchpriority="high" decoding="async" alt="Excel Backlog Importer worksheet selection screen">
               </div>
             </a>
 
@@ -77,7 +74,7 @@
                 <p>See real logged time for an Epic, Story or parent issue, including deeply nested child issues.</p>
               </div>
               <div class="vendor-product-visual">
-                <img src="apps/worklog-rollup-for-jira/assets/screen-light-mode.png" alt="Worlog Rollup issue panel with total logged time">
+                <img src="assets/home-worlog-rollup.jpg" width="752" height="592" loading="lazy" decoding="async" alt="Worlog Rollup issue panel with total logged time">
               </div>
             </a>
           </div>
@@ -130,6 +127,36 @@
         </div>
       </footer>
     </div>
-    <script src="assets/site.js"></script>
+    <script>
+      (() => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainMenu = document.querySelector('#main-menu');
+        if (!menuToggle || !mainMenu) return;
+
+        const closeMenu = () => {
+          mainMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        menuToggle.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const isOpen = mainMenu.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        mainMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (mainMenu.contains(event.target) || menuToggle.contains(event.target)) return;
+          closeMenu();
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeMenu();
+        });
+      })();
+    </script>
   </body>
 </html>
