@@ -1,14 +1,12 @@
-﻿# Worklog Rollup for Jira landing page
+﻿# Worlog Rollup for Jira website pages
 
-Static product landing page for the Mederak Apps website.
+This folder contains the Marketplace-facing product pages for Worlog Rollup for Jira.
 
-## Screenshot placeholders
+The landing page uses production Marketplace assets copied from the product marketplace folder:
 
-Replace the placeholder panels in `index.html` manually when final Marketplace assets are ready.
+- `assets/screen-light-mode.png`
+- `assets/screen-dark-mode.png`
+- `assets/screen-spanish.png`
 
-- `assets/screen-main-panel.png` - main Jira issue panel, recommended 1600 x 1100 px.
-- `assets/screen-details.png` - details table, recommended 1600 x 1000 px.
-- `assets/screen-refresh.png` - refresh or recalculation state, optional.
-
-Do not edit the Forge app source from this website directory.
+Marketplace and pricing links are configured in `assets/site-config.js`.
 

@@ -3,37 +3,51 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Security | Worklog Rollup for Jira</title>
-    <meta name="description" content="Security practices for Worklog Rollup for Jira, an Atlassian Forge app for Jira Cloud.">
+    <title>Security Practices | Worlog Rollup for Jira</title>
+    <meta name="description" content="Security practices for Worlog Rollup for Jira, an Atlassian Forge app for Jira Cloud.">
     <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/security.html">
     <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
   </head>
   <body>
-    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl">Contact security</a></div></nav></header>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worlog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="../excel-backlog-importer-for-jira/">Excel Importer</a><a href="index.html">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/883289483">Marketplace</a></div></nav></header>
     <main class="content-page">
-      <span class="eyebrow">Security practices</span>
-      <h1>Security</h1>
-      <p class="lead">Worklog Rollup for Jira is designed as an Atlassian Forge app for Jira Cloud.</p>
+      <span class="eyebrow">Marketplace trust center</span>
+      <h1>Security Practices</h1>
+      <p class="lead">Worlog Rollup for Jira is designed as an Atlassian Forge app for Jira Cloud, with a narrow data scope focused on Jira logged-time rollups.</p>
 
       <div class="legal-grid">
-        <div class="legal-card"><b>Platform</b><p>Atlassian Forge and Jira Cloud.</p></div>
+        <div class="legal-card"><b>Platform</b><p>Jira Cloud and Atlassian Forge. No Jira Data Center, Connect or separate vendor-hosted product backend is used.</p></div>
         <div class="legal-card"><b>Scopes</b><p><code>read:jira-work</code> and <code>storage:app</code>.</p></div>
         <div class="legal-card"><b>Data read</b><p>Issue hierarchy and Jira time tracking fields needed for calculation.</p></div>
-        <div class="legal-card"><b>Cache</b><p>Short-lived Forge Storage cache for calculation results.</p></div>
+        <div class="legal-card"><b>Support contact</b><p><a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div>
       </div>
 
       <h2>Architecture</h2>
-      <p>The app renders a Jira issue panel and calls a Forge resolver to retrieve issue data through Jira APIs. It does not use Tempo APIs and does not calculate rates or costs.</p>
+      <p>The app renders a Jira issue panel and calls Forge backend code to retrieve issue data through Jira APIs. It reads the current issue context, descendant issue relationships and Jira time tracking values needed to calculate totals.</p>
+
+      <h2>Atlassian Forge security posture</h2>
+      <p>Atlassian describes Forge as a serverless app development platform where compute and storage can be hosted on Atlassian infrastructure. The app is designed to use this Forge model and not send worklog data to a separate vendor backend.</p>
 
       <h2>Permissions</h2>
-      <p><code>read:jira-work</code> is used to read issue data. <code>storage:app</code> is used for app-scoped cache.</p>
+      <p><code>read:jira-work</code> is used to read issue and time tracking data. <code>storage:app</code> is used for app-scoped calculation cache. Jira permissions continue to control which issue data a user can access in Jira.</p>
 
-      <h2>Support contact</h2>
-      <p>Report security questions to <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
+      <h2>Data storage</h2>
+      <p>The app uses short-lived Forge Storage cache for calculation results. It does not store costs, rates, invoices or Tempo data.</p>
+
+      <h2>Logging</h2>
+      <p>The app should avoid logging sensitive issue content. Technical logs should focus on operational status and error diagnosis.</p>
+
+      <h2>Vulnerability reporting</h2>
+      <p>Security issues can be reported to <a href="mailto:support.jira@mederak.pl?subject=Security%20report%20-%20Worlog%20Rollup">support.jira@mederak.pl</a>. Please include reproduction steps, impact, affected tenant context and screenshots where appropriate.</p>
+
+      <h2>Atlassian Marketplace alignment</h2>
+      <p>The app is prepared with Marketplace security expectations in mind, including least-privilege thinking, privacy documentation, customer terms, support contact and transparency about data handling.</p>
     </main>
-    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Worklog Rollup for Jira.</span><div class="footer-links"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="subprocessors.html">Sub-processors</a></div></div></footer>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     <script src="assets/site.js"></script>
   </body>
 </html>
-

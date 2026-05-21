@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Documentation | Worklog Rollup for Jira</title>
-    <meta name="description" content="Documentation for Worklog Rollup for Jira, a Forge app that shows logged time across Jira issue hierarchies.">
+    <title>Documentation | Worlog Rollup for Jira</title>
+    <meta name="description" content="Documentation for Worlog Rollup for Jira, a Forge app that shows logged time across Jira issue hierarchies.">
     <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/docs.html">
     <link rel="icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,39 +13,44 @@
     <link rel="stylesheet" href="assets/site.css">
   </head>
   <body>
-    <header class="topbar"><nav class="nav"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worklog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl">Ask a question</a></div></nav></header>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Worlog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="../excel-backlog-importer-for-jira/">Excel Importer</a><a href="index.html">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/883289483">Marketplace</a></div></nav></header>
     <main class="content-page">
       <span class="eyebrow">User guide</span>
       <h1>Documentation</h1>
-      <p class="lead">Worklog Rollup for Jira shows logged time for the current issue and its descendants.</p>
+      <p class="lead">Worlog Rollup for Jira shows logged time for the current issue and descendant issues directly in the Jira Cloud issue view.</p>
 
-      <h2>Quick start</h2>
+      <h2>Using the panel</h2>
       <ol>
         <li>Open a Jira Cloud issue.</li>
-        <li>Open the Worklog Rollup panel. In Jira it may be labeled Worklog Rollup.</li>
-        <li>Review total logged time in MH and MD.</li>
-        <li>Check the details table to see included issues with logged time.</li>
-        <li>Use Refresh when you want to recalculate after recent worklog changes.</li>
+        <li>Open the Worlog Rollup issue panel.</li>
+        <li>Review the total logged time in MH and MD.</li>
+        <li>Use the details table to see which issues are included in the calculation.</li>
+        <li>Select Refresh after recent worklog or hierarchy changes.</li>
       </ol>
 
       <h2>What is included</h2>
-      <p>The app reads logged time from the current issue and descendant issues found through Jira's standard parent relationship. It uses Jira time tracking fields such as <code>timespent</code> and <code>timetracking.timeSpentSeconds</code>.</p>
+      <p>The app reads logged time from the current issue and every descendant issue found through Jira's standard parent relationship. This includes deeply nested children, such as sub-tasks under Stories that belong to an Epic. The app uses Jira time tracking fields such as <code>timespent</code> and <code>timetracking.timeSpentSeconds</code>.</p>
 
-      <h2>What is not included</h2>
-      <p>The app does not calculate costs, rates, billing amounts or Tempo data. It is focused on Jira worklog time visibility.</p>
+      <h2>Issue details table</h2>
+      <p>The details table lists included issue keys, summaries and time values. It is intended to make the rollup transparent, so users can see which Jira issues contributed to the total.</p>
 
       <h2>Units</h2>
-      <p>Time is shown in MH and MD. In the current product model, 1 MD equals 8 MH.</p>
+      <p>Time is shown in MH and MD. In the product model, 1 MD equals 8 MH.</p>
+
+      <h2>Languages and themes</h2>
+      <p>The app supports English, Spanish, French and Polish. The panel is designed for Jira light mode and dark mode.</p>
 
       <h2>Refresh and cache</h2>
-      <p>The app may use short-lived Forge Storage cache to avoid repeated calculations during normal page refreshes. The Refresh action requests a fresh calculation.</p>
+      <p>The app uses short-lived Forge Storage cache to reduce repeated calculations during normal page refreshes. The Refresh action requests a fresh calculation.</p>
 
       <h2>Large hierarchies</h2>
-      <p>For very large issue trees, the app may stop at safety limits and show that the result was truncated. The summary then reflects the retrieved data.</p>
+      <p>For very large issue trees, the app can stop at safety limits and show a truncated result. The summary then reflects the retrieved data.</p>
+
+      <h2>What is not included</h2>
+      <p>The app does not calculate costs, rates, billing amounts, invoices or Tempo data. It is focused on Jira worklog time visibility.</p>
     </main>
-    <footer class="footer"><div class="footer-inner"><span>&copy; 2026 Mederak Apps. Worklog Rollup for Jira.</span><div class="footer-links"><a href="../../index.html">Mederak Apps</a><a href="../index.html">Apps</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></div></footer>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <script src="assets/site-config.js"></script>
     <script src="assets/site.js"></script>
   </body>
 </html>
-
-
