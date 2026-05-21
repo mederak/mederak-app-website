@@ -1207,13 +1207,14 @@ a {
 .media-card video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   background: #f7faff;
 }
 
 .hero-media-card img {
-  aspect-ratio: 16 / 10.6;
+  aspect-ratio: auto;
 }
 
 .media-card figcaption {
@@ -1848,7 +1849,9 @@ a {
 
 .importer-page .media-card img,
 .importer-page .media-card video {
-  aspect-ratio: 16 / 10;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .importer-page .media-card figcaption {
