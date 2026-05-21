@@ -128,7 +128,7 @@
       ".mederak-consent button,.mederak-consent-manage{min-height:38px;border:1px solid #d8e1ec;border-radius:8px;background:#fff;color:#102033;padding:0 12px;font:inherit;font-weight:800;cursor:pointer}",
       ".mederak-consent button.primary{border-color:#0c66e4;background:#0c66e4;color:#fff}",
       ".mederak-consent-manage{position:fixed;left:12px;bottom:12px;z-index:999;min-height:32px;background:rgba(255,255,255,.92);font-size:12px;box-shadow:0 10px 30px rgba(16,32,51,.12)}",
-      "@media(max-width:640px){.mederak-consent{right:10px;bottom:10px;left:10px;max-width:none;padding:14px}.mederak-consent__actions{display:grid;grid-template-columns:1fr}.mederak-consent button{width:100%}}"
+      "@media(max-width:640px){.mederak-consent{right:10px;bottom:10px;left:10px;max-width:none;max-height:42vh;overflow:auto;padding:14px}.mederak-consent__copy p{font-size:13px}.mederak-consent__actions{display:grid;grid-template-columns:1fr}.mederak-consent button{width:100%}}"
     ].join("");
     document.head.appendChild(style);
   }

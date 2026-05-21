@@ -3003,12 +3003,6 @@ a {
     min-width: 86vw;
   }
 
-  .media-card img,
-  .media-card video,
-  .mini-screen-grid img {
-    aspect-ratio: 1.15 / 1;
-  }
-
   .tour-grid .tour-step:nth-child(n + 6) {
     display: none;
   }
