@@ -1733,6 +1733,13 @@ a {
   background: #ffffff;
 }
 
+.media-card picture,
+.hero-screen picture,
+.worklog-panel-shot picture {
+  display: block;
+  width: 100%;
+}
+
 .worklog-hero-badges span {
   border: 1px solid rgba(12, 102, 228, 0.14);
   border-radius: 999px;
@@ -2885,6 +2892,11 @@ a {
 }
 
 @media (max-width: 520px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .nav {
     padding: 12px;
   }
@@ -2908,20 +2920,50 @@ a {
   }
 
   .product-hero {
+    overflow: hidden;
     padding-left: 12px;
     padding-right: 12px;
   }
 
   .product-hero h1 {
-    font-size: clamp(36px, 12vw, 48px);
+    max-width: min(100%, 340px);
+    font-size: clamp(31px, 8.8vw, 36px);
+    overflow-wrap: break-word;
   }
 
   .product-hero .hero-copy {
+    max-width: min(100%, 340px);
     font-size: 16px;
+    overflow-wrap: break-word;
+  }
+
+  .hero-copy-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .section-heading,
+  .section-heading h2,
+  .section-heading p,
+  .split > div {
+    max-width: min(100%, 340px);
+    overflow-wrap: break-word;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(28px, 8.2vw, 34px);
   }
 
   .hero-benefits {
     grid-template-columns: 1fr;
+  }
+
+  .hero-benefits article > div,
+  .hero-benefits b,
+  .hero-benefits p {
+    min-width: 0;
+    max-width: 260px;
+    overflow-wrap: break-word;
   }
 
   .hero-benefits article:nth-child(n + 4) {
@@ -2985,6 +3027,7 @@ a {
   }
 
   .worklog-total-card {
+    max-width: 270px;
     margin-right: 8px;
   }
 
