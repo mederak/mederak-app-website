@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Import Excel Files into Jira Cloud | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="Import Excel files into Jira Cloud without rebuilding them as CSV. Create Jira issues from XLSX files with mapping, duplicate handling, validation and reports.">
+    <title>Import and Update Jira Issues from Excel | Excel Backlog Importer for Jira</title>
+    <meta name="description" content="Import and update Jira issues from recurring Excel backlogs with reusable setup, Description Builder, value transformations, validation, duplicate handling and reports.">
     <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
-    <meta property="og:title" content="Import Excel files into Jira Cloud without CSV">
-    <meta property="og:description" content="Create Jira issues from XLSX files with reusable mappings, duplicate handling, validation and import reports.">
+    <meta property="og:title" content="Import and update Jira issues from Excel">
+    <meta property="og:description" content="Turn recurring Excel backlog handovers into reviewed Jira changes with reusable setup, Description Builder, transformations, validation and reports.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
     <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/og-excel-backlog-importer.png">
@@ -24,7 +24,7 @@
         "name": "Excel Backlog Importer for Jira",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Jira Cloud",
-        "description": "Import Excel XLSX backlog files into Jira Cloud with mapping, duplicate handling, validation and controlled issue creation.",
+        "description": "Import and update Jira issues from Excel backlog workbooks with reusable setup, Description Builder, value transformations, duplicate handling, validation and controlled reporting.",
         "url": "https://mederak.pl/apps/excel-backlog-importer-for-jira/",
         "softwareHelp": "https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html",
         "publisher": {
@@ -50,8 +50,8 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "Can Jira import Excel files directly?", "acceptedAnswer": {"@type": "Answer", "text": "Jira's native import workflow is commonly CSV-based. Excel Backlog Importer is designed for teams that want to work from XLSX files without rebuilding them as CSV first."}},
-          {"@type": "Question", "name": "Why use this app instead of Jira CSV import?", "acceptedAnswer": {"@type": "Answer", "text": "Jira CSV import is powerful. A dedicated Excel importer can be faster for recurring spreadsheet handovers because it adds guided mapping, duplicate handling, validation and reports around the XLSX workflow."}},
+          {"@type": "Question", "name": "Can Jira import Excel files directly?", "acceptedAnswer": {"@type": "Answer", "text": "Jira's native import workflow is commonly CSV-based. Excel Backlog Importer is designed for teams that want to work from Excel workbooks without rebuilding them as CSV first."}},
+          {"@type": "Question", "name": "Why use this app instead of Jira CSV import?", "acceptedAnswer": {"@type": "Answer", "text": "Jira CSV import is powerful. A dedicated Excel importer can be faster for recurring spreadsheet handovers because it adds guided mapping, Description Builder, value transformations, duplicate handling, validation and reports around the Excel workflow."}},
           {"@type": "Question", "name": "Can I preview rows before importing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The validation screen shows mapped columns, row-level messages and selected valid rows before importing them into Jira."}},
           {"@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing and trial availability are handled through Atlassian Marketplace. Use the Marketplace listing to start evaluation for your Jira Cloud site."}}
         ]
@@ -69,18 +69,18 @@
       <main>
         <section class="hero product-hero">
           <div class="hero-copy-panel">
-            <h1>Turn Excel backlogs into <span>Jira issues</span></h1>
-            <p class="hero-copy">Upload a workbook, map your columns, validate your data, and import selected Jira issues with confidence. Everything you need, from Excel to Jira.</p>
+            <h1>Turn Excel backlogs into reviewed <span>Jira changes</span></h1>
+            <p class="hero-copy">Import and update Jira issues from real business workbooks. Reuse setup, build structured descriptions, extract values from messy cells, validate rows, and create Jira changes only after review.</p>
             <div class="hero-actions">
               <a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="excel-backlog-importer-for-jira">Try on Atlassian Marketplace</a>
               <a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL" data-analytics-event="cta_pricing_click" data-product="excel-backlog-importer-for-jira">View pricing</a>
               <a class="button" href="#video" data-analytics-event="cta_video_click" data-product="excel-backlog-importer-for-jira">Watch workflow</a>
             </div>
             <div class="hero-benefits" aria-label="Product highlights">
-              <article><span class="benefit-icon green">+</span><div><b>Upload your Excel backlog</b><p>Start with a modern .xlsx file.</p></div></article>
-              <article><span class="benefit-icon blue">#</span><div><b>Map columns to Jira fields</b><p>Auto-detect and customize mappings.</p></div></article>
-              <article><span class="benefit-icon gold">!</span><div><b>Validate with confidence</b><p>Catch issues early and import clean data.</p></div></article>
-              <article><span class="benefit-icon jira">J</span><div><b>Import to Jira</b><p>Create selected valid Jira issues.</p></div></article>
+              <article><span class="benefit-icon green">+</span><div><b>Use the workbook you receive</b><p>Import .xlsx and supported legacy .xls files.</p></div></article>
+              <article><span class="benefit-icon blue">#</span><div><b>Map and transform fields</b><p>Reuse columns, extract values and normalize dates.</p></div></article>
+              <article><span class="benefit-icon gold">!</span><div><b>Validate before Jira changes</b><p>Review row-level issues before import or update.</p></div></article>
+              <article><span class="benefit-icon jira">J</span><div><b>Repeat without duplicate work</b><p>Reuse setup, update matches and export reports.</p></div></article>
             </div>
           </div>
           <div class="hero-composition" aria-label="Excel Backlog Importer workflow preview">
@@ -158,6 +158,54 @@
           </div>
         </section>
 
+        <section class="section alt">
+          <div class="section-inner">
+            <div class="section-heading">
+              <span class="eyebrow">New workflow depth</span>
+              <h2>Built for real spreadsheets, not only clean templates</h2>
+              <p>Business workbooks often contain useful context spread across many columns or packed into one long cell. The importer gives teams mapping tools that keep those handovers practical.</p>
+            </div>
+            <div class="feature-showcase">
+              <article class="feature-visual">
+                <div class="visual-placeholder" role="img" aria-label="Placeholder for Description Builder screenshot">
+                  <span>Description Builder screenshot</span>
+                  <b>Multiple Excel columns -> one Jira Description</b>
+                  <p>Replace with final product screenshot.</p>
+                </div>
+                <h3>Description Builder</h3>
+                <p>Combine requirement notes, acceptance criteria, business context and implementation details into one structured Jira Description with ordered sections.</p>
+              </article>
+              <article class="feature-visual">
+                <div class="visual-placeholder" role="img" aria-label="Placeholder for advanced value transformation screenshot">
+                  <span>Advanced value transformation screenshot</span>
+                  <b>Regex extraction with preview</b>
+                  <p>Replace with final product screenshot.</p>
+                </div>
+                <h3>Advanced value transformation</h3>
+                <p>Extract IDs, dates, names or fragments from source cells, use result templates, preview transformations and normalize supported Jira date fields.</p>
+              </article>
+              <article class="feature-visual">
+                <div class="visual-placeholder" role="img" aria-label="Placeholder for saved setup screenshot">
+                  <span>Saved setup screenshot</span>
+                  <b>Recognized workbook setup</b>
+                  <p>Replace with final product screenshot.</p>
+                </div>
+                <h3>Reusable setup</h3>
+                <p>Restore sheet, header row, mappings, transformations, description settings, duplicate strategy and date settings for recurring file structures.</p>
+              </article>
+              <article class="feature-visual">
+                <div class="visual-placeholder" role="img" aria-label="Placeholder for update mode and duplicate handling screenshot">
+                  <span>Update mode screenshot</span>
+                  <b>Create, update, skip or report</b>
+                  <p>Replace with final product screenshot.</p>
+                </div>
+                <h3>Repeat imports without duplicate work</h3>
+                <p>Use stable row identity and duplicate handling when reviewed spreadsheets return with changed estimates, priorities, descriptions or labels.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section id="workflow" class="section alt">
           <div class="section-inner">
             <div class="section-heading">
@@ -171,8 +219,8 @@
                 <p>Open the app in Jira Cloud and confirm that nothing is created until validation and import confirmation.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload XLSX screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-2-upload-1600x1000.jpg"><img src="assets/step-2-upload-1600x1000.png" width="1600" height="1000" alt="Upload XLSX workbook in Excel Backlog Importer" loading="lazy"></picture></button><figcaption>2. Upload XLSX</figcaption></figure>
-                <p>Drop a modern `.xlsx` workbook or choose it from disk. CSV import is intentionally outside this flow.</p>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload Excel workbook screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-2-upload-1600x1000.jpg"><img src="assets/step-2-upload-1600x1000.png" width="1600" height="1000" alt="Upload Excel workbook in Excel Backlog Importer" loading="lazy"></picture></button><figcaption>2. Upload Excel</figcaption></figure>
+                <p>Drop an Excel workbook or choose it from disk. The flow is designed for <code>.xlsx</code> files and supports legacy <code>.xls</code> workbooks where available.</p>
               </article>
               <article class="tour-step">
                 <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-03-worksheet-selection.jpg"><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row for Excel import into Jira" loading="lazy"></picture></button><figcaption>3. Choose worksheet</figcaption></figure>
@@ -184,11 +232,11 @@
               </article>
               <article class="tour-step">
                 <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open field mapping screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-5-mapping-1-1600x1000.jpg"><img src="assets/step-5-mapping-1-1600x1000.png" width="1600" height="1000" alt="Map Excel columns to Jira fields and import defaults" loading="lazy"></picture></button><figcaption>5. Map fields and defaults</figcaption></figure>
-                <p>Choose the default issue type, optional parent and Jira field mappings for the selected project.</p>
+                <p>Choose the default issue type, optional parent, supported Jira field mappings, Description Builder settings and field-level transformations for the selected project.</p>
               </article>
               <article class="tour-step">
                 <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-6-hierarchy-1600x1000.jpg"><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Configure hierarchy information and duplicate handling for Excel imports" loading="lazy"></picture></button><figcaption>6. Review hierarchy and duplicates</figcaption></figure>
-                <p>Use the current hierarchy information screen and configure duplicate detection for repeated workbook imports.</p>
+                <p>Review parent and hierarchy-related settings where your Jira configuration supports them, then configure duplicate detection for repeated workbook imports.</p>
               </article>
               <article class="tour-step">
                 <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-07-validate.jpg"><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validate Excel rows and import selected rows into Jira" loading="lazy"></picture></button><figcaption>7. Validate and import selected rows</figcaption></figure>
@@ -206,7 +254,7 @@
           <div class="section-heading">
             <span class="eyebrow">Key screens</span>
             <h2>Built around the moments that make imports risky</h2>
-            <p>The product screens focus on the decisions that matter: worksheet choice, mapping, duplicate handling, validation and final reporting.</p>
+            <p>The product screens focus on the decisions that matter: worksheet choice, mapping, transformations, duplicate handling, validation and final reporting.</p>
           </div>
           <div class="feature-showcase">
             <article class="feature-visual">
@@ -226,8 +274,8 @@
                 </button>
                 <figcaption>Mapping and import defaults</figcaption>
               </figure>
-              <h3>Map columns and defaults</h3>
-              <p>Set issue type, optional parent and supported Jira field mappings in one place.</p>
+              <h3>Map columns, descriptions and defaults</h3>
+              <p>Set issue type, optional parent, supported Jira field mappings, structured descriptions and value transformations in one place.</p>
             </article>
             <article class="feature-visual">
               <figure class="media-card">
@@ -237,7 +285,7 @@
                 <figcaption>Hierarchy information and duplicate handling</figcaption>
               </figure>
               <h3>Control repeat imports</h3>
-              <p>The current hierarchy screen is informational, while duplicate detection helps avoid creating the same work twice.</p>
+              <p>Parent references, sub-task validation and duplicate detection help teams avoid creating the same work twice during recurring handovers.</p>
             </article>
             <article class="feature-visual">
               <figure class="media-card">
@@ -260,17 +308,23 @@
               <p class="hero-copy">Keep the primary story visual. Let short feature cards support the screenshots instead of replacing them.</p>
             </div>
             <div class="feature-chip-grid">
-              <span>XLSX workbook import</span>
+              <span>XLSX and legacy XLS workbook import</span>
               <span>Worksheet selection</span>
               <span>Reusable mapping setup</span>
               <span>Jira field mapping</span>
+              <span>Description Builder</span>
+              <span>Regex value extraction</span>
+              <span>Date normalization</span>
+              <span>User picker resolution</span>
+              <span>Time tracking mapping</span>
               <span>Supported custom fields</span>
               <span>Required field validation</span>
-              <span>Parent-based imports</span>
+              <span>Parent issue references</span>
+              <span>Sub-task parent validation</span>
               <span>Duplicate handling</span>
-              <span>Duplicate handling</span>
+              <span>Update existing issues</span>
               <span>Validation before import</span>
-              <span>Exportable report</span>
+              <span>CSV and JSON report export</span>
               <span>Forge app for Jira Cloud</span>
             </div>
           </div>
@@ -284,12 +338,14 @@
           <table class="compare-table">
             <thead><tr><th>Workflow area</th><th>Native CSV import</th><th>Excel Backlog Importer</th></tr></thead>
             <tbody>
-              <tr><td>Input format</td><td>CSV files after spreadsheet export.</td><td>Excel XLSX workbook import.</td></tr>
+              <tr><td>Input format</td><td>CSV files after spreadsheet export.</td><td>Excel workbook import for <code>.xlsx</code> and supported legacy <code>.xls</code> files.</td></tr>
               <tr><td>Spreadsheet cleanup</td><td>Often requires file preparation and CSV-safe formatting.</td><td>Designed to keep the Excel workflow closer to the original handover file.</td></tr>
-              <tr><td>Reusable mapping</td><td>Mapping reuse depends on admin workflow and file discipline.</td><td>Designed for saved setup and repeated spreadsheet imports.</td></tr>
+              <tr><td>Reusable mapping</td><td>Mapping reuse depends on admin workflow and file discipline.</td><td>Designed for saved setup and repeated spreadsheet imports, including transformations and Description Builder settings.</td></tr>
+              <tr><td>Messy source cells</td><td>Usually cleaned before import or handled outside Jira.</td><td>Can extract fragments with regex transformation, result templates and date normalization.</td></tr>
+              <tr><td>Rich descriptions</td><td>Often prepared in one CSV column.</td><td>Description Builder can combine multiple Excel columns into one structured Jira Description.</td></tr>
               <tr><td>Validation before import</td><td>Available in the import flow, but not tailored to recurring Excel handovers.</td><td>Guided validation before selected rows are imported.</td></tr>
               <tr><td>Preview</td><td>Works in an admin-oriented import process.</td><td>Preview and row selection are central to the product flow.</td></tr>
-              <tr><td>Hierarchy import</td><td>Possible with careful CSV preparation and Jira configuration.</td><td>Designed for controlled parent-based and structured backlog imports where supported.</td></tr>
+              <tr><td>Parent and sub-task handling</td><td>Possible with careful CSV preparation and Jira configuration.</td><td>Supports parent issue references and validates sub-task parent requirements where supported by Jira configuration.</td></tr>
               <tr><td>Duplicate handling</td><td>Requires careful file discipline and external tracking.</td><td>Includes import mode and record identity settings for repeated workbook uploads.</td></tr>
               <tr><td>Import result review</td><td>Usually handled outside the import workflow.</td><td>The report lists processed rows, statuses and Jira issue keys.</td></tr>
               <tr><td>Report export</td><td>Depends on process and admin handling.</td><td>Designed to provide an import report after the run.</td></tr>
@@ -310,7 +366,8 @@
               <article><b>Spreadsheet migration</b><p>Move teams away from spreadsheet-based tracking into a structured Jira backlog.</p></article>
               <article><b>Bulk issue creation</b><p>Create many issues in a controlled flow with validation and preview.</p></article>
               <article><b>Repeated workbook handovers</b><p>Use duplicate handling and record identity settings when the same workbook returns with reviewed rows.</p></article>
-              <article><b>Hierarchy planning checks</b><p>Review the current hierarchy information screen before importing files that contain parent or grouping columns.</p></article>
+              <article><b>Spreadsheet cleanup reduction</b><p>Extract values, normalize dates and build Jira descriptions without creating a separate import-only workbook.</p></article>
+              <article><b>Parent and sub-task checks</b><p>Validate parent references and sub-task requirements before importing files that contain hierarchy-related columns.</p></article>
             </div>
           </div>
         </section>
@@ -344,8 +401,9 @@
         <section class="section">
           <div class="section-heading"><h2>Current limitations</h2><p>We prefer precise expectations over inflated claims.</p></div>
           <ul class="check-list">
-            <li>The current hierarchy screen is informational in the captured app flow; imports run as a flat backlog with selected defaults and optional parent setup.</li>
+            <li>Parent and hierarchy behavior depends on Jira project configuration, issue type hierarchy, field screens and permissions.</li>
             <li>Supported Jira custom fields depend on product implementation and Jira field type behavior.</li>
+            <li>Advanced value transformation supports bounded regex extraction, result templates and date normalization. It is not a full spreadsheet formula or ETL engine.</li>
             <li>Marketplace pricing and free trial availability depend on the public Atlassian Marketplace listing.</li>
           </ul>
         </section>
@@ -354,10 +412,12 @@
           <div class="section-inner">
             <div class="section-heading"><h2>FAQ</h2><p>Short answers for teams evaluating Excel to Jira imports.</p></div>
             <div class="faq-grid">
-              <article class="faq-item"><h3>Can Jira import Excel files directly?</h3><p>Jira's native import workflow is commonly CSV-based. This app is designed for XLSX files so teams do not have to rebuild Excel backlogs as CSV first.</p></article>
+              <article class="faq-item"><h3>Can Jira import Excel files directly?</h3><p>Jira's native import workflow is commonly CSV-based. This app is designed for Excel workbooks so teams do not have to rebuild Excel backlogs as CSV first.</p></article>
               <article class="faq-item"><h3>Why use this app instead of Jira CSV import?</h3><p>Use it when your team receives recurring Excel backlogs and needs guided mapping, duplicate handling, validation and reports around that workflow.</p></article>
-              <article class="faq-item"><h3>Can I import epics, stories and sub-tasks?</h3><p>The current captured flow presents hierarchy options as informational. Use selected defaults and optional parent setup for the import flow shown on this page.</p></article>
+              <article class="faq-item"><h3>Can I import parent-based work and sub-tasks?</h3><p>The app supports parent references and validates sub-task parent requirements where Jira project configuration and permissions allow those relationships.</p></article>
               <article class="faq-item"><h3>Can it handle repeated Excel uploads?</h3><p>Yes. The flow includes duplicate handling and record identity settings for repeated workbook imports.</p></article>
+              <article class="faq-item"><h3>What is Description Builder?</h3><p>Description Builder combines multiple Excel columns into one structured Jira Description, skipping empty cells and keeping useful workbook context together.</p></article>
+              <article class="faq-item"><h3>What are Advanced value transformations?</h3><p>Advanced transformations can extract parts of a source cell with regex, use result templates and normalize supported date fields before validation and import.</p></article>
               <article class="faq-item"><h3>Does it support custom fields?</h3><p>The app is designed to map supported Jira fields and supported custom field types. Exact support depends on Jira field configuration.</p></article>
               <article class="faq-item"><h3>Can I save mappings for future imports?</h3><p>Saved setup can help reuse worksheet, header row and mapping choices for repeated imports.</p></article>
               <article class="faq-item"><h3>Can I preview the import before creating issues?</h3><p>Yes. Preview and validation are central to the controlled import flow.</p></article>

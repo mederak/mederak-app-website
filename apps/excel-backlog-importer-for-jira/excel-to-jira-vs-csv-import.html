@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Excel to Jira vs CSV Import | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="Compare native Jira CSV import with an Excel-based Jira import workflow. Learn when XLSX import, reusable mappings, validation and import history can save time.">
+    <meta name="description" content="Compare native Jira CSV import with an Excel-based Jira import workflow for reusable setup, Description Builder, value transformations, validation, updates and reports.">
     <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/excel-to-jira-vs-csv-import.html">
     <meta property="og:title" content="Excel to Jira vs CSV Import">
     <meta property="og:description" content="Compare Jira CSV import with an Excel-based Jira import workflow for recurring backlog handovers.">
@@ -27,19 +27,21 @@
     <main class="content-page seo-page">
       <span class="eyebrow">Comparison guide</span>
       <h1>Excel to Jira vs CSV import: when a dedicated importer makes sense</h1>
-      <p class="lead">Jira CSV import is a strong native capability. A dedicated Excel importer makes sense when teams repeatedly receive backlog data in XLSX files and need a controlled, reusable workflow.</p>
+      <p class="lead">Jira CSV import is a strong native capability. A dedicated Excel importer makes sense when teams repeatedly receive backlog data in Excel workbooks and need a controlled, reusable workflow.</p>
 
       <h2>When native Jira CSV import is enough</h2>
       <p>CSV import can be a good fit for one-off migrations, admin-led imports and teams that already maintain clean CSV templates. It is flexible and familiar to many Jira administrators.</p>
 
       <h2>When an Excel-based importer helps</h2>
-      <p>An Excel-first workflow can save time when business teams, clients or analysts keep source backlog data in spreadsheets. It reduces conversion work and keeps mapping, validation and review closer to the handover file.</p>
+      <p>An Excel-first workflow can save time when business teams, clients or analysts keep source backlog data in spreadsheets. It reduces conversion work and keeps mapping, transformations, validation and review closer to the handover file.</p>
 
       <table class="compare-table">
         <thead><tr><th>Workflow area</th><th>Native CSV import</th><th>Excel Backlog Importer</th></tr></thead>
         <tbody>
-          <tr><td>Source file</td><td>CSV prepared from spreadsheet data.</td><td>XLSX workbook used directly.</td></tr>
-          <tr><td>Repeated mapping</td><td>Requires disciplined templates or manual setup.</td><td>Designed for reusable mapping setup per recurring workflow.</td></tr>
+          <tr><td>Source file</td><td>CSV prepared from spreadsheet data.</td><td>Excel workbook used directly, including `.xlsx` and supported legacy `.xls` files.</td></tr>
+          <tr><td>Repeated mapping</td><td>Requires disciplined templates or manual setup.</td><td>Designed for reusable mapping setup per recurring workflow, including transformations and Description Builder settings.</td></tr>
+          <tr><td>Rich descriptions</td><td>Usually prepared as one import column.</td><td>Description Builder can combine multiple Excel columns into one structured Jira Description.</td></tr>
+          <tr><td>Messy source values</td><td>Often cleaned before export to CSV.</td><td>Advanced transformation can extract fragments with regex, result templates and date normalization.</td></tr>
           <tr><td>Validation</td><td>Useful, but broad and admin-oriented.</td><td>Focused on backlog rows before Jira changes are made.</td></tr>
           <tr><td>Preview</td><td>Part of the import process.</td><td>Central step for row-level review and controlled selection.</td></tr>
           <tr><td>Updates</td><td>Possible with careful identifiers.</td><td>Designed for repeat uploads that update matching Jira issues.</td></tr>
@@ -49,9 +51,10 @@
 
       <h2>Example workflow</h2>
       <ol>
-        <li>Receive an XLSX backlog from a client, analyst or sales team.</li>
+        <li>Receive an Excel backlog from a client, analyst or sales team.</li>
         <li>Select the worksheet and header row.</li>
-        <li>Map columns such as Summary, Description, Issue Type, Estimate and External ID.</li>
+        <li>Map columns such as Summary, Issue Type, Estimate and External ID.</li>
+        <li>Use Description Builder or value transformations when the workbook structure needs it.</li>
         <li>Validate required fields and Jira-compatible values.</li>
         <li>Preview the import and create or update selected Jira issues.</li>
       </ol>

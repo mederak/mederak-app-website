@@ -15,7 +15,7 @@ $RemoteRoot = "/www"
 $CredentialTarget = "mederak.pl FTP"
 
 $ExcludedDirectories = @(".git")
-$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore")
+$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", "MARKETING_REFRESH_NOTES.md")
 $ExcludedPathPrefixes = @("scripts/")
 
 Add-Type -Language CSharp -TypeDefinition @"

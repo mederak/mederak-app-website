@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Update Jira Issues from Excel | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="Update existing Jira issues from Excel using controlled mapping, validation and import history. Useful for reviewed estimates, backlog changes and scope updates.">
+    <meta name="description" content="Update existing Jira issues from repeat Excel uploads with reusable setup, stable row identity, controlled mapping, validation, duplicate handling and reports.">
     <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/update-jira-issues-from-excel.html">
     <meta property="og:title" content="Update Jira Issues from Excel">
-    <meta property="og:description" content="Use repeated Excel uploads to update matching Jira issues with validation and import reports.">
+    <meta property="og:description" content="Use repeated Excel uploads to update matching Jira issues with saved setup, stable identity, validation and import reports.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/update-jira-issues-from-excel.html">
     <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/screen-hero.png">
@@ -31,8 +31,17 @@
       <h2>When it makes sense</h2>
       <p>Use update workflows after client review, technical analysis, sprint planning or scope refinement. It is useful when the spreadsheet remains the source of reviewed planning data for a period of time.</p>
 
+      <h2>Reusable setup for repeat files</h2>
+      <p>After successful validation, the app can remember setup for the same file name in the current Jira project. That restored setup can include worksheet, header row, field mappings, Description Builder settings, value transformations, duplicate strategy and date settings.</p>
+
       <h2>Identifying existing issues</h2>
       <p>Repeat imports need a stable identity. Depending on the import setup, this may be a Jira issue key or a stable external row identity such as External ID, Requirement ID or Backlog ID.</p>
+
+      <h2>Updating mapped fields only</h2>
+      <p>Update workflows should be planned around the fields intentionally mapped for the import. This keeps reviewed spreadsheet changes focused on the Jira fields the user selected instead of treating the workbook as an uncontrolled overwrite source.</p>
+
+      <h2>Transform values before update</h2>
+      <p>Advanced value transformation can extract useful fragments from source cells before validation, for example requirement IDs, dates or labels embedded in longer workbook text. Description Builder can also rebuild Jira Description from several reviewed Excel columns.</p>
 
       <h2>Validation before changes</h2>
       <p>Before updating Jira, validate mapped fields, required values and duplicate status. This reduces the risk of pushing incorrect spreadsheet values into existing issues.</p>

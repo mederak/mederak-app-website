@@ -48,6 +48,14 @@
         <li>Full Excel workbook files are not intended to be stored by the app.</li>
       </ul>
 
+      <h2>Transformation safety</h2>
+      <p>Advanced value transformation supports bounded regex extraction for mapped fields. The app is designed to block invalid regex patterns, overly long patterns, overly long inputs, invalid result templates and simple nested-quantifier patterns that are commonly risky for import performance.</p>
+      <ul>
+        <li>Regex preview is limited to a small sample of rows.</li>
+        <li>Active regex transformations per import are limited.</li>
+        <li>Transformation preview values and full source cell values should not be logged as support or diagnostic data.</li>
+      </ul>
+
       <h2>Logging</h2>
       <p>The app should avoid logging sensitive backlog content. Technical logs should focus on operational status and error diagnosis.</p>
 
