@@ -2,6 +2,8 @@
 
 The product landing page references the real app screenshots below. Keep these filenames stable unless the HTML and `ASSETS_TODO.md` are updated together.
 
+Current images are cropped from `D:\work\mederak-products\products\excel-backlog-importer-for-jira\tests\screens`.
+
 ## Real flow screenshots
 
 | File name | Size | Purpose |

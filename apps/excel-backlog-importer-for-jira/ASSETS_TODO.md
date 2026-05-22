@@ -1,11 +1,11 @@
 # Screenshot and media assets
 
-The landing page now uses the real app screenshots from:
+The landing page now uses the real app screenshots generated from:
 
-`D:\work\mederak-products\products\excel-backlog-importer-for-jira\marketplace\assets`
+`D:\work\mederak-products\products\excel-backlog-importer-for-jira\tests\screens`
 
-All imported flow screenshots are `1600 x 1000` and are referenced directly from
-`apps/excel-backlog-importer-for-jira/assets/`.
+The imported desktop flow screenshots are `1600 x 1000` and are referenced directly from
+`apps/excel-backlog-importer-for-jira/assets/`. Mobile alternates are `390 x 900`.
 
 ## Current real flow screenshots
 
