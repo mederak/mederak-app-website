@@ -23,7 +23,8 @@ Current images are cropped from `D:\work\mederak-products\products\excel-backlog
 | --- | --- | --- |
 | `screen-hero.png` | 1600 x 1060 or 1600 x 1000 px | Dedicated hero graphic when available. |
 | `og-excel-backlog-importer.png` | 1200 x 630 px | Social sharing image. |
-| `showreel_en.mp4` | 1920 x 1080 px | Optional short English product video. |
+
+The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
 
 Screenshot rules:
 

@@ -69,44 +69,31 @@
       <main>
         <section class="hero product-hero">
           <div class="hero-copy-panel">
+            <span class="eyebrow">Product tour</span>
             <h1>Turn Excel backlogs into reviewed <span>Jira changes</span></h1>
             <p class="hero-copy">Import and update Jira issues from real business workbooks. Reuse setup, build structured descriptions, extract values from messy cells, validate rows, and create Jira changes only after review.</p>
             <div class="hero-actions">
               <a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="excel-backlog-importer-for-jira">Try on Atlassian Marketplace</a>
               <a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL" data-analytics-event="cta_pricing_click" data-product="excel-backlog-importer-for-jira">View pricing</a>
-              <a class="button" href="#video" data-analytics-event="cta_video_click" data-product="excel-backlog-importer-for-jira">Watch workflow</a>
-            </div>
-            <div class="hero-benefits" aria-label="Product highlights">
-              <article><span class="benefit-icon green">+</span><div><b>Use the workbook you receive</b><p>Import .xlsx and supported legacy .xls files.</p></div></article>
-              <article><span class="benefit-icon blue">#</span><div><b>Map and transform fields</b><p>Reuse columns, extract values and normalize dates.</p></div></article>
-              <article><span class="benefit-icon gold">!</span><div><b>Validate before Jira changes</b><p>Review row-level issues before import or update.</p></div></article>
-              <article><span class="benefit-icon jira">J</span><div><b>Repeat without duplicate work</b><p>Reuse setup, update matches and export reports.</p></div></article>
             </div>
           </div>
-          <div class="hero-composition" aria-label="Excel Backlog Importer workflow preview">
-            <div class="hero-progress" aria-label="Import flow steps">
-              <span>Upload</span><span>Sheet</span><span>Template</span><span>Mapping</span><span>Hierarchy</span><span>Validate</span><span>Import</span><span>Report</span>
+          <div id="video" class="hero-composition hero-video-composition" aria-label="Excel Backlog Importer product tour video">
+            <div class="hero-video-card">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/zkGjekxM1pE"
+                title="Excel Backlog Importer for Jira product tour"
+                loading="eager"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
             </div>
-            <button class="hero-screen hero-screen-upload image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload workbook screen">
-              <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-2-upload-1600x1000.jpg"><img src="assets/step-2-upload-1600x1000.png" width="1600" height="1000" alt="Upload an Excel workbook in Excel Backlog Importer" loading="eager"></picture>
-            </button>
-            <button class="hero-screen hero-screen-sheet image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screen">
-              <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-03-worksheet-selection.jpg"><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row in Excel Backlog Importer" loading="eager"></picture>
-            </button>
-            <button class="hero-screen hero-screen-validate image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation results screen">
-              <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-07-validate.jpg"><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validate rows before importing selected Jira issues" loading="eager"></picture>
-            </button>
-            <button class="hero-screen hero-screen-hierarchy image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screen">
-              <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-6-hierarchy-1600x1000.jpg"><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Review hierarchy information and duplicate handling" loading="lazy"></picture>
-            </button>
-            <button class="hero-screen hero-screen-report image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screen">
-              <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-8-report-1-1600x1000.jpg"><img src="assets/step-8-report-1-1600x1000.png" width="1600" height="1000" alt="Import report with created Jira issues" loading="lazy"></picture>
-            </button>
-            <div class="hero-flow-icons" aria-hidden="true">
-              <span class="excel-badge">X</span>
-              <span class="flow-arrow">-></span>
-              <span class="jira-badge">J</span>
-            </div>
+            <p class="hero-video-note">Watch the workflow first: upload Excel, review mappings and validation, then create or update Jira issues.</p>
+          </div>
+          <div class="hero-benefits" aria-label="Product highlights">
+            <article><span class="benefit-icon green">+</span><div><b>Use the workbook you receive</b><p>Import .xlsx and supported legacy .xls files.</p></div></article>
+            <article><span class="benefit-icon blue">#</span><div><b>Map and transform fields</b><p>Reuse columns, extract values and normalize dates.</p></div></article>
+            <article><span class="benefit-icon gold">!</span><div><b>Validate before Jira changes</b><p>Review row-level issues before import or update.</p></div></article>
+            <article><span class="benefit-icon jira">J</span><div><b>Repeat without duplicate work</b><p>Reuse setup, update matches and export reports.</p></div></article>
           </div>
         </section>
 
@@ -125,36 +112,23 @@
             <div class="media-mosaic">
               <figure class="media-card wide">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-03-worksheet-selection.jpg"><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row before importing Excel to Jira" loading="lazy"></picture>
+                  <picture><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row before importing Excel to Jira" loading="lazy"></picture>
                 </button>
                 <figcaption>Select worksheet and header row</figcaption>
               </figure>
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/step-4-template-1600x1000.png" aria-label="Open column recognition screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-4-template-1600x1000.jpg"><img src="assets/step-4-template-1600x1000.png" width="1600" height="1000" alt="Recognize Excel columns before mapping to Jira fields" loading="lazy"></picture>
+                  <picture><img src="assets/step-4-template-1600x1000.png" width="1600" height="1000" alt="Recognize Excel columns before mapping to Jira fields" loading="lazy"></picture>
                 </button>
                 <figcaption>Recognize Excel columns</figcaption>
               </figure>
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-8-report-1-1600x1000.jpg"><img src="assets/step-8-report-1-1600x1000.png" width="1600" height="1000" alt="Excel Backlog Importer import report after Jira issue creation" loading="lazy"></picture>
+                  <picture><img src="assets/step-8-report-1-1600x1000.png" width="1600" height="1000" alt="Excel Backlog Importer import report after Jira issue creation" loading="lazy"></picture>
                 </button>
                 <figcaption>Export the import report</figcaption>
               </figure>
             </div>
-          </div>
-        </section>
-
-        <section id="video" class="section">
-          <div class="section-heading">
-            <span class="eyebrow">Product tour</span>
-            <h2>See the import flow before reading the details</h2>
-            <p>A short walkthrough is the fastest way to understand how Excel rows become reviewed Jira changes.</p>
-          </div>
-          <div class="video-showcase">
-            <video controls playsinline preload="none" poster="assets/screen-hero.png">
-              <source src="assets/showreel_en.mp4" type="video/mp4">
-            </video>
           </div>
         </section>
 
@@ -169,7 +143,7 @@
               <article class="feature-visual">
                 <figure class="media-card">
                   <button class="image-zoom" type="button" data-lightbox-src="assets/screen-description-builder.png" aria-label="Open Description Builder screenshot">
-                    <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-description-builder.jpg"><img src="assets/screen-description-builder.png" width="1600" height="1000" alt="Description Builder combining multiple Excel columns into Jira Description" loading="lazy"></picture>
+                    <picture><img src="assets/screen-description-builder.png" width="1600" height="1000" alt="Description Builder combining multiple Excel columns into Jira Description" loading="lazy"></picture>
                   </button>
                   <figcaption>Description Builder with multiple Excel columns</figcaption>
                 </figure>
@@ -179,7 +153,7 @@
               <article class="feature-visual">
                 <figure class="media-card">
                   <button class="image-zoom" type="button" data-lightbox-src="assets/screen-advanced-transformations.png" aria-label="Open Advanced value transformation screenshot">
-                    <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-advanced-transformations.jpg"><img src="assets/screen-advanced-transformations.png" width="1600" height="1000" alt="Advanced value transformation with regex extraction and preview" loading="lazy"></picture>
+                    <picture><img src="assets/screen-advanced-transformations.png" width="1600" height="1000" alt="Advanced value transformation with regex extraction and preview" loading="lazy"></picture>
                   </button>
                   <figcaption>Advanced value transformation with regex preview</figcaption>
                 </figure>
@@ -189,7 +163,7 @@
               <article class="feature-visual">
                 <figure class="media-card">
                   <button class="image-zoom" type="button" data-lightbox-src="assets/screen-saved-setup.png" aria-label="Open recognized workbook setup screenshot">
-                    <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-saved-setup.jpg"><img src="assets/screen-saved-setup.png" width="1600" height="1000" alt="Recognized Excel columns before reusable mapping setup" loading="lazy"></picture>
+                    <picture><img src="assets/screen-saved-setup.png" width="1600" height="1000" alt="Recognized Excel columns before reusable mapping setup" loading="lazy"></picture>
                   </button>
                   <figcaption>Recognized workbook setup</figcaption>
                 </figure>
@@ -199,7 +173,7 @@
               <article class="feature-visual">
                 <figure class="media-card">
                   <button class="image-zoom" type="button" data-lightbox-src="assets/screen-update-mode-duplicates.png" aria-label="Open update mode and duplicate handling screenshot">
-                    <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-update-mode-duplicates.jpg"><img src="assets/screen-update-mode-duplicates.png" width="1600" height="1000" alt="Duplicate handling settings for repeated Excel imports and update mode" loading="lazy"></picture>
+                    <picture><img src="assets/screen-update-mode-duplicates.png" width="1600" height="1000" alt="Duplicate handling settings for repeated Excel imports and update mode" loading="lazy"></picture>
                   </button>
                   <figcaption>Update mode and duplicate identity</figcaption>
                 </figure>
@@ -219,35 +193,35 @@
             </div>
             <div class="tour-grid">
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-01-upload-workbook.png" aria-label="Open start screen screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-01-upload-workbook.jpg"><img src="assets/screen-01-upload-workbook.png" width="1600" height="1000" alt="Start Excel Backlog Importer flow inside Jira Cloud" loading="lazy"></picture></button><figcaption>1. Start the importer</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-01-upload-workbook.png" aria-label="Open start screen screenshot"><picture><img src="assets/screen-01-upload-workbook.png" width="1600" height="1000" alt="Start Excel Backlog Importer flow inside Jira Cloud" loading="lazy"></picture></button><figcaption>1. Start the importer</figcaption></figure>
                 <p>Open the app in Jira Cloud and confirm that nothing is created until validation and import confirmation.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload Excel workbook screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-2-upload-1600x1000.jpg"><img src="assets/step-2-upload-1600x1000.png" width="1600" height="1000" alt="Upload Excel workbook in Excel Backlog Importer" loading="lazy"></picture></button><figcaption>2. Upload Excel</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-2-upload-1600x1000.png" aria-label="Open upload Excel workbook screenshot"><picture><img src="assets/step-2-upload-1600x1000.png" width="1600" height="1000" alt="Upload Excel workbook in Excel Backlog Importer" loading="lazy"></picture></button><figcaption>2. Upload Excel</figcaption></figure>
                 <p>Drop an Excel workbook or choose it from disk. The flow is designed for <code>.xlsx</code> files and supports legacy <code>.xls</code> workbooks where available.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-03-worksheet-selection.jpg"><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row for Excel import into Jira" loading="lazy"></picture></button><figcaption>3. Choose worksheet</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot"><picture><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and header row for Excel import into Jira" loading="lazy"></picture></button><figcaption>3. Choose worksheet</figcaption></figure>
                 <p>Select the sheet, header row and saved setup when the workbook is recognized.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-4-template-1600x1000.png" aria-label="Open column recognition screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-4-template-1600x1000.jpg"><img src="assets/step-4-template-1600x1000.png" width="1600" height="1000" alt="Recognize Excel columns before field mapping" loading="lazy"></picture></button><figcaption>4. Recognize columns</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-4-template-1600x1000.png" aria-label="Open column recognition screenshot"><picture><img src="assets/step-4-template-1600x1000.png" width="1600" height="1000" alt="Recognize Excel columns before field mapping" loading="lazy"></picture></button><figcaption>4. Recognize columns</figcaption></figure>
                 <p>Review detected headers and auto-map common names before detailed field mapping.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open field mapping screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-5-mapping-1-1600x1000.jpg"><img src="assets/step-5-mapping-1-1600x1000.png" width="1600" height="1000" alt="Map Excel columns to Jira fields and import defaults" loading="lazy"></picture></button><figcaption>5. Map fields and defaults</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open field mapping screenshot"><picture><img src="assets/step-5-mapping-1-1600x1000.png" width="1600" height="1000" alt="Map Excel columns to Jira fields and import defaults" loading="lazy"></picture></button><figcaption>5. Map fields and defaults</figcaption></figure>
                 <p>Choose the default issue type, optional parent, supported Jira field mappings, Description Builder settings and field-level transformations for the selected project.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-6-hierarchy-1600x1000.jpg"><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Configure hierarchy information and duplicate handling for Excel imports" loading="lazy"></picture></button><figcaption>6. Review hierarchy and duplicates</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot"><picture><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Configure hierarchy information and duplicate handling for Excel imports" loading="lazy"></picture></button><figcaption>6. Review hierarchy and duplicates</figcaption></figure>
                 <p>Review parent and hierarchy-related settings where your Jira configuration supports them, then configure duplicate detection for repeated workbook imports.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-07-validate.jpg"><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validate Excel rows and import selected rows into Jira" loading="lazy"></picture></button><figcaption>7. Validate and import selected rows</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot"><picture><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validate Excel rows and import selected rows into Jira" loading="lazy"></picture></button><figcaption>7. Validate and import selected rows</figcaption></figure>
                 <p>Review row-level messages, select valid rows and import only what passed validation.</p>
               </article>
               <article class="tour-step">
-                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-step-8-report-1-1600x1000.jpg"><img src="assets/step-8-report-1-1600x1000.png" width="1600" height="1000" alt="Import report with created Jira issue keys and export controls" loading="lazy"></picture></button><figcaption>8. Review and export report</figcaption></figure>
+                <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/step-8-report-1-1600x1000.png" aria-label="Open import report screenshot"><picture><img src="assets/step-8-report-1-1600x1000.png" width="1600" height="1000" alt="Import report with created Jira issue keys and export controls" loading="lazy"></picture></button><figcaption>8. Review and export report</figcaption></figure>
                 <p>See created, updated, skipped and failed rows, open Jira issue keys and export CSV or JSON.</p>
               </article>
             </div>
@@ -264,7 +238,7 @@
             <article class="feature-visual">
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-03-worksheet-selection.jpg"><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and saved setup for Excel import" loading="lazy"></picture>
+                  <picture><img src="assets/screen-03-worksheet-selection.png" width="1600" height="1000" alt="Select worksheet and saved setup for Excel import" loading="lazy"></picture>
                 </button>
                 <figcaption>Worksheet and saved setup</figcaption>
               </figure>
@@ -274,7 +248,7 @@
             <article class="feature-visual">
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/step-5-mapping-1-1600x1000.png" aria-label="Open mapping screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-5-mapping-1-1600x1000.jpg"><img src="assets/step-5-mapping-1-1600x1000.png" width="1600" height="1000" alt="Map Excel columns to Jira fields and defaults" loading="lazy"></picture>
+                  <picture><img src="assets/step-5-mapping-1-1600x1000.png" width="1600" height="1000" alt="Map Excel columns to Jira fields and defaults" loading="lazy"></picture>
                 </button>
                 <figcaption>Mapping and import defaults</figcaption>
               </figure>
@@ -284,7 +258,7 @@
             <article class="feature-visual">
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/step-6-hierarchy-1600x1000.png" aria-label="Open hierarchy and duplicate handling screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-step-6-hierarchy-1600x1000.jpg"><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Hierarchy information and duplicate handling settings" loading="lazy"></picture>
+                  <picture><img src="assets/step-6-hierarchy-1600x1000.png" width="1600" height="1000" alt="Hierarchy information and duplicate handling settings" loading="lazy"></picture>
                 </button>
                 <figcaption>Hierarchy information and duplicate handling</figcaption>
               </figure>
@@ -294,7 +268,7 @@
             <article class="feature-visual">
               <figure class="media-card">
                 <button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation screenshot">
-                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-07-validate.jpg"><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validation results and selected rows before import" loading="lazy"></picture>
+                  <picture><img src="assets/screen-07-validate.png" width="1600" height="1000" alt="Validation results and selected rows before import" loading="lazy"></picture>
                 </button>
                 <figcaption>Validation before import</figcaption>
               </figure>

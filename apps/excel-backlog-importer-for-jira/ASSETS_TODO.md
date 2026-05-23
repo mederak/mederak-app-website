@@ -26,7 +26,8 @@ The imported desktop flow screenshots are `1600 x 1000` and are referenced direc
 | --- | --- | --- |
 | `screen-hero.png` | 1600 x 1060 or 1600 x 1000 | Dedicated hero graphic when available. Keep it visually close to the real app UI. |
 | `og-excel-backlog-importer.png` | 1200 x 630 | Open Graph and social sharing image. |
-| `showreel_en.mp4` | 1920 x 1080 or 1662 x 966 | Optional short product tour video. |
+
+The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
 
 ## Rendered dimensions on the current landing page
 
