@@ -3,131 +3,590 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Documentation | Excel Backlog Importer for Jira</title>
-    <meta name="description" content="Documentation for importing and updating Jira issues from Excel with reusable setup, Description Builder, transformations, validation, duplicate handling and reports.">
+    <title>Excel Backlog Importer for Jira User Guide | Documentation</title>
+    <meta name="description" content="User guide for importing and updating Jira issues from Excel workbooks with Excel Backlog Importer for Jira.">
     <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html">
-    <meta property="og:title" content="Excel Backlog Importer for Jira Documentation">
-    <meta property="og:description" content="Prepare Excel files, map Jira fields, build descriptions, transform values, validate imports and update existing Jira issues.">
+    <meta property="og:title" content="Excel Backlog Importer for Jira User Guide">
+    <meta property="og:description" content="Learn how to upload Excel workbooks, select worksheets, map Jira fields, validate rows, handle updates and export import reports.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/og-excel-backlog-importer.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.pl/"},{"@type":"ListItem","position":2,"name":"Excel Backlog Importer for Jira","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/"},{"@type":"ListItem","position":3,"name":"Documentation","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.pl/"},{"@type":"ListItem","position":2,"name":"Excel Backlog Importer for Jira","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/"},{"@type":"ListItem","position":3,"name":"User Guide","item":"https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Excel Backlog Importer for Jira - User Guide","description":"User guide for importing backlog items from Excel into Jira Cloud.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps"},"mainEntityOfPage":"https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html"}</script>
     <script src="/assets/analytics-config.js"></script>
     <script src="/assets/analytics.js" defer></script>
   </head>
   <body>
     <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel Backlog Importer</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Excel Importer</a><a href="../worklog-rollup-for-jira/">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a></div></nav></header>
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="index.html">Excel Backlog Importer</a> / Documentation</nav>
-    <main class="content-page">
-      <span class="eyebrow">User guide</span>
-      <h1>Documentation</h1>
-      <p class="lead">A practical guide for preparing Excel backlog files and importing or updating Jira issues with controlled mapping, Description Builder, value transformations, validation and reporting.</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="index.html">Excel Backlog Importer</a> / User Guide</nav>
+    <main class="docs-page">
+<section class="docs-hero"><div><span class="eyebrow">User guide</span><h1>Excel Backlog Importer for Jira - User Guide</h1><p class="lead">This guide explains how to import backlog items from an Excel workbook into a Jira Cloud project. It is written for project managers, product owners, delivery leads and team leads who use Jira and Excel in everyday work.</p><p class="lead secondary">The app helps you upload an Excel file, choose the right worksheet, map Excel columns to Jira fields, validate the result and then create or update selected Jira issues.</p></div><figure class="docs-hero-shot"><img src="assets/docs/validation-preview.png" alt="Validation preview showing rows ready to import, filters, final Jira values and import button."><figcaption>Review the final Jira values before importing.</figcaption></figure></section>
 
-      <h2>Overview</h2>
-      <p>Excel Backlog Importer for Jira helps teams create or update Jira issues from structured Excel workbooks. It is designed for project managers, analysts, Scrum Masters and Jira admins who receive backlog data in spreadsheets and need a reviewable workflow before Jira changes are made.</p>
-
-      <h2>Before you start</h2>
+    <aside class="docs-sidebar"><nav aria-label="Guide contents">
+      <h2>Contents</h2>
       <ul>
-        <li>Confirm the target Jira project and issue types.</li>
-        <li>Check that you have Jira permissions to create or update issues.</li>
-        <li>Prepare a workbook where each row represents a work item, update row or hierarchy-related row.</li>
-        <li>Use stable identifiers if you plan to update existing Jira issues later.</li>
+        <li><a href="#when-to-use">When to use the app</a></li>
+        <li><a href="#before-you-start">Before you start</a></li>
+        <li><a href="#workflow">Basic import workflow</a></li>
+        <li><a href="#field-mapping">Field mapping explained</a></li>
+        <li><a href="#hierarchy">Issue types and hierarchy</a></li>
+        <li><a href="#description">Description Builder</a></li>
+        <li><a href="#transformations">Advanced value transformation</a></li>
+        <li><a href="#validation">Validation and preview</a></li>
+        <li><a href="#repeated-imports">Repeated imports and updates</a></li>
+        <li><a href="#templates">Saved mapping templates</a></li>
+        <li><a href="#report">Import report</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#best-practices">Best practices</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </nav></aside><article class="docs-article"><section id="when-to-use">
+      <h2>When to use the app</h2>
+      <p>Use the app when you have backlog rows in Excel and want to turn them into Jira issues without copying each row by hand.</p>
+      <p>Typical examples include:</p>
+      <ul>
+        <li>a backlog prepared during discovery or estimation,</li>
+        <li>a scope document shared by a client or stakeholder,</li>
+        <li>a planning workbook maintained by a delivery team,</li>
+        <li>a repeated upload where a newer version of the same workbook should add missing rows or update previously imported rows.</li>
+      </ul>
+      <aside>
+        <p><strong>Important:</strong> Nothing is created in Jira when you upload the file. Jira issues are created or updated only after you validate the rows, review the preview and click the import button.</p>
+      </aside>
+    </section>
+
+    <section id="before-you-start">
+      <h2>Before you start</h2>
+      <h3>Excel file</h3>
+      <p>The app supports Excel workbooks in <code>.xlsx</code> and legacy <code>.xls</code> format.</p>
+      <p>Your workbook does not need to start in the first row. During setup, you choose which row contains the column names. Rows below that header row are treated as backlog data.</p>
+      <p>A good Excel file usually has:</p>
+      <ul>
+        <li>one row per Jira issue, unless you use the multi-column hierarchy option,</li>
+        <li>a clear column for the Jira Summary,</li>
+        <li>optional columns such as Description, Issue Type, Priority, Labels, Components, Due Date, Estimate, Story Points or Assignee,</li>
+        <li>a stable ID column if you plan to import newer versions of the same workbook later.</li>
+      </ul>
+      <p>Avoid merged cells, hidden formulas that produce unexpected values, and unclear duplicate column names. They can make mapping and validation harder to understand.</p>
+
+      <h3>Jira project</h3>
+      <p>Open the app from the Jira project where the issues should be created. The app detects that project and imports into it.</p>
+      <p>Before importing, check that the project has the issue types and fields you need. For example, if you plan to create Stories and Tasks, those issue types must be available in the project.</p>
+      <p>You also need normal Jira permissions for the actions you perform. If Jira does not allow you to create or edit issues, the import may fail even if the Excel setup is correct.</p>
+    </section>
+
+    <section id="workflow">
+      <h2>Basic import workflow</h2>
+
+      <h3>1. Upload your Excel file</h3>
+      <p>Start by choosing an Excel workbook from your computer or dropping it into the upload area. The app reads the workbook in the browser first so you can choose the worksheet and review the structure before Jira changes are made.</p>
+      <figure>
+        <img src="assets/docs/upload-workbook.png" alt="Upload screen where the user can drop or choose an Excel workbook.">
+        <figcaption>Upload the workbook. Jira is not changed at this point.</figcaption>
+      </figure>
+
+      <h3>2. Choose the worksheet</h3>
+      <p>If the workbook contains more than one sheet, choose the sheet that contains the backlog. The app shows the sheet names and their row and column counts.</p>
+
+      <h3>3. Confirm the header row</h3>
+      <p>Click the row that contains the Excel column names. Data import starts from the row below the selected header row.</p>
+      <figure>
+        <img src="assets/docs/select-header-row.png" alt="Worksheet selection screen with a row preview and selected header row.">
+        <figcaption>Select the worksheet and the row that contains column headers.</figcaption>
+      </figure>
+
+      <h3>4. Review detected columns</h3>
+      <p>The app shows the columns detected from the selected header row. You can use <strong>Auto-map common columns</strong> to let the app connect obvious column names, such as Summary, Description, Priority or Estimate. You can still change everything manually later.</p>
+
+      <h3>5. Configure issue structure</h3>
+      <p>Choose whether the import is flat or whether the app should build parent and child relationships. This step also contains the default issue type and optional default parent issue.</p>
+      <figure>
+        <img src="assets/docs/issue-structure.png" alt="Issue structure screen with flat import, parent column and multi-column hierarchy options.">
+        <figcaption>Choose how parent issues should be assigned.</figcaption>
+      </figure>
+
+      <h3>6. Map Excel columns to Jira fields</h3>
+      <p>Choose which Excel column should fill each Jira field. Required Jira fields are marked with an asterisk. Unmapped optional fields are not sent to Jira.</p>
+      <figure>
+        <img src="assets/docs/map-fields.png" alt="Field mapping screen showing Excel columns mapped to Jira fields.">
+        <figcaption>Map Excel columns to Jira fields and review the Excel preview.</figcaption>
+      </figure>
+
+      <h3>7. Set repeated import behavior</h3>
+      <p>Choose how the app should behave if the same workbook, or a newer version of it, is imported again. The safe default is to create only missing rows.</p>
+
+      <h3>8. Validate rows</h3>
+      <p>Click <strong>Validate</strong>. The app builds a preview of the Jira issues that will be created or updated. Rows with blocking errors cannot be imported until the data or mapping is fixed.</p>
+      <figure>
+        <img src="assets/docs/validation-preview.png" alt="Validation preview showing rows ready to import, filters, final Jira values and import button.">
+        <figcaption>Review the final Jira values before importing.</figcaption>
+      </figure>
+
+      <h3>9. Run the import</h3>
+      <p>Select the rows you want to import, then click the import button. Keep the page open while the import is running.</p>
+
+      <h3>10. Check the import report</h3>
+      <p>After the import finishes, the report shows created, updated, skipped and failed rows. Issue keys can be opened in Jira. You can also export the report as CSV or JSON.</p>
+      <figure>
+        <img src="assets/docs/import-results.png" alt="Import report showing created issues, status filters, issue keys and export buttons.">
+        <figcaption>Use the report to confirm what happened for each row.</figcaption>
+      </figure>
+    </section>
+
+    <section id="field-mapping">
+      <h2>Field mapping explained</h2>
+      <p>Mapping means choosing which Excel column should be used for a Jira field. For example, you may map the Excel column <em>Title</em> to the Jira field <em>Summary</em>.</p>
+
+      <h3>Required fields</h3>
+      <p>Jira always requires a Summary. Your project may require other fields depending on the selected issue type. Required fields are marked with an asterisk in the mapping screen.</p>
+      <p>If a required value is missing, validation blocks that row before import.</p>
+
+      <h3>Optional fields</h3>
+      <p>Optional fields can be left unmapped. If a field is not mapped, the app does not send it to Jira.</p>
+      <p>If a mapped optional field is empty for one row, the app usually leaves that field empty for that row.</p>
+
+      <h3>Default values</h3>
+      <p>Defaults are used when the Excel row does not provide a value. The most important defaults are:</p>
+      <ul>
+        <li><strong>Default issue type:</strong> used for rows that do not have an Issue Type column.</li>
+        <li><strong>Default Jira parent:</strong> used when imported rows should be created under the same existing Jira issue.</li>
       </ul>
 
-      <h2>Preparing your Excel file</h2>
-      <p>Use clear column names, one header row and consistent values. Avoid merged cells in the import area. Keep issue type, summary and parent/grouping columns explicit.</p>
+      <h3>Supported field behavior</h3>
+      <p>The app reads Jira project metadata and shows available fields. Common supported fields include Summary, Description, Issue Type, Priority, Labels, Components, Fix versions, Due date, Assignee, Original estimate and custom fields such as Story Points.</p>
+      <p>Some field types need values in a specific form:</p>
+      <ul>
+        <li>Labels can be separated by commas, semicolons or new lines.</li>
+        <li>Components and versions should match existing Jira values, or Jira may reject them.</li>
+        <li>User fields can use email, display name or Jira account ID. Multi-user fields can use comma, semicolon or new-line separated values.</li>
+        <li>Sprint fields expect Jira sprint IDs, such as <code>12</code> or <code>12; 15</code>.</li>
+        <li>Assets fields expect object identifiers, such as <code>workspaceId:objectId</code> or <code>objectId:123</code>.</li>
+      </ul>
+      <p>If the app marks a Jira field as unsupported, do not use that field for this import. Choose another field or ask your Jira administrator whether the field configuration can be simplified.</p>
+    </section>
 
-      <h2>Supported file format</h2>
-      <p>The product is built around Excel <code>.xlsx</code> workbooks and supports legacy <code>.xls</code> workbooks where available. CSV conversion is not required for the core Excel import workflow.</p>
+    <section id="hierarchy">
+      <h2>Issue types and hierarchy</h2>
+      <p>The issue structure step decides how imported rows relate to each other or to existing Jira issues.</p>
 
-      <h2>Recommended columns</h2>
-      <table class="sample-table">
-        <thead><tr><th>Column</th><th>Recommended use</th></tr></thead>
+      <h3>Flat imports</h3>
+      <p>Use <strong>No hierarchy - import rows as separate issues</strong> when each Excel row should become one independent Jira issue. This is the simplest and safest option for many backlogs.</p>
+      <p>For flat imports, you can use one default issue type for all rows or map an Issue Type column if the workbook already contains Jira issue type names.</p>
+
+      <h3>Default issue type</h3>
+      <p>The default issue type is the fallback type used when the app cannot get an issue type from Excel. For example, if the default is Story, rows without an Issue Type value are created as Stories.</p>
+      <p>If you map an Issue Type column, values from Excel override the default row by row.</p>
+
+      <h3>Default Jira parent</h3>
+      <p>Use a default parent when all imported rows should be placed under the same existing Jira issue. The app searches existing Jira issues in the current project and lets you select one.</p>
+      <p>This is useful when you are importing work under one existing Epic, Initiative or parent issue, depending on how your Jira project is configured.</p>
+      <aside>
+        <p><strong>Watch out:</strong> Sub-task issue types require a valid parent. If you choose a sub-task type without a parent, validation blocks the row.</p>
+      </aside>
+
+      <h3>Existing Jira parent key per row</h3>
+      <p>For flat imports, the advanced options allow a column with existing Jira parent keys, such as <code>PROJ-123</code>. Use this only when the Excel file already contains valid Jira issue keys from the current project.</p>
+
+      <h3>Parent from an Excel column</h3>
+      <p>Use <strong>Use parent from an Excel column</strong> when one Excel column says which row is the parent, and another column contains the value used to find that parent row.</p>
+      <p>For example, a row may have <em>Parent ID</em> = <code>F-100</code>, and another row may have <em>Item ID</em> = <code>F-100</code>. The app uses this relationship to create the parent before the child.</p>
+      <p>If more than one row matches the same parent reference, validation reports an ambiguous parent reference. Fix the Excel file or choose a more specific matching column.</p>
+
+      <h3>Build hierarchy from multiple Excel columns</h3>
+      <p>Use <strong>Build hierarchy from multiple Excel columns</strong> when the workbook stores each hierarchy level in a separate column, such as Epic, Story and Task.</p>
+      <p>The first selected hierarchy column becomes the top-level item. Each next selected column becomes a child level under the values before it.</p>
+      <p>The app de-duplicates repeated hierarchy paths. If the same full path appears again, the repeated source row is shown as skipped and no extra Jira issue is created for that duplicate path.</p>
+
+      <h3>Empty hierarchy cells</h3>
+      <p>If the sheet repeats the full hierarchy path on every row, choose the strict option. If the sheet is visually grouped and blank cells mean "same value as above", use the fill-down option.</p>
+
+      <h3>Common hierarchy mistakes</h3>
+      <ul>
+        <li>Choosing an issue type that Jira does not allow under the selected parent type.</li>
+        <li>Leaving a middle hierarchy level empty while a lower level has a value.</li>
+        <li>Using parent names that are not unique.</li>
+        <li>Using parent keys from a different Jira project.</li>
+        <li>Expecting the app to create a missing existing parent issue. Existing parent keys must already exist in Jira.</li>
+      </ul>
+    </section>
+
+    <section id="description">
+      <h2>Description Builder</h2>
+      <p>The Jira Description field can be mapped from one Excel column or built from several Excel columns.</p>
+
+      <h3>Single column</h3>
+      <p>Use <strong>Single column</strong> when one Excel column already contains the full description text you want to send to Jira.</p>
+
+      <h3>Multiple columns</h3>
+      <p>Use <strong>Multiple columns</strong> when important backlog context is spread across several Excel columns, such as Business Context, User Problem, Acceptance Criteria and Technical Notes.</p>
+      <p>The app creates a structured Jira Description with section headings based on the Excel column names. Empty cells are skipped.</p>
+      <figure>
+        <img src="assets/docs/description-builder.png" alt="Description Builder with multiple columns, append unmapped columns option and preview.">
+        <figcaption>Combine several Excel columns into one Jira Description.</figcaption>
+      </figure>
+
+      <h3>Order matters</h3>
+      <p>The order of sections in the builder is the order used in the Jira Description. Move sections up or down to make the final description readable.</p>
+
+      <h3>Append unmapped columns</h3>
+      <p>The app can append unmapped Excel columns to the Description. This is useful when the workbook contains useful context that does not deserve a separate Jira field.</p>
+      <p>Technical-looking columns such as issue key, import status, result or error columns are excluded from this automatic Description append behavior.</p>
+      <aside>
+        <p><strong>Tip:</strong> Use Description Builder for extra context instead of creating too many Jira custom fields for one import.</p>
+      </aside>
+    </section>
+
+    <section id="transformations">
+      <h2>Advanced value transformation</h2>
+      <p>Advanced value transformation lets you extract or reshape a value before it is sent to Jira. Use it only when the Excel cell contains more text than Jira should receive.</p>
+      <p>For example, a source cell may contain <code>[IMPORT] REQ-2025-014 | Login error handling -- draft</code>, but you only want the final Summary to be <code>Login error handling</code>.</p>
+      <figure>
+        <img src="assets/docs/regex-transformation.png" alt="Advanced value transformation panel with regex pattern, result template and preview table.">
+        <figcaption>Use the preview to check extracted values before validation.</figcaption>
+      </figure>
+
+      <h3>Regex extraction in simple words</h3>
+      <p>A regex is a text pattern. It can find a specific part of a longer text. The app uses the first captured part as the value unless you provide a result template.</p>
+      <p>If the pattern does not match a row, validation shows a warning or an error depending on whether the Jira field is required.</p>
+
+      <h3>Result templates</h3>
+      <p>A result template builds the final value from the captured parts of the pattern. Captured parts are referenced as <code>$1</code>, <code>$2</code>, <code>$3</code> and so on.</p>
+
+      <h3>Date parsing</h3>
+      <p>For date fields, choose the input date format after extraction. Supported date formats in the UI include:</p>
+      <ul>
+        <li><code>DD.MM.YYYY</code></li>
+        <li><code>YYYY-MM-DD</code></li>
+        <li><code>DD/MM/YYYY</code></li>
+        <li><code>MM/DD/YYYY</code></li>
+      </ul>
+      <p>Jira receives a normalized date after validation succeeds.</p>
+
+      <h3>Date range example</h3>
+      <p>Source value: <code>(22-23.07.2025)</code></p>
+      <p>You can use one pattern to capture the first day, second day, month and year:</p>
+      <pre><code>\((\d{2})-(\d{2})\.(\d{2})\.(\d{4})\)</code></pre>
+      <table>
+        <thead>
+          <tr>
+            <th>Captured group</th>
+            <th>Meaning</th>
+            <th>Example value</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>Issue Type</td><td>Epic, Story, Task, Sub-task or another issue type supported by the Jira project.</td></tr>
-          <tr><td>Summary</td><td>Required short title for the Jira issue.</td></tr>
-          <tr><td>Description</td><td>Longer requirement, scope or implementation text.</td></tr>
-          <tr><td>Epic Name</td><td>Grouping value for structured backlog imports where supported.</td></tr>
-          <tr><td>Parent</td><td>Parent issue key, parent name or grouping value depending on the import setup.</td></tr>
-          <tr><td>Estimate</td><td>Time or effort value mapped to the relevant Jira field.</td></tr>
-          <tr><td>Priority</td><td>Jira priority value.</td></tr>
-          <tr><td>Assignee</td><td>User reference where Jira lookup permits it.</td></tr>
-          <tr><td>Labels</td><td>Labels separated consistently, for example by comma.</td></tr>
-          <tr><td>Component</td><td>Jira component value if used in the project.</td></tr>
-          <tr><td>External ID</td><td>Stable row identity for duplicate handling and repeat imports.</td></tr>
-          <tr><td>Jira Issue Key</td><td>Existing issue key for update workflows where supported.</td></tr>
+          <tr>
+            <td><code>$1</code></td>
+            <td>First day</td>
+            <td><code>22</code></td>
+          </tr>
+          <tr>
+            <td><code>$2</code></td>
+            <td>Second day</td>
+            <td><code>23</code></td>
+          </tr>
+          <tr>
+            <td><code>$3</code></td>
+            <td>Month</td>
+            <td><code>07</code></td>
+          </tr>
+          <tr>
+            <td><code>$4</code></td>
+            <td>Year</td>
+            <td><code>2025</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Start date template: <code>$1.$3.$4</code>, which gives <code>22.07.2025</code>.</p>
+      <p>End date template: <code>$2.$3.$4</code>, which gives <code>23.07.2025</code>.</p>
+
+      <aside>
+        <p><strong>Use transformations carefully:</strong> A pattern can produce a value that looks valid but is logically wrong. Always check the transformation preview and the validation preview before importing.</p>
+      </aside>
+    </section>
+
+    <section id="validation">
+      <h2>Validation and preview</h2>
+      <p>Validation is the last checkpoint before Jira changes. It checks the selected workbook rows, mapping, issue types, required fields, dates, numbers, estimates, user fields, parent relationships, duplicate handling and transformation results.</p>
+
+      <h3>How to read validation results</h3>
+      <p>The validation screen shows:</p>
+      <ul>
+        <li>how many rows are ready to import,</li>
+        <li>how many rows are blocked by errors,</li>
+        <li>how many rows are skipped,</li>
+        <li>which rows will create new Jira issues,</li>
+        <li>which rows will update existing Jira issues, when update mode is used,</li>
+        <li>the final Jira field values that will be sent.</li>
+      </ul>
+      <p>You can filter the table by added rows, updated rows, skipped rows, missing data and other errors. You can also select or clear individual importable rows.</p>
+
+      <h3>Stale validation</h3>
+      <p>If you change the file, sheet, mapping, hierarchy, issue type, parent, duplicate handling or estimate settings after validation, the preview becomes outdated. Validate again before importing.</p>
+
+      <h3>Estimated manual work avoided</h3>
+      <p>The validation and report screens may show a quiet estimate called <strong>Estimated manual work avoided</strong>. It is an approximate range based on the number of rows, mapped fields, hierarchy settings, Description Builder and value extraction rules.</p>
+      <p>Before import, this estimate does not subtract preparation time. After import, the report may also show approximate preparation time in the importer and net estimated time saved. Treat this as a practical guide, not an exact measurement.</p>
+
+      <h3>Diagnostic JSON</h3>
+      <p>The validation screen includes a subtle <strong>Diagnostic JSON</strong> link. Use it only if the app authors ask for diagnostic data while investigating a problem.</p>
+      <p>This JSON can contain values from the Excel file. Before sending it to the app authors, anonymize sensitive content. The creators of Mederak App do not have access to your data unless you send it yourself, for example by sharing the generated JSON.</p>
+
+      <h3>Common validation messages</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Message or problem</th>
+            <th>What it means</th>
+            <th>How to fix it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Summary is required</td>
+            <td>The row has no final Summary value.</td>
+            <td>Map the correct Summary column or fill the missing Excel cell.</td>
+          </tr>
+          <tr>
+            <td>Issue type is not available</td>
+            <td>The issue type value does not exist in this Jira project.</td>
+            <td>Fix the Excel value or choose a valid default issue type.</td>
+          </tr>
+          <tr>
+            <td>Sub-task issue types require a parent</td>
+            <td>Jira does not allow a sub-task without a parent issue.</td>
+            <td>Select a default parent or map a valid parent column.</td>
+          </tr>
+          <tr>
+            <td>Invalid date format</td>
+            <td>The date cannot be parsed using the expected format.</td>
+            <td>Fix the Excel date or choose the correct transformation date format.</td>
+          </tr>
+          <tr>
+            <td>Regex does not match</td>
+            <td>The extraction pattern did not find a value in that row.</td>
+            <td>Adjust the pattern or fix the source cell.</td>
+          </tr>
+          <tr>
+            <td>Parent issue was not found</td>
+            <td>The parent key from Excel does not exist or is not available in the current project.</td>
+            <td>Correct the parent key or choose an existing parent from the project.</td>
+          </tr>
+          <tr>
+            <td>Duplicate hierarchy path</td>
+            <td>The same generated hierarchy path already appears in the preview.</td>
+            <td>Usually no action is needed. The repeated row is skipped so the app does not create a duplicate issue.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="repeated-imports">
+      <h2>Repeated imports and updates</h2>
+      <p>Repeated import behavior controls what happens when the app finds rows that were imported before.</p>
+
+      <h3>Record identity</h3>
+      <p>A record identity is the value the app uses to recognize the same backlog item in a later import. The best option is a stable Excel ID column, such as Backlog ID or Request ID.</p>
+      <p>If you do not choose an identity column, the app generates an identity from mapped fields. Cross-import duplicate detection is scoped to the same Excel file name.</p>
+
+      <h3>Import modes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>Use when</th>
+            <th>What to watch out for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ignore duplicate checking</td>
+            <td>You want every valid selected row to create a new Jira issue.</td>
+            <td>The app will not check previously imported row identities.</td>
+          </tr>
+          <tr>
+            <td>Create only missing</td>
+            <td>You want the safe default for repeated uploads.</td>
+            <td>Previously imported rows are not updated.</td>
+          </tr>
+          <tr>
+            <td>Skip existing</td>
+            <td>You only want to add rows that have not been imported before.</td>
+            <td>Existing matching rows are skipped.</td>
+          </tr>
+          <tr>
+            <td>Update existing</td>
+            <td>You want to change only rows that already match previous imports.</td>
+            <td>No new missing issues are created.</td>
+          </tr>
+          <tr>
+            <td>Create missing and update existing</td>
+            <td>You want a newer workbook version to add new rows and update old ones.</td>
+            <td>Review mapped fields carefully, because update modes change only mapped fields.</td>
+          </tr>
         </tbody>
       </table>
 
-      <h2>Mapping Excel columns to Jira fields</h2>
-      <p>During import, map spreadsheet headers to Jira fields. Keep mappings focused on the fields you actually need. The same Excel column can be reused across multiple Jira fields when a workbook keeps several useful values in one source column.</p>
+      <h3>How the app decides create vs update</h3>
+      <p>After import, the app stores row identity and file name metadata in Jira issue properties and Forge Storage. On later imports, it uses that stored identity to find previously imported issues.</p>
+      <p>Stored row identities are kept for 30 days and then pruned automatically.</p>
+      <aside>
+        <p><strong>Warning:</strong> Update modes can change existing Jira issues. Before importing, check the validation preview and make sure the correct rows are marked as updated.</p>
+      </aside>
+    </section>
 
-      <h2>Description Builder</h2>
-      <p>Description can be mapped from a single column or built from multiple Excel columns. Description Builder combines selected columns into ordered sections, skips empty cells and can append unmapped workbook context while excluding common technical import columns.</p>
+    <section id="templates">
+      <h2>Saved mapping templates</h2>
+      <p>The app saves your setup automatically after a completed setup. When you upload a similar workbook later, it can suggest a matching template based on the sheet and column layout.</p>
+      <figure>
+        <img src="assets/docs/saved-mapping-template.png" alt="Saved mapping template suggestion for a familiar workbook.">
+        <figcaption>Saved mappings can be reused for newer versions of a similar workbook.</figcaption>
+      </figure>
+      <p>File names do not have to be identical. A workbook called <em>v2</em>, <em>final</em> or <em>copy</em> can still match if the structure is similar.</p>
+      <p>A saved mapping can include field mappings, Description Builder setup, value transformations, hierarchy settings, duplicate mode, estimate settings and source column headers. It does not store full Excel row data.</p>
+      <p>Always review the mapping after applying a template. Columns may have been renamed, removed or reused for a different meaning.</p>
+      <p>If a saved template refers to missing columns or missing required mappings, the app warns you before import.</p>
+    </section>
 
-      <h2>Advanced value transformations</h2>
-      <p>Each mapped field uses the full Excel value by default. Advanced value transformation is available when a user needs to extract part of a source cell. It supports regex extraction, optional result templates and preview before validation.</p>
+    <section id="report">
+      <h2>Import report</h2>
+      <p>The report shows what happened after import:</p>
       <ul>
-        <li>Use the first capture group, the full match or a result template such as <code>$1</code> or <code>${1}</code>.</li>
-        <li>Normalize supported Jira date fields using explicit input formats such as <code>DD.MM.YYYY</code>, <code>YYYY-MM-DD</code>, <code>DD/MM/YYYY</code> or <code>MM/DD/YYYY</code>.</li>
-        <li>Invalid regex, unsafe patterns, invalid result templates and invalid dates are blocked before import.</li>
+        <li>issues created,</li>
+        <li>issues updated,</li>
+        <li>rows skipped,</li>
+        <li>rows failed or blocked,</li>
+        <li>Jira issue keys where available,</li>
+        <li>row-level messages and final field values.</li>
       </ul>
+      <p>You can export the report as CSV or JSON for your own records or for support analysis.</p>
 
-      <h2>Working with custom fields</h2>
-      <p>The app is designed to support practical Jira field families discovered from Jira metadata. Exact behavior depends on Jira configuration, field type, field screen availability and permissions.</p>
-      <ul>
-        <li>Text, paragraph text, numbers, dates and date-time fields.</li>
-        <li>Single select, multi-select, checkbox-like fields, labels-like arrays and cascading select values.</li>
-        <li>User picker and multi-user picker fields using account ID, email address, display name or <code>Name &lt;email@example.com&gt;</code>.</li>
-        <li>Priority, components, fix versions, security level, sprint IDs and Assets object identifiers where Jira metadata supports safe mapping.</li>
-      </ul>
+    </section>
 
-      <h2>Time tracking</h2>
-      <p>Time tracking has a dedicated mapper for original estimate and optional remaining estimate. Supported input styles include plain numbers interpreted by the selected unit, hours, working days, man-days and Jira duration text such as <code>1w 2d 3h</code>.</p>
-
-      <h2>Importing epics, stories and sub-tasks</h2>
-      <p>Parent and sub-task behavior depends on Jira project configuration, issue type hierarchy, field screens and permissions. Use explicit issue type and parent columns, then validate the relationship before import. Sub-task rows require a parent reference from a default parent or a mapped parent column.</p>
-
-      <h2>Updating existing issues</h2>
-      <p>For update workflows, use a stable identity such as Jira Issue Key, External ID, Requirement ID or Backlog ID. Repeated uploads can update matching Jira issues instead of creating duplicate work where the import setup supports the match. Only mapped fields should be treated as part of the update workflow.</p>
-
-      <h2>Saved setup and repeat imports</h2>
-      <p>After successful validation, the app can save setup for the uploaded file name in the current Jira project. Restored setup can include sheet, header row, mappings, value transformations, Description Builder settings, duplicate strategy, estimate settings and locale/date settings.</p>
-
-      <h2>Duplicate handling</h2>
-      <p>Duplicate handling uses configured row identity and import metadata to help with repeated workbook uploads. Users can also choose an import mode that imports every selected valid row as new work when duplicate checking should be ignored.</p>
-
-      <h2>Import history</h2>
-      <p>Import metadata and reports help teams review what happened, support duplicate handling and troubleshoot later questions.</p>
-
-      <h2>Exporting import reports</h2>
-      <p>After an import, export the result report where available. Reports are useful for project records and post-import review.</p>
-
+    <section id="troubleshooting">
       <h2>Troubleshooting</h2>
-      <ul>
-        <li>Missing summaries usually mean the mapped Summary column is empty for selected rows.</li>
-        <li>Invalid select values usually mean the spreadsheet value does not match Jira project configuration.</li>
-        <li>User lookup issues can depend on Atlassian account visibility and permissions.</li>
-        <li>Regex transformation errors usually mean the pattern, result template or date input format needs adjustment.</li>
-        <li>Duplicate identity issues usually mean the selected identity column is missing, inconsistent or reused unexpectedly.</li>
-        <li>Hierarchy errors often come from unsupported parent-child relationships in the Jira project.</li>
-      </ul>
 
-      <h2>Limitations</h2>
-      <ul>
-        <li>Hierarchy behavior depends on Jira project configuration, issue type hierarchy and permissions.</li>
-        <li>Custom field support depends on the field type and Jira configuration.</li>
-        <li>Advanced value transformation is bounded regex extraction with preview, not a full spreadsheet formula engine or ETL system.</li>
-        <li>Trial and pricing are managed through the Atlassian Marketplace listing.</li>
-      </ul>
+      <h3>My file was not read</h3>
+      <p>Check that the file is an <code>.xlsx</code> or <code>.xls</code> workbook. If the workbook is very large, parsing may take longer in the browser.</p>
 
-      <h2>Support</h2>
-      <p>For help, contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>. Include your Jira site URL, target project, import goal and a short description of the spreadsheet structure.</p>
+      <h3>The wrong row is used as the header</h3>
+      <p>Go back to the worksheet selection step and click the row that contains the column names. Remember that import data starts below the selected header row.</p>
+
+      <h3>A required Jira field is missing</h3>
+      <p>Map the missing required field or fill the missing Excel values. Required fields can depend on the selected issue type.</p>
+
+      <h3>Date validation fails</h3>
+      <p>Check whether the Excel value matches the selected date format. If you use text extraction, confirm that the extracted value is the date itself, not the full source text.</p>
+
+      <h3>Regex returns an empty value</h3>
+      <p>Open the transformation preview. If the status is <em>No match</em>, the pattern does not match that row. If the status is <em>Invalid result template</em>, the template may refer to a group that does not exist.</p>
+
+      <h3>The hierarchy does not look right</h3>
+      <p>Check the selected hierarchy mode, selected level columns, issue types for each level and the empty-cell mode. If a child appears without a parent, the source row may be missing a higher-level value or the fill-down option may be incorrect.</p>
+
+      <h3>Some rows are skipped</h3>
+      <p>Skipped rows are usually intentional. For example, repeated hierarchy paths are skipped so the app does not create duplicate generated issues. Read the row message in the validation preview or report.</p>
+
+      <h3>I do not see a Jira field I expected</h3>
+      <p>The app reads fields available for the current Jira project and issue configuration. Some Jira fields may not be returned, may not be supported yet, or may require a different issue type or project setup.</p>
+
+      <h3>The import failed</h3>
+      <p>Read the row-level message in the report. Common causes include missing Jira permissions, Jira rejecting a field value, a field option that does not exist, a parent issue that cannot be used, or a required field that was not accepted by Jira.</p>
+      <p>If you contact the app authors, use the Diagnostic JSON only after anonymizing sensitive workbook data.</p>
+
+      <h3>Jira says the Summary contains newline characters</h3>
+      <p>The app normalizes Summary values by replacing line breaks with spaces before sending them to Jira. If you still see this error, check whether the field being sent is really the Summary field and export the diagnostic data for support review.</p>
+    </section>
+
+    <section id="best-practices">
+      <h2>Best practices</h2>
+      <ul>
+        <li>Start with a small test import before importing a large workbook.</li>
+        <li>Keep one row per Jira issue unless you intentionally use hierarchy columns.</li>
+        <li>Use clear column names.</li>
+        <li>Use a stable ID column when you expect repeated imports.</li>
+        <li>Avoid merged cells.</li>
+        <li>Avoid hidden logic in Excel formulas where possible.</li>
+        <li>Validate before importing and read row-level messages.</li>
+        <li>Review mappings even when using a saved template.</li>
+        <li>Use Description Builder for extra context instead of creating too many custom fields.</li>
+        <li>Be careful with update modes. They change existing Jira issues.</li>
+        <li>Export the report after important imports.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+
+      <h3>Does uploading a workbook create Jira issues?</h3>
+      <p>No. Uploading only prepares the file for review. Jira issues are created or updated only after validation and import.</p>
+
+      <h3>Can I import only selected rows?</h3>
+      <p>Yes. On the validation screen, select the importable rows you want to import. Rows with blocking errors cannot be selected for import.</p>
+
+      <h3>Can the app update existing Jira issues?</h3>
+      <p>Yes, when you use a repeated import mode that updates existing rows and the app can match those rows to previously imported issues.</p>
+
+      <h3>Will update mode change every Jira field?</h3>
+      <p>No. Update modes change only fields that are mapped in the current import setup.</p>
+
+      <h3>Can I use formulas in Excel?</h3>
+      <p>The app reads values from the workbook, but complex formulas can make results harder to predict. For important imports, use visible final values where possible.</p>
+
+      <h3>What happens when a cell is empty?</h3>
+      <p>If the field is optional, the app usually leaves it empty. If the field is required by Jira, validation blocks that row.</p>
+
+      <h3>Why does the app show an estimated manual work avoided value?</h3>
+      <p>It gives a rough, conservative estimate of the manual Jira work the import is likely avoiding. It is not an exact measurement and should not be treated as guaranteed time savings.</p>
+    </section>
+
+    <section id="glossary">
+      <h2>Glossary</h2>
+      <dl>
+        <dt>Workbook</dt>
+        <dd>An Excel file. A workbook can contain one or more sheets.</dd>
+
+        <dt>Sheet</dt>
+        <dd>A tab inside an Excel workbook.</dd>
+
+        <dt>Header row</dt>
+        <dd>The Excel row that contains column names, such as Summary, Description or Priority.</dd>
+
+        <dt>Mapping</dt>
+        <dd>The connection between an Excel column and a Jira field.</dd>
+
+        <dt>Jira field</dt>
+        <dd>A piece of information on a Jira issue, such as Summary, Description, Priority or Due date.</dd>
+
+        <dt>Issue type</dt>
+        <dd>The Jira type of work item, such as Story, Task, Bug, Epic or Sub-task. Available types depend on the Jira project.</dd>
+
+        <dt>Parent</dt>
+        <dd>An issue that contains or groups another issue. Jira parent rules depend on project configuration.</dd>
+
+        <dt>Epic</dt>
+        <dd>A larger Jira work item that often groups Stories or Tasks. Exact behavior depends on the Jira project.</dd>
+
+        <dt>Story</dt>
+        <dd>A Jira issue type often used for user-facing work or product backlog items.</dd>
+
+        <dt>Sub-task</dt>
+        <dd>A Jira issue type that must have a parent issue.</dd>
+
+        <dt>Regex</dt>
+        <dd>A text pattern used to extract part of a longer value. Use it carefully and check the preview.</dd>
+
+        <dt>Validation</dt>
+        <dd>The check that happens before import. It shows which rows are ready, blocked or skipped.</dd>
+      </dl>
+    </section></article>
     </main>
     <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     <script src="assets/site-config.js"></script>
