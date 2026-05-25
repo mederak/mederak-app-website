@@ -33,6 +33,7 @@
       <ul>
         <li><a href="#when-to-use">When to use the app</a></li>
         <li><a href="#before-you-start">Before you start</a></li>
+        <li><a href="#access-control">Access control for administrators</a></li>
         <li><a href="#workflow">Basic import workflow</a></li>
         <li><a href="#field-mapping">Field mapping explained</a></li>
         <li><a href="#hierarchy">Issue types and hierarchy</a></li>
@@ -82,6 +83,25 @@
       <p>You also need normal Jira permissions for the actions you perform. If Jira does not allow you to create or edit issues, the import may fail even if the Excel setup is correct.</p>
     </section>
 
+    <section id="access-control">
+      <h2>Access control for administrators</h2>
+      <p>Excel Backlog Importer is visible by default after installation. This helps users find the app immediately after it is installed. The app still uses the current user's Jira permissions, so users can only browse, create or edit issues when Jira allows them to do that in the selected project.</p>
+
+      <h3>Restricting app access</h3>
+      <p>Jira administrators can restrict the importer to an approved group of users. When restricted access is enabled, only users with the app-specific global permission can open and use the importer.</p>
+      <ol>
+        <li>Open the Excel Backlog Importer configuration page from Jira app administration.</li>
+        <li>Change access mode from <strong>Open by default</strong> to <strong>Restricted</strong>.</li>
+        <li>Open Jira settings, then <strong>System</strong>, then <strong>Global permissions</strong>.</li>
+        <li>Grant <strong>Use Excel Backlog Importer</strong> to the group that should use the importer.</li>
+      </ol>
+
+      <p>Users who do not have <strong>Use Excel Backlog Importer</strong> see an access-restricted message. This means the app is installed correctly, but their administrator has limited app access.</p>
+      <aside>
+        <p><strong>Note:</strong> The app-specific permission does not replace Jira project permissions. A user who has access to the importer still needs the normal Jira permissions required to create or edit issues.</p>
+      </aside>
+    </section>
+
     <section id="workflow">
       <h2>Basic import workflow</h2>
 
@@ -102,8 +122,12 @@
         <figcaption>Select the worksheet and the row that contains column headers.</figcaption>
       </figure>
 
-      <h3>4. Review detected columns</h3>
-      <p>The app shows the columns detected from the selected header row. You can use <strong>Auto-map common columns</strong> to let the app connect obvious column names, such as Summary, Description, Priority or Estimate. You can still change everything manually later.</p>
+      <h3>4. Review saved setup</h3>
+      <p>If the workbook looks similar to one you imported before, the app can suggest a saved setup. You can apply it with one click or continue with a fresh setup.</p>
+      <figure>
+        <img src="assets/docs/saved-mapping-template.png" alt="Saved setup step showing a reusable mapping template for a familiar workbook.">
+        <figcaption>Use a saved setup when a newer workbook has the same or similar structure.</figcaption>
+      </figure>
 
       <h3>5. Configure issue structure</h3>
       <p>Choose whether the import is flat or whether the app should build parent and child relationships. This step also contains the default issue type and optional default parent issue.</p>
@@ -113,26 +137,37 @@
       </figure>
 
       <h3>6. Map Excel columns to Jira fields</h3>
-      <p>Choose which Excel column should fill each Jira field. Required Jira fields are marked with an asterisk. Unmapped optional fields are not sent to Jira.</p>
+      <p>Choose which Excel column should fill each Jira field. Required Jira fields are marked with an asterisk. Unmapped optional fields are not sent to Jira. You can use <strong>Auto-map common columns</strong> to connect obvious column names, such as Summary, Description, Priority or Estimate, and then review the result manually.</p>
       <figure>
         <img src="assets/docs/map-fields.png" alt="Field mapping screen showing Excel columns mapped to Jira fields.">
         <figcaption>Map Excel columns to Jira fields and review the Excel preview.</figcaption>
       </figure>
 
-      <h3>7. Set repeated import behavior</h3>
-      <p>Choose how the app should behave if the same workbook, or a newer version of it, is imported again. The safe default is to create only missing rows.</p>
+      <h3>7. Build the Jira Description</h3>
+      <p>Choose whether Jira Description should come from one Excel column or be built from several columns, such as Business Context, User Problem and Acceptance Criteria.</p>
+      <figure>
+        <img src="assets/docs/description-builder.png" alt="Description step with multiple columns selected for the Jira Description.">
+        <figcaption>Combine several Excel columns into one Jira Description when the workbook contains useful context.</figcaption>
+      </figure>
 
-      <h3>8. Validate rows</h3>
+      <h3>8. Set repeated import behavior</h3>
+      <p>Choose how the app should behave if the same workbook, or a newer version of it, is imported again. The safe default is to create only missing rows.</p>
+      <figure>
+        <img src="assets/docs/updates-duplicates.png" alt="Updates step with repeated import behavior and row identity settings.">
+        <figcaption>Choose how repeated uploads should create missing rows or update existing Jira issues.</figcaption>
+      </figure>
+
+      <h3>9. Validate rows</h3>
       <p>Click <strong>Validate</strong>. The app builds a preview of the Jira issues that will be created or updated. Rows with blocking errors cannot be imported until the data or mapping is fixed.</p>
       <figure>
         <img src="assets/docs/validation-preview.png" alt="Validation preview showing rows ready to import, filters, final Jira values and import button.">
         <figcaption>Review the final Jira values before importing.</figcaption>
       </figure>
 
-      <h3>9. Run the import</h3>
+      <h3>10. Run the import</h3>
       <p>Select the rows you want to import, then click the import button. Keep the page open while the import is running.</p>
 
-      <h3>10. Check the import report</h3>
+      <h3>11. Check the import report</h3>
       <p>After the import finishes, the report shows created, updated, skipped and failed rows. Issue keys can be opened in Jira. You can also export the report as CSV or JSON.</p>
       <figure>
         <img src="assets/docs/import-results.png" alt="Import report showing created issues, status filters, issue keys and export buttons.">
@@ -160,7 +195,7 @@
       </ul>
 
       <h3>Supported field behavior</h3>
-      <p>The app reads Jira project metadata and shows available fields. Common supported fields include Summary, Description, Issue Type, Priority, Labels, Components, Fix versions, Due date, Assignee, Original estimate and custom fields such as Story Points.</p>
+      <p>The app reads Jira project metadata and shows available fields together, including supported custom fields. Common supported fields include Summary, Description, Issue Type, Priority, Labels, Components, Fix versions, Due date, Assignee, Original estimate and custom fields such as Story Points.</p>
       <p>Some field types need values in a specific form:</p>
       <ul>
         <li>Labels can be separated by commas, semicolons or new lines.</li>
@@ -174,7 +209,7 @@
 
     <section id="hierarchy">
       <h2>Issue types and hierarchy</h2>
-      <p>The issue structure step decides how imported rows relate to each other or to existing Jira issues.</p>
+      <p>The issue structure step decides how imported rows relate to each other or to existing Jira issues. It appears before field mapping because parent rules and issue types affect validation.</p>
 
       <h3>Flat imports</h3>
       <p>Use <strong>No hierarchy - import rows as separate issues</strong> when each Excel row should become one independent Jira issue. This is the simplest and safest option for many backlogs.</p>
@@ -227,10 +262,7 @@
       <h3>Multiple columns</h3>
       <p>Use <strong>Multiple columns</strong> when important backlog context is spread across several Excel columns, such as Business Context, User Problem, Acceptance Criteria and Technical Notes.</p>
       <p>The app creates a structured Jira Description with section headings based on the Excel column names. Empty cells are skipped.</p>
-      <figure>
-        <img src="assets/docs/description-builder.png" alt="Description Builder with multiple columns, append unmapped columns option and preview.">
-        <figcaption>Combine several Excel columns into one Jira Description.</figcaption>
-      </figure>
+      <p>The Description step shows a preview before validation, so you can check the final structure without opening Jira.</p>
 
       <h3>Order matters</h3>
       <p>The order of sections in the builder is the order used in the Jira Description. Move sections up or down to make the final description readable.</p>
@@ -248,7 +280,7 @@
       <p>Advanced value transformation lets you extract or reshape a value before it is sent to Jira. Use it only when the Excel cell contains more text than Jira should receive.</p>
       <p>For example, a source cell may contain <code>[IMPORT] REQ-2025-014 | Login error handling -- draft</code>, but you only want the final Summary to be <code>Login error handling</code>.</p>
       <figure>
-        <img src="assets/docs/regex-transformation.png" alt="Advanced value transformation panel with regex pattern, result template and preview table.">
+        <img src="assets/docs/regex-transformation.png" alt="Advanced value transformation modal with regex pattern, result template and preview table.">
         <figcaption>Use the preview to check extracted values before validation.</figcaption>
       </figure>
 
@@ -435,7 +467,7 @@
       </table>
 
       <h3>How the app decides create vs update</h3>
-      <p>After import, the app stores row identity and file name metadata in Jira issue properties and Forge Storage. On later imports, it uses that stored identity to find previously imported issues.</p>
+      <p>After import, the app stores row identity and file name metadata linked to Jira issues. On later imports, it uses that stored identity to find previously imported issues.</p>
       <p>Stored row identities are kept for 30 days and then pruned automatically.</p>
       <aside>
         <p><strong>Warning:</strong> Update modes can change existing Jira issues. Before importing, check the validation preview and make sure the correct rows are marked as updated.</p>
@@ -444,11 +476,7 @@
 
     <section id="templates">
       <h2>Saved mapping templates</h2>
-      <p>The app saves your setup automatically after a completed setup. When you upload a similar workbook later, it can suggest a matching template based on the sheet and column layout.</p>
-      <figure>
-        <img src="assets/docs/saved-mapping-template.png" alt="Saved mapping template suggestion for a familiar workbook.">
-        <figcaption>Saved mappings can be reused for newer versions of a similar workbook.</figcaption>
-      </figure>
+      <p>The app saves your setup automatically after a completed setup. When you upload a similar workbook later, the Saved setup step can suggest a matching template based on the sheet and column layout.</p>
       <p>File names do not have to be identical. A workbook called <em>v2</em>, <em>final</em> or <em>copy</em> can still match if the structure is similar.</p>
       <p>A saved mapping can include field mappings, Description Builder setup, value transformations, hierarchy settings, duplicate mode, estimate settings and source column headers. It does not store full Excel row data.</p>
       <p>Always review the mapping after applying a template. Columns may have been renamed, removed or reused for a different meaning.</p>
@@ -545,6 +573,9 @@
 
       <h3>Why does the app show an estimated manual work avoided value?</h3>
       <p>It gives a rough, conservative estimate of the manual Jira work the import is likely avoiding. It is not an exact measurement and should not be treated as guaranteed time savings.</p>
+
+      <h3>Why do I see an access-restricted screen?</h3>
+      <p>Your Jira administrator has enabled restricted access for the app. Ask an administrator to grant your group the <strong>Use Excel Backlog Importer</strong> global permission, or to switch the app access mode back to <strong>Open by default</strong>.</p>
     </section>
 
     <section id="glossary">
