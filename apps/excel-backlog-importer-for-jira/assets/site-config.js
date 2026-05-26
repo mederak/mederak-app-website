@@ -9,6 +9,6 @@ window.MEDERAK_PRODUCT_CONFIG = {
   PRIVACY_URL: "privacy.html",
   SECURITY_URL: "security.html",
   SUPPORT_URL: "support.html",
-  CTA_PRIMARY_LABEL: "Try on Atlassian Marketplace",
+  CTA_PRIMARY_LABEL: "Start free trial on Atlassian Marketplace",
   CTA_PRICING_LABEL: "View pricing"
 };
