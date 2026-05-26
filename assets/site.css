@@ -1710,7 +1710,10 @@ a {
 
 .importer-page .media-card img,
 .importer-page .media-card video {
-  aspect-ratio: 16 / 10;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #f8fbff;
 }
 
 .importer-page .media-card figcaption {
@@ -2844,6 +2847,10 @@ a {
     display: none;
   }
 
+  .importer-page .feature-showcase .feature-visual:nth-child(n + 4) {
+    display: flex;
+  }
+
   .video-showcase {
     margin-left: -16px;
     margin-right: -16px;
@@ -3146,6 +3153,10 @@ a {
 
   .tour-grid .tour-step:nth-child(n + 6) {
     display: none;
+  }
+
+  .importer-page .tour-grid .tour-step:nth-child(n + 6) {
+    display: flex;
   }
 
   .vendor-page .showcase-grid .showcase-card:nth-child(n + 4) {

@@ -42,6 +42,7 @@
           <tr><td>Repeated mapping</td><td>Requires disciplined templates or manual setup.</td><td>Designed for reusable mapping setup per recurring workflow, including Value cleanup and Description Builder settings.</td></tr>
           <tr><td>Rich descriptions</td><td>Usually prepared as one import column.</td><td>Description Builder can combine multiple Excel columns into one structured Jira Description.</td></tr>
           <tr><td>Messy source values</td><td>Often cleaned before export to CSV.</td><td>Value cleanup can extract fragments with simple rules, an advanced regex rule, result templates and date normalization.</td></tr>
+          <tr><td>Hierarchy</td><td>Usually needs careful preparation of parent keys and import order.</td><td>Supports flat imports, parent-from-column relationships and multi-column hierarchy where Jira configuration allows it.</td></tr>
           <tr><td>Validation</td><td>Useful, but broad and admin-oriented.</td><td>Focused on backlog rows before Jira changes are made.</td></tr>
           <tr><td>Preview</td><td>Part of the import process.</td><td>Central step for row-level review and controlled selection.</td></tr>
           <tr><td>Updates</td><td>Possible with careful identifiers.</td><td>Designed for repeat uploads that update matching Jira issues.</td></tr>
@@ -54,7 +55,7 @@
         <li>Receive an Excel backlog from a client, analyst or sales team.</li>
         <li>Select the worksheet and header row.</li>
         <li>Map columns such as Summary, Issue Type, Estimate and External ID.</li>
-        <li>Use Description Builder or Value cleanup when the workbook structure needs it.</li>
+        <li>Use Description Builder, Value cleanup or hierarchy settings when the workbook structure needs it.</li>
         <li>Validate required fields and Jira-compatible values.</li>
         <li>Preview the import and create or update selected Jira issues.</li>
       </ol>
