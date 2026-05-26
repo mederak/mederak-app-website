@@ -36,9 +36,9 @@
         <li><a href="#access-control">Access control for administrators</a></li>
         <li><a href="#workflow">Basic import workflow</a></li>
         <li><a href="#field-mapping">Field mapping explained</a></li>
-        <li><a href="#hierarchy">Issue types and hierarchy</a></li>
+        <li><a href="#hierarchy">Issue types and parent behavior</a></li>
         <li><a href="#description">Description Builder</a></li>
-        <li><a href="#transformations">Advanced value transformation</a></li>
+        <li><a href="#transformations">Value cleanup</a></li>
         <li><a href="#validation">Validation and preview</a></li>
         <li><a href="#repeated-imports">Repeated imports and updates</a></li>
         <li><a href="#templates">Saved mapping templates</a></li>
@@ -70,7 +70,7 @@
       <p>Your workbook does not need to start in the first row. During setup, you choose which row contains the column names. Rows below that header row are treated as backlog data.</p>
       <p>A good Excel file usually has:</p>
       <ul>
-        <li>one row per Jira issue, unless you use the multi-column hierarchy option,</li>
+        <li>one row per Jira issue for the standard import flow,</li>
         <li>a clear column for the Jira Summary,</li>
         <li>optional columns such as Description, Issue Type, Priority, Labels, Components, Due Date, Estimate, Story Points or Assignee,</li>
         <li>a stable ID column if you plan to import newer versions of the same workbook later.</li>
@@ -129,11 +129,11 @@
         <figcaption>Use a saved setup when a newer workbook has the same or similar structure.</figcaption>
       </figure>
 
-      <h3>5. Configure issue structure</h3>
-      <p>Choose whether the import is flat or whether the app should build parent and child relationships. This step also contains the default issue type and optional default parent issue.</p>
+      <h3>5. Review structure and repeated import settings</h3>
+      <p>Review the issue type, optional parent behavior and repeated import settings before validation. Parent-related behavior depends on the Jira project configuration, issue type hierarchy, screens and permissions.</p>
       <figure>
-        <img src="assets/docs/issue-structure.png" alt="Issue structure screen with flat import, parent column and multi-column hierarchy options.">
-        <figcaption>Choose how parent issues should be assigned.</figcaption>
+        <img src="assets/docs/issue-structure.png" alt="Repeated import settings with import mode and record identity column.">
+        <figcaption>Review structure-related settings and duplicate handling before validation.</figcaption>
       </figure>
 
       <h3>6. Map Excel columns to Jira fields</h3>
@@ -208,11 +208,11 @@
     </section>
 
     <section id="hierarchy">
-      <h2>Issue types and hierarchy</h2>
-      <p>The issue structure step decides how imported rows relate to each other or to existing Jira issues. It appears before field mapping because parent rules and issue types affect validation.</p>
+      <h2>Issue types and parent behavior</h2>
+      <p>The structure step helps you review how imported rows should be created in the current Jira project. Parent-related behavior is constrained by Jira configuration, issue type hierarchy, field screens and user permissions.</p>
 
       <h3>Flat imports</h3>
-      <p>Use <strong>No hierarchy - import rows as separate issues</strong> when each Excel row should become one independent Jira issue. This is the simplest and safest option for many backlogs.</p>
+      <p>Use a flat import when each Excel row should become one independent Jira issue. This is the simplest and safest option for many backlogs.</p>
       <p>For flat imports, you can use one default issue type for all rows or map an Issue Type column if the workbook already contains Jira issue type names.</p>
 
       <h3>Default issue type</h3>
@@ -220,32 +220,15 @@
       <p>If you map an Issue Type column, values from Excel override the default row by row.</p>
 
       <h3>Default Jira parent</h3>
-      <p>Use a default parent when all imported rows should be placed under the same existing Jira issue. The app searches existing Jira issues in the current project and lets you select one.</p>
+      <p>Use a default parent when all imported rows should be placed under the same existing Jira issue and Jira allows that relationship for the selected issue type.</p>
       <p>This is useful when you are importing work under one existing Epic, Initiative or parent issue, depending on how your Jira project is configured.</p>
       <aside>
         <p><strong>Watch out:</strong> Sub-task issue types require a valid parent. If you choose a sub-task type without a parent, validation blocks the row.</p>
       </aside>
 
-      <h3>Existing Jira parent key per row</h3>
-      <p>For flat imports, the advanced options allow a column with existing Jira parent keys, such as <code>PROJ-123</code>. Use this only when the Excel file already contains valid Jira issue keys from the current project.</p>
-
-      <h3>Parent from an Excel column</h3>
-      <p>Use <strong>Use parent from an Excel column</strong> when one Excel column says which row is the parent, and another column contains the value used to find that parent row.</p>
-      <p>For example, a row may have <em>Parent ID</em> = <code>F-100</code>, and another row may have <em>Item ID</em> = <code>F-100</code>. The app uses this relationship to create the parent before the child.</p>
-      <p>If more than one row matches the same parent reference, validation reports an ambiguous parent reference. Fix the Excel file or choose a more specific matching column.</p>
-
-      <h3>Build hierarchy from multiple Excel columns</h3>
-      <p>Use <strong>Build hierarchy from multiple Excel columns</strong> when the workbook stores each hierarchy level in a separate column, such as Epic, Story and Task.</p>
-      <p>The first selected hierarchy column becomes the top-level item. Each next selected column becomes a child level under the values before it.</p>
-      <p>The app de-duplicates repeated hierarchy paths. If the same full path appears again, the repeated source row is shown as skipped and no extra Jira issue is created for that duplicate path.</p>
-
-      <h3>Empty hierarchy cells</h3>
-      <p>If the sheet repeats the full hierarchy path on every row, choose the strict option. If the sheet is visually grouped and blank cells mean "same value as above", use the fill-down option.</p>
-
-      <h3>Common hierarchy mistakes</h3>
+      <h3>Common parent-related mistakes</h3>
       <ul>
         <li>Choosing an issue type that Jira does not allow under the selected parent type.</li>
-        <li>Leaving a middle hierarchy level empty while a lower level has a value.</li>
         <li>Using parent names that are not unique.</li>
         <li>Using parent keys from a different Jira project.</li>
         <li>Expecting the app to create a missing existing parent issue. Existing parent keys must already exist in Jira.</li>
@@ -276,20 +259,39 @@
     </section>
 
     <section id="transformations">
-      <h2>Advanced value transformation</h2>
-      <p>Advanced value transformation lets you extract or reshape a value before it is sent to Jira. Use it only when the Excel cell contains more text than Jira should receive.</p>
-      <p>For example, a source cell may contain <code>[IMPORT] REQ-2025-014 | Login error handling -- draft</code>, but you only want the final Summary to be <code>Login error handling</code>.</p>
+      <h2>Value cleanup</h2>
+      <p>Value cleanup lets you adjust an Excel value before it is sent to Jira. Use it when the Excel cell contains extra text, codes, brackets, dates or labels that should be cleaned up for a specific Jira field.</p>
+      <p>For example, a source cell may contain <code>Training name (*online) (22-23.07.2025)</code>, but Summary should receive only <code>Training name (*online)</code> and Due date should receive <code>2025-07-22</code>.</p>
       <figure>
-        <img src="assets/docs/regex-transformation.png" alt="Advanced value transformation modal with regex pattern, result template and preview table.">
-        <figcaption>Use the preview to check extracted values before validation.</figcaption>
+        <img src="assets/docs/regex-transformation.png" alt="Value cleanup modal with original Excel values and imported values preview.">
+        <figcaption>Use the preview to check cleaned values before validation.</figcaption>
       </figure>
 
-      <h3>Regex extraction in simple words</h3>
-      <p>A regex is a text pattern. It can find a specific part of a longer text. The app uses the first captured part as the value unless you provide a result template.</p>
-      <p>If the pattern does not match a row, validation shows a warning or an error depending on whether the Jira field is required.</p>
+      <h3>Simple cleanup rules</h3>
+      <p>Most cleanup can be configured without formulas or technical patterns. Choose <strong>Adjust value before import</strong> on a mapped field and select one rule:</p>
+      <ul>
+        <li><strong>Import full value:</strong> sends the whole Excel cell unchanged.</li>
+        <li><strong>Take text before:</strong> sends the text before a marker, such as <code>(</code>, <code>-</code> or <code>;</code>. You can choose the first, second, third, last or custom occurrence.</li>
+        <li><strong>Take text after:</strong> sends the text after a selected marker occurrence.</li>
+        <li><strong>Take text between:</strong> sends text between a start marker and an end marker.</li>
+        <li><strong>Remove text in brackets:</strong> removes the first, last or all bracketed parts from round or square brackets.</li>
+        <li><strong>Extract date from text:</strong> finds common date formats and date ranges such as <code>22-23.07.2025</code>.</li>
+        <li><strong>Extract number from text:</strong> finds the first integer or decimal number.</li>
+        <li><strong>Extract Jira issue key:</strong> finds values such as <code>ABC-123</code>.</li>
+        <li><strong>Replace values:</strong> maps exact Excel values to Jira values, for example <code>High</code> to <code>Highest</code> or <code>Tak</code> to <code>Yes</code>.</li>
+      </ul>
 
-      <h3>Result templates</h3>
-      <p>A result template builds the final value from the captured parts of the pattern. Captured parts are referenced as <code>$1</code>, <code>$2</code>, <code>$3</code> and so on.</p>
+      <h3>Preview and fallback</h3>
+      <p>Every cleanup rule shows a preview with original Excel values and the values that will be imported to Jira. The preview updates when you change the rule.</p>
+      <p>If the selected marker, date, number or issue key is not found, choose what should happen: use an empty value or keep the original Excel value. For required Jira fields, an empty value can block the row during validation, which is usually safer than sending the wrong text.</p>
+      <p><strong>Trim spaces</strong> is enabled by default. It removes extra spaces from the beginning and end of the cleaned value.</p>
+
+      <h3>Advanced custom rule</h3>
+      <p>The advanced option is intended for technical users. It allows a custom regex pattern when the simple cleanup rules are not enough. Most imports should use the simple options above.</p>
+      <p>A regex is a text pattern. It can find a specific part of a longer text. The app uses the first captured part as the value unless you provide a result template.</p>
+
+      <h3>Result templates for advanced custom rules</h3>
+      <p>A result template builds the final value from captured parts of the pattern. Captured parts are referenced as <code>$1</code>, <code>$2</code>, <code>$3</code> and so on.</p>
 
       <h3>Date parsing</h3>
       <p>For date fields, choose the input date format after extraction. Supported date formats in the UI include:</p>
@@ -340,13 +342,13 @@
       <p>End date template: <code>$2.$3.$4</code>, which gives <code>23.07.2025</code>.</p>
 
       <aside>
-        <p><strong>Use transformations carefully:</strong> A pattern can produce a value that looks valid but is logically wrong. Always check the transformation preview and the validation preview before importing.</p>
+        <p><strong>Use cleanup carefully:</strong> A rule can produce a value that looks valid but is logically wrong. Always check the cleanup preview and the validation preview before importing.</p>
       </aside>
     </section>
 
     <section id="validation">
       <h2>Validation and preview</h2>
-      <p>Validation is the last checkpoint before Jira changes. It checks the selected workbook rows, mapping, issue types, required fields, dates, numbers, estimates, user fields, parent relationships, duplicate handling and transformation results.</p>
+      <p>Validation is the last checkpoint before Jira changes. It checks the selected workbook rows, mapping, issue types, required fields, dates, numbers, estimates, user fields, parent relationships, duplicate handling and cleanup results.</p>
 
       <h3>How to read validation results</h3>
       <p>The validation screen shows:</p>
@@ -361,10 +363,10 @@
       <p>You can filter the table by added rows, updated rows, skipped rows, missing data and other errors. You can also select or clear individual importable rows.</p>
 
       <h3>Stale validation</h3>
-      <p>If you change the file, sheet, mapping, hierarchy, issue type, parent, duplicate handling or estimate settings after validation, the preview becomes outdated. Validate again before importing.</p>
+      <p>If you change the file, sheet, mapping, issue type, parent, duplicate handling or estimate settings after validation, the preview becomes outdated. Validate again before importing.</p>
 
       <h3>Estimated manual work avoided</h3>
-      <p>The validation and report screens may show a quiet estimate called <strong>Estimated manual work avoided</strong>. It is an approximate range based on the number of rows, mapped fields, hierarchy settings, Description Builder and value extraction rules.</p>
+      <p>The validation and report screens may show a quiet estimate called <strong>Estimated manual work avoided</strong>. It is an approximate range based on the number of rows, mapped fields, Description Builder and value extraction rules.</p>
       <p>Before import, this estimate does not subtract preparation time. After import, the report may also show approximate preparation time in the importer and net estimated time saved. Treat this as a practical guide, not an exact measurement.</p>
 
       <h3>Diagnostic JSON</h3>
@@ -399,22 +401,17 @@
           <tr>
             <td>Invalid date format</td>
             <td>The date cannot be parsed using the expected format.</td>
-            <td>Fix the Excel date or choose the correct transformation date format.</td>
+            <td>Fix the Excel date or choose the correct cleanup date format.</td>
           </tr>
           <tr>
-            <td>Regex does not match</td>
-            <td>The extraction pattern did not find a value in that row.</td>
-            <td>Adjust the pattern or fix the source cell.</td>
+            <td>No matching value found</td>
+            <td>The cleanup rule did not find the selected marker, date, number, issue key or advanced pattern in that row.</td>
+            <td>Adjust the cleanup rule, choose a different fallback option or fix the source cell.</td>
           </tr>
           <tr>
             <td>Parent issue was not found</td>
             <td>The parent key from Excel does not exist or is not available in the current project.</td>
             <td>Correct the parent key or choose an existing parent from the project.</td>
-          </tr>
-          <tr>
-            <td>Duplicate hierarchy path</td>
-            <td>The same generated hierarchy path already appears in the preview.</td>
-            <td>Usually no action is needed. The repeated row is skipped so the app does not create a duplicate issue.</td>
           </tr>
         </tbody>
       </table>
@@ -468,7 +465,7 @@
 
       <h3>How the app decides create vs update</h3>
       <p>After import, the app stores row identity and file name metadata linked to Jira issues. On later imports, it uses that stored identity to find previously imported issues.</p>
-      <p>Stored row identities are kept for 30 days and then pruned automatically.</p>
+      <p>Stored row identities are kept for 90 days and then pruned automatically.</p>
       <aside>
         <p><strong>Warning:</strong> Update modes can change existing Jira issues. Before importing, check the validation preview and make sure the correct rows are marked as updated.</p>
       </aside>
@@ -478,7 +475,7 @@
       <h2>Saved mapping templates</h2>
       <p>The app saves your setup automatically after a completed setup. When you upload a similar workbook later, the Saved setup step can suggest a matching template based on the sheet and column layout.</p>
       <p>File names do not have to be identical. A workbook called <em>v2</em>, <em>final</em> or <em>copy</em> can still match if the structure is similar.</p>
-      <p>A saved mapping can include field mappings, Description Builder setup, value transformations, hierarchy settings, duplicate mode, estimate settings and source column headers. It does not store full Excel row data.</p>
+      <p>A saved mapping can include field mappings, Description Builder setup, Value cleanup rules, duplicate mode, estimate settings and source column headers. It does not store full Excel row data.</p>
       <p>Always review the mapping after applying a template. Columns may have been renamed, removed or reused for a different meaning.</p>
       <p>If a saved template refers to missing columns or missing required mappings, the app warns you before import.</p>
     </section>
@@ -513,14 +510,11 @@
       <h3>Date validation fails</h3>
       <p>Check whether the Excel value matches the selected date format. If you use text extraction, confirm that the extracted value is the date itself, not the full source text.</p>
 
-      <h3>Regex returns an empty value</h3>
-      <p>Open the transformation preview. If the status is <em>No match</em>, the pattern does not match that row. If the status is <em>Invalid result template</em>, the template may refer to a group that does not exist.</p>
-
-      <h3>The hierarchy does not look right</h3>
-      <p>Check the selected hierarchy mode, selected level columns, issue types for each level and the empty-cell mode. If a child appears without a parent, the source row may be missing a higher-level value or the fill-down option may be incorrect.</p>
+      <h3>Value cleanup returns an empty value</h3>
+      <p>Open the cleanup preview. If the status is <em>No match</em>, the selected rule did not find the marker, date, number, issue key or advanced pattern in that row. Choose a different rule, change the fallback option or fix the source cell.</p>
 
       <h3>Some rows are skipped</h3>
-      <p>Skipped rows are usually intentional. For example, repeated hierarchy paths are skipped so the app does not create duplicate generated issues. Read the row message in the validation preview or report.</p>
+      <p>Skipped rows are usually intentional. For example, duplicate handling can skip rows that were already imported or should not be changed in the selected import mode. Read the row message in the validation preview or report.</p>
 
       <h3>I do not see a Jira field I expected</h3>
       <p>The app reads fields available for the current Jira project and issue configuration. Some Jira fields may not be returned, may not be supported yet, or may require a different issue type or project setup.</p>
@@ -537,7 +531,7 @@
       <h2>Best practices</h2>
       <ul>
         <li>Start with a small test import before importing a large workbook.</li>
-        <li>Keep one row per Jira issue unless you intentionally use hierarchy columns.</li>
+        <li>Keep one row per Jira issue for the standard import flow.</li>
         <li>Use clear column names.</li>
         <li>Use a stable ID column when you expect repeated imports.</li>
         <li>Avoid merged cells.</li>
@@ -611,8 +605,11 @@
         <dt>Sub-task</dt>
         <dd>A Jira issue type that must have a parent issue.</dd>
 
+        <dt>Value cleanup</dt>
+        <dd>A rule attached to one mapped Jira field that adjusts the Excel value before import.</dd>
+
         <dt>Regex</dt>
-        <dd>A text pattern used to extract part of a longer value. Use it carefully and check the preview.</dd>
+        <dd>An advanced custom text pattern used only when the simple Value cleanup rules are not enough.</dd>
 
         <dt>Validation</dt>
         <dd>The check that happens before import. It shows which rows are ready, blocked or skipped.</dd>

@@ -2750,6 +2750,29 @@ a {
     width: 100%;
   }
 
+  .docs-page {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .docs-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .docs-hero > div,
+  .docs-hero h1,
+  .docs-hero .lead,
+  .docs-hero-shot,
+  .docs-article section {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .docs-hero .lead {
+    overflow-wrap: anywhere;
+  }
+
   .hero {
     padding-top: 30px;
     gap: 22px;
