@@ -1,25 +1,34 @@
 # Marketing Site Assets
 
-Place screenshots and video in this directory using the exact names below. The product page references these assets directly.
+The product landing page references the real app screenshots below. Keep these filenames stable unless the HTML and `ASSETS_TODO.md` are updated together.
 
-Recommended assets:
+Current images are cropped from `D:\work\mederak-products\products\excel-backlog-importer-for-jira\tests\screens`.
+
+## Real flow screenshots
 
 | File name | Size | Purpose |
 | --- | --- | --- |
-| `screen-hero.png` | 1600 x 1100 px | Main first-screen screenshot. Show the Jira app wizard inside Jira, preferably upload or validation flow. |
-| `screen-upload.png` | 1600 x 1000 px | Upload or sheet selection screen. Used in the benefits section. |
-| `screen-mapping.png` | 1400 x 1000 px | Mapping screen screenshot. Show default issue type, parent and column mapping. |
-| `screen-validation.png` | 1400 x 1000 px | Validation table screenshot. Show selected rows, status, validation message column. |
-| `screen-parent.png` | 1400 x 1000 px | Parent issue selection or import configuration screen. |
-| `screen-update-mode.png` | 1400 x 1000 px | Duplicate handling / update mode screen. |
-| `screen-report.png` | 1400 x 1000 px | Final report screenshot. Show issue links and export actions. |
-| `showreel_en.mp4` | 1920 x 1080 px | Short English product video, ideally 60-120 seconds. |
-| `poster-video.png` | 1600 x 900 px | Optional poster image for the video. |
+| `screen-01-upload-workbook.png` | 1600 x 1000 px | Start screen / importer overview. |
+| `step-2-upload-1600x1000.png` | 1600 x 1000 px | Upload XLSX workbook. |
+| `screen-03-worksheet-selection.png` | 1600 x 1000 px | Worksheet and header row selection. |
+| `step-4-template-1600x1000.png` | 1600 x 1000 px | Column recognition and detected headers. |
+| `step-5-mapping-1-1600x1000.png` | 1600 x 1000 px | Issue type defaults, parent option and Jira field mapping. |
+| `step-6-hierarchy-1600x1000.png` | 1600 x 1000 px | Current hierarchy information and duplicate handling settings. |
+| `screen-07-validate.png` | 1600 x 1000 px | Validation results and selected valid rows before import. |
+| `step-8-report-1-1600x1000.png` | 1600 x 1000 px | Import report with issue links and export actions. |
+
+## Other assets
+
+| File name | Size | Purpose |
+| --- | --- | --- |
+| `screen-hero.png` | 1600 x 1060 or 1600 x 1000 px | Dedicated hero graphic when available. |
+| `og-excel-backlog-importer.png` | 1200 x 630 px | Social sharing image. |
+
+The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
 
 Screenshot rules:
 
-- Use anonymized or demo Jira data only.
+- Use real app screens only.
 - Avoid customer names, real estimates, personal data and internal project keys.
 - Use English UI for Marketplace-facing assets.
-- Keep browser/Jira chrome visible enough to show that this is a Jira Cloud app.
-- Export PNG at 2x scale if possible for crisp retina rendering.
+- Export sharp PNG/WebP files; avoid JPEG compression for UI text.

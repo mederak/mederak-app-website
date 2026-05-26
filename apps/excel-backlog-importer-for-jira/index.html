@@ -3,351 +3,407 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Excel Backlog Importer for Jira | Turn spreadsheets into Jira issues</title>
-    <meta name="description" content="Excel Backlog Importer for Jira helps project managers, analysts and Scrum Masters import backlog rows from Excel into Jira Cloud with validation, mapping and duplicate protection.">
+    <title>Import Excel Backlogs into Jira | Excel Backlog Importer for Jira</title>
+    <meta name="description" content="Import Excel backlogs, scopes and client handovers into Jira Cloud without CSV cleanup or manual copy-paste. Map fields, build descriptions, validate rows and create or update selected Jira issues safely.">
+    <link rel="canonical" href="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
+    <meta property="og:title" content="Import Excel backlogs into Jira without CSV cleanup">
+    <meta property="og:description" content="Upload the Excel workbook you already have, map columns, validate rows and turn formal handovers into reviewed Jira issues.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/">
+    <meta property="og:image" content="https://mederak.pl/apps/excel-backlog-importer-for-jira/assets/og-excel-backlog-importer.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Excel Backlog Importer for Jira",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Jira Cloud",
+        "description": "Import Excel backlogs, scopes and client handovers into Jira Cloud with reusable mapping, Description Builder, Value cleanup, hierarchy setup, validation, duplicate handling, updates and reports.",
+        "url": "https://mederak.pl/apps/excel-backlog-importer-for-jira/",
+        "softwareHelp": "https://mederak.pl/apps/excel-backlog-importer-for-jira/docs.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mederak Apps",
+          "url": "https://mederak.pl/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Mederak Apps", "item": "https://mederak.pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Apps", "item": "https://mederak.pl/apps/"},
+          {"@type": "ListItem", "position": 3, "name": "Excel Backlog Importer for Jira", "item": "https://mederak.pl/apps/excel-backlog-importer-for-jira/"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Does uploading Excel create Jira issues immediately?", "acceptedAnswer": {"@type": "Answer", "text": "No. Uploading the workbook starts setup. You can map fields, validate rows and review the import before creating or updating Jira issues."}},
+          {"@type": "Question", "name": "Do I need to convert Excel to CSV first?", "acceptedAnswer": {"@type": "Answer", "text": "No. The app is designed to work with Excel workbooks directly."}},
+          {"@type": "Question", "name": "Can I build Jira descriptions from multiple Excel columns?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Description Builder can combine multiple Excel columns into one structured Jira Description."}},
+          {"@type": "Question", "name": "Can it update existing Jira issues?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when you use a repeated import mode that updates existing rows and the app can match those rows to previously imported issues."}},
+          {"@type": "Question", "name": "Where does the trial happen?", "acceptedAnswer": {"@type": "Answer", "text": "Trial, installation and billing are handled by Atlassian Marketplace."}}
+        ]
+      }
+    </script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
   </head>
-  <body>
+  <body class="importer-page">
     <div class="site-shell">
-      <header class="topbar">
-        <nav class="nav" aria-label="Main navigation">
-          <a class="brand" href="index.html">
-            <img src="assets/icon.png" alt="">
-            <span>Excel Backlog Importer</span>
-          </a>
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
-            <span class="menu-icon" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            <span>Menu</span>
-          </button>
-          <div class="nav-links" id="main-menu">
-            <a href="#benefits">Benefits</a>
-            <a href="#use-cases">Use cases</a>
-            <a href="#workflow">Workflow</a>
-            <a href="#trust">Trust</a>
-            <a href="security.html">Security</a>
-            <a class="button primary" href="#video">Watch the walkthrough</a>
-          </div>
-        </nav>
-      </header>
+      <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon-small.png" width="96" height="96" alt=""><span>Excel Backlog Importer</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Excel Importer</a><a href="../worklog-rollup-for-jira/">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a></div></nav></header>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="../index.html">Apps</a> / Excel Backlog Importer for Jira</nav>
 
       <main>
-        <section class="hero">
-          <div>
-            <span class="eyebrow">Atlassian Forge hosted app for Jira Cloud teams</span>
-            <h1>Turn Excel estimates into a Jira-ready backlog.</h1>
-            <p class="hero-copy">
-              Excel Backlog Importer for Jira turns structured Excel estimates, discovery notes and offer backlogs into Jira issues in the project you already use. Use it once at project kickoff, or many times during delivery whenever a new estimate, scope package or workshop backlog needs to become part of Jira.
-            </p>
+        <section class="hero product-hero lp-hero">
+          <div class="hero-copy-panel">
+            <span class="eyebrow">Excel Backlog Importer for Jira Cloud</span>
+            <h1>Import Excel backlogs into Jira without CSV cleanup or copy-paste</h1>
+            <p class="hero-copy">Receive project scope, estimates, discovery output or client handovers in Excel? Upload the workbook, map columns to Jira fields, build descriptions from multiple columns, preserve hierarchy, validate every row, then create or update selected Jira issues safely.</p>
             <div class="hero-actions">
-              <a class="button primary" href="mailto:support.jira@mederak.pl?subject=Excel%20Backlog%20Importer%20early%20access">Join early access</a>
-              <a class="button primary" href="#video">Watch how it works</a>
-              <a class="button" href="#compare">Compare with CSV import</a>
+              <a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184" data-config-url="CTA_URL" data-analytics="marketplace-trial-hero" data-analytics-event="marketplace_trial_click_hero" data-product="excel-backlog-importer-for-jira" aria-label="Start free trial on Atlassian Marketplace for Excel Backlog Importer for Jira">Start free trial on Atlassian Marketplace</a>
+              <a class="button" href="#demo" data-analytics="video-90-play" data-analytics-event="video_90_play" data-product="excel-backlog-importer-for-jira">Watch 90-second demo</a>
             </div>
+            <p class="cta-note">Free trial and billing are handled by Atlassian Marketplace.</p>
             <div class="trust-row" aria-label="Product highlights">
               <span>Jira Cloud</span>
-              <span>Hosted by Atlassian Forge</span>
-              <span>Excel .xlsx</span>
-              <span>No external product backend</span>
+              <span>Atlassian Forge</span>
+              <span>XLSX/XLS</span>
+              <span>Validate before import</span>
+              <span>Reusable mappings</span>
+              <span>Import report</span>
             </div>
           </div>
-          <div class="product-shot" aria-label="Product screenshot">
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel has-image">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-hero.png" aria-label="Open hero screenshot full size">
-                  <img src="assets/screen-hero.png" alt="Excel Backlog Importer wizard inside Jira.">
-                </button>
-              </div>
-            </div>
+          <div class="hero-composition">
+            <figure class="media-card hero-media-card illustration-card">
+              <button class="image-zoom" type="button" data-lightbox-src="assets/hero-excel-to-jira-flow.png" aria-label="Open Excel to Jira flow illustration">
+                <img src="assets/hero-excel-to-jira-flow.png" width="1600" height="1000" alt="Excel workbook rows flowing through mapping and validation into reviewed Jira issues" loading="eager" decoding="async">
+              </button>
+              <figcaption>From real Excel workbook to reviewed Jira issues.</figcaption>
+            </figure>
           </div>
         </section>
 
-        <section class="metric-strip" aria-label="Value metrics">
-          <div class="metric"><strong>Minutes</strong><span>instead of hours spent recreating backlog items manually.</span></div>
-          <div class="metric"><strong>Atlassian</strong><span>Forge-hosted app architecture with no separate vendor-hosted product backend.</span></div>
-          <div class="metric"><strong>Preview</strong><span>before import, so PMs can catch problems before Jira changes.</span></div>
-        </section>
-
-        <section id="video" class="section">
-          <div class="section-heading">
-            <h2>Show the import flow in under two minutes.</h2>
-            <p>See how a spreadsheet becomes Jira issues: upload Excel, choose the worksheet, map columns, validate rows and import selected items into an existing Jira project.</p>
-          </div>
-          <div class="video-panel">
-            <video controls preload="metadata" width="100%">
-              <source src="assets/showreel_en.mp4" type="video/mp4">
-              Product walkthrough video.
-            </video>
-          </div>
-        </section>
-
-        <section id="benefits" class="section">
-          <div class="section-heading">
-            <h2>From spreadsheet to Jira, without the manual rebuild.</h2>
-            <p>Map columns, validate rows, choose where new issues should land and import only what is ready.</p>
-          </div>
-          <div class="showcase-grid">
-            <article class="showcase-card">
-              <div class="icon-tile">01</div>
-              <b>Use Excel directly</b>
-              <p>No CSV conversion. Pick the sheet, choose the header row and keep the format your team already uses.</p>
-            </article>
-            <article class="showcase-card">
-              <div class="icon-tile">02</div>
-              <b>Validate before Jira changes</b>
-              <p>Catch missing summaries, invalid values, unsupported fields and duplicate rows before import.</p>
-            </article>
-            <article class="showcase-card">
-              <div class="icon-tile">03</div>
-              <b>Create or update issues</b>
-              <p>Use repeat imports to update matching Jira issues instead of creating duplicate work.</p>
-            </article>
-            <article class="showcase-card">
-              <div class="icon-tile">04</div>
-              <b>Import under a parent</b>
-              <p>Place backlog items under an Epic, phase, package or other supported parent issue.</p>
-            </article>
-          </div>
-          <div class="screen-row">
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel">
-                <div class="asset-card">
-                  <strong>Screenshot slot</strong>
-                  <span>Use <code>assets/screen-upload.png</code><br>Recommended: 1600 x 1000 px</span>
-                </div>
-              </div>
-            </div>
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel">
-                <div class="asset-card">
-                  <strong>Screenshot slot</strong>
-                  <span>Use <code>assets/screen-validation.png</code><br>Recommended: 1600 x 1000 px</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section alt" id="use-cases">
-          <div class="section-inner">
-            <div class="section-heading">
-              <h2>Use cases for real delivery work.</h2>
-              <p>Use the importer whenever structured work starts in Excel and needs to become a reliable Jira backlog.</p>
-            </div>
-            <div class="use-case-strip">
-              <article><span>01</span><b>Discovery workshops</b><p>Workshop notes become Jira-ready stories and tasks.</p></article>
-              <article><span>02</span><b>Sales estimates</b><p>Accepted scope moves from proposal spreadsheet to delivery backlog.</p></article>
-              <article><span>03</span><b>Client backlogs</b><p>Validate and import customer-provided requirements without copy-paste.</p></article>
-              <article><span>04</span><b>Repeat updates</b><p>Refresh estimates, dates, labels and descriptions from the same file.</p></article>
-              <article><span>05</span><b>Parent-based imports</b><p>Add new scope under the right Epic, phase or work package.</p></article>
-              <article><span>06</span><b>Multiple vendors</b><p>Import separate files into different parts of one Jira project.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="split">
+        <section class="section video-strip" id="demo">
+          <div class="section-inner split">
             <div>
-              <span class="eyebrow">Parent-based imports</span>
-              <h2>Put new backlog items exactly where they belong.</h2>
-              <p class="hero-copy">Create imported issues as children of a selected parent issue. Epics are a common example, but available relationships depend on your Jira configuration.</p>
-            </div>
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel">
-                <div class="asset-card">
-                  <strong>Parent selection screenshot</strong>
-                  <span>Use <code>assets/screen-parent.png</code><br>Recommended: 1400 x 1000 px</span>
-                </div>
+              <span class="eyebrow">90-second demo</span>
+              <h2>See the workflow before you install</h2>
+              <p class="hero-copy">Watch the short demo first. If you want the full feature tour, continue with the longer walkthrough.</p>
+              <div class="hero-actions">
+                <a class="button primary" href="https://youtu.be/zkGjekxM1pE?si=kJA2U4fNXuvK1C4t" data-analytics="video-90-play" data-analytics-event="video_90_play" data-product="excel-backlog-importer-for-jira" target="_blank" rel="noopener">Watch 90-second demo</a>
+                <a class="button" href="https://youtu.be/EB2baYsio0o?si=JVUaieDMvhyTdkOB" data-analytics="full-walkthrough-play" data-analytics-event="full_walkthrough_play" data-product="excel-backlog-importer-for-jira" target="_blank" rel="noopener">See full walkthrough</a>
               </div>
+              <a class="walkthrough-card" href="https://youtu.be/EB2baYsio0o?si=JVUaieDMvhyTdkOB" data-analytics="full-walkthrough-play" data-analytics-event="full_walkthrough_play" data-product="excel-backlog-importer-for-jira" target="_blank" rel="noopener">
+                <b>Full walkthrough</b>
+                <span>Longer product tour for admins and evaluators who want the full setup flow.</span>
+              </a>
             </div>
-          </div>
-          <div class="mini-feature-row">
-            <article><b>Import in stages</b><span>Add later phases when they are ready.</span></article>
-            <article><b>Separate work packages</b><span>Keep estimates organized in Jira hierarchy.</span></article>
-            <article><b>Change requests</b><span>Place new scope under the right parent issue.</span></article>
+            <a class="video-card media-card" href="https://youtu.be/zkGjekxM1pE?si=kJA2U4fNXuvK1C4t" data-analytics="video-90-play" data-analytics-event="video_90_play" data-product="excel-backlog-importer-for-jira" target="_blank" rel="noopener" aria-label="Watch 90-second demo on YouTube">
+              <img src="assets/demo-video-thumbnail.png" width="1600" height="1000" alt="90-second demo thumbnail for Excel Backlog Importer workflow" loading="lazy" decoding="async">
+            </a>
           </div>
         </section>
 
         <section class="section alt">
           <div class="section-inner split">
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel">
-                <div class="asset-card">
-                  <strong>Update mode screenshot</strong>
-                  <span>Use <code>assets/screen-update-mode.png</code><br>Recommended: 1400 x 1000 px</span>
-                </div>
+            <div>
+              <span class="eyebrow">Problem</span>
+              <h2>Your project scope is already in Excel. Jira is the painful part.</h2>
+              <p class="hero-copy">Client-approved offers, discovery sheets and requirement handovers often arrive as real-world Excel workbooks: multiple columns, messy values, notes, estimates, acceptance criteria and hierarchy hints. The hard part is not writing the backlog again. The hard part is moving it into Jira without losing structure, creating duplicates or turning the handover into a manual copy-paste task.</p>
+              <div class="problem-list">
+                <article><h3>CSV preparation eats time</h3><p>Jira's native import works best when the data is already clean and CSV-ready. Real handovers rarely are.</p></article>
+                <article><h3>Copy-paste creates mistakes</h3><p>Descriptions, acceptance criteria and estimates get lost or pasted into the wrong place.</p></article>
+                <article><h3>Repeated uploads create chaos</h3><p>Every updated Excel file can mean new duplicates, missed changes and another round of manual checking.</p></article>
               </div>
             </div>
+            <figure class="media-card illustration-card">
+              <button class="image-zoom" type="button" data-lightbox-src="assets/before-after-manual-vs-import.png" aria-label="Open manual versus importer workflow illustration">
+                <img src="assets/before-after-manual-vs-import.png" width="1600" height="1000" alt="Comparison of manual Excel to Jira copy-paste versus a reviewed importer workflow" loading="lazy" decoding="async">
+              </button>
+              <figcaption>Replace manual transfer with mapping, validation and import review.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-inner split">
             <div>
-              <span class="eyebrow">Create or update</span>
-              <h2>Useful after the first import, not only before it.</h2>
-              <p class="hero-copy">Re-upload the same spreadsheet and choose update mode when descriptions, estimates, priorities, labels or dates change.</p>
-              <div class="mini-feature-row compact">
-                <article><b>Recognize rows</b><span>Match repeat imports by file and row identity.</span></article>
-                <article><b>Update selected fields</b><span>Refresh mapped Jira fields without manual editing.</span></article>
+              <span class="eyebrow">Accepted offer to Jira backlog</span>
+              <h2>From accepted offer to Jira backlog</h2>
+              <p class="hero-copy">This app was built for the moment after a client approves the offer or scope and the delivery team needs a real Jira backlog. Instead of rebuilding the spreadsheet as CSV or copying each row by hand, use the Excel workbook as the starting point and turn it into reviewed Jira issues.</p>
+              <div class="usecase-grid usecase-grid-four">
+                <article><b>Accepted offer to delivery backlog</b><p>Turn scoped rows, estimates and notes into Jira work items.</p></article>
+                <article><b>Discovery workshop output to Jira issues</b><p>Move structured workshop findings into Jira without rewriting them.</p></article>
+                <article><b>Client backlog handover to reviewed import</b><p>Validate incoming backlog data before it touches Jira.</p></article>
+                <article><b>Updated workbook to controlled update</b><p>Handle repeated uploads without losing track of existing issues.</p></article>
               </div>
+            </div>
+            <figure class="media-card illustration-card">
+              <button class="image-zoom" type="button" data-lightbox-src="assets/offer-to-backlog-pipeline.png" aria-label="Open accepted offer to Jira backlog pipeline illustration">
+                <img src="assets/offer-to-backlog-pipeline.png" width="1600" height="1000" alt="Pipeline from accepted offer and Excel scope to a Jira backlog ready for delivery" loading="lazy" decoding="async">
+              </button>
+              <figcaption>Use the formal handover document as the starting point.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section alt" id="how-it-works">
+          <div class="section-inner">
+            <div class="section-heading">
+              <span class="eyebrow">How it works</span>
+              <h2>How Excel Backlog Importer works</h2>
+            </div>
+            <div class="steps-with-visual">
+              <ol class="step-list">
+                <li><h3>Upload the workbook</h3><p>Use the Excel file you already have. No need to rebuild it as CSV first.</p></li>
+                <li><h3>Choose worksheet and header row</h3><p>Select the sheet and the row that contains column names.</p></li>
+                <li><h3>Map Excel columns to Jira fields</h3><p>Reuse mappings for repeated imports.</p></li>
+                <li><h3>Build useful Jira descriptions</h3><p>Combine business context, acceptance criteria, technical notes and estimates into a structured description.</p></li>
+                <li><h3>Validate before import</h3><p>Review required fields, value problems, hierarchy and duplicates before anything changes in Jira.</p></li>
+                <li><h3>Create or update selected issues</h3><p>Import only the rows you approve and keep an import report.</p></li>
+              </ol>
+              <figure class="media-card illustration-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/description-builder-columns-to-jira.png" aria-label="Open Description Builder columns to Jira illustration">
+                  <img src="assets/description-builder-columns-to-jira.png" width="1600" height="1000" alt="Multiple Excel columns combined into a structured Jira description" loading="lazy" decoding="async">
+                </button>
+                <figcaption>Description Builder turns scattered workbook context into a structured Jira Description.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="section">
+          <div class="section-heading">
+            <span class="eyebrow">Core capabilities</span>
+            <h2>Everything you need for real Excel handovers</h2>
+          </div>
+          <div class="feature-card-grid">
+            <article><h3>Direct Excel import</h3><p>Upload XLSX/XLS workbooks instead of preparing CSV files first.</p></article>
+            <article><h3>Reusable setup</h3><p>Save mappings and reuse them when similar files come back.</p></article>
+            <article><h3>Description Builder</h3><p>Build Jira descriptions from multiple Excel columns.</p></article>
+            <article><h3>Value cleanup</h3><p>Clean and normalize values before they become Jira field values.</p></article>
+            <article><h3>Hierarchy from Excel</h3><p>Preserve backlog structure when the source file contains hierarchy hints supported by the app's setup.</p></article>
+            <article><h3>Validation before Jira changes</h3><p>Review problems before creating or updating issues.</p></article>
+            <article><h3>Duplicate handling</h3><p>Reduce the risk of creating the same work again when the workbook returns.</p></article>
+            <article><h3>Update existing issues</h3><p>Use repeated imports to update selected Jira issues when the app can match previously imported rows.</p></article>
+            <article><h3>Import report</h3><p>See what was created, updated, skipped or failed after the import.</p></article>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <div class="section-heading">
+              <span class="eyebrow">Product proof</span>
+              <h2>Screenshots from the actual import workflow</h2>
+              <p>Use the illustrations to understand the story, then check real product screens for the setup, validation and report flow.</p>
+            </div>
+            <div class="feature-showcase">
+              <article class="feature-visual">
+                <figure class="media-card">
+                  <button class="image-zoom" type="button" data-lightbox-src="assets/screen-03-worksheet-selection.png" aria-label="Open worksheet selection screenshot">
+                    <picture><img src="assets/screen-03-worksheet-selection.png" width="1680" height="945" alt="Worksheet selection and header row setup in Excel Backlog Importer" loading="lazy" decoding="async"></picture>
+                  </button>
+                  <figcaption>Choose worksheet and header row</figcaption>
+                </figure>
+                <h3>Start from the workbook structure</h3>
+                <p>Select the sheet and header row before mapping Excel columns to Jira fields.</p>
+              </article>
+              <article class="feature-visual">
+                <figure class="media-card">
+                  <button class="image-zoom" type="button" data-lightbox-src="assets/screen-description-builder.png" aria-label="Open Description Builder screenshot">
+                    <picture><img src="assets/screen-description-builder.png" width="1680" height="945" alt="Description Builder combining Excel columns into Jira Description" loading="lazy" decoding="async"></picture>
+                  </button>
+                  <figcaption>Description Builder</figcaption>
+                </figure>
+                <h3>Build richer Jira descriptions</h3>
+                <p>Combine multiple workbook columns into one structured Jira Description.</p>
+              </article>
+              <article class="feature-visual">
+                <figure class="media-card">
+                  <button class="image-zoom" type="button" data-lightbox-src="assets/screen-07-validate.png" aria-label="Open validation preview screenshot">
+                    <picture><img src="assets/screen-07-validate.png" width="1920" height="1080" alt="Validation preview with selected import rows and row-level messages" loading="lazy" decoding="async"></picture>
+                  </button>
+                  <figcaption>Validate before import</figcaption>
+                </figure>
+                <h3>Review before Jira changes</h3>
+                <p>Check row-level messages and selected rows before the final import action.</p>
+              </article>
+              <article class="feature-visual">
+                <figure class="media-card">
+                  <button class="image-zoom" type="button" data-lightbox-src="assets/screen-import-report.png" aria-label="Open import report screenshot">
+                    <picture><img src="assets/screen-import-report.png" width="1680" height="945" alt="Import report showing created updated skipped and failed Jira rows" loading="lazy" decoding="async"></picture>
+                  </button>
+                  <figcaption>Import report</figcaption>
+                </figure>
+                <h3>Keep evidence of the run</h3>
+                <p>Review what was created, updated, skipped or failed after the import.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt" id="safety">
+          <div class="section-inner split">
+            <div>
+              <span class="eyebrow">Safety</span>
+              <h2>Nothing changes in Jira until you review and import</h2>
+              <p class="hero-copy">Uploading an Excel file is not the same as importing it. Use the app to configure mapping, validate rows and review the result before you create or update Jira issues. Jira changes happen only after the final import action.</p>
+              <ul class="check-list">
+                <li>Review rows before import</li>
+                <li>Import selected rows only</li>
+                <li>See validation problems before Jira changes</li>
+                <li>Keep a report after import</li>
+                <li>Security details are available before installation</li>
+              </ul>
+              <div class="hero-actions">
+                <a class="button" href="security.html" data-analytics="security-click" data-analytics-event="security_click" data-product="excel-backlog-importer-for-jira">Read security notes</a>
+                <a class="button" href="docs.html" data-analytics="docs-click" data-analytics-event="docs_click" data-product="excel-backlog-importer-for-jira">Read documentation</a>
+              </div>
+            </div>
+            <figure class="media-card illustration-card">
+              <button class="image-zoom" type="button" data-lightbox-src="assets/validation-safety-gate.png" aria-label="Open validation safety gate illustration">
+                <img src="assets/validation-safety-gate.png" width="1600" height="1000" alt="Validation gate between Excel upload and Jira changes" loading="lazy" decoding="async">
+              </button>
+              <figcaption>Validation is the safety gate before selected Jira changes.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <h2>Why not just use Jira CSV import?</h2>
+            <p>Use Jira CSV import when your data is clean, one-off and already prepared for an admin-led import. Use Excel Backlog Importer when your backlog starts as a real Excel handover and you need mapping, cleanup, hierarchy, validation, duplicate handling and repeatable imports.</p>
+          </div>
+          <table class="compare-table">
+            <thead><tr><th>Need</th><th>Jira CSV import</th><th>Excel Backlog Importer</th></tr></thead>
+            <tbody>
+              <tr><td>Use the original workbook</td><td>Requires CSV preparation</td><td>Upload XLSX/XLS directly</td></tr>
+              <tr><td>Repeat similar imports</td><td>Reconfigure each time</td><td>Reuse saved setup</td></tr>
+              <tr><td>Build rich descriptions</td><td>Prepare text manually</td><td>Combine multiple columns</td></tr>
+              <tr><td>Clean messy values</td><td>Clean before import</td><td>Clean during setup</td></tr>
+              <tr><td>Review before changes</td><td>Admin-oriented import flow</td><td>Validate and select rows before import</td></tr>
+              <tr><td>Handle repeated files</td><td>Higher duplicate risk without separate tracking</td><td>Duplicate handling and update flow for previously imported rows</td></tr>
+            </tbody>
+          </table>
+          <div class="hero-actions">
+            <a class="button" href="excel-to-jira-vs-csv-import.html">Read the full comparison</a>
+            <a class="button" href="https://marketplace.atlassian.com/apps/3429713184?tab=pricing" data-config-url="PRICING_URL" data-analytics="pricing-click" data-analytics-event="pricing_click" data-product="excel-backlog-importer-for-jira">View pricing</a>
+          </div>
+        </section>
+
+        <section class="section alt" id="admin-request">
+          <div class="section-inner split">
+            <div>
+              <span class="eyebrow">For non-admin users</span>
+              <h2>Not a Jira admin? Send this to the person who can approve apps.</h2>
+              <p class="hero-copy">Many PMs, Scrum Masters and Business Analysts can see the problem but cannot install Marketplace apps themselves. Give them a clear next step instead of letting them bounce.</p>
+              <figure class="media-card illustration-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/admin-approval-flow.png" aria-label="Open Jira admin approval flow illustration">
+                  <img src="assets/admin-approval-flow.png" width="1600" height="1000" alt="Project user sends an app trial request to a Jira administrator for Marketplace approval" loading="lazy" decoding="async">
+                </button>
+                <figcaption>Send a clear trial request to your Jira administrator.</figcaption>
+              </figure>
+            </div>
+            <div class="admin-copy-card">
+              <label for="admin-message">Message for your Jira admin</label>
+              <textarea id="admin-message" rows="13" readonly>Hi [Name],
+
+We receive project scope and backlog data in Excel, then spend time rebuilding it manually in Jira.
+
+I'd like to try Excel Backlog Importer for Jira Cloud. It lets us upload the workbook, map Excel columns to Jira fields, validate rows, and create or update selected Jira issues from a reviewed import.
+
+Could you approve a trial from Atlassian Marketplace?
+
+https://marketplace.atlassian.com/apps/3429713184</textarea>
+              <div class="hero-actions">
+                <button class="button primary" type="button" data-copy-admin-message data-analytics="copy-admin-message" data-analytics-event="copy_admin_message" data-product="excel-backlog-importer-for-jira">Copy message for Jira admin</button>
+                <a class="button" href="https://marketplace.atlassian.com/apps/3429713184" data-config-url="CTA_URL" data-analytics-event="marketplace_admin_request_click" data-product="excel-backlog-importer-for-jira">Open Marketplace listing</a>
+              </div>
+              <p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
             </div>
           </div>
         </section>
 
         <section class="section">
-          <div class="forge-banner">
+          <div class="section-inner forge-banner">
             <div>
-              <span class="eyebrow">Why Forge matters</span>
-              <h3>Hosted on Atlassian infrastructure, not on a separate vendor server.</h3>
-              <p>Atlassian describes Forge as its serverless cloud app platform with compute and storage hosted on Atlassian infrastructure. Forge apps also run with tenant isolation and manifest-controlled external egress.</p>
+              <span class="eyebrow">Security and data handling</span>
+              <h2>Designed for Jira Cloud and Atlassian Forge.</h2>
+              <p>The app is designed as an Atlassian Forge app. It avoids storing full Excel files and stores only operational metadata needed for duplicate detection, saved mapping setup and reporting.</p>
             </div>
             <div class="forge-points">
-              <span><b>&check;</b> Atlassian-hosted compute and storage options reduce the need for a separate vendor backend.</span>
-              <span><b>&check;</b> The app is designed not to store full Excel files and not to send backlog data to the app creator's servers.</span>
-              <span><b>&check;</b> Forge storage is scoped per app installation and can align with Atlassian data residency capabilities where eligible.</span>
-              <span><b>&check;</b> External data egress is controlled through the Forge manifest. This app is designed without a remote product backend.</span>
+              <span><b>&check;</b> Works with Jira Cloud and Jira REST APIs through Forge.</span>
+              <span><b>&check;</b> No separate vendor-hosted product backend for backlog data is described in current security documentation.</span>
+              <span><b>&check;</b> Read the <a href="security.html" data-analytics="security-click" data-analytics-event="security_click" data-product="excel-backlog-importer-for-jira">security page</a>, <a href="privacy.html">privacy policy</a> and <a href="support.html">support page</a>.</span>
             </div>
           </div>
         </section>
 
-        <section id="workflow" class="section alt">
+        <section class="section alt">
           <div class="section-inner">
             <div class="section-heading">
-              <h2>A guided import flow that feels safe, not technical.</h2>
-              <p>Project teams should not need to understand every Jira API detail. They need a clear path from file to backlog.</p>
-            </div>
-            <div class="workflow">
-              <article class="workflow-step"><span>1</span><h3>Upload Excel</h3><p>Drop in a .xlsx file and choose the sheet that contains the backlog.</p></article>
-              <article class="workflow-step"><span>2</span><h3>Map columns</h3><p>Connect Excel headers to Jira fields with helpful defaults and saved setups.</p></article>
-              <article class="workflow-step"><span>3</span><h3>Validate rows</h3><p>Review errors, warnings and duplicate status before importing selected rows.</p></article>
-              <article class="workflow-step"><span>4</span><h3>Create issues</h3><p>Import in controlled batches and finish with a downloadable report.</p></article>
+              <span class="eyebrow">Founder credibility</span>
+              <h2>Built by someone who has lived this handover problem</h2>
+              <p>Excel Backlog Importer was built by a software delivery practitioner with 20 years of experience in software-house and consulting projects. The goal is simple: reduce the manual gap between formal project documents and the Jira backlog your team actually works from.</p>
             </div>
           </div>
         </section>
 
-        <section class="section">
-          <div class="split">
-            <div class="feature-list">
-              <article class="feature-card"><div class="icon-tile">&check;</div><div><b>Flexible column mapping</b><p>Choose the sheet, select the header row and map only the fields you need.</p></div></article>
-              <article class="feature-card"><div class="icon-tile">&check;</div><div><b>Jira field support</b><p>Handle text, dates, estimates, labels, select options, user fields and supported custom fields.</p></div></article>
-              <article class="feature-card"><div class="icon-tile">&check;</div><div><b>Controlled access</b><p>Make the app available only to approved project managers or delivery roles.</p></div></article>
-            </div>
-            <div class="browser-frame">
-              <div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-              <div class="screenshot-panel has-image mini-shot">
-                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-mapping.png" aria-label="Open mapping screenshot full size">
-                  <img src="assets/screen-mapping.png" alt="Column mapping screen.">
-                </button>
-              </div>
-            </div>
+        <section class="section" id="faq">
+          <div class="section-heading">
+            <h2>Questions before you start the trial</h2>
           </div>
-        </section>
-
-        <section id="compare" class="section alt">
-          <div class="section-inner">
-            <div class="section-heading">
-              <h2>Why not just use Jira CSV import?</h2>
-              <p>Jira's built-in CSV import is powerful, but it is usually admin-oriented. Excel Backlog Importer is designed for project teams who need a guided, repeatable import workflow inside an existing project.</p>
-            </div>
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th>Need</th>
-                  <th>Excel Backlog Importer for Jira</th>
-                  <th>Standard Jira CSV import</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Use Excel directly</td>
-                  <td><span class="advantage-pill">Best fit</span><br><span class="plus">+</span>Import .xlsx files, choose the worksheet and point to the real header row.</td>
-                  <td><span class="minus">-</span>Requires CSV preparation and stricter file discipline before import.</td>
-                </tr>
-                <tr>
-                  <td>Project team usability</td>
-                  <td><span class="advantage-pill">Designed for PMs</span><br><span class="plus">+</span>Guided wizard for project managers, analysts and Scrum Masters.</td>
-                  <td><span class="minus">-</span>Usually feels admin-oriented and less friendly for recurring delivery workflows.</td>
-                </tr>
-                <tr>
-                  <td>Existing project focus</td>
-                  <td><span class="plus">+</span>Works inside the current Jira project, so users stay in context.</td>
-                  <td><span class="neutral">~</span>Flexible, but broader and less focused on this specific backlog handoff.</td>
-                </tr>
-                <tr>
-                  <td>Preview and row selection</td>
-                  <td><span class="advantage-pill">Safer review</span><br><span class="plus">+</span>Validate rows, uncheck individual rows and import only selected valid items.</td>
-                  <td><span class="minus">-</span>Less tailored to selective backlog review and PM sign-off.</td>
-                </tr>
-                <tr>
-                  <td>Repeated client estimates</td>
-                  <td><span class="advantage-pill">Repeatable</span><br><span class="plus">+</span>Saved setup, duplicate handling and update mode by file and row identity.</td>
-                  <td><span class="minus">-</span>Repeatability depends more on manual preparation and admin process.</td>
-                </tr>
-                <tr>
-                  <td>Hosting model</td>
-                  <td><span class="plus">+</span>Atlassian Forge hosted app; no separate vendor-hosted product backend for backlog data.</td>
-                  <td><span class="plus">+</span>Native Jira feature.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="trust" class="section alt">
-          <div class="section-inner split">
-            <div class="quote">
-              <p>"The best importer is not the one with the most settings. It is the one a project manager can trust before clicking Import."</p>
-              <span>Product principle</span>
-            </div>
-            <div class="feature-list">
-              <article class="feature-card"><div class="icon-tile">S</div><div><b>Security-conscious by design</b><p>The app avoids storing full Excel files and keeps import metadata focused on history, duplicate detection and reporting.</p></div></article>
-              <article class="feature-card"><div class="icon-tile">P</div><div><b>Project-level practicality</b><p>Built for existing Jira Cloud projects and day-to-day users with the right project permissions.</p></div></article>
-              <article class="feature-card"><div class="icon-tile">C</div><div><b>Controlled import decisions</b><p>Teams can validate rows, select only the items they want to import and review a clear result report after the run.</p></div></article>
-            </div>
+          <div class="faq-grid">
+            <article class="faq-item"><h3>Does uploading Excel create Jira issues immediately?</h3><p>No. Uploading the workbook is only the beginning of the setup. You can map fields, validate rows and review the import before creating or updating Jira issues.</p></article>
+            <article class="faq-item"><h3>Do I need to convert Excel to CSV first?</h3><p>No. The app is designed to work with Excel workbooks directly.</p></article>
+            <article class="faq-item"><h3>Can I build Jira descriptions from multiple Excel columns?</h3><p>Yes. Use Description Builder to combine columns such as business context, acceptance criteria, technical notes and estimates into a structured Jira description.</p></article>
+            <article class="faq-item"><h3>Can it preserve hierarchy from Excel?</h3><p>Yes, when the source workbook contains the structure needed by the app's hierarchy setup and Jira configuration allows the resulting issue relationships.</p></article>
+            <article class="faq-item"><h3>Can it update existing Jira issues?</h3><p>Yes, when you use a repeated import mode that updates existing rows and the app can match those rows to previously imported issues.</p></article>
+            <article class="faq-item"><h3>What if I am not a Jira admin?</h3><p>Use the "Copy message for Jira admin" section above and ask the person who manages Marketplace apps on your Jira site to approve the trial.</p></article>
+            <article class="faq-item"><h3>Where does the trial happen?</h3><p>Trial, installation and billing are handled by Atlassian Marketplace.</p></article>
+            <article class="faq-item"><h3>Is there a longer walkthrough?</h3><p>Yes. The full walkthrough video is available from the demo section above.</p></article>
           </div>
         </section>
 
         <section class="cta">
-          <div class="cta-box" id="early-access">
+          <div class="cta-box">
             <div>
-              <h2>Join early access before the Marketplace launch.</h2>
-              <p>Marketplace launch is coming soon. If you would like to try Excel Backlog Importer before the public release, contact us from your company email address and tell us which Jira Cloud site you would like to use it with.</p>
+              <h2>Turn your next Excel handover into a reviewed Jira backlog</h2>
+              <p>Try it on the kind of workbook your team already receives: offer rows, scope notes, estimates, acceptance criteria and backlog handover data.</p>
             </div>
-            <a class="button" href="mailto:support.jira@mederak.pl?subject=Excel%20Backlog%20Importer%20early%20access">Email support.jira@mederak.pl</a>
+            <div class="hero-actions">
+              <a class="button" href="https://marketplace.atlassian.com/apps/3429713184" data-config-url="CTA_URL" data-analytics="marketplace-trial-final" data-analytics-event="marketplace_trial_click_final" data-product="excel-backlog-importer-for-jira" aria-label="Start free trial on Atlassian Marketplace for Excel Backlog Importer for Jira">Start free trial on Atlassian Marketplace</a>
+              <a class="button" href="#demo" data-analytics="video-90-play" data-analytics-event="video_90_play" data-product="excel-backlog-importer-for-jira">Watch 90-second demo</a>
+              <a class="button" href="docs.html" data-analytics="docs-click" data-analytics-event="docs_click" data-product="excel-backlog-importer-for-jira">Read documentation</a>
+              <a class="button" href="security.html" data-analytics="security-click" data-analytics-event="security_click" data-product="excel-backlog-importer-for-jira">Read security notes</a>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer class="footer">
-        <div class="footer-inner">
-          <div>
-            <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel Backlog Importer</span></a>
-            <p>Forge app for Jira Cloud. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p>
-            <p class="footer-credit">Created by Piotr Mederak.</p>
-          </div>
-          <div class="footer-links">
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="security.html">Security</a>
-            <a href="support.html">Support</a>
-            <a href="docs.html">Docs</a>
-            <a href="mailto:support.jira@mederak.pl?subject=Excel%20Backlog%20Importer%20early%20access">Early access</a>
-          </div>
-        </div>
-      </footer>
+      <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" width="723" height="123" loading="lazy" decoding="async" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     </div>
-    <div class="lightbox" id="image-lightbox" aria-hidden="true" role="dialog" aria-label="Screenshot preview">
-      <button class="lightbox-close" type="button" aria-label="Close preview">Close</button>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button">Close</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&lt;</button>
       <img src="" alt="">
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&gt;</button>
     </div>
+    <script src="assets/site-config.js"></script>
     <script src="assets/site.js"></script>
   </body>
 </html>

@@ -22,7 +22,7 @@ This is a plain static site. Upload the whole `marketing-site` directory content
 
 Before publishing:
 
-1. Keep screenshots and video in `assets/` according to `assets/README.md`.
+1. Keep screenshots in `assets/` according to `assets/README.md`.
 2. When the Atlassian Marketplace listing becomes public, update early-access CTA links if needed.
 3. Keep support contact as `support.jira@mederak.pl` unless the support process changes.
 

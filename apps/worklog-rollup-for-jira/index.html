@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Worlog Rollup for Jira | Real logged time totals across Jira hierarchies</title>
+    <meta name="description" content="Worlog Rollup for Jira shows the real total logged time for a Jira issue and all descendant issues, directly in the issue details view.">
+    <link rel="canonical" href="https://mederak.pl/apps/worklog-rollup-for-jira/">
+    <meta property="og:title" content="Worlog Rollup for Jira">
+    <meta property="og:description" content="See the real logged time total for an Epic, Story or parent issue, including deeply nested child work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mederak.pl/apps/worklog-rollup-for-jira/">
+    <meta property="og:image" content="https://mederak.pl/apps/worklog-rollup-for-jira/assets/screen-light-mode.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Worlog Rollup for Jira",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Jira Cloud",
+        "description": "Show the real total logged time for a Jira issue and all descendant issues in a Forge issue panel.",
+        "url": "https://mederak.pl/apps/worklog-rollup-for-jira/",
+        "softwareHelp": "https://mederak.pl/apps/worklog-rollup-for-jira/docs.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mederak Apps",
+          "url": "https://mederak.pl/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Mederak Apps", "item": "https://mederak.pl/"},
+          {"@type": "ListItem", "position": 2, "name": "Apps", "item": "https://mederak.pl/apps/"},
+          {"@type": "ListItem", "position": 3, "name": "Worlog Rollup for Jira", "item": "https://mederak.pl/apps/worklog-rollup-for-jira/"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What does Worlog Rollup for Jira calculate?", "acceptedAnswer": {"@type": "Answer", "text": "It summarizes logged time from the current Jira issue and every descendant issue found through Jira parent relationships, including deeper nested children."}},
+          {"@type": "Question", "name": "Does it calculate rates or billing amounts?", "acceptedAnswer": {"@type": "Answer", "text": "No. The app focuses on time visibility and does not calculate costs, rates, invoices or Tempo data."}},
+          {"@type": "Question", "name": "Does the app support multiple languages and themes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The app supports English, Spanish, French and Polish, and works with Jira light and dark mode."}},
+          {"@type": "Question", "name": "Where does the app run?", "acceptedAnswer": {"@type": "Answer", "text": "The app is designed for Jira Cloud on Atlassian Forge."}},
+          {"@type": "Question", "name": "How is pricing handled?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing is handled through Atlassian Marketplace."}}
+        ]
+      }
+    </script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="importer-page">
+    <div class="site-shell">
+      <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon-small.png" width="96" height="96" alt=""><span>Worlog Rollup</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="../excel-backlog-importer-for-jira/">Excel Importer</a><a href="index.html">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/883289483">Marketplace</a></div></nav></header>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="../index.html">Apps</a> / Worlog Rollup for Jira</nav>
+
+      <main>
+        <section class="hero product-hero">
+          <div class="hero-copy-panel">
+            <h1>See the real <span>time spent</span> on Jira work</h1>
+            <p class="hero-copy">Worlog Rollup for Jira adds a simple issue panel that immediately shows how much time your team logged on an Epic, Story or parent issue, including every nested child issue below it.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="worklog-rollup-for-jira">Try on Atlassian Marketplace</a>
+              <a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL" data-analytics-event="cta_pricing_click" data-product="worklog-rollup-for-jira">View pricing</a>
+              <a class="button" href="#screens" data-analytics-event="cta_screens_click" data-product="worklog-rollup-for-jira">See the panel</a>
+            </div>
+            <div class="hero-benefits" aria-label="Product highlights">
+              <article><span class="benefit-icon jira">J</span><div><b>Works in the issue view</b><p>Open the issue and the total is there.</p></div></article>
+              <article><span class="benefit-icon blue">SUM</span><div><b>Deep hierarchy totals</b><p>Includes children, sub-tasks and deeper descendants.</p></div></article>
+              <article><span class="benefit-icon green">MH</span><div><b>Clear MH and MD totals</b><p>Shows man-hours and man-days at a glance.</p></div></article>
+              <article><span class="benefit-icon gold">A</span><div><b>Multilingual UI</b><p>English, Spanish, French and Polish.</p></div></article>
+            </div>
+          </div>
+          <div class="worklog-hero-visual" aria-label="Worlog Rollup issue panel preview">
+            <div class="worklog-total-card">
+              <span>Total logged time</span>
+              <strong>42.37 MH / 5.30 MD</strong>
+              <p>Current issue plus all descendants</p>
+            </div>
+            <div class="worklog-issue-shell">
+              <div class="worklog-issue-bar" aria-hidden="true">
+                <span>KAN-9</span>
+                <strong>Website 2.0</strong>
+                <small>Issue details</small>
+              </div>
+              <button class="worklog-panel-shot image-zoom" type="button" data-lightbox-src="assets/screen-light-mode.png" aria-label="Open Worlog Rollup issue panel screenshot">
+                <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-light-mode.jpg"><img src="assets/screen-light-mode.png" width="752" height="592" alt="Worlog Rollup issue panel showing total logged time and included Jira issues" loading="eager"></picture>
+              </button>
+              <div class="worklog-hero-badges" aria-label="Panel highlights">
+                <span>Deep child rollup</span>
+                <span>No report setup</span>
+                <span>Light and dark mode</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="problem" class="section alt visual-band">
+          <div class="section-inner split">
+            <div>
+              <span class="eyebrow">The Jira visibility gap</span>
+              <h2>Epic time is easy to underestimate when work is logged deeper down</h2>
+              <p class="hero-copy">Jira can show time logged on Stories under an Epic, but time logged on sub-tasks below those Stories can disappear from the Epic-level view. Worlog Rollup solves that by summing logged time through the full descendant tree.</p>
+              <ul class="compact-list">
+                <li>Open an Epic, Story or parent issue and see the total immediately.</li>
+                <li>Include nested children even when the hierarchy goes multiple levels down.</li>
+                <li>Use the included issue table to understand what contributed to the total.</li>
+              </ul>
+            </div>
+            <div class="media-mosaic">
+              <figure class="media-card wide">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-light-mode.png" aria-label="Open light mode screenshot">
+                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-light-mode.jpg"><img src="assets/screen-light-mode.png" width="752" height="592" alt="Worlog Rollup total logged time panel" loading="lazy"></picture>
+                </button>
+                <figcaption>Total logged time on the issue</figcaption>
+              </figure>
+              <figure class="media-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-dark-mode.png" aria-label="Open dark mode screenshot">
+                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-dark-mode.jpg"><img src="assets/screen-dark-mode.png" width="750" height="589" alt="Worlog Rollup displayed in Jira dark mode" loading="lazy"></picture>
+                </button>
+                <figcaption>Dark mode view</figcaption>
+              </figure>
+              <figure class="media-card">
+                <button class="image-zoom" type="button" data-lightbox-src="assets/screen-spanish.png" aria-label="Open Spanish screenshot">
+                  <picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-spanish.jpg"><img src="assets/screen-spanish.png" width="754" height="595" alt="Worlog Rollup Spanish interface labels" loading="lazy"></picture>
+                </button>
+                <figcaption>English, Spanish, French and Polish support</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <span class="eyebrow">No separate process</span>
+            <h2>A small panel with one job: show the real total</h2>
+            <p>The panel sits in Jira issue details and gives users the rollup where they already review work. It is built for an immediate answer, not a separate reporting workspace.</p>
+          </div>
+          <div class="showcase-grid">
+            <article class="showcase-card"><div class="icon-tile">SUM</div><b>Full descendant rollup</b><p>Totals include work logged on the issue, its children and every lower descendant found through Jira parent relationships.</p></article>
+            <article class="showcase-card"><div class="icon-tile">0</div><b>No setup flow for users</b><p>The app is designed as an always-available panel inside the Jira issue view.</p></article>
+            <article class="showcase-card"><div class="icon-tile">8h</div><b>Readable time units</b><p>Users see totals in MH and MD, with 1 MD displayed as 8 MH.</p></article>
+            <article class="showcase-card"><div class="icon-tile">A</div><b>Theme and language fit</b><p>The panel supports Jira light mode, dark mode, English, Spanish, French and Polish.</p></article>
+          </div>
+        </section>
+
+        <section id="features" class="section alt">
+          <div class="section-inner">
+            <div class="section-heading">
+              <span class="eyebrow">Simple by design</span>
+              <h2>For quick answers during normal Jira work</h2>
+              <p>The product stays intentionally narrow: it answers one practical question clearly and immediately.</p>
+            </div>
+            <div class="feature-chip-grid">
+              <span>Jira Cloud issue panel</span>
+              <span>Instant total on issue open</span>
+              <span>Deep descendant rollup</span>
+              <span>Jira parent relationship</span>
+              <span>MH totals</span>
+              <span>MD totals</span>
+              <span>Included issue table</span>
+              <span>Manual refresh</span>
+              <span>Short-lived calculation cache</span>
+              <span>Light mode</span>
+              <span>Dark mode</span>
+              <span>English UI</span>
+              <span>Spanish UI</span>
+              <span>French UI</span>
+              <span>Polish UI</span>
+              <span>Atlassian Forge app</span>
+              <span>No billing calculations</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="screens" class="section">
+          <div class="section-heading">
+            <span class="eyebrow">Product screens</span>
+            <h2>The same panel in everyday Jira contexts</h2>
+            <p>The panel is intentionally compact: total first, included issues below, theme and language support around it.</p>
+          </div>
+          <div class="feature-showcase">
+            <article class="feature-visual">
+              <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-light-mode.png" aria-label="Open light mode screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-light-mode.jpg"><img src="assets/screen-light-mode.png" width="752" height="592" alt="Worlog Rollup light mode screenshot" loading="lazy"></picture></button><figcaption>Light mode</figcaption></figure>
+              <h3>Instant total in light mode</h3>
+              <p>The rollup appears directly in the issue panel, with the total above the included issue table.</p>
+            </article>
+            <article class="feature-visual">
+              <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-dark-mode.png" aria-label="Open dark mode screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-dark-mode.jpg"><img src="assets/screen-dark-mode.png" width="750" height="589" alt="Worlog Rollup dark mode screenshot" loading="lazy"></picture></button><figcaption>Dark mode</figcaption></figure>
+              <h3>Dark mode support</h3>
+              <p>The same simple rollup view fits Jira dark mode for teams using darker workspaces.</p>
+            </article>
+            <article class="feature-visual">
+              <figure class="media-card"><button class="image-zoom" type="button" data-lightbox-src="assets/screen-spanish.png" aria-label="Open Spanish screenshot"><picture><source media="(max-width: 700px)" srcset="assets/mobile-screen-spanish.jpg"><img src="assets/screen-spanish.png" width="754" height="595" alt="Worlog Rollup Spanish language screenshot" loading="lazy"></picture></button><figcaption>Spanish labels</figcaption></figure>
+              <h3>Multilingual interface</h3>
+              <p>The app supports English, Spanish, French and Polish so teams can use the panel in their preferred language.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner forge-banner">
+            <div>
+              <span class="eyebrow">Security and data handling</span>
+              <h3>Designed for Jira Cloud and Atlassian Forge.</h3>
+              <p>The app reads Jira issue hierarchy and time tracking fields needed for the rollup. It uses app-scoped Forge Storage for short-lived calculation cache.</p>
+            </div>
+            <div class="forge-points">
+              <span><b>&check;</b> Works with Jira Cloud and Jira REST APIs through Forge.</span>
+              <span><b>&check;</b> Reads Jira worklog and issue hierarchy data needed for calculation.</span>
+              <span><b>&check;</b> Does not calculate costs, rates, invoices or Tempo data.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading"><h2>Who it is for</h2><p>Teams that need the real time spent on Jira work without building reports or opening every child issue.</p></div>
+          <div class="role-grid">
+            <article><b>Project Managers</b><p>Check how much time the team spent on an Epic, including lower-level work logged on child tasks.</p></article>
+            <article><b>Team Leads</b><p>Understand real delivery effort without opening every Story and sub-task manually.</p></article>
+            <article><b>Scrum Masters</b><p>Use a direct issue-level total during progress reviews, refinements and delivery discussions.</p></article>
+            <article><b>Jira Admins</b><p>Provide a focused Forge app for rollup visibility without a separate reporting backend.</p></article>
+          </div>
+        </section>
+
+        <section class="section alt">
+          <div class="section-inner">
+            <div class="section-heading"><h2>FAQ</h2><p>Short answers for teams evaluating logged-time rollups in Jira.</p></div>
+            <div class="faq-grid">
+              <article class="faq-item"><h3>What issues are included?</h3><p>The app includes the current issue and descendant issues found through Jira parent relationships, including deeper nested levels.</p></article>
+              <article class="faq-item"><h3>Why is this needed for Epics?</h3><p>Time logged on Stories can be visible at the Epic level, but time logged on sub-tasks below those Stories is easy to miss. Worlog Rollup totals the full descendant tree.</p></article>
+              <article class="faq-item"><h3>What time fields are used?</h3><p>The app reads Jira time tracking values such as <code>timespent</code> and <code>timetracking.timeSpentSeconds</code>.</p></article>
+              <article class="faq-item"><h3>What does MD mean?</h3><p>MD means man-day. The product displays 1 MD as 8 MH.</p></article>
+              <article class="faq-item"><h3>Which languages are supported?</h3><p>The app supports English, Spanish, French and Polish.</p></article>
+              <article class="faq-item"><h3>Does it support Jira dark mode?</h3><p>Yes. The panel supports light and dark mode.</p></article>
+              <article class="faq-item"><h3>Does it read Tempo data?</h3><p>No. The product is focused on Jira issue and time tracking data.</p></article>
+              <article class="faq-item"><h3>Does it calculate billing?</h3><p>No. It does not calculate rates, costs, invoices or billing amounts.</p></article>
+              <article class="faq-item"><h3>Is there a free trial?</h3><p>Trial availability is handled through Atlassian Marketplace. Use the Marketplace listing to start evaluation for your Jira Cloud site.</p></article>
+              <article class="faq-item"><h3>How is pricing handled?</h3><p>Pricing is handled through Atlassian Marketplace. Use the pricing link to review current plan details.</p></article>
+              <article class="faq-item"><h3>Where can I get support?</h3><p>Email <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a> with your Jira site context and issue-panel scenario.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta">
+          <div class="cta-box">
+            <div>
+              <h2>Ready to review rolled-up worklog time in Jira?</h2>
+              <p>Install or evaluate Worlog Rollup for Jira from Atlassian Marketplace and give teams an immediate total directly in Jira issue details.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="button" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL" data-analytics-event="cta_marketplace_click" data-product="worklog-rollup-for-jira">Try on Atlassian Marketplace</a>
+              <a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL" data-analytics-event="cta_pricing_click" data-product="worklog-rollup-for-jira">View pricing</a>
+              <a class="button" href="docs.html" data-analytics-event="cta_docs_click" data-product="worklog-rollup-for-jira">Read documentation</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" width="723" height="123" loading="lazy" decoding="async" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    </div>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button">Close</button>
+      <img src="" alt="">
+    </div>
+    <script src="assets/site-config.js"></script>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
