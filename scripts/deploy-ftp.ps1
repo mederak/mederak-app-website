@@ -13,9 +13,10 @@ $FtpPort = 21
 $FtpUser = "lgngvco"
 $RemoteRoot = "/www"
 $CredentialTarget = "mederak.pl FTP"
+$DeploySecretsPath = Join-Path $ProjectRoot ".deploy-secrets.json"
 
 $ExcludedDirectories = @(".git")
-$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", "MARKETING_REFRESH_NOTES.md")
+$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", "MARKETING_REFRESH_NOTES.md")
 $ExcludedPathPrefixes = @("scripts/")
 
 Add-Type -Language CSharp -TypeDefinition @"
@@ -139,6 +140,26 @@ function Save-DeployCredential {
 }
 
 function Get-DeployCredential {
+    if (Test-Path -LiteralPath $DeploySecretsPath) {
+        $secretConfig = Get-Content -LiteralPath $DeploySecretsPath -Raw | ConvertFrom-Json
+        $passwordProperty = $secretConfig.PSObject.Properties["ftpPassword"]
+        if ($null -eq $passwordProperty -or [string]::IsNullOrWhiteSpace([string]$passwordProperty.Value)) {
+            throw "Missing 'ftpPassword' in .deploy-secrets.json."
+        }
+
+        $password = [string]$passwordProperty.Value
+        if ($password -eq "PUT_FTP_PASSWORD_HERE") {
+            throw "Replace PUT_FTP_PASSWORD_HERE in .deploy-secrets.json before deploying."
+        }
+
+        $userProperty = $secretConfig.PSObject.Properties["ftpUser"]
+        if ($null -ne $userProperty -and -not [string]::IsNullOrWhiteSpace([string]$userProperty.Value) -and [string]$userProperty.Value -ne $FtpUser) {
+            throw ".deploy-secrets.json ftpUser '$($userProperty.Value)' does not match configured FTP user '$FtpUser'."
+        }
+
+        return New-Object System.Net.NetworkCredential($FtpUser, $password)
+    }
+
     try {
         $password = [NativeCredentialManager]::ReadPassword($CredentialTarget)
     }
