@@ -18,6 +18,7 @@ $DeploySecretsPath = Join-Path $ProjectRoot ".deploy-secrets.json"
 $ExcludedDirectories = @(".git")
 $ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", "MARKETING_REFRESH_NOTES.md")
 $ExcludedPathPrefixes = @("scripts/")
+$ExcludedExtensions = @(".md")
 
 Add-Type -Language CSharp -TypeDefinition @"
 using System;
@@ -254,13 +255,20 @@ function Ensure-FtpDirectory {
     $current = ""
     foreach ($part in $parts) {
         $current = "$current/$part"
-        if (-not (Test-FtpDirectory -RemotePath $current -Credential $Credential)) {
-            if ($DryRun) {
+        if ($DryRun) {
+            if (-not (Test-FtpDirectory -RemotePath $current -Credential $Credential)) {
                 Write-Host "DRY create directory $current"
             }
-            else {
+        }
+        else {
+            try {
                 Invoke-FtpNoContent -RemotePath $current -Method ([System.Net.WebRequestMethods+Ftp]::MakeDirectory) -Credential $Credential
                 Write-Host "Created directory $current"
+            }
+            catch [System.Net.WebException] {
+                if (-not (Test-FtpDirectory -RemotePath $current -Credential $Credential)) {
+                    throw
+                }
             }
         }
     }
@@ -363,6 +371,7 @@ function Get-LocalDeployFiles {
             $topDirectory = $relative.Split("/")[0]
             if ($ExcludedDirectories -contains $topDirectory) { return $false }
             if ($ExcludedFiles -contains $_.Name) { return $false }
+            if ($ExcludedExtensions -contains $_.Extension) { return $false }
             foreach ($prefix in $ExcludedPathPrefixes) {
                 if ($relative.StartsWith($prefix, [StringComparison]::OrdinalIgnoreCase)) { return $false }
             }
