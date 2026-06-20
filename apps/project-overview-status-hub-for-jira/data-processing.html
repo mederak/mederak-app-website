@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Processing Summary | Project Overview &amp; Status Hub for Jira</title>
+    <meta name="description" content="Data processing summary for Project Overview & Status Hub for Jira.">
+    <link rel="canonical" href="https://mederak.pl/apps/project-overview-status-hub-for-jira/data-processing.html">
+    <link rel="icon" href="assets/app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Project Overview &amp; Status Hub</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl?subject=Project%20Overview%20%26%20Status%20Hub%20early%20access">Early access</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Marketplace privacy support</span>
+      <h1>Data Processing Summary</h1>
+      <p class="lead">This page summarizes the data categories processed by Project Overview &amp; Status Hub for Jira.</p>
+
+      <h2>Purpose of processing</h2>
+      <p>To generate and refresh project overviews, project radar signals and portfolio views; store saved overviews, settings, access rules, refresh state and usage counters; show people, ownership, links, dates, status and freshness information to authorized users; and support troubleshooting, security and product improvement.</p>
+
+      <h2>Categories of data</h2>
+      <ul>
+        <li>Jira project metadata.</li>
+        <li>Jira issue metadata and selected issue content needed for summaries and signals.</li>
+        <li>Jira user display names and Atlassian account identifiers.</li>
+        <li>Generated overview text, suggested people, suggested links, risk signals and portfolio snapshots.</li>
+        <li>App configuration, access rules, refresh settings and usage counters.</li>
+        <li>Sanitized product analytics events, if analytics is configured.</li>
+      </ul>
+
+      <h2>Storage locations</h2>
+      <p>Saved overviews, settings, access policies, refresh state, AI usage counters and temporary generation job records may be stored in Atlassian Forge app storage for the customer's Jira site.</p>
+
+      <h2>External transmission</h2>
+      <p>The app is designed without a separate vendor-hosted product database for project overview content. Product analytics metadata may be sent to Google Analytics if configured, but analytics payloads are designed not to include Atlassian End User Data.</p>
+
+      <h2>Data minimization</h2>
+      <p>The app is intended to organize project context and signals rather than duplicate full Jira project history. Customers should avoid placing secrets, credentials or highly sensitive regulated information in Jira fields or comments for the purpose of processing it with the app.</p>
+
+      <h2>Deletion</h2>
+      <p>App data can be overwritten by normal app use or removed by uninstalling the app according to Atlassian platform behavior. Customers needing a specific deletion request should contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="subprocessors.html">Subprocessors</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mederak.pl/</loc></url>
   <url><loc>https://mederak.pl/apps/</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/docs.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/privacy.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/terms.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/security.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/subprocessors.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/support.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/data-processing.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/incident-response.html</loc></url>
+  <url><loc>https://mederak.pl/apps/project-overview-status-hub-for-jira/service-level-agreement.html</loc></url>
   <url><loc>https://mederak.pl/apps/excel-backlog-importer-for-jira/</loc></url>
   <url><loc>https://mederak.pl/apps/excel-backlog-importer-for-jira/excel-to-jira-vs-csv-import.html</loc></url>
   <url><loc>https://mederak.pl/apps/excel-backlog-importer-for-jira/import-epics-stories-subtasks-from-excel.html</loc></url>

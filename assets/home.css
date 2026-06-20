@@ -208,9 +208,9 @@ a {
 .vendor-product-card {
   position: relative;
   min-width: 0;
-  min-height: 520px;
+  min-height: 0;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 22px;
   overflow: hidden;
   border: 1px solid rgba(12, 102, 228, 0.16);
@@ -225,6 +225,12 @@ a {
   background:
     linear-gradient(135deg, rgba(12, 102, 228, 0.12), transparent 42%),
     #ffffff;
+}
+
+.vendor-product-card-status {
+  background:
+    linear-gradient(135deg, rgba(12, 102, 228, 0.13), transparent 36%),
+    linear-gradient(180deg, #ffffff, #f8fbff);
 }
 
 .vendor-product-card-rollup {
@@ -290,6 +296,7 @@ a {
 .vendor-product-visual {
   align-self: end;
   min-width: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid rgba(12, 102, 228, 0.16);
   border-radius: 20px;
@@ -300,7 +307,7 @@ a {
 .vendor-product-visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
   object-position: top left;
 }
@@ -308,6 +315,58 @@ a {
 .vendor-product-card-rollup .vendor-product-visual img {
   object-fit: contain;
   background: #ffffff;
+}
+
+.vendor-secondary-apps {
+  max-width: 820px;
+  margin: 20px auto 0;
+}
+
+.vendor-secondary-card {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  border: 1px solid rgba(12, 102, 228, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: 0 14px 38px rgba(16, 32, 51, 0.07);
+}
+
+.vendor-secondary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 52px rgba(16, 32, 51, 0.12);
+}
+
+.vendor-secondary-card > img {
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(12, 102, 228, 0.18);
+}
+
+.vendor-secondary-card span {
+  display: block;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.vendor-secondary-card h2 {
+  margin: 4px 0 4px;
+  color: #0c1f3d;
+  font-family: "Nunito", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.vendor-secondary-card p {
+  margin: 0;
+  color: #405978;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .vendor-proof-row {
@@ -524,6 +583,12 @@ a {
     text-align: center;
   }
 
+  .menu-toggle + .nav-links a.button.primary {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: #ffffff;
+  }
+
   .vendor-hero {
     padding: 44px 16px 34px;
   }
@@ -562,8 +627,12 @@ a {
     font-size: 28px;
   }
 
-  .vendor-product-visual img {
+  .vendor-product-visual {
     aspect-ratio: 4 / 3;
+  }
+
+  .vendor-secondary-apps {
+    max-width: none;
   }
 
   .section {
@@ -644,6 +713,16 @@ a {
     width: 50px;
     height: 50px;
     border-radius: 12px;
+  }
+
+  .vendor-secondary-card {
+    grid-template-columns: 50px minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .vendor-secondary-card > img {
+    width: 50px;
+    height: 50px;
   }
 
   .vendor-proof-row {

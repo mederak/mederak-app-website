@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Overview &amp; Status Hub for Jira User Guide | Documentation</title>
+    <meta name="description" content="User guide for Project Overview &amp; Status Hub for Jira. Learn how to generate project overviews, manage portfolio status, configure access, review freshness and use AI-assisted summaries.">
+    <link rel="canonical" href="https://mederak.pl/apps/project-overview-status-hub-for-jira/docs.html">
+    <meta property="og:title" content="Project Overview &amp; Status Hub for Jira User Guide">
+    <meta property="og:description" content="Learn how to use Project Overview &amp; Status Hub for Jira for project overviews, portfolio status, access control, freshness checks and AI-assisted summaries.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.pl/apps/project-overview-status-hub-for-jira/docs.html">
+    <meta property="og:image" content="https://mederak.pl/apps/project-overview-status-hub-for-jira/assets/hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.pl/"},{"@type":"ListItem","position":2,"name":"Project Overview & Status Hub for Jira","item":"https://mederak.pl/apps/project-overview-status-hub-for-jira/"},{"@type":"ListItem","position":3,"name":"User Guide","item":"https://mederak.pl/apps/project-overview-status-hub-for-jira/docs.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Project Overview & Status Hub for Jira - User Guide","description":"User guide for Project Overview & Status Hub for Jira.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps"},"mainEntityOfPage":"https://mederak.pl/apps/project-overview-status-hub-for-jira/docs.html"}</script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="importer-page status-hub-page">
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="index.html"><img src="assets/app-icon.png" width="96" height="96" alt=""><span>Project Overview &amp; Status Hub</span></a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+          <div class="nav-links" id="main-menu">
+            <a href="../../index.html">Home</a>
+            <a href="../index.html">Apps</a>
+            <a href="index.html">Product</a>
+            <a href="docs.html">Docs</a>
+            <a href="security.html">Security</a>
+            <a class="button primary" href="mailto:support.jira@mederak.pl?subject=Project%20Overview%20%26%20Status%20Hub%20early%20access">Request early access</a>
+          </div>
+        </nav>
+      </header>
+
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="../index.html">Apps</a> / <a href="index.html">Project Overview &amp; Status Hub for Jira</a> / User Guide</nav>
+
+      <main class="docs-page">
+        <section class="docs-hero">
+          <div>
+            <span class="eyebrow">User guide</span>
+            <h1>Project Overview &amp; Status Hub for Jira - User Guide</h1>
+            <p class="lead">This guide explains how to use Project Overview &amp; Status Hub for Jira in plain language. It is written for project managers, delivery managers, product owners, team leads, PMO teams, Jira administrators, and anyone who needs to understand a project quickly.</p>
+          </div>
+          <figure class="docs-hero-shot">
+            <img src="assets/demo-project-overview-1440-full.png" alt="Project overview page showing project status, owner, milestone, timeline, purpose, radar, project pulse, people, and important links" loading="eager" decoding="async">
+            <figcaption>A sample project overview generated from demo data.</figcaption>
+          </figure>
+        </section>
+
+        <aside class="docs-sidebar"><nav aria-label="Guide contents">
+    <h2>Table of contents</h2>
+    <ol>
+      <li><a href="#short-version">The short version</a></li>
+      <li><a href="#who-it-is-for">Who the app is for</a></li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#permissions">Permissions and access</a></li>
+      <li><a href="#first-run">First run and first overview</a></li>
+      <li><a href="#project-overview">Project overview page</a></li>
+      <li><a href="#editing">Editing a project overview</a></li>
+      <li><a href="#section-access">Section access</a></li>
+      <li><a href="#project-refresh">Checking and refreshing a project overview</a></li>
+      <li><a href="#portfolio">Portfolio overview</a></li>
+      <li><a href="#report-generation">Generating and refreshing reports from portfolio</a></li>
+      <li><a href="#freshness-settings">Freshness settings</a></li>
+      <li><a href="#calculations">How the app calculates statuses and numbers</a></li>
+      <li><a href="#ai">AI, suggestions, and limits</a></li>
+      <li><a href="#data-privacy">Data, privacy, and limitations</a></li>
+      <li><a href="#recommended-setup">Recommended rollout setup</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav></aside>
+        <article class="docs-article">
+    <section id="short-version">
+      <h2>The short version</h2>
+      <p>
+        Project Overview & Status Hub for Jira creates a clear, readable overview of a Jira project.
+        It brings together the project purpose, owners, useful links, current phase, timeline,
+        activity facts, and risk signals in one place.
+      </p>
+      <p>
+        The app does not replace Jira. It reads project activity from Jira and turns it into a
+        manager-friendly summary. It helps people understand a project without opening every board,
+        filter, issue, comment, and document link.
+      </p>
+      <p>The app helps answer questions such as:</p>
+      <ul>
+        <li>What is this project for?</li>
+        <li>Who owns the project and who should I talk to?</li>
+        <li>Where are the important documents, dashboards, repositories, and support links?</li>
+        <li>Is the project active, planned, paused, done, or not scanned yet?</li>
+        <li>Does the project have risk signals that should be discussed?</li>
+        <li>Which projects in the wider portfolio need attention?</li>
+      </ul>
+      <p>
+        A generated overview should be treated as a strong first draft. A project administrator
+        can review it, edit it, confirm suggested information, and save it as the official project
+        overview inside the app.
+      </p>
+    </section>
+
+    <section id="who-it-is-for">
+      <h2>Who the app is for</h2>
+      <ul>
+        <li><strong>Project managers and delivery managers</strong> use it to see project context, ownership, dates, and risk signals.</li>
+        <li><strong>Product owners and team leads</strong> use it to keep purpose, documentation, and responsibilities visible.</li>
+        <li><strong>PMO and portfolio teams</strong> use it to compare many projects and find the ones that need review.</li>
+        <li><strong>New joiners</strong> use it as a starting point before reading deeper project material.</li>
+        <li><strong>Jira administrators</strong> use it to configure access and control who can view, manage, or edit overviews.</li>
+      </ul>
+      <p>
+        The app is most useful when Jira contains real project activity: issues, statuses, owners,
+        due dates, links, comments, and project roles. The better the project data, the better the
+        generated overview.
+      </p>
+    </section>
+
+    <section id="installation">
+      <h2>Installation</h2>
+      <p>
+        Installation is done by a Jira administrator. Normal users do not need to install anything
+        on their computers.
+      </p>
+      <ol>
+        <li>Open Jira administration.</li>
+        <li>Go to app management or the Atlassian Marketplace flow for your Jira site.</li>
+        <li>Install <strong>Project Overview & Status Hub for Jira</strong>.</li>
+        <li>Open the app configuration page.</li>
+        <li>Grant the required Jira permissions to the right groups.</li>
+        <li>Ask project administrators or portfolio managers to generate the first overviews.</li>
+      </ol>
+
+      <h3>What is added to Jira</h3>
+      <ul>
+        <li><strong>A project page</strong> for the overview of one Jira project.</li>
+        <li><strong>A global portfolio page</strong> for a cross-project overview.</li>
+        <li><strong>An admin configuration page</strong> that lists the permissions administrators need to grant.</li>
+        <li><strong>Global permissions</strong> that control app access and portfolio management.</li>
+      </ul>
+
+      <h3>What the app needs from Jira</h3>
+      <p>
+        The app reads Jira work data and Jira user data. It stores its own generated overviews and
+        configuration in the app storage for your Jira site. It does not need a separate external
+        database for project overviews.
+      </p>
+    </section>
+
+    <section id="permissions">
+      <h2>Permissions and access</h2>
+      <p>
+        The app separates viewing, managing, and editing. This lets you give broad read access while
+        keeping generation and administration limited to a smaller group.
+      </p>
+
+      <figure>
+        <img src="assets/demo-access-configuration-1440-full.png" alt="Access setup screen showing portfolio view access, portfolio management access, and project overview editing permissions">
+        <figcaption>The access setup screen shows the permission names administrators need to grant in Jira.</figcaption>
+      </figure>
+
+      <h3>Main permissions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Permission name</th>
+            <th>Typical audience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Use the app in projects when access is restricted</td>
+            <td>Use Project Overview & Status Hub for Jira</td>
+            <td>People who should read project overviews</td>
+          </tr>
+          <tr>
+            <td>Open the cross-project portfolio page</td>
+            <td>View Project Overview & Status Hub for Jira portfolio overview</td>
+            <td>PMO, delivery managers, leadership, team leads</td>
+          </tr>
+          <tr>
+            <td>Generate and refresh project overviews from portfolio</td>
+            <td>Generate Project Overview & Status Hub for Jira portfolio briefs</td>
+            <td>PMO, Jira administrators, selected managers</td>
+          </tr>
+          <tr>
+            <td>Edit an overview for a specific project</td>
+            <td>Administer Projects or Administer Jira</td>
+            <td>Project administrators and Jira administrators</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>How to configure permissions in Jira</h3>
+      <ol>
+        <li>Open Jira settings.</li>
+        <li>Go to the global permissions area.</li>
+        <li>Add the portfolio view permission to the group that should see portfolio.</li>
+        <li>Add the portfolio management permission only to a smaller admin or PMO group.</li>
+        <li>Use Jira project permissions to decide who can edit overviews inside projects.</li>
+      </ol>
+
+      <h3>What users see when access is missing</h3>
+      <p>
+        If the app is restricted and a user does not have the required permission, the app shows a
+        clear message telling them to ask a Jira administrator for access. If only one section is
+        restricted, the user can still see the sections they are allowed to view.
+      </p>
+    </section>
+
+    <section id="first-run">
+      <h2>First run and first overview</h2>
+      <p>
+        After installation, the app does not have to scan everything immediately. You can generate
+        overviews one project at a time, or from the portfolio page for several projects.
+      </p>
+      <h3>What happens when the first overview is generated</h3>
+      <ol>
+        <li>The app reads the Jira project context it is allowed to see.</li>
+        <li>It analyzes recent project activity, normally from the last 26 weeks.</li>
+        <li>It prepares a draft overview: purpose, people, links, working model, workflow notes, project pulse, and radar.</li>
+        <li>A project administrator reviews the draft.</li>
+        <li>After saving, the overview becomes the official app overview for that project.</li>
+      </ol>
+      <p>
+        A generated draft is intentionally cautious. Suggested people and links should be confirmed
+        before they are treated as official.
+      </p>
+    </section>
+
+    <section id="project-overview">
+      <h2>Project overview page</h2>
+      <p>
+        The project overview page is the main page for one project. It is designed to give a useful
+        management-level view without forcing people to inspect every Jira issue.
+      </p>
+
+      <figure>
+        <img src="assets/demo-project-overview-1440-full.png" alt="Project overview page showing project status, owner, milestone, timeline, purpose, radar, project pulse, people, and important links">
+        <figcaption>A sample project overview generated from demo data.</figcaption>
+      </figure>
+
+      <h3>Top summary cards</h3>
+      <ul>
+        <li><strong>Project status</strong> shows the current phase of the project, calculated from Jira status categories.</li>
+        <li><strong>Main owner</strong> shows the best owner information saved or suggested for the project.</li>
+        <li><strong>Next milestone</strong> shows the planned end date or the latest due date found in Jira.</li>
+        <li><strong>Timeline</strong> shows how far the project is between its start and planned end.</li>
+      </ul>
+
+      <h3>Project purpose</h3>
+      <p>
+        The project purpose explains why the project exists. It should be understandable to someone
+        who is new to the project. The app can suggest a purpose from Jira activity, but a human
+        should review and save the final wording.
+      </p>
+
+      <h3>Project radar</h3>
+      <p>
+        Project radar highlights signals worth discussing. It does not make decisions for the team.
+        It gives managers a short list of things to watch, plus positive signals that show what is
+        going well.
+      </p>
+      <p>Radar can show:</p>
+      <ul>
+        <li>risk signals, such as blockers, scope pressure, stale review work, or quality pressure,</li>
+        <li>positive signals, such as steady completion or clear ownership,</li>
+        <li>the number of issues analyzed,</li>
+        <li>the analysis window,</li>
+        <li>an AI-written summary if AI summaries are enabled and available,</li>
+        <li>detector evidence and example issue keys.</li>
+      </ul>
+
+      <h3>People & roles</h3>
+      <p>
+        This section lists people connected with the project. A person can be confirmed or suggested.
+        Confirmed means a user accepted the information. Suggested means the app found signs in Jira,
+        but someone should check it.
+      </p>
+
+      <h3>Project pulse</h3>
+      <p>
+        Project pulse is a compact list of project facts: last issue update, newest issue, open work,
+        work in progress, completed work, project dates, number of analyzed issues, people count,
+        data period, and project type.
+      </p>
+
+      <h3>Important links</h3>
+      <p>
+        Important links help people jump to the right documentation, dashboards, repositories,
+        Jira boards, team channels, environments, or support handover material. Links can also be
+        confirmed or suggested.
+      </p>
+
+      <h3>Quick actions</h3>
+      <p>
+        Project administrators can check freshness, refresh project pulse, refresh project radar,
+        or reset the overview. These actions are meant to keep the overview useful as Jira activity changes.
+      </p>
+    </section>
+
+    <section id="editing">
+      <h2>Editing a project overview</h2>
+      <p>
+        Project administrators and Jira administrators can edit the overview. The goal is to combine
+        automatic discovery with human judgment.
+      </p>
+
+      <figure>
+        <img src="assets/demo-project-edit-purpose-1440-full.png" alt="Project purpose edit mode with rich text controls, regenerate, cancel, and save buttons">
+        <figcaption>Editing the project purpose.</figcaption>
+      </figure>
+
+      <h3>What can be edited</h3>
+      <ul>
+        <li><strong>Purpose</strong> can be rewritten or refined.</li>
+        <li><strong>People and roles</strong> can be confirmed, removed, or adjusted.</li>
+        <li><strong>Important links</strong> can be added, removed, and confirmed.</li>
+        <li><strong>Project start and planned end dates</strong> can be overridden manually.</li>
+      </ul>
+
+      <h3>Saving an overview</h3>
+      <p>
+        Saving makes the overview the official app version for that project. Portfolio uses saved
+        overviews as its source. If an overview is still a draft, portfolio will show it as a draft.
+      </p>
+
+      <h3>Regenerating a section</h3>
+      <p>
+        Regenerating asks the app to prepare a new suggestion for that section from current Jira data.
+        It is helpful when the project has changed, but the result should still be reviewed before saving.
+      </p>
+
+      <h3>Resetting an overview</h3>
+      <p>
+        Resetting replaces the existing overview with a fresh generated draft. This is useful when
+        the project has changed so much that small edits are not enough. Use it carefully because
+        generated content can replace earlier manual edits.
+      </p>
+    </section>
+
+    <section id="section-access">
+      <h2>Section access</h2>
+      <p>
+        Not every section needs to be visible to everyone. For example, onboarding sections can be
+        open to all project users, while radar or management sections may be restricted.
+      </p>
+
+      <figure>
+        <img src="assets/demo-project-section-access-1440-full.png" alt="Section access modal with options for everyone with project access or selected roles and users">
+        <figcaption>Managing access for one section of a project overview.</figcaption>
+      </figure>
+
+      <h3>Visibility modes</h3>
+      <ul>
+        <li><strong>Everyone with project access</strong> means anyone who can access the Jira project can view the section.</li>
+        <li><strong>Selected roles and users</strong> means only project administrators and explicitly granted roles or users can view it.</li>
+      </ul>
+
+      <h3>View and edit</h3>
+      <p>
+        <strong>View</strong> lets someone see the section. <strong>Edit</strong> lets someone change it.
+        Project administrators keep administrative access.
+      </p>
+
+      <h3>Recommended use</h3>
+      <p>
+        Keep general onboarding information broadly visible. Restrict sections that contain management
+        notes, sensitive risk signals, or information intended only for a smaller group.
+      </p>
+    </section>
+
+    <section id="project-refresh">
+      <h2>Checking and refreshing a project overview</h2>
+      <p>
+        Projects change over time. Jira issues move, new links appear, roles shift, and release dates change.
+        The app helps you keep the overview fresh without overwriting human-approved content too quickly.
+      </p>
+
+      <h3>Check freshness</h3>
+      <p>
+        <strong>Check freshness</strong> compares the saved overview with a fresh draft from current Jira data.
+        Instead of immediately replacing the saved overview, the app shows review signals for sections
+        that may need attention.
+      </p>
+      <p>Freshness signals can appear when:</p>
+      <ul>
+        <li>new issue types appear in recent activity,</li>
+        <li>the number of analyzed issues changes a lot,</li>
+        <li>a different person becomes the strongest activity-based owner suggestion,</li>
+        <li>new useful link candidates are found,</li>
+        <li>new workflow statuses appear,</li>
+        <li>a section has not been confirmed or updated for a long time.</li>
+      </ul>
+
+      <h3>Still accurate</h3>
+      <p>
+        If the app suggests a review but the section is still correct, click <strong>Still accurate</strong>.
+        This records that a human checked the section and clears the signal.
+      </p>
+
+      <h3>Project pulse refresh</h3>
+      <p>
+        Project pulse refresh updates the factual activity information, such as latest issue update,
+        open work, work in progress, completed work, and data period.
+      </p>
+
+      <h3>Project radar refresh</h3>
+      <p>
+        Project radar refresh reruns the radar signals and, if AI summaries are enabled, can generate
+        a new radar narrative. Radar refresh is useful before management reviews, release checkpoints,
+        or portfolio status meetings.
+      </p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio overview</h2>
+      <p>
+        Portfolio overview shows many projects in one place. It is designed for people who need to
+        see where attention is needed across a set of projects.
+      </p>
+
+      <figure>
+        <img src="assets/demo-portfolio-overview-1440-full.png" alt="Portfolio overview page with summary cards, filters, bulk actions, and project table">
+        <figcaption>The portfolio overview page.</figcaption>
+      </figure>
+
+      <h3>Top summary cards</h3>
+      <ul>
+        <li><strong>All projects</strong> counts every project visible in the portfolio dataset.</li>
+        <li><strong>Needs attention</strong> counts projects with radar risk signals.</li>
+        <li><strong>At risk</strong> counts projects with high-severity radar risks.</li>
+        <li><strong>Stale overviews</strong> counts overviews that should be reviewed or refreshed.</li>
+        <li><strong>Missing overviews</strong> counts projects without a generated overview.</li>
+        <li><strong>Unconfirmed owners</strong> counts projects where the owner is still a suggestion.</li>
+      </ul>
+
+      <h3>Project table</h3>
+      <p>Each project row shows:</p>
+      <ul>
+        <li>project name and key,</li>
+        <li>owner,</li>
+        <li>overview status,</li>
+        <li>risk and signal summary,</li>
+        <li>timeline,</li>
+        <li>last update,</li>
+        <li>available action: open, generate, refresh, or retry.</li>
+      </ul>
+
+      <h3>Filters</h3>
+      <p>
+        Filters help narrow the portfolio. You can focus on projects needing attention, high-risk projects,
+        projects with watch signals, stale overviews, missing overviews, unconfirmed owners, low coverage,
+        or generation issues.
+      </p>
+
+      <h3>Search</h3>
+      <p>
+        Search matches project name and project key. It does not search inside issue comments or documents.
+      </p>
+    </section>
+
+    <section id="report-generation">
+      <h2>Generating and refreshing reports from portfolio</h2>
+      <p>
+        Users with portfolio management permission can generate missing overviews and refresh existing
+        overviews from the portfolio page.
+      </p>
+
+      <figure>
+        <img src="assets/demo-portfolio-generate-confirmation-1440-full.png" alt="Confirmation modal for generating an overview for one project from portfolio">
+        <figcaption>Confirmation before generating a project overview from portfolio.</figcaption>
+      </figure>
+
+      <h3>Generate one missing overview</h3>
+      <ol>
+        <li>Find a project with status <strong>Missing overview</strong>.</li>
+        <li>Click <strong>Generate</strong>.</li>
+        <li>Review the confirmation message.</li>
+        <li>Click <strong>Generate overview</strong>.</li>
+        <li>Wait for the generation process to finish.</li>
+        <li>Open the generated overview and review it before treating it as official.</li>
+      </ol>
+
+      <h3>Refresh one existing overview</h3>
+      <p>
+        Use refresh when an overview exists but the project has changed. The app generates an updated
+        overview from the latest Jira data available to the generating user.
+      </p>
+
+      <h3>Bulk actions</h3>
+      <ul>
+        <li><strong>Generate missing overviews</strong> creates overviews for projects that do not have one.</li>
+        <li><strong>Refresh projects needing attention</strong> refreshes projects with attention signals.</li>
+        <li><strong>Refresh selected</strong> refreshes projects selected in the table.</li>
+        <li><strong>Generate selected missing</strong> creates overviews for selected projects that are missing one.</li>
+      </ul>
+
+      <h3>Generation progress</h3>
+      <p>
+        The app shows progress while generation runs. It reports how many issues were scanned and
+        which phase is running, such as metadata preparation, scanning, analysis, purpose generation,
+        radar narrative generation, or saving.
+      </p>
+    </section>
+
+    <section id="freshness-settings">
+      <h2>Freshness settings</h2>
+      <p>
+        The <strong>Overview management</strong> view is used to manage freshness rules, project overview
+        generation, and diagnostics.
+      </p>
+
+      <figure>
+        <img src="assets/demo-portfolio-management-1440-full.png" alt="Overview management page with projects, missing overviews, needs review, failed generation, and freshness rules">
+        <figcaption>The overview management view.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/demo-portfolio-refresh-settings-1440-full.png" alt="Freshness settings modal with preset, project mode, analysis window, live preview, and advanced thresholds">
+        <figcaption>Freshness settings for portfolio overviews.</figcaption>
+      </figure>
+
+      <h3>Freshness preset</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Preset</th>
+            <th>Meaning</th>
+            <th>Good for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Relaxed</td>
+            <td>Fewer review prompts</td>
+            <td>Stable portfolios with fewer changes</td>
+          </tr>
+          <tr>
+            <td>Balanced</td>
+            <td>Recommended default</td>
+            <td>Most teams</td>
+          </tr>
+          <tr>
+            <td>Strict</td>
+            <td>Earlier review prompts</td>
+            <td>Fast-changing or high-risk portfolios</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Project mode</h3>
+      <ul>
+        <li><strong>Auto</strong> marks projects that may need review based on the freshness rules.</li>
+        <li><strong>Manual only</strong> leaves refresh decisions to administrators.</li>
+        <li><strong>Keep fresh</strong> makes the app suggest reviews earlier.</li>
+      </ul>
+
+      <h3>Analysis window</h3>
+      <p>
+        The analysis window controls how far back Jira activity is analyzed. Common choices are
+        the last 3 months, 6 months, or 12 months. A longer window gives more history. A shorter
+        window focuses more on recent work.
+      </p>
+
+      <h3>Advanced thresholds</h3>
+      <p>
+        Advanced thresholds control when the app marks an overview as worth refreshing. The settings
+        are intentionally limited to sensible ranges:
+      </p>
+      <ul>
+        <li>active project maximum overview age: 7 to 180 days,</li>
+        <li>inactive project maximum overview age: 14 to 365 days,</li>
+        <li>meaningful changes for active projects: 1 to 50 changes,</li>
+        <li>meaningful changes for inactive projects: 1 to 100 changes,</li>
+        <li>changed work share: 1% to 100%.</li>
+      </ul>
+    </section>
+
+    <section id="calculations">
+      <h2>How the app calculates statuses and numbers</h2>
+      <p>
+        This section explains the app logic without technical jargon. One important rule: the project
+        status shown on the project page and the status shown in portfolio use the same shared business logic.
+      </p>
+
+      <h3>Project status</h3>
+      <p>
+        The app looks at Jira status categories: <strong>To Do</strong>, <strong>In Progress</strong>,
+        <strong>Done</strong>, and other statuses. It then chooses a plain-language phase.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>When it appears</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Not scanned yet</td>
+            <td>No overview data has been generated yet.</td>
+          </tr>
+          <tr>
+            <td>No work found</td>
+            <td>No Jira issues were found in the analyzed data.</td>
+          </tr>
+          <tr>
+            <td>Planning</td>
+            <td>There is To Do work, but no work in progress and no completed work.</td>
+          </tr>
+          <tr>
+            <td>Backlog</td>
+            <td>There is To Do work and Done work, but nothing currently In Progress.</td>
+          </tr>
+          <tr>
+            <td>Active</td>
+            <td>At least one issue is In Progress.</td>
+          </tr>
+          <tr>
+            <td>Paused</td>
+            <td>There is unfinished work, but no movement on unfinished work for about 6 months.</td>
+          </tr>
+          <tr>
+            <td>Done</td>
+            <td>All known work is done.</td>
+          </tr>
+          <tr>
+            <td>Needs classification</td>
+            <td>Jira statuses are unusual and the app cannot classify them confidently.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Business status</h3>
+      <p>
+        Business status is a simpler version of project status. Active, Planning, and Backlog are
+        treated as active. Paused is treated as paused. Done is treated as closed. No work found is
+        treated as archived. Unknown cases remain unknown.
+      </p>
+
+      <h3>Project start and planned end</h3>
+      <p>
+        Manual dates win. If a project administrator manually sets a start or planned end date,
+        the app uses that. If no manual date exists, the app uses Jira suggestions:
+      </p>
+      <ul>
+        <li>project start: the oldest known issue date,</li>
+        <li>planned end: the latest due date found in analyzed issues.</li>
+      </ul>
+
+      <h3>Timeline</h3>
+      <p>
+        Timeline shows how much time has passed between start and planned end. If one date is missing,
+        the app shows that dates are needed. If the current date is past the planned end, the timeline
+        shows that the project is past planned end.
+      </p>
+
+      <h3>Coverage score</h3>
+      <p>
+        Coverage is a simple completeness score. It checks four things, each worth 25%:
+      </p>
+      <ul>
+        <li>an overview exists,</li>
+        <li>the overview has a meaningful purpose,</li>
+        <li>the overview has an owner,</li>
+        <li>the overview has important links.</li>
+      </ul>
+
+      <h3>Needs attention and At risk</h3>
+      <p>
+        <strong>Needs attention</strong> counts projects with radar risk signals: high, attention,
+        or watch. <strong>At risk</strong> is narrower and counts only projects with high-severity risks.
+      </p>
+
+      <h3>Stale overviews</h3>
+      <p>An overview can be considered stale when:</p>
+      <ul>
+        <li>freshness checks suggest a section review,</li>
+        <li>the overview is older than the configured age threshold,</li>
+        <li>enough meaningful Jira changes were detected,</li>
+        <li>the changed work share reaches the configured percentage,</li>
+        <li>refresh was forced,</li>
+        <li>relevant freshness configuration changed.</li>
+      </ul>
+
+      <h3>Meaningful Jira changes</h3>
+      <p>
+        The app does not treat every small edit as a reason to refresh. It pays attention to changes
+        that often matter for management reporting, such as:
+      </p>
+      <ul>
+        <li>high, critical, highest, or blocker priority,</li>
+        <li>issue types such as bug, defect, incident, risk, or blocker,</li>
+        <li>statuses such as blocked, escalated, release, done, closed, or resolved,</li>
+        <li>labels related to risk, blockers, escalation, or blocked work.</li>
+      </ul>
+
+      <h3>Unconfirmed owners</h3>
+      <p>
+        A project is counted as having an unconfirmed owner when the app has a likely owner suggestion,
+        but nobody has confirmed it in the overview. This is deliberate: suggestions should not pretend
+        to be official responsibility.
+      </p>
+
+      <h3>Missing overview</h3>
+      <p>
+        A project is missing an overview when it exists in the portfolio project list but no overview
+        has been generated or saved for it yet.
+      </p>
+    </section>
+
+    <section id="ai">
+      <h2>AI, suggestions, and limits</h2>
+      <p>
+        The app can use Atlassian-hosted Forge LLMs to help write readable text, such as a project
+        purpose suggestion or a radar narrative. AI helps with wording. It does not replace project
+        ownership or human review.
+      </p>
+
+      <h3>What AI can help generate</h3>
+      <ul>
+        <li>an editable project purpose suggestion,</li>
+        <li>a project radar summary,</li>
+        <li>a short explanation of what to watch and what looks good.</li>
+      </ul>
+
+      <h3>What still works without AI</h3>
+      <p>
+        The core app still works without AI: project facts, status, portfolio tables, dates, links,
+        people suggestions, detector signals, and freshness checks remain available. If AI is disabled
+        or the monthly limit is reached, deterministic data is still shown.
+      </p>
+
+      <h3>Monthly limit</h3>
+      <p>
+        The monthly AI limit is shared by purpose suggestions and project radar summaries. When usage
+        gets close to the limit, the app can warn users before an AI action. When the limit is used up,
+        new AI-written summaries are hidden until the limit resets, but the rest of the overview remains usable.
+      </p>
+    </section>
+
+    <section id="data-privacy">
+      <h2>Data, privacy, and limitations</h2>
+      <h3>Where data comes from</h3>
+      <p>
+        The app reads Jira data it is allowed to access, such as projects, issues, statuses, users,
+        project roles, links, due dates, and recent activity.
+      </p>
+
+      <h3>Why two users may see different results</h3>
+      <p>
+        Jira permissions matter. If the user generating or refreshing an overview cannot see some
+        issues, comments, roles, or links, the app may not be able to include them. This is why the
+        app shows who last generated or saved an overview.
+      </p>
+
+      <h3>Where app data is stored</h3>
+      <p>
+        The app stores generated overviews, settings, and access policies in Forge app storage for
+        the Jira site. It does not need a separate external server for these overviews.
+      </p>
+
+      <h3>What the app does not do</h3>
+      <ul>
+        <li>It does not change Jira issue statuses.</li>
+        <li>It does not make project decisions.</li>
+        <li>It does not prove that a suggested owner is officially accountable.</li>
+        <li>It does not show data Jira does not allow it to access.</li>
+        <li>It should not be treated as a legal, compliance, or audit record by itself.</li>
+      </ul>
+
+      <h3>Why human review matters</h3>
+      <p>
+        The app organizes signals and context, but humans understand business intent. The best results
+        come from using generated overviews as a starting point and then confirming the important parts.
+      </p>
+    </section>
+
+    <section id="recommended-setup">
+      <h2>Recommended rollout setup</h2>
+      <ol>
+        <li>Install the app on a test or staging Jira site first, if your organization uses one.</li>
+        <li>Grant portfolio view access to the people who need cross-project context.</li>
+        <li>Grant portfolio management access only to a small group.</li>
+        <li>Pick a small set of active projects and generate their first overviews.</li>
+        <li>Ask project administrators to review purpose, owners, links, and radar signals.</li>
+        <li>Confirm or remove suggested people and links.</li>
+        <li>Set section access for sensitive sections such as radar or management notes.</li>
+        <li>Use the portfolio page to identify missing, stale, or high-risk overviews.</li>
+        <li>Adjust freshness settings only after seeing how noisy or quiet the default mode is for your organization.</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+
+      <h3>Does the app change Jira issues?</h3>
+      <p>
+        No. It reads Jira data and stores an app-specific overview. It does not move Jira issues
+        or change issue statuses.
+      </p>
+
+      <h3>Can we use the app without AI?</h3>
+      <p>
+        Yes. AI improves readable summaries, but the main overview, portfolio, status calculations,
+        dates, links, and detector signals still work without AI.
+      </p>
+
+      <h3>Why is a project marked Active?</h3>
+      <p>
+        Because at least one analyzed issue is in the Jira In Progress category.
+      </p>
+
+      <h3>Why is a project marked Paused?</h3>
+      <p>
+        Because unfinished work exists, but the app has not seen recent movement on unfinished work
+        for about 6 months.
+      </p>
+
+      <h3>Why does portfolio say there is no owner when someone leads the project?</h3>
+      <p>
+        Usually because the owner has not been confirmed in the overview, or the app did not have
+        enough visible Jira activity to suggest one. Open the project overview and confirm the owner.
+      </p>
+
+      <h3>Why does an overview need review?</h3>
+      <p>
+        The app may have found new activity, new useful links, a changed owner signal, workflow changes,
+        an old section, or enough meaningful Jira changes to pass the configured freshness rules.
+      </p>
+
+      <h3>Can we hide radar or pulse from most users?</h3>
+      <p>
+        Yes. A project administrator can restrict section visibility to selected project roles and users.
+      </p>
+
+      <h3>What should we do if generation fails?</h3>
+      <p>
+        Portfolio shows a failed generation state and a retry action. Check whether the generating user
+        has access to the project and whether Jira returned a temporary error. Then retry.
+      </p>
+
+      <h3>Why do dates sometimes look wrong?</h3>
+      <p>
+        If no manual dates were saved, the app uses Jira suggestions: oldest known issue for project start
+        and latest due date for planned end. A project administrator can override these dates manually.
+      </p>
+
+      <h3>How often should we refresh overviews?</h3>
+      <p>
+        Start with the Balanced preset. Refresh high-risk or fast-changing projects more often.
+        Stable projects can usually be checked less frequently.
+      </p>
+    </section>
+  </article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            <a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a>
+            <p>Project Overview &amp; Status Hub for Jira. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p>
+          </div>
+          <div class="footer-links">
+            <a href="../../index.html">Home</a>
+            <a href="../index.html">Apps</a>
+            <a href="index.html">Product</a>
+            <a href="docs.html">Docs</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security</a>
+            <a href="subprocessors.html">Subprocessors</a>
+            <a href="mailto:support.jira@mederak.pl">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

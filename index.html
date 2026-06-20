@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mederak Apps | Practical Jira Cloud apps</title>
-    <meta name="description" content="Mederak Apps builds focused Jira Cloud apps for controlled Excel backlog imports, repeat Jira issue updates and real logged-time rollups.">
+    <title>Mederak Apps | AI project status and Excel to Jira apps</title>
+    <meta name="description" content="Mederak Apps builds focused Jira Cloud apps for AI-assisted project status automation, portfolio overviews and controlled Excel backlog imports into Jira.">
     <link rel="canonical" href="https://mederak.pl/">
     <meta property="og:title" content="Mederak Apps">
-    <meta property="og:description" content="Focused Jira Cloud apps for controlled Excel backlog imports, repeat Jira updates and real logged-time rollups across issue hierarchies.">
+    <meta property="og:description" content="Focused Jira Cloud apps for AI-assisted project status automation, portfolio overviews and controlled Excel backlog imports into Jira.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mederak.pl/">
     <meta property="og:image" content="https://mederak.pl/assets/mederak-apps-logo.png">
@@ -28,10 +28,10 @@
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
           <div class="nav-links" id="main-menu">
             <a href="apps/">Apps</a>
+            <a href="apps/project-overview-status-hub-for-jira/">Project Overview</a>
             <a href="apps/excel-backlog-importer-for-jira/">Excel Backlog Importer</a>
             <a href="apps/worklog-rollup-for-jira/">Worlog Rollup</a>
-            <a href="apps/excel-backlog-importer-for-jira/security.html">Security</a>
-            <a href="apps/excel-backlog-importer-for-jira/support.html">Support</a>
+            <a href="mailto:support.jira@mederak.pl">Support</a>
             <a class="button primary" href="apps/">View apps</a>
           </div>
         </nav>
@@ -41,16 +41,32 @@
         <section class="vendor-hero">
           <div class="vendor-hero-copy">
             <span class="eyebrow">Mederak Apps for Jira Cloud</span>
-            <h1>Small Jira apps for work that should be easier</h1>
-            <p class="hero-copy">Mederak Apps builds focused Atlassian Marketplace apps for teams that need practical improvements inside Jira Cloud: controlled Excel backlog imports, repeat Jira updates and clearer logged-time totals.</p>
+            <h1>Jira Cloud apps for automated status work and cleaner backlog handovers</h1>
+            <p class="hero-copy">Mederak Apps builds focused Jira Cloud apps for teams that need practical improvements inside Jira: AI-assisted project overviews in early access, portfolio status signals and controlled Excel backlog imports.</p>
             <div class="hero-actions">
               <a class="button primary" href="apps/">Browse apps</a>
+              <a class="button" href="apps/project-overview-status-hub-for-jira/">Project Overview &amp; Status Hub</a>
               <a class="button" href="apps/excel-backlog-importer-for-jira/">Excel Backlog Importer</a>
-              <a class="button" href="apps/worklog-rollup-for-jira/">Worlog Rollup</a>
             </div>
           </div>
 
           <div class="vendor-showcase" aria-label="Mederak Apps products">
+            <a class="vendor-product-card vendor-product-card-status" href="apps/project-overview-status-hub-for-jira/">
+              <div class="vendor-product-copy">
+                <div class="vendor-product-title">
+                  <img src="apps/project-overview-status-hub-for-jira/assets/app-icon.png" alt="">
+                  <div>
+                    <span>AI project status · Early access</span>
+                    <h2>Project Overview &amp; Status Hub</h2>
+                  </div>
+                </div>
+                <p>Turn Jira activity into AI-assisted project overviews, portfolio status signals, risk radar and freshness checks for PMO, delivery and project teams.</p>
+              </div>
+              <div class="vendor-product-visual">
+                <img src="apps/project-overview-status-hub-for-jira/assets/hero.png" width="1793" height="877" fetchpriority="high" decoding="async" alt="Project Overview and Status Hub portfolio status dashboard">
+              </div>
+            </a>
+
             <a class="vendor-product-card vendor-product-card-importer" href="apps/excel-backlog-importer-for-jira/">
               <div class="vendor-product-copy">
                 <div class="vendor-product-title">
@@ -63,23 +79,18 @@
                 <p>Turn recurring Excel backlog handovers into reviewed Jira issues and updates with reusable setup, Description Builder, Value cleanup, validation and reports.</p>
               </div>
               <div class="vendor-product-visual">
-                <img src="assets/home-excel-backlog-importer.jpg" width="900" height="506" fetchpriority="high" decoding="async" alt="Excel Backlog Importer worksheet selection screen">
+                <img src="assets/home-excel-backlog-importer.jpg" width="900" height="506" loading="lazy" decoding="async" alt="Excel Backlog Importer worksheet selection screen">
               </div>
             </a>
+          </div>
 
-            <a class="vendor-product-card vendor-product-card-rollup" href="apps/worklog-rollup-for-jira/">
+          <div class="vendor-secondary-apps" aria-label="Additional Mederak Apps products">
+            <a class="vendor-secondary-card" href="apps/worklog-rollup-for-jira/">
+              <img src="apps/worklog-rollup-for-jira/assets/icon.png" alt="">
               <div class="vendor-product-copy">
-                <div class="vendor-product-title">
-                  <img src="apps/worklog-rollup-for-jira/assets/icon.png" alt="">
-                  <div>
-                    <span>Time rollups</span>
-                    <h2>Worlog Rollup</h2>
-                  </div>
-                </div>
+                <span>Additional Jira utility</span>
+                <h2>Worlog Rollup</h2>
                 <p>See real logged time for an Epic, Story or parent issue, including deeply nested child issues.</p>
-              </div>
-              <div class="vendor-product-visual">
-                <img src="assets/home-worlog-rollup.jpg" width="752" height="592" loading="lazy" decoding="async" alt="Worlog Rollup issue panel with total logged time">
               </div>
             </a>
           </div>
@@ -94,14 +105,14 @@
 
         <section class="section">
           <div class="section-heading">
-            <h2>Two focused products, one vendor context.</h2>
-            <p>Use the app catalogue to reach product landing pages, documentation, security practices, privacy policies, terms and support contacts.</p>
+            <h2>Focused products for concrete Jira workflows.</h2>
+            <p>Use the app catalogue to review product pages, documentation, security practices, privacy policies, terms and support contacts.</p>
           </div>
           <div class="showcase-grid">
-            <article class="showcase-card"><div class="icon-tile">01</div><b>Marketplace-facing pages</b><p>Each product page links to install, pricing, documentation and support.</p></article>
+            <article class="showcase-card"><div class="icon-tile">01</div><b>Status automation</b><p>Project Overview &amp; Status Hub helps turn Jira activity into reviewed project and portfolio context.</p></article>
             <article class="showcase-card"><div class="icon-tile">02</div><b>Clear support path</b><p>Support is handled through <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p></article>
             <article class="showcase-card"><div class="icon-tile">03</div><b>Security documentation</b><p>Product security pages describe Forge architecture and data handling.</p></article>
-            <article class="showcase-card"><div class="icon-tile">04</div><b>Practical scope</b><p>The apps are intentionally narrow and designed around specific Jira team problems.</p></article>
+            <article class="showcase-card"><div class="icon-tile">04</div><b>Backlog handovers</b><p>Excel Backlog Importer helps turn recurring Excel files into reviewed Jira issues and updates.</p></article>
           </div>
         </section>
 
@@ -109,7 +120,7 @@
           <div class="cta-box">
             <div>
               <h2>Review the app catalogue.</h2>
-              <p>Compare the available Jira Cloud apps and continue to the product page that matches your team's use case.</p>
+              <p>Start with Project Overview &amp; Status Hub for Jira status automation or Excel Backlog Importer for controlled Excel to Jira handovers.</p>
             </div>
             <a class="button" href="apps/">Open apps</a>
           </div>
@@ -124,10 +135,10 @@
           </div>
           <div class="footer-links">
             <a href="apps/">Apps</a>
+            <a href="apps/project-overview-status-hub-for-jira/">Project Overview &amp; Status Hub</a>
             <a href="apps/excel-backlog-importer-for-jira/">Excel Backlog Importer</a>
             <a href="apps/worklog-rollup-for-jira/">Worlog Rollup</a>
-            <a href="apps/excel-backlog-importer-for-jira/security.html">Security</a>
-            <a href="apps/excel-backlog-importer-for-jira/support.html">Support</a>
+            <a href="mailto:support.jira@mederak.pl">Support</a>
           </div>
         </div>
       </footer>
