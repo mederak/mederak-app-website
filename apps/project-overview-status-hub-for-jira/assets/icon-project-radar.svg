@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" role="img" aria-labelledby="title">
+  <title id="title">Project radar</title>
+  <rect x="8" y="8" width="72" height="72" rx="20" fill="#EEF5FF"/>
+  <circle cx="44" cy="44" r="27" fill="#fff" stroke="#BBD6FF" stroke-width="3"/>
+  <circle cx="44" cy="44" r="17" fill="none" stroke="#D7E7FF" stroke-width="3"/>
+  <circle cx="44" cy="44" r="7" fill="none" stroke="#D7E7FF" stroke-width="3"/>
+  <path d="M44 44l18-12" fill="none" stroke="#0C66E4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M44 17v8M44 63v8M17 44h8M63 44h8" fill="none" stroke="#22A06B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="62" cy="32" r="5" fill="#0C66E4"/>
+  <circle cx="31" cy="55" r="4" fill="#22A06B"/>
+</svg>

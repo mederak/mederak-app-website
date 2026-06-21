@@ -958,6 +958,17 @@ a {
   font-weight: 900;
 }
 
+.status-feature-icon {
+  display: block;
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.status-hub-page .showcase-card b {
+  margin-top: 18px;
+}
+
 .workflow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

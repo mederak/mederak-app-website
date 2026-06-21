@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" role="img" aria-labelledby="title">
+  <title id="title">AI automation</title>
+  <defs>
+    <linearGradient id="g" x1="16" y1="14" x2="72" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C66E4"/>
+      <stop offset="1" stop-color="#22A06B"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="72" height="72" rx="20" fill="#EEF5FF"/>
+  <path d="M27 34c0-3.9 3.1-7 7-7h20c3.9 0 7 3.1 7 7v20c0 3.9-3.1 7-7 7H34c-3.9 0-7-3.1-7-7V34Z" fill="#fff" stroke="#BBD6FF" stroke-width="3"/>
+  <path d="M37 53l3-18h8l3 18M39 46h10" fill="none" stroke="#0C66E4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 24l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5ZM27 20l1.5 3.8 3.8 1.5-3.8 1.5L27 30.5l-1.5-3.7-3.8-1.5 3.8-1.5L27 20Z" fill="url(#g)"/>
+</svg>

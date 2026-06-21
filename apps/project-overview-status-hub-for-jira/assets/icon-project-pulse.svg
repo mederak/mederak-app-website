@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" role="img" aria-labelledby="title">
+  <title id="title">Project pulse</title>
+  <rect x="8" y="8" width="72" height="72" rx="20" fill="#EEF5FF"/>
+  <rect x="22" y="24" width="44" height="40" rx="12" fill="#fff" stroke="#BBD6FF" stroke-width="3"/>
+  <path d="M28 47h8l5-13 7 23 5-10h7" fill="none" stroke="#0C66E4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 34h12M30 59h8M50 34h8" fill="none" stroke="#22A06B" stroke-width="4" stroke-linecap="round"/>
+</svg>
