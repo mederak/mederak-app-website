@@ -969,6 +969,10 @@ a {
   margin-top: 18px;
 }
 
+.status-wide-media {
+  margin-top: 28px;
+}
+
 .workflow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
