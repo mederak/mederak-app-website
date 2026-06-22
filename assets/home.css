@@ -538,6 +538,113 @@ a {
   font-weight: 700;
 }
 
+.error-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 76px 22px 84px;
+}
+
+.error-main-compact {
+  min-height: calc(100vh - 280px);
+  display: grid;
+  align-items: center;
+}
+
+.error-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(12, 102, 228, 0.16);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(247, 251, 255, 0.96));
+  padding: 56px;
+  box-shadow: 0 24px 70px rgba(16, 32, 51, 0.10);
+}
+
+.error-code {
+  position: absolute;
+  right: 32px;
+  top: 18px;
+  color: rgba(12, 102, 228, 0.08);
+  font-family: "Nunito", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(120px, 20vw, 260px);
+  font-weight: 900;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.error-hero h1 {
+  position: relative;
+  max-width: 760px;
+  margin: 22px 0 18px;
+  font-family: "Nunito", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.error-hero .eyebrow,
+.error-hero .hero-copy,
+.error-hero .hero-actions {
+  position: relative;
+}
+
+.error-hero .hero-copy {
+  margin: 0;
+}
+
+.error-hero .hero-actions {
+  justify-content: flex-start;
+}
+
+.error-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.error-route-card {
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(12, 102, 228, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 22px;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 14px 36px rgba(16, 32, 51, 0.07);
+}
+
+.error-route-card:hover {
+  border-color: rgba(12, 102, 228, 0.34);
+  transform: translateY(-1px);
+}
+
+.error-route-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(12, 102, 228, 0.16);
+}
+
+.error-route-card span {
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.error-route-card strong {
+  font-size: 21px;
+  line-height: 1.18;
+}
+
+.error-route-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 @media (max-width: 920px) {
   .nav {
     position: relative;
@@ -613,6 +720,7 @@ a {
   }
 
   .vendor-showcase,
+  .error-route-grid,
   .showcase-grid {
     grid-template-columns: 1fr;
   }
@@ -680,6 +788,20 @@ a {
   .footer-inner {
     grid-template-columns: 1fr;
   }
+
+  .error-main {
+    padding: 44px 16px 58px;
+  }
+
+  .error-hero {
+    padding: 34px;
+    border-radius: 24px;
+  }
+
+  .error-code {
+    right: 18px;
+    top: 18px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -730,8 +852,13 @@ a {
   }
 
   .section,
+  .error-main,
   .cta {
     padding-left: 12px;
     padding-right: 12px;
+  }
+
+  .error-hero {
+    padding: 28px 20px;
   }
 }
