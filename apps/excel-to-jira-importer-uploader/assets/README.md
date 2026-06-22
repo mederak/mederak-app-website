@@ -2,7 +2,7 @@
 
 The product landing page references the real app screenshots below. Keep these filenames stable unless the HTML and `ASSETS_TODO.md` are updated together.
 
-Current images are cropped from `D:\work\mederak-products\products\excel-backlog-importer-for-jira\tests\screens`.
+Current images are cropped from `D:\work\mederak-products\products\excel-to-jira-importer-uploader\tests\screens`.
 
 ## Real flow screenshots
 
@@ -22,7 +22,7 @@ Current images are cropped from `D:\work\mederak-products\products\excel-backlog
 | File name | Size | Purpose |
 | --- | --- | --- |
 | `screen-hero.png` | 1600 x 1060 or 1600 x 1000 px | Dedicated hero graphic when available. |
-| `og-excel-backlog-importer.png` | 1200 x 630 px | Social sharing image. |
+| `og-excel-to-jira-importer-uploader.png` | 1200 x 630 px | Social sharing image. |
 
 The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
 

@@ -128,7 +128,7 @@ Mention that users should contact from a company email address.
 
 
 
-For Excel Backlog Importer for Jira, the website may describe:
+For Excel to Jira Importer & Uploader, the website may describe:
 
 \- Excel `.xlsx` import.
 

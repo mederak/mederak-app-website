@@ -2,10 +2,10 @@
 
 The landing page now uses the real app screenshots generated from:
 
-`D:\work\mederak-products\products\excel-backlog-importer-for-jira\tests\screens`
+`D:\work\mederak-products\products\excel-to-jira-importer-uploader\tests\screens`
 
 The imported flow screenshots are cropped to a horizontal `1680 x 945` frame and are referenced directly from
-`apps/excel-backlog-importer-for-jira/assets/`. Do not swap them for portrait mobile-only crops on responsive layouts.
+`apps/excel-to-jira-importer-uploader/assets/`. Do not swap them for portrait mobile-only crops on responsive layouts.
 
 ## Current real flow screenshots
 
@@ -25,7 +25,7 @@ The imported flow screenshots are cropped to a horizontal `1680 x 945` frame and
 | File | Recommended size | Purpose |
 | --- | --- | --- |
 | `screen-hero.png` | 1680 x 945 | Dedicated hero graphic when available. Keep it visually close to the real app UI. |
-| `og-excel-backlog-importer.png` | 1200 x 630 | Open Graph and social sharing image. |
+| `og-excel-to-jira-importer-uploader.png` | 1200 x 630 | Open Graph and social sharing image. |
 
 The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
 

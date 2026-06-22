@@ -1,10 +1,10 @@
-# Excel Backlog Importer for Jira - marketing refresh notes
+# Excel to Jira Importer & Uploader - marketing refresh notes
 
 Last reviewed: 2026-05-22
 
 ## Current product story
 
-Excel Backlog Importer for Jira should be positioned as a controlled workflow for recurring Excel-to-Jira handovers, not only as a basic file importer.
+Excel to Jira Importer & Uploader should be positioned as a controlled workflow for recurring Excel-to-Jira handovers, not only as a basic file importer.
 
 The strongest story is:
 
@@ -80,7 +80,7 @@ The product helps project managers, business analysts, Scrum Masters, delivery t
 
 ### App catalogue
 
-- Rewrite the Excel Backlog Importer card to include `.xlsx` and `.xls`, reusable setup, Description Builder, transformations, duplicate handling, update mode and reports.
+- Rewrite the Excel to Jira Importer & Uploader card to include `.xlsx` and `.xls`, reusable setup, Description Builder, transformations, duplicate handling, update mode and reports.
 
 ### Product landing page
 

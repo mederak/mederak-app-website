@@ -1,6 +1,6 @@
-# Excel Backlog Importer Marketing Site
+# Excel to Jira Importer & Uploader Marketing Site
 
-Static marketing and Marketplace support website for **Excel Backlog Importer for Jira**.
+Static marketing and Marketplace support website for **Excel to Jira Importer & Uploader**.
 
 ## Contents
 

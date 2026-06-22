@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mederak.pl/apps/excel-to-jira-importer-uploader/sitemap.xml

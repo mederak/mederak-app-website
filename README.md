@@ -12,7 +12,7 @@ Public website for Mederak Apps.
 
 \- `/apps/` — app catalogue
 
-\- `/apps/excel-backlog-importer-for-jira/` — product page
+\- `/apps/excel-to-jira-importer-uploader/` — product page
 
 \- `/apps/{app}/docs.html` — app documentation
 

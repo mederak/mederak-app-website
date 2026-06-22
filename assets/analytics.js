@@ -4,7 +4,7 @@
   var config = window.MEDERAK_ANALYTICS_CONFIG || {};
   var storageKey = config.consentStorageKey || "mederak_google_consent_v1";
   var tagIds = normalizeTagIds(config.googleTagIds || [config.googleTagId, config.googleAdsId]);
-  var privacyUrl = config.privacyUrl || "/apps/excel-backlog-importer-for-jira/privacy.html";
+  var privacyUrl = config.privacyUrl || "/apps/excel-to-jira-importer-uploader/privacy.html";
   var destinations = config.eventDestinations || {};
 
   window.dataLayer = window.dataLayer || [];
