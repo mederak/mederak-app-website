@@ -19,6 +19,7 @@ $ExcludedDirectories = @(".git")
 $ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", "MARKETING_REFRESH_NOTES.md")
 $ExcludedPathPrefixes = @("scripts/")
 $ExcludedExtensions = @(".md")
+$EnsuredRemoteDirectories = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 
 Add-Type -Language CSharp -TypeDefinition @"
 using System;
@@ -255,6 +256,10 @@ function Ensure-FtpDirectory {
     $current = ""
     foreach ($part in $parts) {
         $current = "$current/$part"
+        if ($EnsuredRemoteDirectories.Contains($current)) {
+            continue
+        }
+
         if ($DryRun) {
             if (-not (Test-FtpDirectory -RemotePath $current -Credential $Credential)) {
                 Write-Host "DRY create directory $current"
@@ -271,6 +276,8 @@ function Ensure-FtpDirectory {
                 }
             }
         }
+
+        [void]$EnsuredRemoteDirectories.Add($current)
     }
 }
 
