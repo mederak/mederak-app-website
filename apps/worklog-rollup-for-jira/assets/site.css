@@ -2876,7 +2876,7 @@ a {
   }
 
   .compare-table td:nth-child(3)::before {
-    content: "Excel to Jira Importer & Uploader";
+    content: "Excel to Jira Importer & Updater";
     display: block;
     margin-bottom: 8px;
     color: #164b35;

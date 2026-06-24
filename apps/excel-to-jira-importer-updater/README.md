@@ -1,6 +1,6 @@
-# Excel to Jira Importer & Uploader Marketing Site
+# Excel to Jira Importer & Updater Marketing Site
 
-Static marketing and Marketplace support website for **Excel to Jira Importer & Uploader**.
+Static marketing and Marketplace support website for **Excel to Jira Importer & Updater**.
 
 ## Contents
 
