@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy Policy | Project Overview &amp; Status Hub for Jira</title>
-    <meta name="description" content="Privacy policy for Project Overview & Status Hub for Jira.">
+    <meta name="description" content="Privacy policy for Project Overview & Status Hub for Jira, including Jira data access, Forge storage, AI-assisted features, analytics, retention and privacy requests.">
     <link rel="canonical" href="https://mederak.pl/apps/project-overview-status-hub-for-jira/privacy.html">
     <link rel="icon" href="assets/app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,44 +17,66 @@
   <body class="status-hub-page">
     <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Project Overview &amp; Status Hub</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="mailto:support.jira@mederak.pl?subject=Project%20Overview%20%26%20Status%20Hub%20early%20access">Early access</a></div></nav></header>
     <main class="content-page">
-      <span class="eyebrow">Last updated: June 20, 2026</span>
+      <span class="eyebrow">Last updated: June 25, 2026</span>
       <h1>Privacy Policy</h1>
-      <p class="lead">This Privacy Policy explains how Project Overview &amp; Status Hub for Jira handles data when used with Jira Cloud.</p>
+      <p class="lead">This Privacy Policy explains how Project Overview &amp; Status Hub for Jira handles data when it is installed on a Jira Cloud site.</p>
 
-      <h2>Who we are</h2>
-      <p>Project Overview &amp; Status Hub for Jira is provided by Piotr Mederak, ul. Magnolii 1K/2, 05-500 Nowa Wola, Poland. For privacy or support requests, contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
+      <div class="legal-grid">
+        <div class="legal-card"><b>Primary runtime</b><p>Jira Cloud and Atlassian Forge. Project overview content is stored in Forge app storage for the customer's Jira site.</p></div>
+        <div class="legal-card"><b>No separate overview database</b><p>The app is designed without a vendor-hosted database for generated project overviews, portfolio snapshots or saved app settings.</p></div>
+        <div class="legal-card"><b>Permission-aware access</b><p>The app works with Jira authentication, Jira permissions, app permissions and section-level access rules.</p></div>
+        <div class="legal-card"><b>Privacy contact</b><p><a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div>
+      </div>
 
-      <h2>Plain English summary</h2>
-      <p>The app reads Jira project information that Jira allows it to access, turns that information into project overviews and portfolio views, and stores app-specific overviews and settings in Atlassian Forge app storage for the customer's Jira site.</p>
-      <p>The app does not use a separate vendor-hosted database for project overviews. It does not change Jira issue statuses. It does not read data that Jira permissions do not allow it to read.</p>
+      <h2>Who provides the app</h2>
+      <p>Project Overview &amp; Status Hub for Jira is provided by Piotr Mederak, ul. Magnolii 1K/2, 05-500 Nowa Wola, Poland. Privacy, security and support questions can be sent to <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
 
-      <h2>Data the app may access from Jira</h2>
+      <h2>Scope of this policy</h2>
+      <p>This policy covers the app experience inside Jira Cloud and the related public product pages operated by Mederak Apps. It does not replace Atlassian's privacy documentation for Jira Cloud, Atlassian Marketplace, Atlassian accounts or Atlassian Forge infrastructure.</p>
+      <p>Customers decide which Jira projects, users and groups can use the app through their Atlassian site administration, Jira permissions and app access configuration. If a privacy request concerns Jira content controlled by a customer organization, we may need to coordinate with that organization's Jira administrator.</p>
+
+      <h2>How the app uses Jira data</h2>
+      <p>The app reads Jira data that the installed app and the current user are allowed to access. It uses that data to generate and maintain project overviews, project pulse information, project radar signals, ownership suggestions, important links, freshness indicators and portfolio views.</p>
+      <p>The app does not move Jira issues, change Jira issue statuses or make project decisions. Generated summaries and AI-assisted text are intended to be reviewed by authorized users before they are treated as official project context.</p>
+
+      <h2>Jira data the app may access</h2>
       <ul>
-        <li>Jira project identifiers, project keys, project names, project types and project leads.</li>
-        <li>Jira issue identifiers, issue keys, summaries, issue types, statuses, status categories, dates, due dates, links and recent activity.</li>
-        <li>Jira user display names and Atlassian account identifiers when needed for ownership, project roles, assignees, reporters, commenters or last-updated-by information.</li>
-        <li>Project roles, project permissions and app-specific global permissions used to control access.</li>
-        <li>Links discovered from Jira activity, such as documentation, dashboards, repositories, team channels, environments or support links.</li>
+        <li>Project metadata, including project identifiers, project keys, names, types, leads and category information.</li>
+        <li>Issue metadata and selected issue content needed for overview generation, such as issue keys, summaries, issue types, statuses, status categories, dates, due dates, links and recent activity.</li>
+        <li>User information needed for ownership and context, such as display names and Atlassian account identifiers for project leads, roles, assignees, reporters, commenters or last-updated-by information.</li>
+        <li>Project roles, project permissions and app-specific global permissions used to decide who can view, generate, refresh or manage overviews.</li>
+        <li>Links discovered from Jira activity or saved by users, such as documentation, dashboards, repositories, team channels, environments or support links.</li>
       </ul>
 
-      <h2>Data stored by the app</h2>
-      <p>The app may store saved project overviews, generated summaries, suggested people and links, radar signals, portfolio snapshots, refresh state, settings, section access rules, AI usage counters and temporary generation job records in Forge app storage.</p>
+      <h2>App records stored in Forge</h2>
+      <p>The app may store generated and edited project overviews, suggested people and links, project pulse data, project radar signals, portfolio snapshots, freshness state, access rules, settings, AI usage counters and temporary generation job records in Atlassian Forge app storage for the customer's Jira site.</p>
+      <p>These records support product functionality, including opening saved project overviews, showing portfolio status, applying access rules, refreshing stale overviews and respecting configured usage limits.</p>
 
       <h2>AI-assisted features</h2>
-      <p>The app may use Atlassian-hosted Forge LLM capabilities to help write readable project purpose suggestions and radar narratives. AI output is shown as a suggestion or summary and should be reviewed by users before it is treated as official project context.</p>
+      <p>The app may use Atlassian-hosted Forge LLM capabilities to help write editable project purpose suggestions and readable radar narratives. The app does not call a vendor-hosted AI provider for these app features.</p>
+      <p>AI output can be incomplete or inaccurate. The app presents AI-assisted text as a draft, suggestion or summary that should be reviewed by users before it is saved, shared or relied on.</p>
 
       <h2>Product analytics</h2>
-      <p>The app may send sanitized product analytics events to Google Analytics when analytics is configured. Analytics payloads are designed not to include Jira issue text, issue keys, project names, user display names, email addresses, comments, links or saved overview text.</p>
-      <p>This marketing website may also use Google Analytics and Google Ads measurement through the Google tag. Website analytics does not give Mederak Apps access to customer Jira content or app data inside Jira Cloud.</p>
+      <p>When analytics is configured for the production environment, the app may send sanitized product analytics events to Google Analytics. Analytics events are intended to measure product usage patterns, reliability and feature adoption.</p>
+      <p>Analytics payloads are designed not to include Jira issue text, issue keys, project names, user display names, email addresses, comments, customer links or saved overview text. Product analytics is separate from the generated project overview content stored in Forge.</p>
 
-      <h2>Data retention</h2>
-      <p>App records are retained while needed to provide product functionality, show saved overviews, support portfolio views and keep refresh settings available. Records may be overwritten by normal app use, removed by uninstalling the app according to Atlassian platform behavior, or deleted after a support request where technically feasible.</p>
+      <h2>Website analytics</h2>
+      <p>This public marketing website may use Google Analytics and Google Ads measurement through the Google tag. Website analytics helps understand visits to public product, documentation, privacy, security and support pages. It does not give Mederak Apps access to customer Jira content or app data inside Jira Cloud.</p>
+
+      <h2>Retention and deletion</h2>
+      <p>App records are retained while they are needed to provide product functionality, show saved overviews, support portfolio views, keep refresh settings available and troubleshoot customer support requests.</p>
+      <p>Records may be overwritten by normal app use, removed when the app is uninstalled according to Atlassian platform behavior, or deleted after a support request where technically feasible. Because app records are associated with a customer's Atlassian site, some requests may need confirmation or coordination from the customer's Jira administrator.</p>
 
       <h2>Sharing and subprocessors</h2>
-      <p>We do not sell personal data. The app relies on Atlassian to host and operate Jira Cloud, Forge app hosting and Forge app storage. If product analytics is configured, the app may use Google Analytics for sanitized product telemetry. See <a href="subprocessors.html">Subprocessors</a> for details.</p>
+      <p>We do not sell personal data. The app relies on Atlassian to provide Jira Cloud, Forge app hosting, Forge app storage, Forge permissions, Marketplace installation and related platform services. If analytics is configured, Google Analytics may process sanitized telemetry and website measurement data.</p>
+      <p>See the <a href="subprocessors.html">Subprocessors</a> page for the current subprocessor summary.</p>
 
-      <h2>Your rights and requests</h2>
-      <p>For access, correction, deletion or privacy questions, contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>. We may need to work with the customer's Jira administrator because app records are associated with the customer's Atlassian site.</p>
+      <h2>Security</h2>
+      <p>The app is designed around Atlassian Forge hosting, Jira authentication, permission-aware access and data minimization. More details are available on the <a href="security.html">Security Practices</a> and <a href="data-processing.html">Data Processing Summary</a> pages.</p>
+
+      <h2>Privacy rights and requests</h2>
+      <p>Depending on applicable law and context, users may have rights to request access, correction, deletion or information about personal data. For privacy questions or requests, contact <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a>.</p>
+      <p>Please include enough context to identify the relevant Atlassian site and app records, but do not send passwords, API tokens, confidential Jira exports or unnecessary customer data in the request.</p>
     </main>
     <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="mailto:support.jira@mederak.pl">support.jira@mederak.pl</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="subprocessors.html">Subprocessors</a><a href="support.html">Support</a></div></div></footer>
     <script src="../../assets/site.js"></script>

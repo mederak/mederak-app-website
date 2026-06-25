@@ -1,2 +1,3 @@
 .deploy-secrets.json
 *.local
+.DS_Store
