@@ -16,7 +16,7 @@ $CredentialTarget = "mederak.pl FTP"
 $DeploySecretsPath = Join-Path $ProjectRoot ".deploy-secrets.json"
 
 $ExcludedDirectories = @(".git")
-$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", "MARKETING_REFRESH_NOTES.md")
+$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", ".DS_Store", "MARKETING_REFRESH_NOTES.md")
 $ExcludedPathPrefixes = @("scripts/")
 $ExcludedExtensions = @(".md")
 $EnsuredRemoteDirectories = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
