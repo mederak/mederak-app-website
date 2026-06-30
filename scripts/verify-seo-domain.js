@@ -133,6 +133,19 @@ for (const sitemapFile of sitemapFiles) {
   }
 }
 
+const publicContentFiles = walk(root).filter((file) => {
+  const filePath = relative(file);
+  if (filePath.startsWith("scripts/")) return false;
+  if (filePath.startsWith(".git/")) return false;
+  return /\.(?:html|xml|txt|js|json|css)$/i.test(filePath);
+});
+
+for (const publicContentFile of publicContentFiles) {
+  const file = relative(publicContentFile);
+  const content = fs.readFileSync(publicContentFile, "utf8");
+  assert(!oldDomainPattern.test(content), `${file} contains mederak.pl in public generated content`);
+}
+
 assert(
   read("robots.txt").includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`),
   "robots.txt must point to https://mederak.app/sitemap.xml"

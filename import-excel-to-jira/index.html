@@ -125,12 +125,17 @@
       </ul>
 
       <h2>Example: simple import workbook</h2>
-      <p>A simple workbook usually has one row per Jira issue and enough columns to populate the fields your team uses every day.</p>
+      <p>A simple workbook usually has one row per Jira issue and enough columns to populate the fields your team uses every day. The example below shows how typical Excel columns can be mapped before creation.</p>
       <table class="sample-table">
-        <thead><tr><th>Summary</th><th>Description</th><th>Issue Type</th><th>Priority</th><th>Assignee</th><th>Due date</th><th>Component</th></tr></thead>
+        <thead><tr><th>Excel column</th><th>Jira mapping</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>Add onboarding checklist</td><td>Create the first version of the customer onboarding checklist.</td><td>Task</td><td>Medium</td><td>alex@example.com</td><td>2026-07-10</td><td>Customer Portal</td></tr>
-          <tr><td>Validate billing address rules</td><td>Confirm required fields and error messages for EU customers.</td><td>Story</td><td>High</td><td>maria@example.com</td><td>2026-07-17</td><td>Billing</td></tr>
+          <tr><td>Summary</td><td>Summary</td><td>Required in most Jira projects; keep it short and issue-like.</td></tr>
+          <tr><td>Description</td><td>Description</td><td>Use for the main body, or combine with other columns in Description Builder.</td></tr>
+          <tr><td>Issue Type</td><td>Issue Type</td><td>Values should match the issue types available in the target project.</td></tr>
+          <tr><td>Priority</td><td>Priority</td><td>Normalize values before import when the spreadsheet uses labels such as P1 or Urgent.</td></tr>
+          <tr><td>Assignee</td><td>Assignee</td><td>Use valid Jira users or leave unmapped when ownership is not ready.</td></tr>
+          <tr><td>Due date</td><td>Due date</td><td>Use an unambiguous date format before validation.</td></tr>
+          <tr><td>Component</td><td>Components</td><td>Useful when backlog rows already identify product areas or teams.</td></tr>
         </tbody>
       </table>
 
@@ -168,11 +173,12 @@
       <p>Hierarchy imports need careful preparation because parent-child relationships depend on the Jira issue type hierarchy, field screens, permissions and project configuration. Conceptually, the workbook needs a way to say which rows belong together and which rows should become parent or child issues.</p>
       <p>Safe hierarchy examples include columns such as Epic Name, Story Summary, Sub-task Summary, Parent Key, Parent Row, Level or another stable parent reference. Those names are examples, not required column names. The important part is that the workbook structure can be mapped and validated before Jira issues are created.</p>
       <table class="sample-table">
-        <thead><tr><th>Epic</th><th>Story</th><th>Sub-task</th><th>Parent reference</th></tr></thead>
+        <thead><tr><th>Excel column</th><th>Jira mapping</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>Customer onboarding</td><td>Create onboarding checklist</td><td>Draft checklist copy</td><td>Story row 2</td></tr>
-          <tr><td>Customer onboarding</td><td>Create onboarding checklist</td><td>Review with support team</td><td>Story row 2</td></tr>
-          <tr><td>Billing improvements</td><td>Validate billing address rules</td><td>Confirm EU validation cases</td><td>Story row 5</td></tr>
+          <tr><td>Epic</td><td>Parent or hierarchy level</td><td>Can identify the higher-level work item when the Jira project supports that structure.</td></tr>
+          <tr><td>Story</td><td>Summary or hierarchy level</td><td>Often becomes the issue summary for story-level rows.</td></tr>
+          <tr><td>Sub-task</td><td>Summary for child issue</td><td>Use only when subtasks are enabled and valid under the selected parent issue type.</td></tr>
+          <tr><td>Parent reference</td><td>Parent relationship</td><td>May be a parent row, parent key, level value or another consistent reference.</td></tr>
         </tbody>
       </table>
       <p>For deeper detail, read the supporting guide to <a href="../apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html">import epics, stories and subtasks from Excel</a>.</p>
@@ -181,10 +187,14 @@
       <p>Repeat uploads are different from one-time imports. Teams often need bulk priority updates, due date updates, ownership cleanup, description refinement, status or context cleanup, fixes after an initial import, or synchronization from a spreadsheet handover that remains active during review.</p>
       <p>To update Jira issues from Excel, the import setup needs a stable way to match workbook rows to existing Jira issues, such as a Jira issue key or another supported row identity. Without that identity, repeated uploads can accidentally create duplicates instead of updating the intended issues.</p>
       <table class="sample-table">
-        <thead><tr><th>Issue key</th><th>Summary</th><th>Priority</th><th>Assignee</th><th>Due date</th><th>Comment/Notes</th></tr></thead>
+        <thead><tr><th>Excel column</th><th>Jira mapping</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>PROJ-124</td><td>Add onboarding checklist</td><td>High</td><td>alex@example.com</td><td>2026-07-08</td><td>Moved earlier after customer review.</td></tr>
-          <tr><td>PROJ-130</td><td>Validate billing address rules</td><td>Medium</td><td>maria@example.com</td><td>2026-07-22</td><td>Waiting for finance approval.</td></tr>
+          <tr><td>Issue key</td><td>Existing Jira issue identity</td><td>Used to match workbook rows to issues such as PROJ-124 before updating.</td></tr>
+          <tr><td>Summary</td><td>Summary</td><td>Map only if the spreadsheet should update the existing Jira summary.</td></tr>
+          <tr><td>Priority</td><td>Priority</td><td>Useful for reviewed priority changes after planning or customer feedback.</td></tr>
+          <tr><td>Assignee</td><td>Assignee</td><td>Validate users before applying ownership cleanup.</td></tr>
+          <tr><td>Due date</td><td>Due date</td><td>Review date changes carefully because they affect existing work.</td></tr>
+          <tr><td>Comment/Notes</td><td>Description or notes field</td><td>Use Description Builder when the note should become structured Jira content.</td></tr>
         </tbody>
       </table>
       <p>For a focused workflow, read the guide to <a href="../apps/excel-to-jira-importer-updater/update-jira-issues-from-excel.html">update Jira issues from Excel</a>.</p>

@@ -1,7 +1,7 @@
 window.MEDERAK_PRODUCT_CONFIG = {
   PRODUCT_NAME: "Excel to Jira Importer & Updater",
   PRODUCT_SLUG: "excel-to-jira-importer-updater",
-  SUPPORT_EMAIL: "support.jira@mederak.pl",
+  SUPPORT_EMAIL: "",
   MARKETPLACE_URL: "https://marketplace.atlassian.com/apps/3429713184",
   CTA_URL: "https://marketplace.atlassian.com/apps/3429713184",
   PRICING_URL: "https://marketplace.atlassian.com/apps/3429713184?tab=pricing",
