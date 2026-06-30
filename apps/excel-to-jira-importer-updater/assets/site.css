@@ -1258,6 +1258,43 @@ a {
   background: #071322;
 }
 
+.youtube-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #071322;
+}
+
+.youtube-fallback {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: #ffffff;
+  text-decoration: none;
+  background: #071322;
+}
+
+.youtube-fallback img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  opacity: 0.78;
+}
+
+.youtube-play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: rgba(12, 102, 228, 0.94);
+  padding: 13px 20px;
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
 .hero-media-card img {
   aspect-ratio: auto;
 }

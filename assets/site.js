@@ -78,6 +78,24 @@ document.querySelectorAll('[data-config-label]').forEach((element) => {
   if (key && siteConfig[key]) element.textContent = siteConfig[key];
 });
 
+document.querySelectorAll('[data-youtube-embed]').forEach((container) => {
+  if (window.location.protocol === 'file:') return;
+
+  const videoId = container.dataset.videoId;
+  const title = container.dataset.videoTitle || 'YouTube video';
+  if (!videoId) return;
+
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?rel=0&origin=https%3A%2F%2Fmederak.app`;
+  iframe.title = title;
+  iframe.loading = 'lazy';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.allowFullscreen = true;
+
+  container.replaceChildren(iframe);
+});
+
 carousels.forEach((carousel) => {
   const slides = [...carousel.querySelectorAll('[data-carousel-slide]')];
   const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
@@ -105,4 +123,3 @@ carousels.forEach((carousel) => {
   });
   showSlide(activeIndex);
 });
-
