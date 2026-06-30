@@ -39,8 +39,10 @@
       <h2>Use stable identity before updating</h2>
       <p>Repeat imports need a stable identity. Depending on the import setup, this may be a Jira issue key or another supported row identity such as an external requirement ID. The key idea is simple: the workflow must know which Jira issue a spreadsheet row is supposed to update.</p>
       <p>If no stable identity is available, the safer path is usually to treat the workbook as a new import candidate and review duplicates carefully before creating anything.</p>
-      <figure class="media-card">
-        <img src="assets/screen-update-existing-issues.png" width="1680" height="945" alt="Excel to Jira update existing issues workflow with matching and review" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="assets/screen-update-existing-issues.png" aria-label="Open update existing issues screenshot">
+          <img src="assets/screen-update-existing-issues.png" width="1680" height="945" alt="Excel to Jira update existing issues workflow with matching and review" loading="lazy" decoding="async">
+        </button>
         <figcaption>Use matching information and review before updating existing Jira issues.</figcaption>
       </figure>
 
@@ -68,8 +70,10 @@
 
       <h2>Review planned changes before Jira is updated</h2>
       <p>Before applying updates, review planned changes, skipped rows, validation errors and any creates that would happen because a row could not be matched. This is the point to catch stale issue keys, invalid users, invalid dates, duplicate rows and field values that do not fit the target project.</p>
-      <figure class="media-card">
-        <img src="assets/screen-update-mode-duplicates.png" width="1680" height="945" alt="Duplicate handling and update mode review before Jira changes" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="assets/screen-update-mode-duplicates.png" aria-label="Open duplicate handling screenshot">
+          <img src="assets/screen-update-mode-duplicates.png" width="1680" height="945" alt="Duplicate handling and update mode review before Jira changes" loading="lazy" decoding="async">
+        </button>
         <figcaption>Review matching and duplicate handling before confirming a repeat import.</figcaption>
       </figure>
 
@@ -91,6 +95,12 @@
       </div>
     </main>
     <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="../../import-excel-to-jira/">Guide</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button">Close</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&lt;</button>
+      <img src="" alt="">
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&gt;</button>
+    </div>
     <script src="assets/site-config.js"></script>
     <script src="assets/site.js"></script>
   </body>

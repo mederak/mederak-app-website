@@ -2894,6 +2894,17 @@ a {
   max-width: 980px;
 }
 
+.seo-page .screenshot-card img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.seo-page .screenshot-card .image-zoom:focus-visible {
+  outline: 3px solid rgba(12, 102, 228, 0.35);
+  outline-offset: 4px;
+}
+
 .inline-cta {
   border: 1px solid #baf3db;
   border-radius: 18px;

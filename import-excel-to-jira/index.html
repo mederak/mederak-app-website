@@ -137,24 +137,30 @@
       <h2>How to choose worksheet and header row</h2>
       <p>Real Excel workbooks often contain cover sheets, notes, lookup tabs, archived versions or several worksheets for different teams. The row with column names is also not always the first row; it may appear after instructions, metadata or a client approval note.</p>
       <p>A workbook-aware import flow lets you choose the worksheet that contains Jira-ready rows and select the header row before mapping begins. This prevents the importer from treating notes or title rows as Jira data.</p>
-      <figure class="media-card">
-        <img src="../apps/excel-to-jira-importer-updater/assets/screen-worksheet-selection.png" width="1680" height="945" alt="Excel to Jira worksheet selection and header row setup before Jira field mapping" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="../apps/excel-to-jira-importer-updater/assets/screen-worksheet-selection.png" aria-label="Open worksheet and header row selection screenshot">
+          <img src="../apps/excel-to-jira-importer-updater/assets/screen-worksheet-selection.png" width="1680" height="945" alt="Excel to Jira worksheet selection and header row setup before Jira field mapping" loading="lazy" decoding="async">
+        </button>
         <figcaption>Select the worksheet and header row before mapping Excel columns to Jira fields.</figcaption>
       </figure>
 
       <h2>How to map Excel columns to Jira fields</h2>
       <p>Mapping connects each spreadsheet column to the Jira field it should populate. Common mappings include Summary, Issue Type, Description, Priority, Assignee, Reporter, Due date, Components and custom fields available in the selected Jira project and issue type configuration.</p>
       <p>Mapping is also a safety boundary for updates. Instead of treating every spreadsheet cell as something that should overwrite Jira, you decide which workbook columns are relevant and which Jira fields are intentionally created or updated.</p>
-      <figure class="media-card">
-        <img src="../apps/excel-to-jira-importer-updater/assets/screen-column-mapping.png" width="1680" height="945" alt="Excel columns mapped to Jira fields before import" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="../apps/excel-to-jira-importer-updater/assets/screen-column-mapping.png" aria-label="Open Excel column mapping screenshot">
+          <img src="../apps/excel-to-jira-importer-updater/assets/screen-column-mapping.png" width="1680" height="945" alt="Excel columns mapped to Jira fields before import" loading="lazy" decoding="async">
+        </button>
         <figcaption>Map workbook columns to the Jira fields used by the target project.</figcaption>
       </figure>
 
       <h2>How to combine Excel columns into Jira Description</h2>
       <p>Jira Description often needs more than one spreadsheet column. Description Builder can combine acceptance criteria, notes, business context and source references into one structured Jira Description.</p>
       <p>For example, a workbook might store <strong>Acceptance Criteria</strong>, <strong>Notes</strong>, <strong>Business Context</strong> and <strong>Source Reference</strong> separately. Keeping those columns separate is useful for review, but Jira users usually need a readable issue description. Description Builder bridges that gap without forcing spreadsheet authors to maintain one large formatted cell.</p>
-      <figure class="media-card">
-        <img src="../apps/excel-to-jira-importer-updater/assets/screen-description-builder.png" width="1680" height="945" alt="Description Builder combining multiple Excel columns into a Jira description" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="../apps/excel-to-jira-importer-updater/assets/screen-description-builder.png" aria-label="Open Description Builder screenshot">
+          <img src="../apps/excel-to-jira-importer-updater/assets/screen-description-builder.png" width="1680" height="945" alt="Description Builder combining multiple Excel columns into a Jira description" loading="lazy" decoding="async">
+        </button>
         <figcaption>Combine several workbook columns into one readable Jira Description.</figcaption>
       </figure>
 
@@ -185,8 +191,10 @@
 
       <h2>How to review changes before Jira is updated</h2>
       <p>Review is the safety step. Before importing, check planned created issues, updated issues, skipped rows and validation errors. A good review catches missing summaries, invalid users, unsupported parent relationships, duplicated rows, date problems and values that need cleanup before Jira changes are made.</p>
-      <figure class="media-card">
-        <img src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" width="1920" height="1080" alt="Review Jira import changes before creating or updating issues from Excel" loading="lazy" decoding="async">
+      <figure class="media-card screenshot-card">
+        <button class="image-zoom" type="button" data-lightbox-src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" aria-label="Open Jira import review screenshot">
+          <img src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" width="1920" height="1080" alt="Review Jira import changes before creating or updating issues from Excel" loading="lazy" decoding="async">
+        </button>
         <figcaption>Validate and review workbook rows before the final Jira import.</figcaption>
       </figure>
 
@@ -253,6 +261,10 @@
         <div class="footer-links"><a href="../index.html">Home</a><a href="../apps/">Apps</a><a href="../apps/excel-to-jira-importer-updater/">Product</a><a href="../apps/excel-to-jira-importer-updater/docs.html">Docs</a><a href="../apps/excel-to-jira-importer-updater/security.html">Security</a><a href="../apps/excel-to-jira-importer-updater/support.html">Support</a></div>
       </div>
     </footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button">Close</button>
+      <img src="" alt="">
+    </div>
     <script src="../assets/site.js"></script>
   </body>
 </html>
