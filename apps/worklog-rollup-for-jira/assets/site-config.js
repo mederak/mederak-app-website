@@ -1,5 +1,5 @@
 ﻿window.MEDERAK_PRODUCT_CONFIG = {
-  PRODUCT_NAME: "Worlog Rollup for Jira",
+  PRODUCT_NAME: "Worklog Rollup for Jira",
   PRODUCT_SLUG: "worklog-rollup-for-jira",
   SUPPORT_EMAIL: "support.jira@mederak.pl",
   MARKETPLACE_URL: "https://marketplace.atlassian.com/apps/883289483",

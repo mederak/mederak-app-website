@@ -3,37 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Import Jira Hierarchy from Excel | Excel to Jira Importer & Updater</title>
-    <meta name="description" content="Import structured Jira work from Excel with flat imports, parent-from-column relationships, multi-column hierarchy, validation and controlled reports.">
+    <title>Import Epics, Stories and Subtasks from Excel to Jira</title>
+    <meta name="description" content="Learn how to plan Excel imports for Jira epics, stories, tasks and subtasks with parent references, hierarchy columns, validation and review before creation.">
     <link rel="canonical" href="https://mederak.app/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html">
-    <meta property="og:title" content="Import Jira hierarchy from Excel">
-    <meta property="og:description" content="Plan structured Jira imports from Excel with parent references, multi-column hierarchy, validation and controlled review.">
+    <meta property="og:title" content="Import Epics, Stories and Subtasks from Excel to Jira">
+    <meta property="og:description" content="Plan structured Jira imports from Excel with hierarchy columns, parent references, validation and controlled review.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mederak.app/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html">
-    <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/screen-hero.png">
+    <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/screen-epic-story-subtask-import.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"Plan parent and sub-task imports from Excel","item":"https://mederak.app/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"Import epics, stories and subtasks from Excel","item":"https://mederak.app/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Import epics, stories and subtasks from Excel to Jira","description":"A practical guide to planning structured Jira hierarchy imports from Excel workbooks.","author":{"@type":"Organization","name":"Mederak Apps","url":"https://mederak.app/"},"publisher":{"@type":"Organization","name":"Mederak Apps","url":"https://mederak.app/"},"mainEntityOfPage":"https://mederak.app/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I import epics, stories and subtasks from one Excel workbook?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the workbook structure and Jira configuration support the intended parent-child relationships and those relationships are validated before import."}},{"@type":"Question","name":"Do my columns need exact names like Epic or Story?","acceptedAnswer":{"@type":"Answer","text":"No exact public column names are required by this guide. The workbook needs clear columns that can be mapped to issue types, summaries and parent references."}},{"@type":"Question","name":"Can I attach new issues to existing Jira parents?","acceptedAnswer":{"@type":"Answer","text":"A workbook can include existing parent issue keys when the target Jira project supports those parent relationships and the import setup maps them correctly."}},{"@type":"Question","name":"What should I validate before importing hierarchy?","acceptedAnswer":{"@type":"Answer","text":"Validate missing summaries, issue types, parent references, unsupported relationships, duplicate hierarchy paths and required Jira field values before creating issues."}}]}</script>
     <script src="/assets/analytics-config.js"></script>
     <script src="/assets/analytics.js" defer></script>
   </head>
   <body>
-    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Excel to Jira</a><a href="../worklog-rollup-for-jira/">Worlog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a></div></nav></header>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Excel to Jira</a><a href="../../import-excel-to-jira/">Guide</a><a href="../worklog-rollup-for-jira/">Worklog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a></div></nav></header>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="index.html">Excel to Jira Importer & Updater</a> / Import epics, stories and subtasks</nav>
     <main class="content-page seo-page">
       <span class="eyebrow">Structured backlog imports</span>
-      <h1>Import Jira hierarchy from Excel</h1>
-      <p class="lead">Structured Jira imports are harder than flat issue creation. Excel to Jira Importer & Updater helps teams prepare flat imports, parent-from-column imports and multi-column hierarchy imports where Jira configuration, issue type hierarchy, field screens and permissions support those relationships.</p>
+      <h1>Import epics, stories and subtasks from Excel to Jira</h1>
+      <p class="lead">Hierarchy is the part of Excel to Jira import where careful planning matters most. A flat list can become Jira issues row by row, but epics, stories, tasks and subtasks need valid parent relationships before Jira issues are created.</p>
+      <p>This page focuses on structured imports. For the full end-to-end process, start with the <a href="../../import-excel-to-jira/">Excel to Jira import guide</a>.</p>
 
       <h2>The hierarchy problem</h2>
-      <p>Backlogs often arrive as grouped spreadsheet rows: epics, stories, tasks and implementation details in one workbook. Manual import can lose context when parent keys, issue types, hierarchy paths and relationships are not validated before Jira changes.</p>
+      <p>Backlogs often arrive as grouped spreadsheet rows: epics at the top, stories beneath them, implementation tasks below those stories and notes in separate columns. That structure is obvious to a human reader but not always obvious to an import tool unless the workbook contains clear issue type, summary and parent reference data.</p>
+      <p>Jira configuration also matters. Available issue types, parent-child relationships, field screens and permissions can differ by project. A hierarchy that looks reasonable in Excel must still be valid in the target Jira Cloud project.</p>
       <figure class="media-card">
-        <img src="assets/screen-epic-story-subtask-import.png" width="1920" height="1080" alt="Excel to Jira Importer & Updater multi-column hierarchy setup for Jira imports" loading="lazy">
-        <figcaption>Build hierarchy from Excel columns such as Epic, Story and Task.</figcaption>
+        <img src="assets/screen-epic-story-subtask-import.png" width="1920" height="1080" alt="Excel to Jira Importer and Updater multi-column hierarchy setup for Jira imports" loading="lazy" decoding="async">
+        <figcaption>Build hierarchy from Excel columns such as Epic, Story and Task when the Jira project supports it.</figcaption>
       </figure>
+
+      <h2>Common workbook patterns</h2>
+      <p>There is no single universal spreadsheet layout for hierarchy. Useful patterns include one row per issue with a parent reference, one row per child item with parent data repeated in another column, or separate columns for levels such as Epic, Story and Sub-task. The right structure depends on how the workbook was produced and how the target Jira project is configured.</p>
+      <table class="sample-table">
+        <thead><tr><th>Pattern</th><th>Example columns</th><th>When it helps</th></tr></thead>
+        <tbody>
+          <tr><td>Parent reference</td><td>Row ID, Parent Row, Summary, Issue Type</td><td>When each row is one work item and child rows point to parent rows.</td></tr>
+          <tr><td>Existing Jira parent</td><td>Parent Key, Summary, Issue Type, Description</td><td>When new issues should be created under already existing Jira parents.</td></tr>
+          <tr><td>Multiple hierarchy columns</td><td>Epic, Story, Sub-task, Notes</td><td>When the workbook expresses hierarchy through separate level columns.</td></tr>
+          <tr><td>Level indicator</td><td>Level, Summary, Parent Reference, Description</td><td>When indentation or grouped rows were converted into explicit levels.</td></tr>
+        </tbody>
+      </table>
 
       <h2>Current hierarchy modes</h2>
       <ul>
@@ -43,44 +60,49 @@
         <li><strong>Existing Jira parent key:</strong> advanced flat imports can use a column with existing Jira parent keys when the project allows it.</li>
       </ul>
 
-      <h2>Example spreadsheet columns</h2>
+      <h2>Example hierarchy workbook</h2>
+      <p>The column names below are examples. They are meant to show the kind of structure that makes parent relationships reviewable before import.</p>
       <table class="sample-table">
-        <thead><tr><th>Column</th><th>Purpose</th></tr></thead>
+        <thead><tr><th>Epic</th><th>Story</th><th>Sub-task</th><th>Parent reference</th><th>Priority</th></tr></thead>
         <tbody>
-          <tr><td>Parent ID</td><td>Reference to another row in the same workbook when using parent-from-column mode.</td></tr>
-          <tr><td>Epic</td><td>Top-level hierarchy value when using multi-column hierarchy mode.</td></tr>
-          <tr><td>Story Summary</td><td>Summary for the story-level Jira issue.</td></tr>
-          <tr><td>Task Summary</td><td>Summary for a child-level Jira issue where supported.</td></tr>
-          <tr><td>Existing Parent Key</td><td>Existing Jira parent issue key where the target project supports parent relationships.</td></tr>
-          <tr><td>Issue Type</td><td>Jira issue type to create or update.</td></tr>
-          <tr><td>Description</td><td>Requirement or implementation detail.</td></tr>
-          <tr><td>Estimate</td><td>Time estimate or effort value supported by the target field.</td></tr>
-          <tr><td>Assignee</td><td>User reference where Jira lookup and permissions allow it.</td></tr>
+          <tr><td>Customer onboarding</td><td>Create onboarding checklist</td><td>Draft checklist copy</td><td>Story: Create onboarding checklist</td><td>Medium</td></tr>
+          <tr><td>Customer onboarding</td><td>Create onboarding checklist</td><td>Review with support team</td><td>Story: Create onboarding checklist</td><td>Medium</td></tr>
+          <tr><td>Billing improvements</td><td>Validate billing address rules</td><td>Confirm EU validation cases</td><td>Story: Validate billing address rules</td><td>High</td></tr>
         </tbody>
       </table>
 
       <h2>How mapping helps</h2>
-      <p>Mapping lets you connect each spreadsheet column to the Jira field it should populate. For hierarchy imports, the important part is using stable level, issue type and parent columns so the import flow can validate relationships before issue creation.</p>
+      <p>Mapping connects workbook columns to Jira fields and hierarchy settings. For structured imports, the important part is not only mapping Summary and Issue Type. You also need a consistent way to identify parent issues, child issues and any existing Jira parent keys used by the import.</p>
+      <p>If the workbook also has business context, acceptance criteria or implementation notes, use Description Builder to preserve that context in the Jira Description instead of trying to squeeze everything into a hierarchy column.</p>
 
-      <h2>Parent validation</h2>
-      <p>Child rows need a valid parent relationship. Depending on the setup, that can come from a default parent, a mapped existing parent key, a parent row reference or a multi-column hierarchy path. Rows without the required parent reference should be blocked during validation before Jira changes are made.</p>
-
-      <h2>Risks to validate</h2>
+      <h2>Parent validation before import</h2>
+      <p>Validation should happen before Jira issues are created. The review step should make it clear which rows are planned for creation, which rows cannot be imported, and which parent relationships need correction. This matters because a wrong parent can be more disruptive than a missing optional field: it can put work in the wrong place and make backlog review harder.</p>
       <ul>
         <li>Missing issue type or summary.</li>
         <li>Parent keys, parent references or hierarchy paths that do not match the expected setup.</li>
-        <li>Repeated hierarchy paths that would otherwise create duplicate generated issues.</li>
+        <li>Repeated hierarchy paths that may create duplicate generated issues.</li>
         <li>Unsupported parent-child relationships in the Jira project.</li>
         <li>Invalid users, estimates, priorities, components or custom field values.</li>
       </ul>
 
+      <h2>When to keep the import flat</h2>
+      <p>Not every Excel backlog should become a hierarchy on the first import. If the parent relationships are unclear, if issue type names are inconsistent, or if the Jira project configuration is still being decided, a flat import under a selected parent issue may be safer. The team can then refine structure in Jira after the data is visible and validated.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-grid">
+        <article class="faq-item"><h3>Can I import epics, stories and subtasks from one Excel workbook?</h3><p>Yes, when the workbook structure and Jira configuration support the intended parent-child relationships and those relationships are validated before import.</p></article>
+        <article class="faq-item"><h3>Do my columns need exact names like Epic or Story?</h3><p>No exact public column names are required by this guide. The workbook needs clear columns that can be mapped to issue types, summaries and parent references.</p></article>
+        <article class="faq-item"><h3>Can I attach new issues to existing Jira parents?</h3><p>A workbook can include existing parent issue keys when the target Jira project supports those parent relationships and the import setup maps them correctly.</p></article>
+        <article class="faq-item"><h3>What should I validate before importing hierarchy?</h3><p>Validate missing summaries, issue types, parent references, unsupported relationships, duplicate hierarchy paths and required Jira field values before creating issues.</p></article>
+      </div>
+
       <div class="inline-cta">
         <h2>Plan a controlled hierarchy import</h2>
-        <p>Review the main workflow, then continue to Atlassian Marketplace when you are ready to evaluate structured Excel imports for Jira Cloud.</p>
-        <div class="hero-actions"><a class="button primary" href="index.html">View product</a><a class="button" href="#" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL">Try on Atlassian Marketplace</a><a class="button" href="#" data-config-url="PRICING_URL" data-config-label="CTA_PRICING_LABEL">View pricing</a></div>
+        <p>Review the main product workflow, then evaluate structured Excel imports for Jira Cloud through Atlassian Marketplace.</p>
+        <div class="hero-actions"><a class="button primary" href="index.html">View product</a><a class="button" href="https://marketplace.atlassian.com/apps/3429713184" data-config-url="CTA_URL" data-config-label="CTA_PRIMARY_LABEL">Try on Atlassian Marketplace</a><a class="button" href="excel-to-jira-vs-csv-import.html">Excel to Jira vs CSV import</a></div>
       </div>
     </main>
-    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="../../import-excel-to-jira/">Guide</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     <script src="assets/site-config.js"></script>
     <script src="assets/site.js"></script>
   </body>

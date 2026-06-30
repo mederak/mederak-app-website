@@ -79,6 +79,17 @@ function getMetaDescription(content) {
   return "";
 }
 
+function getRobotsMeta(content) {
+  for (const tag of content.matchAll(/<meta\s+[^>]*>/gi)) {
+    const name = extractAttribute(tag[0], "name").toLowerCase();
+    if (name === "robots") {
+      return extractAttribute(tag[0], "content").toLowerCase();
+    }
+  }
+
+  return "";
+}
+
 function getJsonLdBlocks(content, file) {
   const blocks = [];
 
@@ -159,13 +170,25 @@ for (const [file, expectedCanonical] of keyCanonicals) {
 }
 
 const htmlFiles = walk(root).filter((file) => file.endsWith(".html"));
-const indexableHtmlFiles = htmlFiles.filter((file) => !relative(file).startsWith("google"));
+const seoHtmlFiles = htmlFiles.filter((file) => !relative(file).startsWith("google"));
+const indexableHtmlFiles = seoHtmlFiles;
 const titles = new Map();
 const descriptions = new Map();
+const targetPages = new Set([
+  "apps/excel-to-jira-importer-updater/index.html",
+  "import-excel-to-jira/index.html",
+]);
 
-for (const htmlFile of htmlFiles) {
+for (const htmlFile of seoHtmlFiles) {
   const file = relative(htmlFile);
   const content = fs.readFileSync(htmlFile, "utf8");
+
+  const canonicalTags = Array.from(content.matchAll(/<link\s+[^>]*rel=["']canonical["'][^>]*>/gi));
+  assert(canonicalTags.length === 1, `${file} must have exactly one canonical tag, found ${canonicalTags.length}`);
+  for (const canonicalTag of canonicalTags) {
+    const href = extractAttribute(canonicalTag[0], "href");
+    assert(href.startsWith(`${canonicalOrigin}/`), `${file} canonical must point to ${canonicalOrigin}: ${href}`);
+  }
 
   for (const tag of content.matchAll(/<(?:link|meta)\s+[^>]*(?:rel=["']canonical["']|property=["']og:url["']|name=["']twitter:url["'])[^>]*>/gi)) {
     assert(!oldDomainPattern.test(tag[0]), `${file} has old-domain SEO tag: ${tag[0]}`);
@@ -179,6 +202,11 @@ for (const htmlFile of htmlFiles) {
     const values = collectJsonValues(data);
     const oldValue = values.find((value) => oldDomainPattern.test(value));
     assert(!oldValue, `${file} has old-domain JSON-LD value: ${oldValue}`);
+  }
+
+  if (targetPages.has(file)) {
+    const robots = getRobotsMeta(content);
+    assert(!robots.includes("noindex"), `${file} must not be noindex`);
   }
 }
 
@@ -214,7 +242,7 @@ for (const [description, files] of descriptions) {
   assert(files.length === 1, `duplicate meta description "${description}" in ${files.join(", ")}`);
 }
 
-for (const file of ["apps/excel-to-jira-importer-updater/index.html", "import-excel-to-jira/index.html"]) {
+for (const file of targetPages) {
   const content = read(file);
   const types = getJsonLdBlocks(content, file).flatMap(jsonLdTypes);
   assert(types.includes("FAQPage"), `${file} must include FAQPage JSON-LD`);

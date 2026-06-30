@@ -85,15 +85,22 @@ document.querySelectorAll('[data-youtube-embed]').forEach((container) => {
   const title = container.dataset.videoTitle || 'YouTube video';
   if (!videoId) return;
 
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?rel=0&origin=https%3A%2F%2Fmederak.app`;
-  iframe.title = title;
-  iframe.loading = 'lazy';
-  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-  iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  iframe.allowFullscreen = true;
+  const loadVideo = (event) => {
+    event.preventDefault();
 
-  container.replaceChildren(iframe);
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?rel=0&origin=https%3A%2F%2Fmederak.app`;
+    iframe.title = title;
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+
+    container.replaceChildren(iframe);
+  };
+
+  const fallback = container.querySelector('.youtube-fallback');
+  if (fallback) fallback.addEventListener('click', loadVideo);
 });
 
 carousels.forEach((carousel) => {
