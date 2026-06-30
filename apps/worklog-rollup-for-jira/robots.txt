@@ -1,5 +1,5 @@
 ﻿User-agent: *
 Allow: /
 
-Sitemap: https://mederak.pl/apps/worklog-rollup-for-jira/sitemap.xml
+Sitemap: https://mederak.app/apps/worklog-rollup-for-jira/sitemap.xml
 

@@ -8,6 +8,10 @@ ErrorDocument 500 /500.html
 
 RewriteEngine On
 
+# Canonical domain: keep old mederak.pl hosts redirect-only.
+RewriteCond %{HTTP_HOST} ^(www\.)?mederak\.pl$ [NC]
+RewriteRule ^(.*)$ https://mederak.app/$1 [R=301,L,NE]
+
 # Redirect /index.html to /
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]

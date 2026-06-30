@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mederak.pl/sitemap.xml
+Sitemap: https://mederak.app/sitemap.xml

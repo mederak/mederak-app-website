@@ -1,4 +1,4 @@
-\# mederak.pl
+\# mederak.app
 
 
 
@@ -48,3 +48,10 @@ Deploy the committed website state:
 
 The deploy script runs `git diff --check` and requires a clean working tree before uploading. It excludes repository metadata, local instructions, README, deploy scripts and local secret files from the public mirror.
 
+## SEO verification
+
+Verify that `https://mederak.app` is the canonical and sitemap domain:
+
+```powershell
+node scripts/verify-seo-domain.js
+```
