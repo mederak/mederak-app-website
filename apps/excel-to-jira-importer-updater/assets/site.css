@@ -1246,6 +1246,18 @@ a {
   background: #f7faff;
 }
 
+.video-embed {
+  padding: 0;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #071322;
+}
+
 .hero-media-card img {
   aspect-ratio: auto;
 }
@@ -3799,4 +3811,3 @@ a {
     display: grid;
   }
 }
-

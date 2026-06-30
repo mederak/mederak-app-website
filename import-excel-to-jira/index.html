@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Import Excel to Jira | Excel to Jira Guide</title>
+    <meta name="description" content="Learn how to import Excel into Jira Cloud, when native CSV import is enough, and how to safely map, review, create and update Jira issues from real Excel workbooks.">
+    <link rel="canonical" href="https://mederak.app/import-excel-to-jira/">
+    <meta property="og:title" content="How to Import Excel to Jira">
+    <meta property="og:description" content="Learn when Jira CSV import is enough and how to map, review, create and update Jira issues from real Excel workbooks.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/import-excel-to-jira/">
+    <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/og-excel-to-jira-importer-updater.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../apps/excel-to-jira-importer-updater/assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Mederak Apps", "item": "https://mederak.app/"},
+          {"@type": "ListItem", "position": 2, "name": "How to Import Excel to Jira", "item": "https://mederak.app/import-excel-to-jira/"}
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to import Excel to Jira",
+        "description": "A practical guide to importing Excel workbooks into Jira Cloud, including native CSV import, manual copy-paste, dedicated Excel import workflows, mapping, hierarchy, updates and review.",
+        "author": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
+        "publisher": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
+        "mainEntityOfPage": "https://mederak.app/import-excel-to-jira/"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Excel to Jira Importer - Import & Update Jira Issues from Excel",
+        "description": "A walkthrough showing how to import an Excel workbook into Jira Cloud, map spreadsheet columns to Jira fields, review changes, and create or update Jira issues after confirmation.",
+        "thumbnailUrl": "https://i.ytimg.com/vi/KEpNiVnPt3U/hqdefault.jpg",
+        "embedUrl": "https://www.youtube.com/embed/KEpNiVnPt3U",
+        "contentUrl": "https://www.youtube.com/watch?v=KEpNiVnPt3U"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Can Jira import Excel files directly?", "acceptedAnswer": {"@type": "Answer", "text": "Jira's native import flow is CSV-based. To import Excel data with native Jira tools, teams commonly export or prepare CSV first. A dedicated Excel importer can start from XLSX, XLS or CSV files."}},
+          {"@type": "Question", "name": "Do I need to convert Excel to CSV before importing to Jira?", "acceptedAnswer": {"@type": "Answer", "text": "For native Jira import, CSV preparation is usually required. With Excel to Jira Importer and Updater, you can start from real Excel workbooks and review mapped Jira changes before import."}},
+          {"@type": "Question", "name": "Can I update existing Jira issues from Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a dedicated import workflow can update matching Jira issues when the setup includes a stable identity such as an issue key or another supported row identity."}},
+          {"@type": "Question", "name": "Can I import epics, stories and subtasks from Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the workbook structure and Jira configuration support the planned hierarchy. Parent relationships should be validated before Jira issues are created."}},
+          {"@type": "Question", "name": "When is Jira CSV import enough?", "acceptedAnswer": {"@type": "Answer", "text": "Native Jira CSV import can be enough for clean, one-time, admin-led imports where the data is already prepared in a CSV format that matches the target Jira fields."}}
+        ]
+      }
+    </script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand logo-brand" href="../index.html"><img src="../assets/mederak-apps-logo.png" alt="Mederak Apps"></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+        <div class="nav-links" id="main-menu">
+          <a href="../index.html">Home</a>
+          <a href="../apps/">Apps</a>
+          <a href="../apps/excel-to-jira-importer-updater/">Excel to Jira</a>
+          <a href="../apps/excel-to-jira-importer-updater/docs.html">Docs</a>
+          <a href="../apps/excel-to-jira-importer-updater/support.html">Support</a>
+          <a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Mederak Apps</a> / How to import Excel to Jira</nav>
+
+    <main class="content-page seo-page">
+      <span class="eyebrow">Excel to Jira guide</span>
+      <h1>How to import Excel to Jira</h1>
+      <p class="lead">Teams often plan work in Excel before it reaches Jira Cloud. This guide explains the main ways to move spreadsheet data into Jira, when native CSV import is enough, and when a dedicated Excel to Jira importer is a better fit.</p>
+
+      <h2>Can Jira import Excel files directly?</h2>
+      <p>Jira's native import flow is built around CSV files. That can work well when a Jira administrator has a clean, prepared CSV file and a one-time import to run. Real project work often starts in Excel workbooks instead: multiple worksheets, header rows after introductory notes, acceptance criteria, estimates, owner columns and hierarchy hints.</p>
+      <p>If the workbook is simple, exporting to CSV may be enough. If the workbook needs worksheet selection, header row selection, value cleanup, Description Builder, hierarchy planning or repeat updates, a dedicated Excel to Jira workflow can reduce manual preparation.</p>
+
+      <h2>Option 1: Use Jira's native CSV import</h2>
+      <p>Native Jira CSV import is a good choice for clean one-time imports where the data already matches the Jira fields you plan to populate. It is especially useful for admin-led migrations where the source data can be reshaped before import.</p>
+      <p>Prepare the CSV carefully: confirm Summary, Issue Type and required custom fields, check user values, prepare parent keys if hierarchy is involved, and test with a small set of rows before importing a large backlog.</p>
+
+      <h2>Option 2: Copy and paste manually</h2>
+      <p>Manual copy-paste can be acceptable for a handful of issues. It becomes fragile when the workbook contains many rows, structured descriptions, estimates, custom fields, hierarchy or repeated updates. The risk is not only time spent; it is also missed acceptance criteria, duplicate issues and inconsistent field values.</p>
+
+      <h2>Option 3: Use Excel to Jira Importer and Updater</h2>
+      <p><a href="../apps/excel-to-jira-importer-updater/">Excel to Jira Importer and Updater</a> is an Atlassian Marketplace app for Jira Cloud. It lets you start from XLSX, XLS or CSV files, choose the worksheet and header row, map Excel columns to Jira fields, clean values, build Jira descriptions, validate rows and review changes before Jira is updated.</p>
+      <p>The app is also designed for repeat uploads where existing Jira issues need to be updated from Excel instead of recreated as duplicates.</p>
+
+      <h2>How to prepare your Excel workbook</h2>
+      <p>Before importing, make sure each row represents the Jira issue or hierarchy item you want to create or update. Keep required values such as Summary and Issue Type clear. If your workbook has IDs, external references or Jira issue keys, preserve them because they can help with repeat imports and updates.</p>
+      <ul>
+        <li>Keep one clear row per work item where possible.</li>
+        <li>Use stable IDs if the same workbook may return later with updates.</li>
+        <li>Separate acceptance criteria, business notes, estimates and ownership into columns if they need to become Jira fields or Description content.</li>
+        <li>Check whether hierarchy is represented by parent IDs, existing parent issue keys or separate columns such as Epic, Story and Task.</li>
+      </ul>
+
+      <h2>How to choose the worksheet and header row</h2>
+      <p>Real Excel workbooks often contain cover sheets, notes, lookup tabs or multiple versions of the same backlog. A workbook-aware importer lets you choose the worksheet that contains the Jira rows and select the header row when column names are not on the first row.</p>
+      <figure class="media-card">
+        <img src="../apps/excel-to-jira-importer-updater/assets/screen-worksheet-selection.png" width="1680" height="945" alt="Excel to Jira worksheet selection and header row setup before Jira field mapping" loading="lazy" decoding="async">
+        <figcaption>Select the worksheet and header row before mapping Excel columns to Jira fields.</figcaption>
+      </figure>
+
+      <h2>How to map Excel columns to Jira fields</h2>
+      <p>Mapping connects each spreadsheet column to the Jira field it should populate. Common mappings include Summary, Issue Type, Description, Priority, Reporter, Assignee, Due date, Components and custom fields available in your Jira project.</p>
+      <p>Mapping is also where you decide which fields should be created or updated, which helps keep repeat imports controlled instead of treating every spreadsheet cell as an uncontrolled overwrite source.</p>
+
+      <h2>How to combine Excel columns into Jira Description</h2>
+      <p>Jira Description often needs more than one spreadsheet column. Description Builder can combine business context, acceptance criteria, implementation notes, dependencies and estimates into a structured Jira Description.</p>
+      <figure class="media-card">
+        <img src="../apps/excel-to-jira-importer-updater/assets/screen-description-builder.png" width="1680" height="945" alt="Description Builder combining multiple Excel columns into a Jira description" loading="lazy" decoding="async">
+        <figcaption>Combine several workbook columns into one readable Jira Description.</figcaption>
+      </figure>
+
+      <h2>How to import epics, stories and subtasks</h2>
+      <p>Hierarchy needs careful preparation. Parent relationships can depend on the Jira issue type hierarchy, field screens, permissions and project configuration. If the workbook contains epics, stories, tasks or subtasks, validate the intended parent relationships before creating issues.</p>
+      <p>Read the supporting guide for <a href="../apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel.html">importing epics, stories and subtasks from Excel to Jira</a>.</p>
+
+      <h2>How to update existing Jira issues from Excel</h2>
+      <p>Repeat uploads are different from one-time imports. To update Jira issues from Excel, the import setup needs a stable way to match workbook rows to existing Jira issues, such as a Jira issue key or another supported row identity.</p>
+      <p>Read the supporting guide to <a href="../apps/excel-to-jira-importer-updater/update-jira-issues-from-excel.html">update Jira issues from Excel</a>.</p>
+
+      <h2>How to review changes before Jira is updated</h2>
+      <p>Review is the safety step. Before importing, check planned created issues, updated issues, skipped rows and validation errors. This helps catch missing summaries, invalid users, unsupported parent relationships and values that need cleanup before Jira changes are made.</p>
+      <figure class="media-card">
+        <img src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" width="1920" height="1080" alt="Review Jira import changes before creating or updating issues from Excel" loading="lazy" decoding="async">
+        <figcaption>Validate and review workbook rows before the final Jira import.</figcaption>
+      </figure>
+
+      <h2>Common mistakes when importing Excel to Jira</h2>
+      <ul>
+        <li>Exporting the wrong worksheet to CSV.</li>
+        <li>Using a header row that does not contain the real column names.</li>
+        <li>Importing hierarchy without validating parent relationships.</li>
+        <li>Putting all description content into one hard-to-maintain spreadsheet cell.</li>
+        <li>Updating existing Jira issues without stable row identity.</li>
+        <li>Skipping review and discovering invalid values only after Jira changes are made.</li>
+      </ul>
+
+      <h2>When native CSV import is enough</h2>
+      <p>Use native Jira CSV import when the data is clean, the file is already prepared as CSV, the import is one-time, a Jira administrator owns the process and the workbook does not need repeatable mapping, cleanup or workbook-specific handling.</p>
+
+      <h2>When a dedicated Excel to Jira importer makes sense</h2>
+      <p>A dedicated importer makes sense when teams receive real Excel workbooks, need to choose worksheets and header rows, map columns to Jira fields, combine columns into Jira Description, clean values, import hierarchy, update existing Jira issues or review changes before Jira is updated.</p>
+      <div class="inline-cta">
+        <h2>Try the Excel to Jira workflow for Jira Cloud</h2>
+        <p>Review the product page, documentation and Marketplace listing when you are ready to evaluate the app with your own workbook structure.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="../apps/excel-to-jira-importer-updater/">View Excel to Jira Importer and Updater</a>
+          <a class="button" href="https://marketplace.atlassian.com/apps/3429713184">Open Atlassian Marketplace listing</a>
+          <a class="button" href="../apps/excel-to-jira-importer-updater/docs.html">Read documentation</a>
+        </div>
+      </div>
+
+      <h2>Watch the Excel to Jira workflow</h2>
+      <p>This video walkthrough shows selecting an Excel workbook, choosing a worksheet and header row, mapping Excel columns to Jira fields, reviewing planned Jira changes before import, and creating or updating Jira issues only after confirmation.</p>
+      <div class="video-embed media-card">
+        <iframe src="https://www.youtube.com/embed/KEpNiVnPt3U" title="Excel to Jira Importer - Import & Update Jira Issues from Excel" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p><a href="https://www.youtube.com/watch?v=KEpNiVnPt3U">Watch Excel to Jira Importer - Import & Update Jira Issues from Excel on YouTube</a>.</p>
+
+      <h2>FAQ</h2>
+      <div class="faq-grid">
+        <article class="faq-item"><h3>Can Jira import Excel files directly?</h3><p>Jira's native import flow is CSV-based. To import Excel data with native Jira tools, teams commonly export or prepare CSV first. A dedicated Excel importer can start from XLSX, XLS or CSV files.</p></article>
+        <article class="faq-item"><h3>Do I need to convert Excel to CSV before importing to Jira?</h3><p>For native Jira import, CSV preparation is usually required. With Excel to Jira Importer and Updater, you can start from real Excel workbooks and review mapped Jira changes before import.</p></article>
+        <article class="faq-item"><h3>Can I update existing Jira issues from Excel?</h3><p>Yes, a dedicated import workflow can update matching Jira issues when the setup includes a stable identity such as an issue key or another supported row identity.</p></article>
+        <article class="faq-item"><h3>Can I import epics, stories and subtasks from Excel?</h3><p>Yes, when the workbook structure and Jira configuration support the planned hierarchy. Parent relationships should be validated before Jira issues are created.</p></article>
+        <article class="faq-item"><h3>When is Jira CSV import enough?</h3><p>Native Jira CSV import can be enough for clean, one-time, admin-led imports where the data is already prepared in a CSV format that matches the target Jira fields.</p></article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div><a class="brand logo-brand" href="../index.html"><img src="../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud apps by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div>
+        <div class="footer-links"><a href="../index.html">Home</a><a href="../apps/">Apps</a><a href="../apps/excel-to-jira-importer-updater/">Product</a><a href="../apps/excel-to-jira-importer-updater/docs.html">Docs</a><a href="../apps/excel-to-jira-importer-updater/security.html">Security</a><a href="../apps/excel-to-jira-importer-updater/support.html">Support</a></div>
+      </div>
+    </footer>
+    <script src="../assets/site.js"></script>
+  </body>
+</html>
