@@ -17,13 +17,24 @@ RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]
 
 # Product rename: keep old Excel Backlog Importer URLs working.
-RewriteRule ^apps/excel-backlog-importer-for-jira/?$ /apps/excel-to-jira-importer-uploader/ [R=301,L]
-RewriteRule ^apps/excel-backlog-importer-for-jira/(.*)$ /apps/excel-to-jira-importer-uploader/$1 [R=301,L]
+RewriteRule ^apps/excel-backlog-importer-for-jira/?$ /apps/excel-to-jira-importer-updater/ [R=301,L]
+RewriteRule ^apps/excel-backlog-importer-for-jira/(.*)$ /apps/excel-to-jira-importer-updater/$1 [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-uploader/?$ /apps/excel-to-jira-importer-updater/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-uploader/(.*)$ /apps/excel-to-jira-importer-updater/$1 [R=301,L]
 
 # Excel to Jira guide canonical URLs.
+RewriteRule ^import-excel-to-jira\.html$ /import-excel-to-jira/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/import-excel-to-jira/?$ /import-excel-to-jira/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/import-excel-to-jira\.html$ /import-excel-to-jira/ [R=301,L]
 RewriteRule ^apps/excel-to-jira-importer-updater/excel-to-jira-vs-csv-import\.html$ /apps/excel-to-jira-importer-updater/jira-csv-import-vs-excel-import/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/jira-csv-import-vs-excel-import\.html$ /apps/excel-to-jira-importer-updater/jira-csv-import-vs-excel-import/ [R=301,L]
 RewriteRule ^apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel\.html$ /apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel-to-jira/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel-to-jira\.html$ /apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel-to-jira/ [R=301,L]
 RewriteRule ^apps/excel-to-jira-importer-updater/update-jira-issues-from-excel\.html$ /apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/map-excel-columns-to-jira-fields\.html$ /apps/excel-to-jira-importer-updater/map-excel-columns-to-jira-fields/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/review-jira-changes-before-import\.html$ /apps/excel-to-jira-importer-updater/review-jira-changes-before-import/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/excel-to-jira-template\.html$ /apps/excel-to-jira-importer-updater/excel-to-jira-template/ [R=301,L]
+RewriteRule ^apps/excel-to-jira-importer-updater/fill-excel-from-jira\.html$ /apps/excel-to-jira-importer-updater/fill-excel-from-jira/ [R=301,L]
 
 <IfModule mod_headers.c>
   <FilesMatch "\.(html?)$">

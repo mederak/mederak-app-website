@@ -160,6 +160,16 @@ assert(
   rootSitemap.includes(`${canonicalOrigin}/import-excel-to-jira/`),
   "sitemap.xml must include the Excel to Jira guide page"
 );
+assert(
+  !rootSitemap.includes(`${canonicalOrigin}/apps/excel-to-jira-importer-updater/import-excel-to-jira/`),
+  "sitemap.xml must not include the redirected duplicate Excel import guide"
+);
+
+const excelProductSitemap = read("apps/excel-to-jira-importer-updater/sitemap.xml");
+assert(
+  !excelProductSitemap.includes(`${canonicalOrigin}/apps/excel-to-jira-importer-updater/import-excel-to-jira/`),
+  "apps/excel-to-jira-importer-updater/sitemap.xml must not include the redirected duplicate Excel import guide"
+);
 
 const keyCanonicals = new Map([
   ["index.html", `${canonicalOrigin}/`],
@@ -167,6 +177,7 @@ const keyCanonicals = new Map([
   ["apps/project-overview-status-hub-for-jira/index.html", `${canonicalOrigin}/apps/project-overview-status-hub-for-jira/`],
   ["apps/excel-to-jira-importer-updater/index.html", `${canonicalOrigin}/apps/excel-to-jira-importer-updater/`],
   ["import-excel-to-jira/index.html", `${canonicalOrigin}/import-excel-to-jira/`],
+  ["apps/excel-to-jira-importer-updater/import-excel-to-jira/index.html", `${canonicalOrigin}/import-excel-to-jira/`],
   ["apps/worklog-rollup-for-jira/index.html", `${canonicalOrigin}/apps/worklog-rollup-for-jira/`],
 ]);
 
@@ -270,6 +281,10 @@ assert(
 assert(
   /RewriteRule\s+\^\(\.\*\)\$\s+https:\/\/mederak\.app\/\$1\s+\[R=301,L,NE\]/i.test(htaccess),
   ".htaccess must 301 redirect old-domain paths to https://mederak.app/$1"
+);
+assert(
+  /RewriteRule\s+\^apps\/excel-to-jira-importer-updater\/import-excel-to-jira\/\?\$\s+\/import-excel-to-jira\/\s+\[R=301,L\]/i.test(htaccess),
+  ".htaccess must 301 redirect duplicate product import guide to /import-excel-to-jira/"
 );
 
 if (failures.length > 0) {
