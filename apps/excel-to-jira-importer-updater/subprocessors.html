@@ -18,21 +18,47 @@
     <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html">Product</a><a href="index.html#guides">Guides</a><a href="docs.html">User guide</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try the app</a></div></nav></header>
     <nav class="resource-nav" aria-label="Excel to Jira resources"><a href="index.html">Overview</a><a href="../../import-excel-to-jira/">Import</a><a href="update-jira-issues-from-excel/">Update</a><a href="jira-csv-import-vs-excel-import/">CSV vs Excel</a><a href="import-epics-stories-subtasks-from-excel-to-jira/">Hierarchy</a><a href="map-excel-columns-to-jira-fields/">Field mapping</a><a href="review-jira-changes-before-import/">Review</a><a href="excel-to-jira-template/">Template</a><a href="fill-excel-from-jira/">Fill from Jira</a><a href="docs.html">User guide</a><a href="security.html">Security</a><a href="support.html">Support</a></nav>
     <main class="content-page">
-      <span class="eyebrow">Last updated: May 21, 2026</span>
+      <span class="eyebrow">Last updated: July 3, 2026</span>
       <h1>Sub-processors</h1>
       <p class="lead">This page lists core service providers involved in providing Excel to Jira Importer & Updater.</p>
 
-      <div class="legal-grid">
-        <div class="legal-card"><b>Atlassian</b><p>Jira Cloud, Atlassian Forge hosting, app runtime, app storage, Marketplace installation and authentication context.</p></div>
-        <div class="legal-card"><b>Customer Jira site</b><p>Customer-controlled Jira Cloud environment where project data, created issues and issue properties are stored.</p></div>
-        <div class="legal-card"><b>Google</b><p>Google Analytics, Google Ads and Google tag services for website measurement, campaign attribution and consent-aware advertising measurement on this marketing website.</p></div>
-      </div>
+      <table class="sample-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Purpose</th>
+            <th>Data involved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Atlassian</td>
+            <td>Jira Cloud, Atlassian Forge hosting, app runtime, app storage, Marketplace installation, licensing and authentication context.</td>
+            <td>Jira data available to the app, app configuration, import metadata, saved setups, import history, issue properties, user and site context.</td>
+          </tr>
+          <tr>
+            <td>Customer Jira site</td>
+            <td>Customer-controlled Jira Cloud environment where project data, created issues, updated issues and issue properties are stored.</td>
+            <td>Customer Jira project data, created or updated issue data and app issue properties controlled by the customer site.</td>
+          </tr>
+          <tr>
+            <td>Google Analytics</td>
+            <td>Product analytics when configured for the production app, and public website measurement for product pages and campaign attribution.</td>
+            <td>Sanitized usage events, operational labels, aggregate counts, browser-generated analytics client identifier and request metadata. The app is designed not to send full Excel files, workbook cell values, column names, Jira issue text, issue keys, project names, user names, email addresses, customer links or support messages.</td>
+          </tr>
+          <tr>
+            <td>Google Ads and Google tag services</td>
+            <td>Consent-aware advertising measurement and campaign attribution on this public marketing website.</td>
+            <td>Website visit and conversion measurement data controlled through the website consent banner and Google Consent Mode.</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2>Changes</h2>
       <p>Material changes to sub-processors will be reflected on this page. Customers can contact <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a> with questions.</p>
 
-      <h2>Website analytics</h2>
-      <p>Google measurement applies to this public marketing website only. It is separate from the Forge app runtime and does not process customer Excel files or Jira issue content from the installed app.</p>
+      <h2>Analytics scope</h2>
+      <p>Product analytics for the installed Forge app is limited to sanitized usage and reliability events. Website analytics for this public marketing website is separate from the Forge app runtime and does not process customer Excel files or Jira issue content from the installed app.</p>
     </main>
     <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">User guide</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     <script src="assets/site.js"></script>
