@@ -81,9 +81,10 @@
   </head>
   <body class="importer-page">
     <div class="site-shell">
-      <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon-small.png" width="96" height="96" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Excel to Jira</a><a href="../../import-excel-to-jira/">Guide</a><a href="../worklog-rollup-for-jira/">Worklog Rollup</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Marketplace</a></div></nav></header>
+      <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/icon-small.png" width="96" height="96" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html" aria-current="page">Product</a><a href="index.html#guides">Guides</a><a href="docs.html">User guide</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try the app</a></div></nav></header>
 
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Mederak Apps</a> / <a href="../index.html">Apps</a> / Excel to Jira Importer & Updater</nav>
+    <nav class="resource-nav" aria-label="Excel to Jira resources"><a href="index.html" aria-current="page">Overview</a><a href="import-excel-to-jira/">Import</a><a href="update-jira-issues-from-excel/">Update</a><a href="jira-csv-import-vs-excel-import/">CSV vs Excel</a><a href="import-epics-stories-subtasks-from-excel-to-jira/">Hierarchy</a><a href="map-excel-columns-to-jira-fields/">Field mapping</a><a href="review-jira-changes-before-import/">Review</a><a href="excel-to-jira-template/">Template</a><a href="fill-excel-from-jira/">Fill from Jira</a><a href="docs.html">User guide</a><a href="security.html">Security</a><a href="support.html">Support</a></nav>
 
       <main>
         <section class="hero product-hero lp-hero">
@@ -151,7 +152,7 @@
               <p>The workflow supports creating new Jira issues and updating existing Jira issues from repeated Excel uploads when matching information is available.</p>
               <div class="hero-actions">
                 <a class="button" href="../../import-excel-to-jira/">How to import Excel to Jira</a>
-                <a class="button" href="excel-to-jira-vs-csv-import.html">Excel to Jira vs CSV import</a>
+                <a class="button" href="jira-csv-import-vs-excel-import/">Excel to Jira vs CSV import</a>
               </div>
             </div>
             <figure class="media-card">
@@ -172,8 +173,8 @@
             <div class="feature-card-grid">
               <article><h3>My Excel file has multiple worksheets</h3><p>Choose the worksheet that contains the Jira import data before mapping columns.</p></article>
               <article><h3>The header row is not the first row</h3><p>Select the row that contains column names so workbook notes and cover rows do not break the import setup.</p></article>
-              <article><h3>I need to import epics, stories and subtasks</h3><p>Use hierarchy setup when the workbook and Jira project support the planned parent relationships. <a href="import-epics-stories-subtasks-from-excel.html">Read the hierarchy guide</a>.</p></article>
-              <article><h3>I need to update existing Jira issues from Excel</h3><p>Use repeated imports to update matching Jira issues when a stable issue key or supported row identity is available. <a href="update-jira-issues-from-excel.html">Read the update guide</a>.</p></article>
+              <article><h3>I need to import epics, stories and subtasks</h3><p>Use hierarchy setup when the workbook and Jira project support the planned parent relationships. <a href="import-epics-stories-subtasks-from-excel-to-jira/">Read the hierarchy guide</a>.</p></article>
+              <article><h3>I need to update existing Jira issues from Excel</h3><p>Use repeated imports to update matching Jira issues when a stable issue key or supported row identity is available. <a href="update-jira-issues-from-excel/">Read the update guide</a>.</p></article>
               <article><h3>I need to combine several Excel columns into Jira Description</h3><p>Description Builder can combine context, acceptance criteria, notes and estimates into one structured Jira Description.</p></article>
               <article><h3>I need to clean values before import</h3><p>Use Value cleanup to normalize spreadsheet values before Jira validation and import.</p></article>
               <article><h3>I need to review changes before Jira is updated</h3><p>Validate rows and review planned creates, updates, skipped rows and errors before the final import action.</p></article>
@@ -405,9 +406,27 @@
             </tbody>
           </table>
           <div class="hero-actions">
-            <a class="button" href="excel-to-jira-vs-csv-import.html">Read the full comparison</a>
+            <a class="button" href="jira-csv-import-vs-excel-import/">Read the full comparison</a>
             <a class="button" href="../../import-excel-to-jira/">Excel to Jira import guide</a>
             <a class="button" href="https://marketplace.atlassian.com/apps/3429713184?tab=pricing" data-config-url="PRICING_URL" data-analytics="pricing-click" data-analytics-event="pricing_click" data-product="excel-to-jira-importer-updater">View pricing</a>
+          </div>
+        </section>
+
+        <section class="section" id="guides">
+          <div class="section-inner">
+            <div class="section-heading">
+              <span class="eyebrow">Guides and templates</span>
+              <h2>Learn the Excel to Jira workflows by intent</h2>
+              <p>Practical pages for Jira admins, project managers, migration leads and teams preparing Jira issues in spreadsheets.</p>
+            </div>
+            <div class="guide-link-grid">
+              <a class="guide-link-card" href="import-excel-to-jira/"><b>Import from Excel</b><span>Upload XLSX, XLS or CSV, choose worksheet and header row, map fields and review before import.</span></a>
+              <a class="guide-link-card" href="update-jira-issues-from-excel/"><b>Update Jira from Excel</b><span>Use repeat workbook uploads to update matching Jira issues after full review.</span></a>
+              <a class="guide-link-card" href="review-jira-changes-before-import/"><b>Safer review workflow</b><span>Preview creates, updates, skipped rows and errors before Jira changes.</span></a>
+              <a class="guide-link-card" href="map-excel-columns-to-jira-fields/"><b>Templates and mapping</b><span>Map Excel columns to Jira fields, custom fields and structured descriptions.</span></a>
+              <a class="guide-link-card" href="excel-to-jira-template/"><b>Sample import template</b><span>Download a starter CSV and adapt it to your Jira project.</span></a>
+              <a class="guide-link-card" href="fill-excel-from-jira/"><b>Fill Excel from Jira</b><span>Fill a controlled workbook from selected Jira issues as part of a repeatable workflow.</span></a>
+            </div>
           </div>
         </section>
 
@@ -476,8 +495,8 @@ https://marketplace.atlassian.com/apps/3429713184</textarea>
           <div class="faq-grid">
             <article class="faq-item"><h3>Can Jira import Excel files directly?</h3><p>Jira's native import flow is CSV-based. Excel to Jira Importer and Updater is for Jira Cloud teams that want to start from XLSX, XLS or CSV files and review mapped Jira changes before import.</p></article>
             <article class="faq-item"><h3>How do I import Excel into Jira Cloud?</h3><p>Upload the workbook, choose the worksheet and header row, map Excel columns to Jira fields, validate the rows, review planned creates or updates, then import only after confirmation.</p></article>
-            <article class="faq-item"><h3>Can I update existing Jira issues from Excel?</h3><p>Yes. Repeat imports can update matching Jira issues when the import setup provides a stable identity such as a Jira issue key or another supported row identity. See the <a href="update-jira-issues-from-excel.html">update Jira issues from Excel guide</a>.</p></article>
-            <article class="faq-item"><h3>Can I import epics, stories and subtasks from Excel into Jira?</h3><p>Yes, when the workbook structure and Jira configuration support the intended hierarchy. See the <a href="import-epics-stories-subtasks-from-excel.html">hierarchy import guide</a>.</p></article>
+            <article class="faq-item"><h3>Can I update existing Jira issues from Excel?</h3><p>Yes. Repeat imports can update matching Jira issues when the import setup provides a stable identity such as a Jira issue key or another supported row identity. See the <a href="update-jira-issues-from-excel/">update Jira issues from Excel guide</a>.</p></article>
+            <article class="faq-item"><h3>Can I import epics, stories and subtasks from Excel into Jira?</h3><p>Yes, when the workbook structure and Jira configuration support the intended hierarchy. See the <a href="import-epics-stories-subtasks-from-excel-to-jira/">hierarchy import guide</a>.</p></article>
             <article class="faq-item"><h3>Do I need to convert Excel to CSV before importing to Jira?</h3><p>No. The app can work from XLSX and XLS workbooks, and CSV is also supported for teams that already use CSV files.</p></article>
             <article class="faq-item"><h3>Can I map Excel columns to Jira custom fields?</h3><p>Yes. You can map workbook columns to Jira fields, including custom fields that are available in the selected Jira project and issue type configuration.</p></article>
             <article class="faq-item"><h3>Can I combine multiple Excel columns into a Jira Description?</h3><p>Yes. Description Builder can combine several Excel columns, such as business context, acceptance criteria and notes, into one structured Jira Description.</p></article>
@@ -506,7 +525,7 @@ https://marketplace.atlassian.com/apps/3429713184</textarea>
         </section>
       </main>
 
-      <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" width="723" height="123" loading="lazy" decoding="async" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="../../import-excel-to-jira/">Guide</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+      <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="assets/mederak-apps-logo.png" width="723" height="123" loading="lazy" decoding="async" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="../../import-excel-to-jira/">Guides</a><a href="docs.html">User guide</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
     </div>
     <div class="lightbox" id="image-lightbox" aria-hidden="true">
       <button class="lightbox-close" type="button">Close</button>

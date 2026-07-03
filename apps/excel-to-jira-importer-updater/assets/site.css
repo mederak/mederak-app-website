@@ -117,6 +117,10 @@ a {
   color: var(--blue);
 }
 
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
 .menu-toggle {
   display: none;
   align-items: center;
@@ -2411,6 +2415,38 @@ a {
   color: var(--blue);
 }
 
+.resource-nav {
+  width: 100%;
+  max-width: min(1180px, 100%);
+  margin: 14px auto 0;
+  padding: 0 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resource-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  border: 1px solid rgba(174, 190, 209, 0.72);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--muted);
+  padding: 7px 11px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.resource-nav a:hover,
+.resource-nav a[aria-current="page"] {
+  border-color: rgba(12, 102, 228, 0.4);
+  background: rgba(238, 245, 255, 0.95);
+  color: var(--blue-dark);
+}
+
 .sample-table {
   width: 100%;
   border-collapse: separate;
@@ -2458,6 +2494,52 @@ a {
 
 .inline-cta h2 {
   margin-top: 0;
+}
+
+.guide-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0 6px;
+}
+
+.guide-link-card {
+  display: block;
+  min-height: 100%;
+  border: 1px solid rgba(12, 102, 228, 0.16);
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(16, 32, 51, 0.07);
+}
+
+.guide-link-card b {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.guide-link-card span {
+  display: block;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.download-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(12, 102, 228, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #f7faff);
+  padding: 22px;
+  margin: 28px 0;
+}
+
+.download-panel p {
+  margin-bottom: 0;
 }
 
 .docs-page {
@@ -2829,6 +2911,19 @@ a {
 
   .menu-toggle + .nav-links .button {
     width: 100%;
+  }
+
+  .resource-nav {
+    max-width: 100vw;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+
+  .resource-nav a {
+    flex: 0 0 auto;
   }
 
   .docs-page {
@@ -3473,6 +3568,7 @@ a {
 @media (max-width: 980px) {
   .problem-list,
   .feature-card-grid,
+  .usecase-grid-four,
   .step-list,
   .steps-with-visual {
     grid-template-columns: 1fr;
@@ -3481,9 +3577,31 @@ a {
   .steps-with-visual {
     gap: 22px;
   }
+
+  .usecase-grid-four {
+    display: grid;
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .usecase-grid-four article {
+    min-width: 0;
+    flex-basis: auto;
+  }
 }
 
 @media (max-width: 720px) {
+  .guide-link-grid,
+  .download-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .download-panel .button {
+    width: 100%;
+  }
+
   .lp-hero {
     padding-top: 34px;
   }
@@ -3504,20 +3622,6 @@ a {
 
   .hero-benefits article:nth-child(n + 4) {
     display: grid;
-  }
-
-  .usecase-grid-four {
-    display: grid;
-    grid-template-columns: 1fr;
-    overflow: visible;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-  }
-
-  .usecase-grid-four article {
-    min-width: 0;
-    flex-basis: auto;
   }
 
   .admin-copy-card textarea {
@@ -3839,6 +3943,51 @@ a {
 }
 
 @media (max-width: 720px) {
+  .importer-page .usecase-grid,
+  .importer-page .role-grid,
+  .importer-page .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .importer-page .usecase-grid article,
+  .importer-page .role-grid article,
+  .importer-page .faq-item {
+    min-width: 0;
+    flex-basis: auto;
+    scroll-snap-align: none;
+  }
+
+  .importer-page .forge-banner {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .importer-page .forge-banner > *,
+  .importer-page .forge-points span {
+    min-width: 0;
+  }
+
+  .importer-page .forge-points span {
+    overflow-wrap: anywhere;
+  }
+
+  .importer-page .cta-box {
+    padding: 24px 16px;
+  }
+
+  .importer-page .cta-box .button {
+    width: 100%;
+    white-space: normal;
+  }
+
   .importer-page .compare-table tr:nth-child(n + 6),
   .importer-page .faq-grid .faq-item:nth-child(n + 7) {
     display: block;

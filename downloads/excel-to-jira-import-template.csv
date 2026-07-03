@@ -1,0 +1,4 @@
+Summary,Description,Issue Type,Priority,Assignee,Reporter,Due Date,Labels,Component,Epic Name,Parent Key,Linked Issue Key,Story Points
+"Create onboarding checklist","List required onboarding steps and owners.","Story","Medium","owner@example.com","reporter@example.com","2026-08-15","onboarding;customer","Customer Portal","Customer onboarding","","",5
+"Draft checklist copy","Prepare the first version of checklist copy for review.","Sub-task","Medium","writer@example.com","reporter@example.com","2026-08-20","onboarding","Customer Portal","","PROJ-123","",2
+"Validate billing address rules","Confirm address validation cases before implementation.","Task","High","analyst@example.com","reporter@example.com","2026-08-22","billing;validation","Billing","","","PROJ-98",3

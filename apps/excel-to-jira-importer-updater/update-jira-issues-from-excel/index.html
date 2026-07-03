@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update Jira Issues from Excel | Mederak Apps</title>
+    <meta name="description" content="Bulk update Jira issues from Excel with row matching, field mapping, validation and a full review before Jira changes.">
+    <link rel="canonical" href="https://mederak.app/apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/">
+    <meta property="og:title" content="Update Jira Issues from Excel">
+    <meta property="og:description" content="Review creates, updates, skipped rows and errors before applying Jira bulk updates from Excel.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/">
+    <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/screen-update-existing-issues.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/icon.png">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"Update Jira Issues from Excel","item":"https://mederak.app/apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I update existing Jira issues from Excel?","acceptedAnswer":{"@type":"Answer","text":"Yes, when rows can be matched to existing Jira issues with a stable identity such as an issue key or another supported row identity."}},{"@type":"Question","name":"Can unmatched rows create duplicates?","acceptedAnswer":{"@type":"Answer","text":"They can if matching is not clear. Review unmatched rows, creates, updates and skipped rows before confirmation."}},{"@type":"Question","name":"Can I update only selected fields?","acceptedAnswer":{"@type":"Answer","text":"Yes. Map only the fields that should be updated from the workbook."}}]}</script>
+    <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="../"><img src="../assets/icon.png" alt=""><span>Excel to Jira Importer & Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../">Product</a><a href="../#guides" aria-current="page">Guides</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try the app</a></div></nav></header>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../../index.html">Mederak Apps</a> / <a href="../">Excel to Jira Importer & Updater</a> / Update Jira issues from Excel</nav>
+    <nav class="resource-nav" aria-label="Excel to Jira resources"><a href="../">Overview</a><a href="../import-excel-to-jira/">Import</a><a href="../update-jira-issues-from-excel/" aria-current="page">Update</a><a href="../jira-csv-import-vs-excel-import/">CSV vs Excel</a><a href="../import-epics-stories-subtasks-from-excel-to-jira/">Hierarchy</a><a href="../map-excel-columns-to-jira-fields/">Field mapping</a><a href="../review-jira-changes-before-import/">Review</a><a href="../excel-to-jira-template/">Template</a><a href="../fill-excel-from-jira/">Fill from Jira</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a></nav>
+    <main class="content-page seo-page">
+      <span class="eyebrow">Jira bulk update from Excel</span>
+      <h1>Update Jira issues from Excel with a full review before anything changes</h1>
+      <p class="lead">Updating existing Jira issues from a spreadsheet is powerful, but it is also where teams need the most control. The app can use repeat uploads to update matching Jira issues from workbook rows, while keeping field mapping, validation and review in front of the final confirmation.</p>
+      <div class="hero-actions"><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try on Atlassian Marketplace</a><a class="button" href="../review-jira-changes-before-import/">Review workflow</a><a class="button" href="../">View product</a></div>
+      <figure class="media-card screenshot-card"><button class="image-zoom" type="button" data-lightbox-src="../assets/screen-update-existing-issues.png" aria-label="Open update existing issues screenshot"><img src="../assets/screen-update-existing-issues.png" width="1680" height="945" alt="Update existing Jira issues from Excel with matching and review" loading="lazy" decoding="async"></button><figcaption>Use matching information and review before updating existing Jira issues.</figcaption></figure>
+
+      <h2>Why bulk updating Jira from Excel is risky</h2>
+      <p>Bulk updates can change real work that teams already depend on. A spreadsheet may be stale, sorted differently, missing issue keys or edited by someone who did not know what changed in Jira since the first import. If the workflow cannot match rows carefully, the same file can create duplicates or overwrite fields that should stay in Jira.</p>
+      <p>The safer pattern is narrow: match rows, map only the fields you intend to update, validate values and review every planned change.</p>
+
+      <h2>How rows are matched to existing Jira issues</h2>
+      <p>A repeat upload needs stable identity. In many cases that is a Jira issue key such as <code>PROJ-124</code>. In other setups it can be another supported row identity from the previous import. The important rule is that every update candidate should have a clear target before you confirm changes.</p>
+      <table class="sample-table"><thead><tr><th>Excel column</th><th>Use</th><th>Review question</th></tr></thead><tbody><tr><td>Issue Key</td><td>Match the row to an existing Jira issue</td><td>Does the issue still exist and belong to this project?</td></tr><tr><td>External ID</td><td>Match repeated workbook versions</td><td>Is this ID stable across versions?</td></tr><tr><td>Summary</td><td>Update text if intentionally mapped</td><td>Should Excel replace the current Jira summary?</td></tr><tr><td>Priority or Due Date</td><td>Bulk field cleanup</td><td>Are values valid for the target Jira configuration?</td></tr></tbody></table>
+
+      <h2>Review creates, updates, skipped rows and errors</h2>
+      <p>For update work, the review should separate rows that will update an existing issue from rows that would create new issues, rows that are skipped and rows blocked by errors. This helps catch stale issue keys, duplicate workbook rows, invalid users, invalid dates and values that no longer match Jira field options.</p>
+      <figure class="media-card screenshot-card"><button class="image-zoom" type="button" data-lightbox-src="../assets/screen-update-mode-duplicates.png" aria-label="Open duplicate and update mode screenshot"><img src="../assets/screen-update-mode-duplicates.png" width="1680" height="945" alt="Duplicate handling and update mode review before Jira changes" loading="lazy" decoding="async"></button><figcaption>Review matching and duplicate handling before a repeat import changes Jira.</figcaption></figure>
+
+      <h2>Useful update scenarios</h2>
+      <div class="feature-card-grid">
+        <article><h3>Priority cleanup after planning</h3><p>Map a reviewed Priority column and leave unrelated Jira fields unmapped.</p></article>
+        <article><h3>Owner or due date changes</h3><p>Validate user and date values before assigning many issues at once.</p></article>
+        <article><h3>Description refinement</h3><p>Use Description Builder when reviewed context should replace or improve Jira Description.</p></article>
+        <article><h3>Second workbook version</h3><p>Upload a newer workbook and review what will update compared with the previous run.</p></article>
+        <article><h3>Post-import cleanup</h3><p>Fix imported values after stakeholders review the initial Jira issues.</p></article>
+        <article><h3>Client handover corrections</h3><p>Apply approved corrections while keeping Jira changes visible before confirmation.</p></article>
+      </div>
+
+      <h2>Safety and validation</h2>
+      <p>Validation should check required fields, user fields, dates, numbers, field options, hierarchy and duplicate handling before Jira is updated. A narrow mapping also reduces risk: if the workbook should only update Priority and Due date, do not map Summary, Description or other fields by habit.</p>
+      <p>After import, keep the import report so the team can see which rows were updated, skipped or failed.</p>
+
+      <h2>Related guides</h2>
+      <div class="guide-link-grid"><a class="guide-link-card" href="../import-excel-to-jira/"><b>Import Excel to Jira</b><span>Start with workbook upload, worksheet selection and Jira field mapping.</span></a><a class="guide-link-card" href="../review-jira-changes-before-import/"><b>Review before import</b><span>Use the review step as the safety boundary before bulk changes.</span></a><a class="guide-link-card" href="../map-excel-columns-to-jira-fields/"><b>Map Excel columns</b><span>Choose exactly which fields Excel should create or update.</span></a><a class="guide-link-card" href="../excel-to-jira-template/"><b>Template</b><span>Download a starter CSV with an Issue Key column you can adapt.</span></a></div>
+      <h2>FAQ</h2>
+      <div class="faq-grid"><article class="faq-item"><h3>Can I update existing Jira issues from Excel?</h3><p>Yes, when rows can be matched to existing Jira issues with a stable identity.</p></article><article class="faq-item"><h3>Can unmatched rows create duplicates?</h3><p>They can. Review unmatched rows before confirmation.</p></article><article class="faq-item"><h3>Can I update only selected fields?</h3><p>Yes. Map only fields that should change.</p></article></div>
+      <div class="inline-cta"><h2>Review bulk updates before applying them</h2><p>Use Excel for planning, but keep Jira changes visible and deliberate.</p><div class="hero-actions"><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try on Atlassian Marketplace</a><a class="button" href="../docs.html">Read documentation</a><a class="button" href="../">View product</a></div></div>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../../index.html"><img src="../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../../index.html">Home</a><a href="../../index.html">Apps</a><a href="../">Product</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a></div></div></footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true"><button class="lightbox-close" type="button">Close</button><button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&lt;</button><img src="" alt=""><button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&gt;</button></div>
+    <script src="../assets/site-config.js"></script><script src="../assets/site.js"></script>
+  </body>
+</html>
