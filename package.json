@@ -1,0 +1,17 @@
+{
+  "name": "mederak-app-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-astro-site.mjs && node scripts/copy-static-site-assets.mjs",
+    "preview": "astro preview",
+    "verify:source": "node scripts/verify-seo-domain.js",
+    "verify:dist": "node scripts/verify-seo-domain.js dist",
+    "verify:parity": "node scripts/compare-source-to-dist.mjs",
+    "test": "node scripts/test-jira-csv-readiness-analyzer.js && node scripts/test-jira-csv-error-matcher.js && node scripts/test-jira-csv-readiness-checker-ui.js && npm run build && npm run verify:dist && npm run verify:parity",
+    "compare:live": "node scripts/compare-built-site-to-live.mjs"
+  },
+  "devDependencies": {
+    "astro": "^7.0.6"
+  }
+}

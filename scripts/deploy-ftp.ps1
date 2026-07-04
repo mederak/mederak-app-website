@@ -8,6 +8,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $ProjectRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$BuildRoot = Join-Path $ProjectRoot "dist"
 $FtpHost = "ftp.cluster100.hosting.ovh.net"
 $FtpPort = 21
 $FtpUser = "lgngvco"
@@ -15,10 +16,10 @@ $RemoteRoot = "/www"
 $CredentialTarget = "mederak.pl FTP"
 $DeploySecretsPath = Join-Path $ProjectRoot ".deploy-secrets.json"
 
-$ExcludedDirectories = @(".git")
-$ExcludedFiles = @("AGENTS.md", "README.md", ".gitignore", ".deploy-secrets.json", ".DS_Store", "MARKETING_REFRESH_NOTES.md")
-$ExcludedPathPrefixes = @("scripts/")
-$ExcludedExtensions = @(".md")
+$ExcludedDirectories = @()
+$ExcludedFiles = @(".DS_Store")
+$ExcludedPathPrefixes = @()
+$ExcludedExtensions = @()
 $EnsuredRemoteDirectories = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 
 Add-Type -Language CSharp -TypeDefinition @"
@@ -187,6 +188,24 @@ function Assert-CleanGitState {
 
         if ($status) {
             throw "Working tree is not clean. Commit or stash changes before deploy."
+        }
+    }
+    finally {
+        Pop-Location
+    }
+}
+
+function Invoke-SiteBuild {
+    Push-Location $ProjectRoot
+    try {
+        & npm run build
+        if ($LASTEXITCODE -ne 0) {
+            throw "npm run build failed."
+        }
+
+        & node scripts/verify-seo-domain.js dist
+        if ($LASTEXITCODE -ne 0) {
+            throw "dist SEO verification failed."
         }
     }
     finally {
@@ -363,16 +382,17 @@ function Get-RemoteTree {
 function Get-RelativeDeployPath {
     param([Parameter(Mandatory = $true)][string]$FullName)
 
-    $root = $ProjectRoot.ProviderPath.TrimEnd("\", "/") + [System.IO.Path]::DirectorySeparatorChar
+    $resolvedBuildRoot = Resolve-Path -LiteralPath $BuildRoot
+    $root = $resolvedBuildRoot.ProviderPath.TrimEnd("\", "/") + [System.IO.Path]::DirectorySeparatorChar
     if (-not $FullName.StartsWith($root, [StringComparison]::OrdinalIgnoreCase)) {
-        throw "Path '$FullName' is not below project root '$root'."
+        throw "Path '$FullName' is not below build root '$root'."
     }
 
     $FullName.Substring($root.Length).Replace("\", "/")
 }
 
 function Get-LocalDeployFiles {
-    Get-ChildItem -LiteralPath $ProjectRoot -Recurse -File -Force |
+    Get-ChildItem -LiteralPath $BuildRoot -Recurse -File -Force |
         Where-Object {
             $relative = Get-RelativeDeployPath -FullName $_.FullName
             $topDirectory = $relative.Split("/")[0]
@@ -433,6 +453,7 @@ function Send-FtpFile {
 
 function Invoke-Deploy {
     Assert-CleanGitState
+    Invoke-SiteBuild
 
     $credential = Get-DeployCredential
     Ensure-FtpDirectory -RemotePath $RemoteRoot -Credential $credential

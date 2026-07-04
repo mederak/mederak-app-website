@@ -3,7 +3,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const root = path.resolve(__dirname, "..");
+const projectRoot = path.resolve(__dirname, "..");
+const requestedRoot = process.argv[2] || ".";
+const root = path.resolve(projectRoot, requestedRoot);
 const canonicalOrigin = "https://mederak.app";
 const oldDomainPattern = /\b(?:https?:\/\/)?(?:www\.)?mederak\.pl\b/i;
 const failures = [];
