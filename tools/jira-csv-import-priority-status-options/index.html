@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jira CSV Priority and Status Option Problems - How to Fix</title>
+    <meta name="description" content="Fix Jira CSV import warnings when priority, status, resolution, option, or select-list values do not exist or are not valid.">
+    <link rel="canonical" href="https://mederak.app/tools/jira-csv-import-priority-status-options/">
+    <meta property="og:title" content="Jira CSV Priority and Status Option Problems - How to Fix">
+    <meta property="og:description" content="Fix Jira CSV import warnings when priority, status, resolution, option, or select-list values do not exist or are not valid.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/tools/jira-csv-import-priority-status-options/">
+    <meta property="og:image" content="https://mederak.app/assets/mederak-apps-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/apps/excel-to-jira-importer-updater/assets/icon.png">
+    <link rel="stylesheet" href="/assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Jira CSV priority, status and option value errors - how to fix","description":"Fix Jira CSV import warnings when priority, status, resolution, option, or select-list values do not exist or are not valid.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps","url":"https://mederak.app/"},"mainEntityOfPage":"https://mederak.app/tools/jira-csv-import-priority-status-options/"}</script>
+    <script src="/assets/site-config.js"></script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand logo-brand" href="/"><img src="/assets/mederak-apps-logo.png" alt="Mederak Apps"></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+        <div class="nav-links" id="main-menu">
+          <a href="/">Home</a>
+          <a href="/apps/">Apps</a>
+          <a href="/apps/excel-to-jira-importer-updater/">Excel to Jira Importer &amp; Updater</a>
+          <a href="/tools/jira-csv-import-error-explainer/">CSV error explainer</a>
+          <a href="/tools/jira-csv-excel-readiness-checker/">Readiness checker</a>
+          <a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184/excel-to-jira-importer-and-updater?hosting=cloud&tab=overview" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">Marketplace</a>
+        </div>
+      </nav>
+    </header>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Mederak Apps</a> / <a href="/apps/excel-to-jira-importer-updater/">Excel to Jira Importer &amp; Updater</a> / <a href="/tools/jira-csv-import-error-explainer/">Jira CSV error explainer</a> / Jira CSV Priority, Status and Option Value Errors</nav>
+      <nav class="resource-nav" aria-label="Free Jira CSV and Excel tools"><a href="/tools/jira-csv-import-error-explainer/">Error explainer</a><a href="/tools/jira-csv-excel-readiness-checker/">Readiness checker</a><a href="/tools/jira-csv-import-date-format/">Date format</a><a href="/tools/jira-csv-import-parent-child/">Parent-child</a><a href="/tools/jira-csv-import-custom-fields/">Custom fields</a><a href="/tools/jira-csv-bulk-update-risks/">Bulk update</a><a href="/tools/jira-csv-import-field-mapping/">Field mapping</a></nav>
+      <main class="content-page seo-page tool-page">
+        <span class="eyebrow">Jira CSV import troubleshooting</span>
+        <h1>Jira CSV priority, status and option value errors - how to fix</h1>
+        <p class="lead">Select-like values must match existing Jira options and workflow or status configuration.</p>
+        <p class="tool-disclaimer">This is not official Atlassian documentation. Your Jira import wizard and project settings may behave differently. Always review Atlassian's current documentation and your Jira import preview before confirming an import.</p>
+
+        <section>
+          <h2>Short explanation</h2>
+          <p>Common cause: The CSV value has different casing or trailing spaces.</p>
+          <p>Possible fix: Normalize casing and remove trailing spaces.</p>
+        </section>
+
+        <section>
+          <h2>Common causes</h2>
+          <ul><li>The CSV value has different casing or trailing spaces.</li><li>The option exists in another project but not the target project.</li><li>The status is not valid for issue creation or the current workflow.</li><li>Resolution values are mapped when they should be left empty for open issues.</li></ul>
+        </section>
+
+        <section>
+          <h2>How to fix it</h2>
+          <ul><li>Normalize casing and remove trailing spaces.</li><li>Make sure options exist in the target Jira configuration.</li><li>Avoid mapping workflow status unless the import method supports it.</li><li>Check the preview for invalid option warnings.</li></ul>
+        </section>
+
+        <section>
+          <h2>What to check in Jira</h2>
+          <ul><li>Priority scheme and project options.</li><li>Workflow statuses available for the issue type.</li><li>Resolution values and whether they are appropriate for the import.</li></ul>
+          <p>Check your Jira configuration before importing. Field configuration, workflow, issue type scheme, permissions and import wizard behavior can change the result.</p>
+        </section>
+
+        <section>
+          <h2>Example</h2>
+          <pre class="csv-example"><code>Summary,Priority,Status
+Fix payment retry,High,To Do</code></pre>
+        </section>
+
+        <section>
+          <h2>How to avoid this next time</h2>
+          <ul><li>Options exist in Jira</li><li>No trailing spaces</li><li>Workflow values reviewed</li></ul>
+          <p>No Jira access required: the free checker can help identify common spreadsheet risks locally in your browser before you decide whether to install a Jira app.</p>
+        </section>
+
+        <div class="inline-cta tool-cta">
+        <h2>Map Excel columns to Jira fields safely</h2>
+        <p>CSV imports are possible, but fragile. Excel to Jira Importer &amp; Updater lets you map real Excel workbooks, clean values, create or update Jira issues, and review every change before Jira is modified.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184/excel-to-jira-importer-and-updater?hosting=cloud&tab=overview" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL" data-analytics-event="marketplace_csv_error_click" data-product="excel-to-jira-importer-updater">View on Atlassian Marketplace</a>
+          <a class="button" href="/tools/jira-csv-excel-readiness-checker/">Try the free readiness checker</a>
+          <a class="button" href="https://www.youtube.com/watch?v=KEpNiVnPt3U" data-config-url="EXCEL_DEMO_URL">Watch the 90-second demo</a>
+        </div>
+      </div>
+
+        <section>
+          <h2>Related Jira CSV import errors</h2>
+          <div class="guide-link-grid"><a class="guide-link-card" href="/tools/jira-csv-import-custom-fields/"><b>Jira CSV Custom Field Import Problems</b><span>Custom field values must match the field type and available options in the target Jira configuration.</span></a><a class="guide-link-card" href="/tools/jira-csv-import-field-mapping/"><b>Jira CSV Import Field Mapping Problems</b><span>Field mapping problems happen when Jira cannot connect CSV columns to the Jira fields needed for the selected project and issue type.</span></a><a class="guide-link-card" href="/tools/jira-csv-bulk-update-risks/"><b>Jira CSV Bulk Update Risks</b><span>CSV files with issue keys may be treated as update-like workflows depending on the import method. Empty values and duplicate keys can be risky.</span></a><a class="guide-link-card" href="/tools/jira-csv-excel-readiness-checker/"><b>Free Jira CSV and Excel readiness checker</b><span>No Jira access required. Check CSV risk signals and basic workbook metadata locally in your browser.</span></a></div>
+        </section>
+      </main>
+      <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <a class="brand logo-brand" href="/"><img src="/assets/mederak-apps-logo.png" alt="Mederak Apps"></a>
+          <p>Jira Cloud apps and free browser tools by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk" data-config-url="SUPPORT_URL">Mederak Apps Service Desk</a></p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/apps/">Apps</a>
+          <a href="/apps/excel-to-jira-importer-updater/">Excel to Jira Importer &amp; Updater</a>
+          <a href="/tools/jira-csv-import-error-explainer/">CSV error explainer</a>
+          <a href="/tools/jira-csv-excel-readiness-checker/">Readiness checker</a>
+          <a href="/apps/excel-to-jira-importer-updater/security.html">Security</a>
+        </div>
+      </div>
+    </footer>
+    </div>
+    <script src="/assets/site.js"></script>
+  </body>
+</html>
