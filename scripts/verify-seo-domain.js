@@ -90,6 +90,11 @@ function getRobotsMeta(content) {
   return "";
 }
 
+function routeFromIndexHtml(filePath) {
+  const directory = path.dirname(relative(filePath)).replace(/\\/g, "/");
+  return directory === "." ? "/" : `/${directory}/`;
+}
+
 function getJsonLdBlocks(content, file) {
   const blocks = [];
 
@@ -152,6 +157,19 @@ assert(
 );
 
 const rootSitemap = read("sitemap.xml");
+const rootSitemapUrls = Array.from(rootSitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)).map((match) => match[1]);
+const rootSitemapUrlSet = new Set(rootSitemapUrls);
+assert(
+  /<urlset\b[^>]*xmlns=["']http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9["']/i.test(rootSitemap),
+  "sitemap.xml must be a sitemap.org XML urlset"
+);
+assert(rootSitemapUrls.length === rootSitemapUrlSet.size, "sitemap.xml must not contain duplicate URLs");
+for (const url of rootSitemapUrls) {
+  assert(url.startsWith(`${canonicalOrigin}/`), `sitemap.xml URL must use ${canonicalOrigin}: ${url}`);
+  assert(!/[?#]/.test(url), `sitemap.xml URL must not contain query strings or fragments: ${url}`);
+  assert(!/\blocalhost\b|127\.0\.0\.1|\.local\b/i.test(url), `sitemap.xml URL must not contain local hosts: ${url}`);
+  assert(!/\b(?:dev|test|staging)\b/i.test(url), `sitemap.xml URL must not contain developer/test URLs: ${url}`);
+}
 assert(
   rootSitemap.includes(`${canonicalOrigin}/apps/excel-to-jira-importer-updater/`),
   "sitemap.xml must include the Excel to Jira product page"
@@ -196,6 +214,9 @@ for (const [file, expectedCanonical] of keyCanonicals) {
 const htmlFiles = walk(root).filter((file) => file.endsWith(".html"));
 const seoHtmlFiles = htmlFiles.filter((file) => !relative(file).startsWith("google"));
 const indexableHtmlFiles = seoHtmlFiles;
+const toolIndexFiles = htmlFiles
+  .filter((file) => relative(file).startsWith("tools/") && path.basename(file) === "index.html")
+  .sort((a, b) => relative(a).localeCompare(relative(b)));
 const titles = new Map();
 const descriptions = new Map();
 const targetPages = new Set([
@@ -232,6 +253,21 @@ for (const htmlFile of seoHtmlFiles) {
     const robots = getRobotsMeta(content);
     assert(!robots.includes("noindex"), `${file} must not be noindex`);
   }
+}
+
+for (const toolIndexFile of toolIndexFiles) {
+  const file = relative(toolIndexFile);
+  const content = fs.readFileSync(toolIndexFile, "utf8");
+  const canonical = content.match(/<link\s+[^>]*rel=["']canonical["'][^>]*>/i);
+  const expectedUrl = `${canonicalOrigin}${routeFromIndexHtml(toolIndexFile)}`;
+  const robots = getRobotsMeta(content);
+
+  assert(!robots.includes("noindex"), `${file} must not be noindex`);
+  assert(Boolean(canonical), `${file} is missing rel=canonical`);
+  if (canonical) {
+    assert(extractAttribute(canonical[0], "href") === expectedUrl, `${file} canonical should be ${expectedUrl}`);
+  }
+  assert(rootSitemapUrlSet.has(expectedUrl), `sitemap.xml must include tool page ${expectedUrl}`);
 }
 
 for (const htmlFile of indexableHtmlFiles) {
