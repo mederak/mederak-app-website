@@ -1,0 +1,15 @@
+---
+import { getLegacyPage } from "../../lib/legacy-pages.mjs";
+import DocumentHead from "./document/DocumentHead.astro";
+import BodyOpen from "./document/BodyOpen.astro";
+import SiteHeader from "./navigation/SiteHeader.astro";
+import PageNavigation from "./navigation/PageNavigation.astro";
+import MainContent from "./content/MainContent.astro";
+import SiteFooter from "./navigation/SiteFooter.astro";
+import ImageLightbox from "../media/ImageLightbox.astro";
+import BodyScripts from "./document/BodyScripts.astro";
+
+const { pagePath } = Astro.props;
+const { modules } = getLegacyPage(pagePath);
+---
+<Fragment set:html={modules.beforeHead} /><DocumentHead markup={modules.head} /><Fragment set:html={modules.betweenHeadAndBody} /><BodyOpen markup={modules.bodyOpen} /><Fragment set:html={modules.beforeHeader} /><SiteHeader markup={modules.header} /><PageNavigation beforeMain={modules.afterHeaderBeforeMain} breadcrumb={modules.breadcrumb} resourceNav={modules.resourceNav} /><MainContent markup={modules.main} /><Fragment set:html={modules.betweenMainAndFooter} /><SiteFooter markup={modules.footer} /><Fragment set:html={modules.afterFooterBeforeLightbox} /><ImageLightbox markup={modules.lightbox} /><BodyScripts markup={modules.afterLightbox} /><Fragment set:html={modules.afterBody} />

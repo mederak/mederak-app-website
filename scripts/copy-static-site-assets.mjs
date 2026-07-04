@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { getHtmlPages, isHtmlAliasWithCleanRoute } from "../src/lib/legacy-pages.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const outDir = path.join(root, "dist");
@@ -49,8 +50,17 @@ function copyPublicFiles(directory) {
   }
 }
 
+function copyLegacyHtmlAliases() {
+  for (const page of getHtmlPages().filter((candidate) => isHtmlAliasWithCleanRoute(candidate.relativeFile))) {
+    const destination = path.join(outDir, page.relativeFile);
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.copyFileSync(page.file, destination);
+  }
+}
+
 fs.mkdirSync(outDir, { recursive: true });
 copyPublicFiles(root);
+copyLegacyHtmlAliases();
 fs.rmSync(path.join(outDir, ".astro"), { recursive: true, force: true });
 fs.rmSync(path.join(outDir, ".gitkeep"), { force: true });
 console.log("Copied static assets into dist.");

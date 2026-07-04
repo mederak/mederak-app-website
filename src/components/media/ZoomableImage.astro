@@ -1,0 +1,21 @@
+---
+const {
+  src,
+  alt,
+  width,
+  height,
+  mobileSrc,
+  caption,
+  buttonClass = "image-zoom",
+  loading = "lazy"
+} = Astro.props;
+---
+<figure class="media-card">
+  <button class={buttonClass} type="button" data-lightbox-src={src} aria-label={`Open ${alt}`}>
+    <picture>
+      {mobileSrc && <source media="(max-width: 700px)" srcset={mobileSrc} />}
+      <img src={src} width={width} height={height} alt={alt} loading={loading} decoding="async" />
+    </picture>
+  </button>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
