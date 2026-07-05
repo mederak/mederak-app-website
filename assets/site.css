@@ -168,6 +168,16 @@ a {
   box-shadow: 0 12px 24px rgba(12, 102, 228, 0.26);
 }
 
+.button.primary:hover,
+.button.primary:focus-visible,
+.nav-links a.button.primary:hover,
+.nav-links a.button.primary:focus-visible {
+  background: linear-gradient(135deg, #0055cc, #0c66e4);
+  border-color: #0055cc;
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(12, 102, 228, 0.34);
+}
+
 .button:hover {
   transform: translateY(-1px);
 }
