@@ -1,4 +1,31 @@
 ---
-const { markup } = Astro.props;
+const { context, metadata } = Astro.props;
+
+const title = metadata.title || context.title;
+const description = metadata.description || metadata.ogDescription || "";
+const ogTitle = metadata.ogTitle || title;
+const ogDescription = metadata.ogDescription || description;
+const ogImage = metadata.ogImage || "https://mederak.app/assets/mederak-apps-logo.png";
+const ogType = metadata.ogType || "website";
+const twitterCard = metadata.twitterCard || "summary_large_image";
 ---
-<Fragment set:html={markup} />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  {description && <meta name="description" content={description}>}
+  {context.noindex && <meta name="robots" content="noindex, follow">}
+  <link rel="canonical" href={context.canonicalUrl}>
+  <meta property="og:title" content={ogTitle}>
+  {ogDescription && <meta property="og:description" content={ogDescription}>}
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={context.canonicalUrl}>
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content={twitterCard}>
+  {context.product?.icon && <link rel="icon" href={context.product.icon}>}
+  <link rel="stylesheet" href={context.stylesheet}>
+  {metadata.jsonLd.map((script) => <Fragment set:html={script} />)}
+  {context.configScript && <script is:inline src={context.configScript}></script>}
+  <script is:inline src="/assets/analytics-config.js"></script>
+  <script is:inline src="/assets/analytics.js" defer></script>
+</head>

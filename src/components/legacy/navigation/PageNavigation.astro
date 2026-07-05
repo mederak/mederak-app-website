@@ -1,4 +1,23 @@
 ---
-const { beforeMain } = Astro.props;
+const { context } = Astro.props;
+
+const normalize = (href) => href.endsWith("/") || href.endsWith(".html") ? href : `${href}/`;
+const isCurrent = (href) => normalize(context.canonicalPath) === normalize(href);
 ---
-<Fragment set:html={beforeMain} />
+{context.breadcrumbs.length > 1 && (
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    {context.breadcrumbs.map((item, index) => (
+      <>
+        {index > 0 && " / "}
+        {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+      </>
+    ))}
+  </nav>
+)}
+{context.resourceNav && (
+  <nav class="resource-nav" aria-label={context.resourceNav.label}>
+    {context.resourceNav.links.map((link) => (
+      <a href={link.href} aria-current={isCurrent(link.href) ? "page" : undefined}>{link.label}</a>
+    ))}
+  </nav>
+)}

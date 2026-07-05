@@ -10,6 +10,6 @@ import ImageLightbox from "../media/ImageLightbox.astro";
 import BodyScripts from "./document/BodyScripts.astro";
 
 const { pagePath } = Astro.props;
-const { modules } = getLegacyPage(pagePath);
+const { context, metadata, modules } = getLegacyPage(pagePath);
 ---
-<Fragment set:html={modules.beforeHead} /><DocumentHead markup={modules.head} /><Fragment set:html={modules.betweenHeadAndBody} /><BodyOpen markup={modules.bodyOpen} /><Fragment set:html={modules.beforeHeader} /><SiteHeader markup={modules.header} /><PageNavigation beforeMain={modules.afterHeaderBeforeMain} breadcrumb={modules.breadcrumb} resourceNav={modules.resourceNav} /><MainContent markup={modules.main} /><Fragment set:html={modules.betweenMainAndFooter} /><SiteFooter markup={modules.footer} /><Fragment set:html={modules.afterFooterBeforeLightbox} /><ImageLightbox markup={modules.lightbox} /><BodyScripts markup={modules.afterLightbox} /><Fragment set:html={modules.afterBody} />
+<Fragment set:html={modules.beforeHead} /><DocumentHead context={context} metadata={metadata} /><Fragment set:html={modules.betweenHeadAndBody} /><BodyOpen markup={modules.bodyOpen} /><Fragment set:html={modules.beforeHeader} /><SiteHeader context={context} /><PageNavigation context={context} /><MainContent markup={modules.main} /><Fragment set:html={modules.betweenMainAndFooter} /><SiteFooter context={context} /><ImageLightbox /><BodyScripts context={context} /><Fragment set:html={modules.afterBody} />

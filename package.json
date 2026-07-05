@@ -8,8 +8,10 @@
     "verify:source": "node scripts/verify-seo-domain.js",
     "verify:dist": "node scripts/verify-seo-domain.js dist",
     "verify:parity": "node scripts/compare-source-to-dist.mjs",
+    "verify:shell": "node scripts/verify-astro-shell.mjs dist",
+    "verify:links": "node scripts/verify-local-links.mjs dist",
     "assets:audit": "node scripts/audit-media-library.mjs",
-    "test": "node scripts/test-jira-csv-readiness-analyzer.js && node scripts/test-jira-csv-error-matcher.js && node scripts/test-jira-csv-readiness-checker-ui.js && npm run build && npm run verify:dist && npm run verify:parity && npm run assets:audit",
+    "test": "node scripts/test-jira-csv-readiness-analyzer.js && node scripts/test-jira-csv-error-matcher.js && node scripts/test-jira-csv-readiness-checker-ui.js && npm run build && npm run verify:dist && npm run verify:shell && npm run verify:links && npm run assets:audit",
     "compare:live": "node scripts/compare-built-site-to-live.mjs"
   },
   "devDependencies": {

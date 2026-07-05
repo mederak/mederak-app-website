@@ -1,4 +1,53 @@
 ---
-const { markup } = Astro.props;
+import { products, site } from "../../../data/site-structure.mjs";
+
+const { context } = Astro.props;
+const product = context.product;
+const excel = products["excel-to-jira-importer-updater"];
+
+const vendorLinks = [
+  { label: "Home", href: "/" },
+  { label: "Apps", href: "/apps/" },
+  { label: "Trust center", href: "/trust-center.html" },
+  { label: "SLA", href: "/service-level-agreement.html" },
+  { label: "Support", href: site.supportUrl }
+];
+
+const productLinks = product ? [
+  { label: "Home", href: "/" },
+  { label: "Apps", href: "/apps/" },
+  { label: "Product", href: product.home },
+  { label: "Docs", href: product.docs },
+  { label: "Privacy", href: product.privacy },
+  { label: "Terms", href: product.terms },
+  { label: "Security", href: product.security },
+  { label: "Support", href: product.support }
+] : [];
+
+const toolLinks = [
+  { label: "Home", href: "/" },
+  { label: "Apps", href: "/apps/" },
+  { label: excel.name, href: excel.home },
+  { label: "CSV error explainer", href: "/tools/jira-csv-import-error-explainer/" },
+  { label: "Readiness checker", href: "/tools/jira-csv-excel-readiness-checker/" },
+  { label: "Security", href: excel.security }
+];
+
+const links = context.section === "tool" ? toolLinks : context.section === "product" ? productLinks : vendorLinks;
+const footerCopy = context.section === "tool"
+  ? "Jira Cloud apps and free browser tools by Mederak Apps."
+  : product
+    ? `${product.name} is a Jira Cloud app by Mederak Apps.`
+    : "Practical Jira Cloud apps by Mederak Apps.";
 ---
-<Fragment set:html={markup} />
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a class="brand logo-brand" href="/"><img src={site.logo} alt={site.name}></a>
+      <p>{footerCopy} Support: <a href={site.supportUrl} data-config-url={context.section === "tool" ? "SUPPORT_URL" : undefined}>Mederak Apps Service Desk</a></p>
+    </div>
+    <div class="footer-links">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </div>
+  </div>
+</footer>

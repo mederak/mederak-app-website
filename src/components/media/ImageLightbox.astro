@@ -1,4 +1,6 @@
 ---
-const { markup = "" } = Astro.props;
 ---
-<Fragment set:html={markup} />
+<div class="lightbox" id="image-lightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button">Close</button>
+  <img src="" alt="">
+</div>

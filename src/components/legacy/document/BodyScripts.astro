@@ -1,4 +1,4 @@
 ---
-const { markup } = Astro.props;
+const { context } = Astro.props;
 ---
-<Fragment set:html={markup} />
+<script is:inline src={context.siteScript}></script>

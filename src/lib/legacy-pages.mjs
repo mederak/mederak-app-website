@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createPageContext } from "./page-context.mjs";
 
 const projectRoot = process.cwd();
 const ignoredDirectories = new Set([".git", "dist", "node_modules", "src"]);
@@ -100,6 +101,36 @@ function splitLegacyHtml(html) {
   };
 }
 
+function firstMatch(source, pattern) {
+  return source.match(pattern)?.[1] || "";
+}
+
+function decodeHtml(value) {
+  return String(value || "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function extractHeadMetadata(head) {
+  const jsonLd = [...head.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi)]
+    .map((match) => match[0]);
+
+  return {
+    title: decodeHtml(firstMatch(head, /<title>([\s\S]*?)<\/title>/i).trim()),
+    description: decodeHtml(firstMatch(head, /<meta\b[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i)),
+    canonical: firstMatch(head, /<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']*)["'][^>]*>/i),
+    ogTitle: decodeHtml(firstMatch(head, /<meta\b[^>]*property=["']og:title["'][^>]*content=["']([^"']*)["'][^>]*>/i)),
+    ogDescription: decodeHtml(firstMatch(head, /<meta\b[^>]*property=["']og:description["'][^>]*content=["']([^"']*)["'][^>]*>/i)),
+    ogType: decodeHtml(firstMatch(head, /<meta\b[^>]*property=["']og:type["'][^>]*content=["']([^"']*)["'][^>]*>/i)) || "website",
+    ogImage: firstMatch(head, /<meta\b[^>]*property=["']og:image["'][^>]*content=["']([^"']*)["'][^>]*>/i),
+    twitterCard: decodeHtml(firstMatch(head, /<meta\b[^>]*name=["']twitter:card["'][^>]*content=["']([^"']*)["'][^>]*>/i)) || "summary_large_image",
+    jsonLd
+  };
+}
+
 export function getHtmlPages() {
   return walk(projectRoot)
     .filter((file) => file.endsWith(".html"))
@@ -119,10 +150,13 @@ export function getLegacyPage(relativeFile) {
   }
 
   const html = fs.readFileSync(page.file, "utf8");
+  const modules = splitLegacyHtml(html);
   return {
     ...page,
     html,
-    modules: splitLegacyHtml(html)
+    modules,
+    metadata: extractHeadMetadata(modules.head),
+    context: createPageContext(page)
   };
 }
 

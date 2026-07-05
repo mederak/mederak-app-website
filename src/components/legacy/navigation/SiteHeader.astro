@@ -1,4 +1,61 @@
 ---
-const { markup } = Astro.props;
+import { products, site } from "../../../data/site-structure.mjs";
+
+const { context } = Astro.props;
+
+const isCurrent = (href) => context.canonicalPath === href;
+const product = context.product;
+const excel = products["excel-to-jira-importer-updater"];
+
+const vendorLinks = [
+  { label: "Apps", href: "/apps/" },
+  { label: products["project-overview-status-hub-for-jira"].shortName, href: products["project-overview-status-hub-for-jira"].home },
+  { label: excel.name, href: excel.home },
+  { label: products["worklog-rollup-for-jira"].shortName, href: products["worklog-rollup-for-jira"].home },
+  { label: "Support", href: site.supportUrl },
+  { label: "View apps", href: "/apps/", class: "button primary" }
+];
+
+const productLinks = product ? [
+  { label: "Home", href: "/" },
+  { label: "Apps", href: "/apps/" },
+  { label: "Product", href: product.home },
+  { label: "Docs", href: product.docs },
+  { label: "Security", href: product.security },
+  { label: "Support", href: product.support },
+  { label: "Marketplace", href: product.marketplaceOverview || product.marketplace, class: "button primary" }
+] : [];
+
+const toolLinks = [
+  { label: "Home", href: "/" },
+  { label: "Apps", href: "/apps/" },
+  { label: excel.name, href: excel.home },
+  { label: "CSV error explainer", href: "/tools/jira-csv-import-error-explainer/" },
+  { label: "Readiness checker", href: "/tools/jira-csv-excel-readiness-checker/" },
+  { label: "Marketplace", href: excel.marketplaceOverview, class: "button primary", configUrl: "EXCEL_MARKETPLACE_OVERVIEW_URL" }
+];
+
+const links = context.section === "tool" ? toolLinks : context.section === "product" ? productLinks : vendorLinks;
+const brandHref = product && context.section === "product" ? product.home : "/";
+const brandImage = product && context.section === "product" ? product.icon : site.logo;
+const brandText = product && context.section === "product" ? product.name : "";
 ---
-<Fragment set:html={markup} />
+<header class="topbar">
+  <nav class="nav" aria-label="Main navigation">
+    <a class:list={["brand", !brandText && "logo-brand"]} href={brandHref}>
+      <img src={brandImage} alt={brandText ? "" : site.name}>
+      {brandText && <span>{brandText}</span>}
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button>
+    <div class="nav-links" id="main-menu">
+      {links.map((link) => (
+        <a
+          class={link.class}
+          href={link.href}
+          aria-current={isCurrent(link.href) ? "page" : undefined}
+          data-config-url={link.configUrl}
+        >{link.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
