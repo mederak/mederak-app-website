@@ -24,7 +24,7 @@ Current images are cropped from `D:\work\mederak-products\products\excel-to-jira
 | `screen-hero.png` | 1600 x 1060 or 1600 x 1000 px | Dedicated hero graphic when available. |
 | `og-excel-to-jira-importer-updater.png` | 1200 x 630 px | Social sharing image. |
 
-The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
+The product tour is embedded from YouTube: `https://youtu.be/O7YVRhEy0DE`.
 
 Screenshot rules:
 

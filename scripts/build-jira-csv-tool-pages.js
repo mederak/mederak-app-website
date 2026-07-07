@@ -6,7 +6,7 @@ const problems = require("../tools/jira-csv-import-problems.js");
 
 const root = path.resolve(__dirname, "..");
 const marketplaceUrl = "https://marketplace.atlassian.com/apps/3429713184/excel-to-jira-importer-and-updater?hosting=cloud&tab=overview";
-const demoUrl = "https://www.youtube.com/watch?v=KEpNiVnPt3U";
+const demoUrl = "https://www.youtube.com/watch?v=O7YVRhEy0DE";
 const checkerPath = "/tools/jira-csv-excel-readiness-checker/";
 const explainerPath = "/tools/jira-csv-import-error-explainer/";
 
@@ -127,7 +127,7 @@ function ctaBlock(problem) {
         <div class="hero-actions">
           <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL" data-analytics-event="marketplace_csv_error_click" data-product="excel-to-jira-importer-updater">View on Atlassian Marketplace</a>
           <a class="button" href="${checkerPath}">Try the free readiness checker</a>
-          <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the 90-second demo</a>
+          <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
         </div>
       </div>`;
 }
@@ -284,7 +284,7 @@ function mainPage() {
               <div class="hero-actions">
                 <a class="button primary" href="${checkerPath}">Try the free readiness checker</a>
                 <a class="button" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">View on Atlassian Marketplace</a>
-                <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the 90-second demo</a>
+                <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
               </div>
             </div>
             <div class="tool-side-card">
@@ -373,7 +373,7 @@ function checkerPage() {
               <div class="hero-actions">
                 <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">View on Atlassian Marketplace</a>
                 <a class="button" href="${explainerPath}">Open the error explainer</a>
-                <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the 90-second demo</a>
+                <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
               </div>
             </div>
             <div class="tool-side-card">

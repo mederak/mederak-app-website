@@ -27,7 +27,7 @@ The imported flow screenshots are cropped to a horizontal `1680 x 945` frame and
 | `screen-hero.png` | 1680 x 945 | Dedicated hero graphic when available. Keep it visually close to the real app UI. |
 | `og-excel-to-jira-importer-updater.png` | 1200 x 630 | Open Graph and social sharing image. |
 
-The product tour is embedded from YouTube: `https://youtu.be/zkGjekxM1pE`.
+The product tour is embedded from YouTube: `https://youtu.be/O7YVRhEy0DE`.
 
 ## Rendered dimensions on the current landing page
 
