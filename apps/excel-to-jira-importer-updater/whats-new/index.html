@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Excel to Jira Importer - What's New | Mederak Apps</title>
+    <meta name="description" content="See recent customer-visible improvements in Excel to Jira Importer &amp; Updater for Jira Cloud, based on Marketplace production release notes.">
+    <link rel="canonical" href="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
+    <meta property="og:title" content="Excel to Jira Importer - Product Updates">
+    <meta property="og:description" content="Recent Marketplace release notes for Excel to Jira Importer &amp; Updater show ongoing improvements to issue-view imports, review, validation, large workbook handling, CSV support, dark mode and localization.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
+    <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/og-excel-to-jira-importer-updater.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/icon.png">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"What's New","item":"https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Excel to Jira Importer - What's New","description":"Customer-visible release notes for Excel to Jira Importer & Updater for Jira Cloud.","dateModified":"2026-07-09","isPartOf":{"@type":"SoftwareApplication","name":"Excel to Jira Importer and Updater","applicationCategory":"BusinessApplication","operatingSystem":"Jira Cloud","url":"https://mederak.app/apps/excel-to-jira-importer-updater/"}}</script>
+    <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="../"><img src="../assets/icon.png" alt=""><span>Excel to Jira Importer &amp; Updater</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../">Product</a><a href="../#guides">Guides</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try the app</a></div></nav></header>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../../index.html">Mederak Apps</a> / <a href="../">Excel to Jira Importer &amp; Updater</a> / What's new</nav>
+    <nav class="resource-nav" aria-label="Excel to Jira resources"><a href="../">Overview</a><a href="../whats-new/" aria-current="page">What's new</a><a href="../../../import-excel-to-jira/">Import</a><a href="../update-jira-issues-from-excel/">Update</a><a href="../jira-csv-import-vs-excel-import/">CSV vs Excel</a><a href="../import-epics-stories-subtasks-from-excel-to-jira/">Hierarchy</a><a href="../map-excel-columns-to-jira-fields/">Field mapping</a><a href="../review-jira-changes-before-import/">Review</a><a href="../excel-to-jira-template/">Template</a><a href="../fill-excel-from-jira/">Fill from Jira</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a></nav>
+
+    <main class="content-page seo-page whats-new-page">
+      <span class="eyebrow">Product updates</span>
+      <h1>What's new in Excel to Jira Importer &amp; Updater</h1>
+      <p class="lead">This page summarizes customer-visible Marketplace releases. It is based on the production changelog that is updated after a successful Atlassian Marketplace deploy, so buyers and admins can see that the product is actively improved.</p>
+      <div class="hero-actions"><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try on Atlassian Marketplace</a><a class="button" href="../docs.html">Read documentation</a><a class="button" href="../support.html">Contact support</a></div>
+
+      <section class="release-summary-panel" aria-labelledby="release-summary">
+        <div>
+          <span class="eyebrow">Latest Marketplace release</span>
+          <h2 id="release-summary">Version 1.27.5, published July 9, 2026</h2>
+          <p>The latest Marketplace release focused on starting imports directly from a Jira issue, preparing Excel rows as child issues under that selected parent, and refining the issue-view import modal.</p>
+        </div>
+        <div class="release-focus-card" aria-label="Latest release focus">
+          <strong>This release is about starting from the Jira issue where the work belongs.</strong>
+          <ul>
+            <li>Open Excel to Jira Importer from a Jira issue action.</li>
+            <li>Use the current issue as the selected parent before review.</li>
+            <li>Keep Help, Close and parent-context controls clearer in the modal.</li>
+          </ul>
+        </div>
+      </section>
+
+      <h2>Recent highlights</h2>
+      <div class="feature-card-grid">
+        <article><h3>Start from a Jira issue</h3><p>A new Jira issue action can open the importer from the current issue and prepare the normal review-first workflow with that issue selected as the parent.</p></article>
+        <article><h3>Child issue import context</h3><p>The issue-view import header now explains that Excel rows will be prepared as child Jira issues under the selected issue before review.</p></article>
+        <article><h3>Issue-view modal polish</h3><p>The modal is easier to close, keeps parent context near the top, and spaces Help and Close controls to reduce accidental clicks.</p></article>
+        <article><h3>Time tracking fixes</h3><p>Field metadata and validation copy were corrected so Time tracking availability follows Jira project and issue type configuration.</p></article>
+        <article><h3>Safer review before import</h3><p>Clearer repair guidance, cell-level ignore controls, better required Reporter handling and cleaner validation messages help users understand what needs attention before Jira is changed.</p></article>
+        <article><h3>Large workbook progress</h3><p>Review preparation and import progress were improved for larger files, including lighter browser results, overall progress feedback and time-left estimates.</p></article>
+      </div>
+
+      <h2>Marketplace release history</h2>
+      <div class="release-timeline">
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.27.5</strong><span>July 9, 2026</span></div>
+          <div class="release-body">
+            <h3>Start an import from a Jira issue</h3>
+            <ul>
+              <li>Added a Jira issue action that starts Excel to Jira Importer from the current issue.</li>
+              <li>Prepared the normal review-first import workflow with the current Jira issue selected as the parent.</li>
+              <li>Added a compact issue-view header explaining that Excel rows will be prepared as child Jira issues under the selected issue before review.</li>
+              <li>Moved parent context near the top of the issue-view import modal and removed repeated parent messages from the workflow.</li>
+              <li>Made the issue-view import modal easier to close and aligned the first loading screen with the app loading style.</li>
+              <li>Swapped and spaced Help and Close controls in the issue-view modal to reduce accidental clicks.</li>
+              <li>Updated the in-app "What's new" panel with a walkthrough of starting an import from a Jira issue.</li>
+              <li>Fixed Time tracking field mapping availability and validation copy so Jira configuration is not described as an importer limitation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.26.33</strong><span>July 1, 2026</span></div>
+          <div class="release-body">
+            <h3>Review, large workbook handling and release notes</h3>
+            <ul>
+              <li>Added clearer validation repair guidance on review and import report screens.</li>
+              <li>Added cell-level ignore and restore controls in Review changes.</li>
+              <li>Improved default Reporter handling and reduced duplicate validation messages.</li>
+              <li>Blocked mappings to Jira fields missing from current project metadata before import.</li>
+              <li>Aligned large-workbook upload and review limits to 10,000 data rows and 1,000,000 worksheet cells.</li>
+              <li>Added progress and time-left estimates while large workbooks are sent to review.</li>
+              <li>Improved review and import progress for longer 10,000-row workflows.</li>
+              <li>Added automatic suggestions for repeated-upload matching columns.</li>
+              <li>Fixed cleared values for existing Jira issues so intended clears are sent as updates.</li>
+              <li>Added a compact in-app "What's new" entry point and help-menu links to release notes, documentation and support.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.25.3</strong><span>June 24, 2026</span></div>
+          <div class="release-body">
+            <h3>German interface support</h3>
+            <ul>
+              <li>Added German language support for the app interface.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.25.2</strong><span>June 23, 2026</span></div>
+          <div class="release-body">
+            <h3>Dark mode polish</h3>
+            <ul>
+              <li>Improved dark mode styling for workflow panels, dialogs, review tables and setup summaries.</li>
+              <li>Finished dark mode styling for recent workflow and saved setup history panels.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.25.0</strong><span>June 23, 2026</span></div>
+          <div class="release-body">
+            <h3>Field value builder</h3>
+            <ul>
+              <li>Added a field value builder so users can combine multiple Excel columns into one mapped Jira field value with a custom separator.</li>
+              <li>Added optional shortening for built field values so long workbook text can fit Jira field limits before review and import.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.24.1</strong><span>June 13, 2026</span></div>
+          <div class="release-body">
+            <h3>CSV/TSV import and export</h3>
+            <ul>
+              <li>Added CSV and TSV import for simple backlog tables, with separator and encoding controls before mapping.</li>
+              <li>Added CSV/TSV download with Jira issue keys after import, alongside the existing Excel download.</li>
+              <li>Fixed repeated-upload review so Summary values with equivalent spacing are no longer shown as changed.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.23.5</strong><span>June 12, 2026</span></div>
+          <div class="release-body">
+            <h3>Review message cleanup</h3>
+            <ul>
+              <li>Fixed the change review table so repeated workbook validation messages are shown once per row instead of being duplicated when a larger review is processed in parts.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.23.4</strong><span>June 12, 2026</span></div>
+          <div class="release-body">
+            <h3>Start screen and demo review fixes</h3>
+            <ul>
+              <li>Kept the start screen stable when customers move between the import and Fill Excel from Jira choices.</li>
+              <li>Fixed the demo review flow so browser-compatible row identity hashing no longer shows a crypto compatibility error.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="inline-cta">
+        <h2>See the current workflow</h2>
+        <p>The changelog shows active product work, but the safest way to evaluate the app is to try it on the kind of workbook your team already receives.</p>
+        <div class="hero-actions"><a class="button primary" href="https://marketplace.atlassian.com/apps/3429713184">Try on Atlassian Marketplace</a><a class="button" href="../">View product overview</a><a class="button" href="../docs.html">Read user guide</a></div>
+      </div>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../../index.html"><img src="../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Cloud app by Mederak Apps. Support: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="../../../index.html">Home</a><a href="../../index.html">Apps</a><a href="../">Product</a><a href="../whats-new/">What's new</a><a href="../docs.html">User guide</a><a href="../security.html">Security</a><a href="../support.html">Support</a></div></div></footer>
+    <script src="../assets/site-config.js"></script><script src="../assets/site.js"></script>
+  </body>
+</html>

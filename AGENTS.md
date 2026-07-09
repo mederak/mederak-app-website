@@ -148,3 +148,68 @@ For Excel to Jira Importer & Updater, the website may describe:
 
 Do not describe rollback.
 
+
+
+\## Recurring What's new updates
+
+
+
+For Excel to Jira Importer & Updater, the source of truth for the public What's new page is:
+
+`/Users/medec/Developer/mederak-apps/products/excel-importer-backlog-for-jira/forge/marketplace_changelog.md`
+
+
+
+When the user asks to refresh What's new:
+
+\- Read the latest `marketplace_changelog.md` entry first.
+
+\- Update `/apps/excel-to-jira-importer-updater/whats-new/`.
+
+\- Update the visible landing page teasers in `/apps/excel-to-jira-importer-updater/index.html`.
+
+\- Keep the latest release at the top of the release history and preserve older useful entries below it.
+
+\- Update page metadata such as `dateModified` and Open Graph description when the latest release changes the visible positioning.
+
+\- Rebuild `dist` before handing back if the local preview or deployment output matters.
+
+
+
+Write the public changelog in customer-facing language. Summarize repeated internal entries into one clear buyer-friendly change when needed.
+
+
+
+Do not show internal release plumbing to customers, including:
+
+\- `Changes included since Marketplace version...`
+
+\- `Included app versions...`
+
+\- internal app-version ranges,
+
+\- stat cards or big numbers that do not explain customer value.
+
+
+
+Prefer concrete release notes such as:
+
+\- what users can now do,
+
+\- what became clearer or safer,
+
+\- what was fixed,
+
+\- what workflow became easier.
+
+
+
+After editing, run at least:
+
+\- `git diff --check`
+
+\- `npm run build`
+
+\- `npm run verify:dist`
+
+\- `npm run verify:links`
