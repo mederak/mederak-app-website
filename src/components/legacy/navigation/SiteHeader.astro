@@ -23,7 +23,7 @@ const productLinks = product ? [
   { label: "Docs", href: product.docs },
   { label: "Security", href: product.security },
   { label: "Support", href: product.support },
-  { label: "Marketplace", href: product.marketplaceOverview || product.marketplace, class: "button primary" }
+  { label: "Try it for free", href: product.marketplaceOverview || product.marketplace, class: "button primary" }
 ] : [];
 
 const toolLinks = [
@@ -32,7 +32,7 @@ const toolLinks = [
   { label: excel.name, href: excel.home },
   { label: "CSV error explainer", href: "/tools/jira-csv-import-error-explainer/" },
   { label: "Readiness checker", href: "/tools/jira-csv-excel-readiness-checker/" },
-  { label: "Marketplace", href: excel.marketplaceOverview, class: "button primary", configUrl: "EXCEL_MARKETPLACE_OVERVIEW_URL" }
+  { label: "Try it for free", href: excel.marketplaceOverview, class: "button primary", configUrl: "EXCEL_MARKETPLACE_OVERVIEW_URL" }
 ];
 
 const links = context.section === "tool" ? toolLinks : context.section === "product" ? productLinks : vendorLinks;

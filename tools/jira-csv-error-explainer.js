@@ -56,7 +56,7 @@
       '<div class="hero-actions">',
       '<a class="button primary" href="/tools/' + encodeURIComponent(problem.slug) + '/">Open the full guide</a>',
       '<a class="button" href="/tools/jira-csv-excel-readiness-checker/">Try the free readiness checker</a>',
-      '<a class="button" href="' + escapeHtml(marketplaceUrl) + '">View on Atlassian Marketplace</a>',
+      '<a class="button" href="' + escapeHtml(marketplaceUrl) + '">Try it for free</a>',
       "</div>",
       "</div>"
     ].join("");

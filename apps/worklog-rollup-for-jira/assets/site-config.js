@@ -9,6 +9,6 @@
   PRIVACY_URL: "privacy.html",
   SECURITY_URL: "security.html",
   SUPPORT_URL: "support.html",
-  CTA_PRIMARY_LABEL: "Try on Atlassian Marketplace",
+  CTA_PRIMARY_LABEL: "Try it for free",
   CTA_PRICING_LABEL: "View pricing"
 };

@@ -65,7 +65,7 @@ function nav() {
           <a href="/apps/excel-to-jira-importer-updater/">Excel to Jira Importer &amp; Updater</a>
           <a href="${explainerPath}">CSV error explainer</a>
           <a href="${checkerPath}">Readiness checker</a>
-          <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">Marketplace</a>
+          <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">Try it for free</a>
         </div>
       </nav>
     </header>`;
@@ -125,7 +125,7 @@ function ctaBlock(problem) {
         <h2>${escapeHtml(problem.ctaHeading)}</h2>
         <p>${escapeHtml(problem.ctaCopy)}</p>
         <div class="hero-actions">
-          <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL" data-analytics-event="marketplace_csv_error_click" data-product="excel-to-jira-importer-updater">View on Atlassian Marketplace</a>
+          <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL" data-analytics-event="marketplace_csv_error_click" data-product="excel-to-jira-importer-updater">Try it for free</a>
           <a class="button" href="${checkerPath}">Try the free readiness checker</a>
           <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
         </div>
@@ -283,7 +283,7 @@ function mainPage() {
               <p>The checker is not a replacement for Atlassian's documentation or Jira's import preview. It is a practical preflight step for files that might contain empty summaries, duplicate keys, ambiguous dates or risky update fields.</p>
               <div class="hero-actions">
                 <a class="button primary" href="${checkerPath}">Try the free readiness checker</a>
-                <a class="button" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">View on Atlassian Marketplace</a>
+                <a class="button" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">Try it for free</a>
                 <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
               </div>
             </div>
@@ -371,7 +371,7 @@ function checkerPage() {
               <h2>Import real Excel workbooks into Jira with mapping, cleanup and review</h2>
               <p>CSV imports are possible, but fragile. Excel to Jira Importer &amp; Updater lets you map real Excel workbooks, clean values, create or update Jira issues, and review every change before Jira is modified.</p>
               <div class="hero-actions">
-                <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">View on Atlassian Marketplace</a>
+                <a class="button primary" href="${marketplaceUrl}" data-config-url="EXCEL_MARKETPLACE_OVERVIEW_URL">Try it for free</a>
                 <a class="button" href="${explainerPath}">Open the error explainer</a>
                 <a class="button" href="${demoUrl}" data-config-url="EXCEL_DEMO_URL">Watch the short demo</a>
               </div>
