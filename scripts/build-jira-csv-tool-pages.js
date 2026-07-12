@@ -45,7 +45,7 @@ function header(currentUrl, title, description, type = "article", extraJsonLd = 
     <meta property="og:url" content="https://mederak.app${currentUrl}">
     <meta property="og:image" content="https://mederak.app/assets/mederak-apps-logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/apps/excel-to-jira-importer-updater/assets/icon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link rel="stylesheet" href="/assets/site.css">
     ${extraJsonLd}
     <script src="/assets/site-config.js"></script>

@@ -22,7 +22,7 @@ const twitterCard = metadata.twitterCard || "summary_large_image";
   <meta property="og:url" content={context.canonicalUrl}>
   <meta property="og:image" content={ogImage}>
   <meta name="twitter:card" content={twitterCard}>
-  {context.product?.icon && <link rel="icon" href={context.product.icon}>}
+  <link rel="icon" type="image/png" href={context.favicon}>
   <link rel="stylesheet" href={context.stylesheet}>
   {metadata.jsonLd.map((script) => <Fragment set:html={script} />)}
   {context.configScript && <script is:inline src={context.configScript}></script>}

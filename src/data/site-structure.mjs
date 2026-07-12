@@ -2,7 +2,8 @@ export const site = {
   origin: "https://mederak.app",
   name: "Mederak Apps",
   supportUrl: "https://mederak.atlassian.net/servicedesk",
-  logo: "/assets/mederak-apps-logo.png"
+  logo: "/assets/mederak-apps-logo.png",
+  favicon: "/assets/favicon.png"
 };
 
 export const products = {
@@ -11,6 +12,7 @@ export const products = {
     shortName: "Excel to Jira",
     name: "Excel to Jira Importer & Updater",
     icon: "/apps/excel-to-jira-importer-updater/assets/icon.png",
+    favicon: "/apps/excel-to-jira-importer-updater/assets/favicon.png",
     home: "/apps/excel-to-jira-importer-updater/",
     docs: "/apps/excel-to-jira-importer-updater/docs.html",
     privacy: "/apps/excel-to-jira-importer-updater/privacy.html",
@@ -28,6 +30,7 @@ export const products = {
     shortName: "Project Overview",
     name: "Project Overview & Status Hub",
     icon: "/apps/project-overview-status-hub-for-jira/assets/app-icon.png",
+    favicon: "/apps/project-overview-status-hub-for-jira/assets/favicon.png",
     home: "/apps/project-overview-status-hub-for-jira/",
     docs: "/apps/project-overview-status-hub-for-jira/docs.html",
     privacy: "/apps/project-overview-status-hub-for-jira/privacy.html",
@@ -43,6 +46,7 @@ export const products = {
     shortName: "Worklog Rollup",
     name: "Worklog Rollup for Jira",
     icon: "/apps/worklog-rollup-for-jira/assets/icon.png",
+    favicon: "/apps/worklog-rollup-for-jira/assets/favicon.png",
     home: "/apps/worklog-rollup-for-jira/",
     docs: "/apps/worklog-rollup-for-jira/docs.html",
     privacy: "/apps/worklog-rollup-for-jira/privacy.html",

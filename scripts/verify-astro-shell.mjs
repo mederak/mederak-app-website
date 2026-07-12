@@ -28,6 +28,19 @@ function count(source, pattern) {
   return source.match(pattern)?.length || 0;
 }
 
+function expectedFavicon(relative) {
+  if (relative === "import-excel-to-jira/index.html" || relative.startsWith("apps/excel-to-jira-importer-updater/")) {
+    return "/apps/excel-to-jira-importer-updater/assets/favicon.png";
+  }
+  if (relative.startsWith("apps/project-overview-status-hub-for-jira/")) {
+    return "/apps/project-overview-status-hub-for-jira/assets/favicon.png";
+  }
+  if (relative.startsWith("apps/worklog-rollup-for-jira/")) {
+    return "/apps/worklog-rollup-for-jira/assets/favicon.png";
+  }
+  return "/assets/favicon.png";
+}
+
 const failures = [];
 
 for (const page of expectedPages) {
@@ -42,6 +55,8 @@ for (const file of walk(root)) {
   if (count(html, /<header\b[^>]*class=["'][^"']*\btopbar\b/gi) !== 1) failures.push(`${relative}: expected one site header`);
   if (count(html, /<footer\b[^>]*class=["'][^"']*\bfooter\b/gi) !== 1) failures.push(`${relative}: expected one site footer`);
   if (count(html, /<link\b[^>]*rel=["']canonical["']/gi) !== 1) failures.push(`${relative}: expected one canonical link`);
+  if (count(html, /<link\b[^>]*rel=["']icon["']/gi) !== 1) failures.push(`${relative}: expected one favicon link`);
+  if (!html.includes(`href="${expectedFavicon(relative)}"`)) failures.push(`${relative}: unexpected favicon`);
   if (count(html, /id=["']main-menu["']/gi) !== 1) failures.push(`${relative}: expected one main menu`);
   if (html.includes("localhost")) failures.push(`${relative}: contains localhost`);
   if (!isErrorPage && /<meta\b[^>]*name=["']robots["'][^>]*noindex/i.test(html)) failures.push(`${relative}: unexpected noindex`);

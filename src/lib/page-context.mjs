@@ -138,6 +138,7 @@ export function createPageContext(page) {
     title: pageTitleFromRoute(canonicalPath),
     breadcrumbs: breadcrumbsForRoute(canonicalPath, product),
     resourceNav: resourceLinksForRoute(canonicalPath, product),
+    favicon: product?.favicon || site.favicon,
     stylesheet: isErrorPage || route === "/" ? "/assets/home.css" : product?.stylesheet || "/assets/site.css",
     configScript: route.startsWith("/tools/") || route === "/import-excel-to-jira/"
       ? "/assets/site-config.js"
