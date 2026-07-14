@@ -7,7 +7,7 @@
     <meta name="description" content="See recent customer-visible improvements in Excel to Jira Importer &amp; Updater for Jira Cloud, based on Marketplace production release notes.">
     <link rel="canonical" href="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
     <meta property="og:title" content="Excel to Jira Importer - Product Updates">
-    <meta property="og:description" content="Recent Marketplace release notes for Excel to Jira Importer &amp; Updater cover contextual workbook help, issue-view imports, safer review, validation and large workbook handling.">
+    <meta property="og:description" content="Version 1.31.2 adds spreadsheet paste, more reliable large-workbook review and faster Description Builder workflows.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
     <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/og-excel-to-jira-importer-updater.png">
@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="/apps/excel-to-jira-importer-updater/assets/favicon.png">
     <link rel="stylesheet" href="../assets/site.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"What's New","item":"https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Excel to Jira Importer - What's New","description":"Customer-visible release notes for Excel to Jira Importer & Updater for Jira Cloud.","dateModified":"2026-07-12","isPartOf":{"@type":"SoftwareApplication","name":"Excel to Jira Importer and Updater","applicationCategory":"BusinessApplication","operatingSystem":"Jira Cloud","url":"https://mederak.app/apps/excel-to-jira-importer-updater/"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Excel to Jira Importer - What's New","description":"Customer-visible release notes for Excel to Jira Importer & Updater for Jira Cloud.","dateModified":"2026-07-14","isPartOf":{"@type":"SoftwareApplication","name":"Excel to Jira Importer and Updater","applicationCategory":"BusinessApplication","operatingSystem":"Jira Cloud","url":"https://mederak.app/apps/excel-to-jira-importer-updater/"}}</script>
     <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
   </head>
   <body>
@@ -32,31 +32,43 @@
       <section class="release-summary-panel" aria-labelledby="release-summary">
         <div>
           <span class="eyebrow">Latest Marketplace release</span>
-          <h2 id="release-summary">Version 1.28.1, published July 12, 2026</h2>
-          <p>The latest Marketplace release adds contextual workbook help when validation is blocked or a current import report contains failed rows, without automatically sending workbook content.</p>
+          <h2 id="release-summary">Version 1.31.2, published July 14, 2026</h2>
+          <p>The latest Marketplace release makes it faster to bring spreadsheet data into Jira, keeps large-workbook review responsive and streamlines building Jira content from multiple source columns.</p>
         </div>
         <div class="release-focus-card" aria-label="Latest release focus">
-          <strong>This release is about getting practical help at the point where an import is blocked.</strong>
+          <strong>This release makes everyday spreadsheet-to-Jira work faster and more reliable.</strong>
           <ul>
-            <li>Open support from blocked validation or a failed import report.</li>
-            <li>Start with the relevant import stage preselected in the support form.</li>
-            <li>Keep workbook content private unless the user chooses to share it.</li>
+            <li>Paste spreadsheet data directly into the reviewed import workflow.</li>
+            <li>Review large workbooks with responsive background processing and resumable progress.</li>
+            <li>Build and verify Jira content faster with row-by-row previews and instant column selection.</li>
           </ul>
         </div>
       </section>
 
       <h2>Recent highlights</h2>
       <div class="feature-card-grid">
+        <article><h3>Paste spreadsheet data</h3><p>Copy tabular data from Excel Online, Google Sheets or another spreadsheet tool and take it through the same mapping, validation and review workflow as an uploaded file.</p></article>
+        <article><h3>More reliable large-workbook review</h3><p>Responsive background processing, resumable progress and smoother continuous table loading keep larger reviews moving.</p></article>
+        <article><h3>Faster content building</h3><p>Review Description output row by row and add source columns immediately in the Description and field value builders.</p></article>
         <article><h3>Contextual workbook help</h3><p>Import Rescue appears when validation is blocked or the current import report contains failed rows, so users can reach support from the problem they are reviewing.</p></article>
-        <article><h3>Privacy-safe support handoff</h3><p>The support action does not automatically send workbook content. Users remain in control of the information they choose to provide.</p></article>
-        <article><h3>Relevant support stage</h3><p>The support form opens with the relevant validation or failed-import stage already selected, reducing the setup needed to explain where the workflow stopped.</p></article>
-        <article><h3>Cleaner validation review</h3><p>The unused Diagnostic JSON export was removed so the validation review stays focused on fixes and the next safe action.</p></article>
         <article><h3>Start from a Jira issue</h3><p>A Jira issue action can open the importer from the current issue and prepare the normal review-first workflow with that issue selected as the parent.</p></article>
         <article><h3>Safer review before import</h3><p>Clearer repair guidance, cell-level ignore controls, better required Reporter handling and cleaner validation messages help users understand what needs attention before Jira is changed.</p></article>
       </div>
 
       <h2>Marketplace release history</h2>
       <div class="release-timeline">
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.31.2</strong><span>July 14, 2026</span></div>
+          <div class="release-body">
+            <h3>Faster spreadsheet-to-Jira workflows</h3>
+            <ul>
+              <li>Paste spreadsheet data directly from Excel Online, Google Sheets or other spreadsheet tools and take it through the same mapping, validation and review workflow as uploaded files.</li>
+              <li>Review large workbooks more reliably with responsive background processing, resumable progress and smoother continuous table loading.</li>
+              <li>Build and verify Jira content faster with row-by-row Description previews and instant source-column selection in the Description and field value builders.</li>
+            </ul>
+          </div>
+        </article>
+
         <article class="release-entry">
           <div class="release-meta"><strong>1.28.1</strong><span>July 12, 2026</span></div>
           <div class="release-body">
