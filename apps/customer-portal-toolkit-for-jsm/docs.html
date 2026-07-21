@@ -1,47 +1,420 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Documentation | Customer Portal Toolkit for JSM</title>
-    <meta name="description" content="Installation, configuration, publishing, feature and limitation guide for Customer Portal Toolkit for Jira Service Management.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Portal Toolkit for JSM User Guide | Documentation</title>
+    <meta name="description" content="Complete user guide for installing, configuring, previewing and publishing Customer Portal Toolkit content in Jira Service Management Cloud.">
     <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/docs.html">
+    <meta property="og:title" content="Customer Portal Toolkit for JSM User Guide">
+    <meta property="og:description" content="Configure supported JSM portal surfaces, widgets, visibility, previews and safe customer actions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/docs.html">
+    <meta property="og:image" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/assets/docs/builder-overview.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Customer Portal Toolkit for JSM User Guide","description":"Complete guide to configuring and publishing Customer Portal Toolkit content in Jira Service Management Cloud.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps"},"mainEntityOfPage":"https://mederak.app/apps/customer-portal-toolkit-for-jsm/docs.html","dateModified":"2026-07-21"}</script>
+    <script src="/assets/analytics-config.js"></script>
+    <script src="/assets/analytics.js" defer></script>
   </head>
   <body class="status-hub-page">
-    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Request early access</a></div></nav></header>
-    <main class="content-page">
-      <span class="eyebrow">Version 1.0 documentation · Updated July 21, 2026</span>
-      <h1>Customer Portal Toolkit documentation</h1>
-      <p class="lead">This guide explains how Jira Service Management administrators install, configure, preview and publish supported customer portal content.</p>
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html" aria-current="page">Docs</a><a href="widgets.html">Widgets</a><a href="troubleshooting.html">Troubleshooting</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Request early access</a></div></nav></header>
 
-      <h2>Product scope</h2>
-      <p>Customer Portal Toolkit is a Jira Service Management Cloud app. It provides an administrator builder and renders configured content on supported customer portal surfaces, including request details, the request side panel, the portal header and request actions. Availability depends on the customer's JSM plan, project type, request type, fields, workflow, permissions and Atlassian APIs.</p>
+    <main class="docs-page">
+      <section class="docs-hero">
+        <div>
+          <span class="eyebrow">Complete user guide · Version 1.0</span>
+          <h1>Customer Portal Toolkit for JSM — User Guide</h1>
+          <p class="lead">Build clearer Jira Service Management customer request views with governed content, privacy-treated context and permission-checked actions.</p>
+          <p class="lead secondary">This guide is for Jira administrators and JSM project administrators. Customers can use the shorter <a href="#customer-experience">customer experience section</a>.</p>
+          <p class="docs-meta"><strong>Updated July 21, 2026</strong> · Screenshots use fictional data and the current application components.</p>
+          <div class="hero-actions"><a class="button primary" href="#quick-start">Start configuring</a><a class="button secondary" href="widgets.html">Browse all 62 widgets</a></div>
+        </div>
+        <figure class="docs-hero-shot">
+          <button class="image-zoom" type="button" data-lightbox-src="assets/docs/builder-overview.png" aria-label="Open the visual builder screenshot">
+            <img src="assets/docs/builder-overview.png" width="1840" height="900" alt="Three-column Customer Portal Toolkit builder with widget library, editable customer request preview and properties inspector.">
+          </button>
+          <figcaption>Widget library, live customer-page preview and focused properties inspector.</figcaption>
+        </figure>
+      </section>
 
-      <h2>Installation</h2>
-      <ol><li>A Jira administrator installs the current Marketplace version on the intended Jira Cloud site and reviews the requested scopes and data disclosures.</li><li>Open <strong>Customer Portal Toolkit</strong> from global administration or a supported project's settings.</li><li>Review the installation-wide AI, product analytics and two-person publication settings. They are disabled by default.</li><li>Select a JSM project and inspect detected request types, fields, workflow, SLA and other capabilities.</li><li>Apply a starter template or create a layout, preview it with authorized test data, resolve validation errors and publish.</li><li>Complete a controlled customer acceptance test before using the configuration broadly.</li></ol>
+      <aside class="docs-sidebar">
+        <nav aria-label="User guide contents">
+          <h2>Contents</h2>
+          <ul>
+            <li><a href="#documentation-map">Documentation map</a></li>
+            <li><a href="#quick-start">Quick start</a></li>
+            <li><a href="#install">Install and open</a></li>
+            <li><a href="#roles">Roles and permissions</a></li>
+            <li><a href="#scopes">Configuration scopes</a></li>
+            <li><a href="#portal-areas">Portal areas</a></li>
+            <li><a href="#builder">Builder workspace</a></li>
+            <li><a href="#widgets">Add widgets</a></li>
+            <li><a href="#layout">Layout and templates</a></li>
+            <li><a href="#visibility">Panel visibility</a></li>
+            <li><a href="#content">Content and localization</a></li>
+            <li><a href="#appearance">Appearance</a></li>
+            <li><a href="#metrics">Metrics and charts</a></li>
+            <li><a href="#actions">Customer actions</a></li>
+            <li><a href="#preview">Preview</a></li>
+            <li><a href="#publish">Validate and publish</a></li>
+            <li><a href="#versions">Versions and rollback</a></li>
+            <li><a href="#acceptance">Acceptance checklist</a></li>
+            <li><a href="#customer-experience">Customer experience</a></li>
+            <li><a href="#settings">AI and analytics</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#help">Get help</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <h2>Configuration scopes</h2>
-      <p>Configuration can be maintained at global, project and request-type scope. Narrower scopes inherit from their parent and may apply bounded overrides. Drafts are editable; a published version is the configuration read by the portal runtime. Publication uses revision checks so one administrator does not silently overwrite another administrator's newer work.</p>
+      <article class="docs-article">
+        <section id="documentation-map">
+          <h2>Documentation map</h2>
+          <div class="docs-link-grid">
+            <a class="docs-link-card" href="widgets.html"><strong>Widget reference</strong><span>Every one of the 62 registered widget contracts, including use case, source, surfaces and important limits.</span></a>
+            <a class="docs-link-card" href="troubleshooting.html"><strong>Troubleshooting</strong><span>Safe checks for missing content, capability warnings, suppressed metrics, disabled actions, publishing conflicts and AI fallback.</span></a>
+            <a class="docs-link-card" href="security.html"><strong>Security and privacy</strong><span>Architecture, scopes, authorization, data handling, retention, AI transparency and incident response.</span></a>
+          </div>
+          <div class="callout"><strong>Product boundary</strong> The app extends Forge-supported parts of the existing Jira Service Management portal. It does not replace the portal and cannot rewrite rows in Jira's native <em>My requests</em> list.</div>
+        </section>
 
-      <h2>Widget and data behavior</h2>
-      <ul><li><strong>Current-request widgets</strong> read supported request fields, public activity, participants, organizations, SLA, service and related metadata only when the current actor and JSM API permit it.</li><li><strong>Aggregate widgets</strong> use compiled, project-bound queries and return only privacy-treated counts, buckets, ranges, percentages, durations or short series. They do not return matching requests or cross-request content.</li><li><strong>Action widgets</strong> support a closed set of operations. The backend rechecks the published policy, current user's permissions and current workflow immediately before mutation.</li><li><strong>Public header widgets</strong> can show explicitly public configuration-backed content to anonymous or generic unlicensed visitors. They cannot read a request, run aggregates, execute actions, personalize content or use AI.</li><li><strong>AI widgets</strong> require installation-wide and per-widget opt-in and use Atlassian-hosted Forge LLM. Core portal behavior does not depend on AI.</li></ul>
+        <section id="quick-start">
+          <h2>Quick start</h2>
+          <ol class="numbered-checklist">
+            <li><strong>Open the builder.</strong> Use global administration as a Jira administrator, or open the app from the target service project's settings as a project administrator.</li>
+            <li><strong>Choose the configuration target.</strong> Select global, project or request-type scope and one active portal area.</li>
+            <li><strong>Start with a layout.</strong> Run the five-step Quick setup, apply a starter template, or add an empty section.</li>
+            <li><strong>Add and configure widgets.</strong> Drag a compatible widget into the preview or use <strong>Add</strong>, then edit it in the Widget, Visibility and Style inspector tabs.</li>
+            <li><strong>Preview deliberately.</strong> Choose a controlled request, customer/agent/project-admin simulation, language and device. Preview never proves real Jira permission.</li>
+            <li><strong>Resolve validation errors.</strong> Review capability, privacy, query, content and action warnings; test any warning you accept.</li>
+            <li><strong>Publish the complete scope.</strong> The Publish dialog lists every changed portal area. Confirm it, then verify the result in the real customer portal with controlled accounts.</li>
+          </ol>
+        </section>
 
-      <h2>Preview and publication</h2>
-      <p>The builder can preview supported customer, project-agent and project-administrator audiences, locations, locales and device sizes. Preview is a configuration tool, not proof that every tenant capability is available. Validate the published result in the real JSM customer portal with an authorized test account.</p>
-      <p>When two-person publication is enabled, a different eligible administrator must approve the exact draft revision within 24 hours.</p>
+        <section id="install">
+          <h2>Install and open the app</h2>
+          <h3>Before installation</h3>
+          <ul>
+            <li>Use Jira Service Management Cloud; Server and Data Center are not supported.</li>
+            <li>Have an organization or site administrator who may install Marketplace apps and review permissions.</li>
+            <li>Prepare at least one controlled JSM project, synthetic request and test customer account.</li>
+            <li>Review the <a href="privacy.html">Privacy Policy</a>, <a href="security.html">Security Practices</a>, <a href="data-residency.html">Data Residency</a> and <a href="terms.html">Customer Terms</a>.</li>
+          </ul>
+          <h3>Marketplace installation</h3>
+          <ol>
+            <li>Open the approved Customer Portal Toolkit listing in Atlassian Marketplace and confirm the app name, vendor and Cloud hosting.</li>
+            <li>Select <strong>Get it now</strong> or <strong>Try it free</strong>, select the intended site and review the requested access.</li>
+            <li>Complete installation, then confirm the app appears under Atlassian administration's <strong>Connected apps</strong>.</li>
+            <li>Open the app's global administration page, or open the target JSM service project and choose its settings/apps area.</li>
+          </ol>
+          <p>Atlassian's current administrator flow is documented in <a href="https://support.atlassian.com/organization-administration/docs/installing-and-managing-app-access/">Install and manage app access</a>. Atlassian may rename navigation items; use its current Connected Apps instructions if labels differ.</p>
+        </section>
 
-      <h2>Security and privacy settings</h2>
-      <ul><li>Use the smallest audience and scope that meets the business need.</li><li>Keep aggregate privacy minimums at or above the enforced minimum of five.</li><li>Use synthetic or authorized data for previews and support reproductions.</li><li>Do not place credentials, tokens, secrets or unnecessary sensitive data in widget copy, links or support tickets.</li><li>Review <a href="privacy.html">Privacy</a>, <a href="security.html">Security</a>, <a href="data-processing.html">Data Processing</a> and <a href="ai-transparency.html">AI Transparency</a> before rollout.</li></ul>
+        <section id="roles">
+          <h2>Roles and permissions</h2>
+          <table>
+            <thead><tr><th>Role</th><th>What the role can do</th><th>Boundary</th></tr></thead>
+            <tbody>
+              <tr><td>Jira administrator</td><td>Manage installation-wide settings and global, project and request-type configuration.</td><td>The backend rechecks Jira <code>ADMINISTER</code> permission for every sensitive operation.</td></tr>
+              <tr><td>JSM project administrator</td><td>Manage the current project's configuration and request-type overlays.</td><td>Cannot edit another project, global settings or globally locked properties.</td></tr>
+              <tr><td>Agent in this project</td><td>May be included in a published panel audience and preview simulation.</td><td>Must have the relevant Jira/JSM permission in the current project.</td></tr>
+              <tr><td>Customer</td><td>Sees published content and available actions on requests they may access.</td><td>The app does not grant access that Jira/JSM denies.</td></tr>
+              <tr><td>Anonymous or generic unlicensed visitor</td><td>May see explicitly public, configuration-backed portal-header content.</td><td>No request data, aggregate query, customer action, preference, personalization or AI.</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-      <h2>Known limitations</h2>
-      <ul><li>Jira Server and Jira Data Center are not supported.</li><li>The app does not replace the JSM portal or provide arbitrary row-level customization of JSM's native My requests table.</li><li>Feature availability varies by JSM plan, tenant, project type, account class, workflow and Atlassian API support.</li><li>Some aggregate metrics are prepared asynchronously and may show a safe unavailable or stale state while refreshing.</li><li>Forge LLM is an optional Preview platform capability and may be unavailable, limited or changed by Atlassian.</li><li>Version 1.0 does not provide a file-based configuration export/import or a customer-restorable app backup.</li><li>Registry presence and documentation do not override a missing tenant capability or permission.</li></ul>
+        <section id="scopes">
+          <h2>Configuration scopes and inheritance</h2>
+          <p>Effective configuration resolves from broad to narrow:</p>
+          <pre><code>GLOBAL → PROJECT → REQUEST TYPE → CURRENT CONTEXT</code></pre>
+          <ul>
+            <li><strong>Global</strong> provides a consistent installation-wide base.</li>
+            <li><strong>Project</strong> adapts that base to one authorized service project.</li>
+            <li><strong>Request type</strong> applies only genuine differences for one request type.</li>
+          </ul>
+          <p>At a narrower scope you can inherit, override an allowed property, hide an inherited widget, restore the parent value, or make an independent copy. Use the narrowest change that solves the requirement; copying a full layout makes future parent updates harder to govern.</p>
+          <div class="callout"><strong>Conditions are display logic, not authorization.</strong> The backend still derives the site, actor, project, request, module and license from trusted Forge context and rechecks access.</div>
+        </section>
 
-      <h2>Troubleshooting</h2>
-      <ol><li>Confirm the app version and that installation is current.</li><li>Confirm the user, project, request type, location and device match the published visibility policy.</li><li>Check Jira/JSM permissions and whether the required field, SLA, Assets or workflow capability exists.</li><li>Open the builder preview and resolve any validation or capability warning.</li><li>If the problem remains, contact <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a> with the site hostname, safe timestamps, location, actor class and reproduction steps. Do not send customer request content or credentials.</li></ol>
+        <section id="portal-areas">
+          <h2>Supported portal areas</h2>
+          <table>
+            <thead><tr><th>Builder label</th><th>Use it for</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Request details · wide section</td><td>Primary information inside a customer request.</td><td>Rendered in the Forge-provided request detail position; it is not an arbitrary page canvas.</td></tr>
+              <tr><td>Request details · side panel</td><td>Compact supporting information beside a request.</td><td>Prefer a short, single-column layout.</td></tr>
+              <tr><td>Portal header</td><td>A short shared notice at the top of supported portal pages.</td><td>The only public/anonymous-capable 1.0 path; use public-safe configured content only.</td></tr>
+              <tr><td>Request action</td><td>One focused customer action next to the request controls.</td><td>Only compatible action widgets are offered.</td></tr>
+            </tbody>
+          </table>
+          <p>Other logical locations remain dormant when Forge does not provide an approved safe surface. Their presence in internal types is not a promise that administrators can activate them.</p>
+        </section>
+
+        <section id="builder">
+          <h2>Understand the builder workspace</h2>
+          <figure>
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/builder-overview.png" aria-label="Open the builder workspace screenshot">
+              <img src="assets/docs/builder-overview.png" width="1840" height="900" alt="Customer Portal Toolkit builder showing widget library, live portal canvas and inspector panels.">
+            </button>
+            <figcaption>01 Widget library, 02 live portal canvas, 03 selected widget inspector.</figcaption>
+          </figure>
+          <ol>
+            <li><strong>Widget library:</strong> search compatible widgets, browse recommendations or choose a customer task. Capability-dependent widgets are disabled with a reason when the current project cannot support them.</li>
+            <li><strong>Portal preview:</strong> arrange sections, columns, groups and widget order while seeing a full customer-page context or only the edited area.</li>
+            <li><strong>Properties inspector:</strong> use the sticky Widget, Visibility and Style tabs for the selected item and complete panel.</li>
+          </ol>
+          <p>On desktop, the three work areas scroll independently and their separators can be dragged or controlled by keyboard. Narrow layouts stack the areas and use normal page scrolling. The header shows draft save state, validation readiness, Quick start, Help, Versions, installation settings and Publish.</p>
+        </section>
+
+        <section id="widgets">
+          <h2>Add and select widgets</h2>
+          <ol>
+            <li>Select the intended portal area and configuration scope first.</li>
+            <li>Use <strong>Recommended</strong>, a task group, or <strong>Browse all widgets</strong>. Search checks every compatible widget.</li>
+            <li>Drag a widget into the canvas or select its <strong>Add</strong> button.</li>
+            <li>Select the rendered widget to open its properties. Use drag/drop or the move controls to change order.</li>
+            <li>Review the cost label: Fast, Standard, May load later or Prepared periodically.</li>
+          </ol>
+          <p>The registry contains 62 definitions. The builder exposes 61 portal/customer widgets; <strong>Admin AI Configuration Assistant</strong> is the 62nd admin-only contract and never renders in the customer portal. Read the <a href="widgets.html">complete widget reference</a> before using capability-dependent, aggregate, AI or action widgets.</p>
+        </section>
+
+        <section id="layout">
+          <h2>Layout, sections and starter templates</h2>
+          <p>Quick setup has five steps: portal area, starting layout, panel visibility, preview context, and review/publish. The available starter layouts are IT Help Desk, Customer Support, HR, Facilities, Access Requests and Incident Management.</p>
+          <ul>
+            <li>Templates create editable drafts and never publish automatically.</li>
+            <li>Replacing a non-empty draft requires confirmation.</li>
+            <li>A template may include SLA, Assets, organization, workflow or other widgets that are unavailable in a particular project.</li>
+            <li>Configure desktop, tablet and mobile behavior; keep narrow areas readable and avoid excessive multi-column layouts.</li>
+            <li>If a published location has no effective widgets, Jira can hide the complete app module chrome for that location.</li>
+          </ul>
+        </section>
+
+        <section id="visibility">
+          <h2>Panel visibility</h2>
+          <figure>
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/audience-status-device-visibility.png" aria-label="Open the panel visibility screenshot">
+              <img src="assets/docs/audience-status-device-visibility.png" width="1840" height="900" alt="Builder inspector with customer, project agent, project administrator, request status and device visibility controls.">
+            </button>
+            <figcaption>Audience, request status and device settings apply to the complete selected panel.</figcaption>
+          </figure>
+          <p>Visibility belongs to the complete location panel, not individual widgets. Choose at least one audience and one device. Selected audiences are combined with OR; audience, status, device, request access, license, account type, capability and action checks still combine with AND at runtime.</p>
+          <ul>
+            <li><strong>Customer</strong> — authenticated JSM customer.</li>
+            <li><strong>Agent in this project</strong> — licensed user with the current project's service-desk agent permission.</li>
+            <li><strong>Project administrator</strong> — user with project administration permission, or a global Jira administrator.</li>
+          </ul>
+          <p>If a role lookup fails, a role-restricted panel fails closed. A hidden action cannot be invoked by forging its widget ID because execution repeats the panel and widget policy checks.</p>
+        </section>
+
+        <section id="content">
+          <h2>Content, Jira fields and localization</h2>
+          <ul>
+            <li>Write a reviewed English base label, description, fallback and configured content.</li>
+            <li>Add reviewed Polish content where your audience needs it. Preview both languages before publishing.</li>
+            <li>Select fields from current-project metadata. Do not assume a field ID copied from another site has the same meaning.</li>
+            <li>Use a customer-friendly label without changing the underlying Jira field or value.</li>
+            <li>Choose a safe missing-value or unavailable-capability message. Never simulate data that Jira did not provide.</li>
+            <li>Links use restricted protocols and configured labels; arbitrary HTML, CSS, JavaScript, templates, endpoints or payloads are not accepted.</li>
+          </ul>
+          <p>Locale matching follows the exact tag, its base language and then English. Administrators remain responsible for the accuracy of customer-facing, legal, safety and workflow wording.</p>
+        </section>
+
+        <section id="appearance">
+          <h2>Widget appearance</h2>
+          <p>New widgets use the compact borderless <strong>JSM native</strong> treatment by default. In the Style tab, choose a preset and then combine validated tokens.</p>
+          <table>
+            <thead><tr><th>Preset</th><th>Best use</th></tr></thead>
+            <tbody>
+              <tr><td>JSM native / borderless</td><td>Default request-detail information that should continue the host portal's visual rhythm.</td></tr>
+              <tr><td>Card</td><td>A distinct grouped item with optional icon, label and description.</td></tr>
+              <tr><td>Name: value</td><td>A compact field such as “Status: In progress”.</td></tr>
+              <tr><td>Subtle row</td><td>An inline value on a quiet background.</td></tr>
+              <tr><td>Value only</td><td>A minimal presentation without label, icon or description.</td></tr>
+            </tbody>
+          </table>
+          <p>Surface, spacing, stacked/inline layout, label separator, emphasis, alignment, label/icon/description visibility and separators remain a closed validated token set. Custom CSS, remote assets and arbitrary colors are not accepted.</p>
+        </section>
+
+        <section id="metrics">
+          <h2>Privacy-treated metrics and charts</h2>
+          <figure>
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/privacy-treated-service-context.png" aria-label="Open the privacy-treated metrics screenshot">
+              <img src="assets/docs/privacy-treated-service-context.png" width="1840" height="900" alt="Synthetic customer request showing workload metrics, historical baseline, trend, sample, freshness and a suppressed small-cohort count.">
+            </button>
+            <figcaption>Metrics provide context, freshness and privacy treatment without returning matching request rows.</figcaption>
+          </figure>
+          <ul>
+            <li>Every query is compiled, bounded and tied to the current project.</li>
+            <li>Use presets or the visual query editor where possible. Advanced JQL accepts only supported variables and must pass validation.</li>
+            <li>The privacy minimum is at least five. Small cohorts can be suppressed, generalized or shown as a range/qualitative value.</li>
+            <li>Exact values require the configured higher threshold, with a baseline of at least twenty.</li>
+            <li>Historical charts use stored snapshots and include a text equivalent, sample/freshness context and an honest no-data state.</li>
+            <li>Response, resolution, percentile, trend and SLA history are contextual estimates, not a guarantee for the current request.</li>
+          </ul>
+          <div class="callout"><strong>Do not create differencing attacks.</strong> Avoid near-identical widgets or time windows intended to infer a suppressed cohort.</div>
+        </section>
+
+        <section id="actions">
+          <h2>Permission-checked customer actions</h2>
+          <figure>
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/permission-checked-action.png" aria-label="Open the customer action confirmation screenshot">
+              <img src="assets/docs/permission-checked-action.png" width="1840" height="900" alt="Confirmation dialog for a public customer update explaining that permissions and published policy are checked again on the server.">
+            </button>
+            <figcaption>Confirmation is followed by a fresh backend permission, workflow and published-policy check.</figcaption>
+          </figure>
+          <p>Actions never extend Jira/JSM permission. Configure only fields, transitions, participant candidates and closed safe operations offered by the installed app for the current project.</p>
+          <ul>
+            <li><strong>Add Public Comment</strong> always creates a customer-visible comment, never an internal note.</li>
+            <li><strong>Add Attachment</strong> accepts a supported local file from 1 to 256 KiB through this app path.</li>
+            <li><strong>Edit Allowed Fields</strong> accepts only administrator-selected allowlisted fields and bounded values.</li>
+            <li><strong>Participant and transition actions</strong> use server-issued choices intersected with current Jira options.</li>
+            <li>Confirmation, validation, rate limits, atomic idempotency and content-free audit protect every mutation.</li>
+          </ul>
+          <p>Test both a permitted customer and a customer without permission after any workflow, field, request-type or permission change. See the <a href="widgets.html#actions">action widget reference</a>.</p>
+        </section>
+
+        <section id="preview">
+          <h2>Preview the customer experience</h2>
+          <figure>
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/customer-request-context.png" aria-label="Open the desktop customer request screenshot">
+              <img src="assets/docs/customer-request-context.png" width="1840" height="900" alt="Synthetic JSM customer request with status, support contact, SLA target, explanatory callout, process journey and safe next action.">
+            </button>
+            <figcaption>Full-page desktop preview with the edited app area shown in real request context.</figcaption>
+          </figure>
+          <div class="docs-screenshot-pair">
+            <figure>
+              <button class="image-zoom" type="button" data-lightbox-src="assets/docs/mobile-request-view.png" aria-label="Open the mobile customer request screenshot">
+                <img src="assets/docs/mobile-request-view.png" width="415" height="869" alt="Mobile synthetic customer request with vertically stacked Customer Portal Toolkit content.">
+              </button>
+              <figcaption>The same content reflows into a readable mobile column.</figcaption>
+            </figure>
+            <div>
+              <h3>Preview controls</h3>
+              <ul>
+                <li><strong>Request:</strong> use the newest authorized request, Previous/Next, or enter an explicitly authorized request key.</li>
+                <li><strong>Preview as:</strong> simulate customer, project agent or project administrator; anonymous appears only for a global portal header.</li>
+                <li><strong>Language:</strong> switch between English and Polish.</li>
+                <li><strong>Device:</strong> inspect desktop, tablet and mobile.</li>
+                <li><strong>Detail:</strong> use Full portal for context or Edited area for focused layout work.</li>
+                <li><strong>Zoom:</strong> changes the preview only and never saves configuration.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout"><strong>Preview is a simulation.</strong> It does not prove that the simulated account has real request access or permission. Always perform controlled acceptance in Jira's real customer portal.</div>
+        </section>
+
+        <section id="publish">
+          <h2>Validate, save and publish</h2>
+          <p>Draft changes autosave with optimistic revision checks. The header reports Saving, Saved, Error or Conflict. Undo and redo affect the current editing session.</p>
+          <ol>
+            <li>Select <strong>Review issues</strong> and open each affected widget/field.</li>
+            <li>Fix every blocking error. Understand warnings before proceeding.</li>
+            <li>Select <strong>Publish</strong>. If a save is still pending, the app saves the draft first.</li>
+            <li>Review the publishing scope and every changed portal area. Publication covers the whole selected global/project/request-type scope, not only the area currently previewed.</li>
+            <li>Confirm publication and refresh the real portal request.</li>
+          </ol>
+          <p>If module visibility metadata has not synchronized to Jira, the builder shows a red pending-sync banner with a retry action. The configuration may be published, but do not accept empty-module behavior until the banner clears.</p>
+          <h3>Optional two-person approval</h3>
+          <p>When enabled installation-wide, the first eligible administrator requests approval for the exact revision. A different eligible administrator must approve that unchanged revision within 24 hours. A revision change or expiry requires a new request.</p>
+        </section>
+
+        <section id="versions">
+          <h2>Versions, conflicts and rollback</h2>
+          <ul>
+            <li><strong>Versions</strong> shows publication history for the current scope.</li>
+            <li>A save conflict means another administrator changed the same draft. Reload and reconcile intentionally; do not overwrite blindly.</li>
+            <li>Rollback restores an earlier published version into a new draft. It does not rewrite history in place.</li>
+            <li>Validate the restored draft against current fields, workflow, capabilities, privacy settings and parent configuration before publishing.</li>
+            <li>Version 1.0 does not provide file-based configuration export/import, cross-site migration or a customer-restorable backup.</li>
+          </ul>
+        </section>
+
+        <section id="acceptance">
+          <h2>Post-publication acceptance checklist</h2>
+          <ul class="checklist">
+            <li>Test a Jira administrator and in-scope/out-of-scope project administrator.</li>
+            <li>Test a customer with request access and a customer without access.</li>
+            <li>For the public header, test authenticated, generic unlicensed and anonymous states separately.</li>
+            <li>Check English and Polish on desktop, tablet, mobile and the narrow side panel.</li>
+            <li>Check projects with and without optional SLA, Assets, organization, service, knowledge, field and workflow capabilities.</li>
+            <li>Verify suppressed, generalized, exact and stale metric states without exposing rows.</li>
+            <li>Test every configured action for success, denial, double submission, retry and changed workflow.</li>
+            <li>Test AI disabled; if enabled, also test unavailable, timeout, budget and invalid-output fallback.</li>
+            <li>Confirm one slow or failing widget does not make sibling content unusable.</li>
+          </ul>
+        </section>
+
+        <section id="customer-experience">
+          <h2>What customers need to know</h2>
+          <p>Customers may see different content by request type, project, status, request access, project capabilities, language, device and administrator configuration. A local unavailable state does not mean the complete portal has failed.</p>
+          <ul>
+            <li><strong>Not available</strong> can mean a missing field/capability, empty value, timeout or insufficient access.</li>
+            <li><strong>Privacy suppression</strong> means a small or unsafe aggregate is intentionally hidden or generalized.</li>
+            <li><strong>Cached or stale</strong> content includes freshness context; it should not be read as current live state.</li>
+            <li>Historical metrics provide context, not a personal SLA or prediction.</li>
+            <li>An action appears only when the current customer, request, workflow and published policy allow it.</li>
+            <li>Optional AI text is an identified plain-language aid, not authoritative Jira state or professional advice.</li>
+          </ul>
+        </section>
+
+        <section id="settings">
+          <h2>Installation settings: analytics, AI and approval</h2>
+          <table>
+            <thead><tr><th>Setting</th><th>Default</th><th>Behavior</th></tr></thead>
+            <tbody>
+              <tr><td>Installation-local product analytics</td><td>Off</td><td>Optional integer aggregates with coarse dimensions; no request content, free text, people, account IDs, emails, prompts or third-party analytics.</td></tr>
+              <tr><td>Forge LLM</td><td>Off globally and per widget</td><td>Allows individually enabled AI widgets to attempt Atlassian-hosted generation. Deterministic fallback remains available.</td></tr>
+              <tr><td>Two-person publication approval</td><td>Off</td><td>Requires a second eligible administrator to approve the exact revision before publication.</td></tr>
+            </tbody>
+          </table>
+          <p>Enable an optional setting only after organizational review and acceptance on the installed version. See <a href="ai-transparency.html">AI Transparency</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+        </section>
+
+        <section id="accessibility">
+          <h2>Accessibility and responsive use</h2>
+          <ul>
+            <li>The builder and runtime support keyboard navigation, visible focus, reduced motion and responsive reflow.</li>
+            <li>Resizable desktop separators support arrow keys, Home/End and double-click reset.</li>
+            <li>Charts provide a text equivalent; color is not the only status cue.</li>
+            <li>Interactive controls require a visible or programmatic accessible name.</li>
+            <li>Keep customer copy short, use meaningful link labels and test browser zoom and narrow layouts.</li>
+          </ul>
+          <p>Report lost focus, clipped content, horizontal overflow, missing labels, unreadable contrast or a chart without an equivalent summary as a defect.</p>
+        </section>
+
+        <section id="help">
+          <h2>Troubleshooting and support</h2>
+          <p>Start with the <a href="troubleshooting.html">Troubleshooting Guide</a>. For product support, use the <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a>.</p>
+          <p>Include the app version/environment, site hostname, UTC timestamp, portal area, actor class, project/request-type name, locale/device/browser, configuration revision, safe error or correlation code and synthetic reproduction steps.</p>
+          <div class="callout"><strong>Do not send customer content.</strong> Exclude request summaries/descriptions, comments, field values, attachments, people, email/account IDs, tokens, credentials, raw Jira responses, full portal URLs and AI prompts/completions.</div>
+        </section>
+
+        <section id="glossary">
+          <h2>Glossary</h2>
+          <dl class="glossary-list">
+            <div><dt>Capability</dt><dd>A field, API, plan, workflow or project feature that a widget needs to operate.</dd></div>
+            <div><dt>Configuration scope</dt><dd>The global, project or request-type level being edited and published.</dd></div>
+            <div><dt>Effective configuration</dt><dd>The result after inheritance, local overrides, locks and current context are resolved.</dd></div>
+            <div><dt>Panel</dt><dd>The complete app content in one portal location. Audience/status/device visibility applies to this whole unit.</dd></div>
+            <div><dt>Privacy-treated aggregate</dt><dd>A count, range, label, percentage, duration or short series that passed cohort and disclosure controls without returning matching request rows.</dd></div>
+            <div><dt>Published version</dt><dd>The validated configuration revision used by the customer portal runtime.</dd></div>
+            <div><dt>Safe fallback</dt><dd>A deterministic or unavailable state used when a field, capability, AI call or data source cannot safely return content.</dd></div>
+            <div><dt>Trusted context</dt><dd>Site, actor, project, request, module and license information derived from Forge/Jira rather than accepted from a browser payload.</dd></div>
+          </dl>
+        </section>
+      </article>
     </main>
-    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Service Management Cloud app by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="data-processing.html">Data processing</a><a href="data-residency.html">Residency</a><a href="ai-transparency.html">AI</a><a href="support.html">Support</a></div></div></footer>
+
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="widgets.html">Widgets</a><a href="troubleshooting.html">Troubleshooting</a><a href="privacy.html">Privacy</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true"><button class="lightbox-close" type="button">Close</button><img src="" alt=""></div>
     <script src="../../assets/site.js"></script>
   </body>
 </html>

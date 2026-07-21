@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Troubleshooting Guide | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Troubleshoot Customer Portal Toolkit installation, builder, publishing, widget, privacy metric, action, AI and portal rendering issues safely.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/troubleshooting.html">
+    <meta property="og:title" content="Customer Portal Toolkit Troubleshooting Guide">
+    <meta property="og:description" content="Safe checks and resolution paths for administrators and support teams.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/troubleshooting.html">
+    <meta property="og:image" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/assets/docs/audience-status-device-visibility.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Customer Portal Toolkit Troubleshooting Guide","description":"Safe diagnostic checks for Customer Portal Toolkit for Jira Service Management.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps"},"mainEntityOfPage":"https://mederak.app/apps/customer-portal-toolkit-for-jsm/troubleshooting.html","dateModified":"2026-07-21"}</script>
+    <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html">Product</a><a href="docs.html">User guide</a><a href="widgets.html">Widgets</a><a href="troubleshooting.html" aria-current="page">Troubleshooting</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Open support ticket</a></div></nav></header>
+    <main class="docs-page troubleshooting-page">
+      <section class="docs-hero"><div><span class="eyebrow">Administrator and support runbook</span><h1>Troubleshooting Guide</h1><p class="lead">Diagnose missing content, unavailable capabilities, publishing conflicts, suppressed metrics and disabled actions without weakening permissions or privacy controls.</p><p class="lead secondary">Start with a synthetic reproduction and a safe incident envelope. Never expose customer content merely to make a symptom easier to debug.</p><p class="docs-meta"><strong>Updated July 21, 2026</strong></p></div><figure class="docs-hero-shot"><button class="image-zoom" type="button" data-lightbox-src="assets/docs/audience-status-device-visibility.png" aria-label="Open visibility settings screenshot"><img src="assets/docs/audience-status-device-visibility.png" width="1840" height="900" alt="Customer Portal Toolkit builder with audience, request status and device visibility controls."></button><figcaption>Many visibility problems begin with scope, audience, request status or device configuration.</figcaption></figure></section>
+      <aside class="docs-sidebar"><nav aria-label="Troubleshooting contents"><h2>Contents</h2><ul><li><a href="#first-checks">First checks</a></li><li><a href="#incident-envelope">Safe incident envelope</a></li><li><a href="#admin-builder">Admin and builder</a></li><li><a href="#portal-content">Portal content</a></li><li><a href="#metrics-charts">Metrics and charts</a></li><li><a href="#actions">Customer actions</a></li><li><a href="#ai">Optional AI</a></li><li><a href="#performance">Performance and cache</a></li><li><a href="#support">Escalation</a></li></ul><a class="button secondary docs-sidebar-button" href="docs.html">Back to user guide</a></nav></aside>
+      <article class="docs-article">
+        <section id="first-checks">
+          <h2>First checks</h2>
+          <ol class="numbered-checklist">
+            <li>Confirm the exact app version, Forge environment and Jira Cloud site.</li>
+            <li>Confirm the actor role: Jira administrator, project administrator, agent, customer, generic unlicensed or anonymous.</li>
+            <li>Confirm the global/project/request-type scope and portal area currently published.</li>
+            <li>Open the same request directly in Jira/JSM as the affected user and confirm the underlying value or action is available.</li>
+            <li>Check the builder's validation overview, capability warnings and pending module-visibility synchronization banner.</li>
+            <li>Reproduce with a synthetic request in development or staging where possible.</li>
+          </ol>
+          <div class="callout"><strong>Do not “fix” a symptom by broadening scopes, adding egress, lowering privacy thresholds, switching a customer read/mutation to app authority or disabling validation.</strong></div>
+        </section>
+
+        <section id="incident-envelope">
+          <h2>Capture a safe incident envelope</h2>
+          <p>Record only:</p>
+          <ul><li>app version, environment and site hostname;</li><li>UTC timestamp and timezone;</li><li>portal area and actor class;</li><li>project/request-type name or synthetic identifier;</li><li>configuration revision, locale, device/viewport and browser;</li><li>safe app error code/correlation ID and HTTP status class if shown;</li><li>expected behavior, actual behavior and synthetic reproduction steps.</li></ul>
+          <p>Do not collect request summaries/descriptions/keys unless an approved process requires one, comments, field values, organization/people names, email/account IDs, attachments, JQL containing customer values, full portal URLs, prompts/completions, storage values, tokens, credentials, raw Jira response bodies or browser secrets.</p>
+        </section>
+
+        <section id="admin-builder">
+          <h2>Administration and builder</h2>
+          <table class="troubleshooting-table">
+            <thead><tr><th>Symptom</th><th>Safe checks</th><th>Resolution</th></tr></thead>
+            <tbody>
+              <tr><td>Global admin page is missing</td><td>Confirm the app is installed on this site and the actor has Jira <code>ADMINISTER</code> permission.</td><td>Use an eligible Jira administrator and the approved installation. Do not copy another app identity or URL.</td></tr>
+              <tr><td>Project settings access is denied</td><td>Confirm the current project context and <code>ADMINISTER_PROJECTS</code> permission.</td><td>Use an eligible project/global administrator. A submitted project ID cannot grant access.</td></tr>
+              <tr><td>Wrong project or request type is shown</td><td>Read the “Editing” scope summary and trusted project context.</td><td>Use Change to select an authorized target; stop if the host context itself is wrong.</td></tr>
+              <tr><td>Template contains unavailable widgets</td><td>Check plan, project type, field, SLA, Assets, organization, service, knowledge and workflow capabilities.</td><td>Map, replace or locally hide the widget. A template is a starting draft, not a capability guarantee.</td></tr>
+              <tr><td>Draft save reports a conflict</td><td>Check the current revision, publication history and another administrator's change.</td><td>Reload and reconcile intentionally. Do not overwrite through payload or browser manipulation.</td></tr>
+              <tr><td>Publish is blocked</td><td>Select Review issues and inspect every blocking field-level error.</td><td>Fix all errors. Warnings require an understood and tested decision, not a blanket waiver.</td></tr>
+              <tr><td>Publish asks for approval</td><td>Check the global two-person setting, requester, unchanged revision and request age.</td><td>A different eligible administrator approves within 24 hours; otherwise create a new request.</td></tr>
+              <tr><td>Published but module chrome is stale</td><td>Look for the red pending visibility-sync banner.</td><td>Use Retry visibility sync, then refresh the customer request. Authorization is unchanged while sync is pending.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="portal-content">
+          <h2>Portal content and visibility</h2>
+          <table class="troubleshooting-table">
+            <thead><tr><th>Symptom</th><th>Safe checks</th><th>Resolution</th></tr></thead>
+            <tbody>
+              <tr><td>Complete panel is hidden</td><td>Check enablement, effective empty layout, audience, request status, device, account class, request access and license.</td><td>Correct the complete panel policy and republish. Preview simulation alone is not permission evidence.</td></tr>
+              <tr><td>One widget says Not available</td><td>Check its selected field/source, current request access, required capability and fallback.</td><td>Keep the local safe state or repair the source/configuration. Never substitute privileged or unrelated data.</td></tr>
+              <tr><td>Portal header is empty for anonymous visitors</td><td>Confirm global portal-header scope, published public configuration, supported public page and public widget class.</td><td>Keep it empty unless every public-safety condition is met; request data, metrics, actions and AI are forbidden.</td></tr>
+              <tr><td>Wrong language appears</td><td>Check exact locale, base-language content, English fallback and published revision.</td><td>Add reviewed localized content and republish. Do not rely on unreviewed machine translation for critical copy.</td></tr>
+              <tr><td>Desktop looks correct but mobile is crowded</td><td>Use the mobile preview and check columns, widths, long labels, tables and action controls.</td><td>Use a single-column narrow layout, concise copy and compatible appearance tokens.</td></tr>
+              <tr><td>Related item is missing</td><td>Open the target directly as the current user and confirm the relation is customer-visible.</td><td>Accept omission when the target is unauthorized; the app does not disclose that a hidden target exists.</td></tr>
+              <tr><td>SLA, Assets, service or knowledge widget is missing</td><td>Confirm the project plan, field/configuration and current-user API capability.</td><td>Use a safe fallback/replacement or keep the widget unavailable until the real capability exists.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="metrics-charts">
+          <h2>Metrics and charts</h2>
+          <table class="troubleshooting-table">
+            <thead><tr><th>Symptom</th><th>Safe checks</th><th>Resolution</th></tr></thead>
+            <tbody>
+              <tr><td>Counter is suppressed or qualitative</td><td>Check cohort size, privacy minimum, exact threshold, time window, query dimensions, freshness and differencing policy.</td><td>Use a broader legitimate cohort or accept the safe presentation. Do not lower controls merely to reveal a value.</td></tr>
+              <tr><td>Historical duration or SLA value is absent</td><td>Confirm the semantic metric engine, compatible definition and enough privacy-safe samples.</td><td>Leave unavailable until the specific metric can be computed; do not relabel a count.</td></tr>
+              <tr><td>Chart has no points</td><td>Check publication time, snapshot schedule, stable metric definition, sample, timestamps and sibling state.</td><td>Allow the honest no-data state while snapshots build; investigate jobs without exposing raw rows.</td></tr>
+              <tr><td>Value appears stale</td><td>Check displayed freshness, cache age, refresh state and safe correlation ID.</td><td>A safe stale value may remain after refresh failure. Repair the source/job rather than removing freshness disclosure.</td></tr>
+              <tr><td>Metric differs from Jira search</td><td>Compare project binding, current-customer/organization cohort, supported query definition and privacy treatment.</td><td>Expect generalized output. Customer metrics intentionally do not reproduce a raw Jira issue search.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="actions">
+          <h2>Customer actions</h2>
+          <figure><button class="image-zoom" type="button" data-lightbox-src="assets/docs/permission-checked-action.png" aria-label="Open action confirmation screenshot"><img src="assets/docs/permission-checked-action.png" width="1840" height="900" alt="Public update confirmation with server-side permission and policy check notice."></button><figcaption>Confirmation does not replace the fresh server-side authorization performed on submission.</figcaption></figure>
+          <table class="troubleshooting-table">
+            <thead><tr><th>Symptom</th><th>Safe checks</th><th>Resolution</th></tr></thead>
+            <tbody>
+              <tr><td>Action is disabled</td><td>Check authenticated customer, active license, exact portal location, panel visibility, published policy, request access, capability and workflow.</td><td>Configure only server-attested choices and retest as the customer. Never elevate with app authority.</td></tr>
+              <tr><td>Public comment is rejected</td><td>Confirm text is present, at most 10,000 characters and permitted by the current customer API.</td><td>Correct the input/permission. Never fall back to an internal comment.</td></tr>
+              <tr><td>Attachment is rejected</td><td>Check decoded size 1–256 KiB, filename, MIME type, encoding and customer permission.</td><td>Use a supported smaller file or the service team's approved alternative.</td></tr>
+              <tr><td>Participant is unavailable</td><td>Check the published participant policy, server-issued token/label and current Jira permission.</td><td>Reconfigure the approved participant. Never submit a raw account ID from the portal.</td></tr>
+              <tr><td>Transition disappeared</td><td>Check the live current-customer transitions and published allowlist after workflow/status changes.</td><td>Update policy and retest. A transition absent from the current workflow must stay disabled.</td></tr>
+              <tr><td>Duplicate or Processing response</td><td>Check whether the first submission is running or already succeeded.</td><td>Wait and refresh request state before retrying; use the same UI retry flow.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="ai">
+          <h2>Optional AI</h2>
+          <table class="troubleshooting-table">
+            <thead><tr><th>Symptom</th><th>Safe checks</th><th>Resolution</th></tr></thead>
+            <tbody>
+              <tr><td>AI widget uses fallback</td><td>Check global opt-in, per-widget opt-in, actor class, Forge LLM availability, budget, timeout/circuit and output validation.</td><td>Use deterministic content. Core portal behavior must not depend on AI.</td></tr>
+              <tr><td>AI output is rejected</td><td>Check bounded input/output, required schema, prohibited content and customer-safe projection.</td><td>Keep the validated deterministic fallback; do not bypass validation or send more customer data.</td></tr>
+              <tr><td>Admin AI assistant does not appear in the portal</td><td>Confirm the selected registry contract.</td><td>This is expected: Admin AI Configuration Assistant is admin-only and has no customer portal location.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="performance">
+          <h2>Performance, cache and partial failures</h2>
+          <ul>
+            <li>A five-second client batch deadline can leave one slow widget unavailable while siblings continue.</li>
+            <li>Fast widgets use configured content or the current request; Standard widgets use an additional source/action; high-cost widgets may load later; historical widgets are prepared periodically.</li>
+            <li>Cached customer-shared data contains only an already privacy-treated presentation.</li>
+            <li>A failed refresh can preserve a safe stale presentation with freshness context.</li>
+            <li>Do not lengthen the whole page timeout to hide one slow source. Repair, replace or move the expensive widget.</li>
+          </ul>
+        </section>
+
+        <section id="support">
+          <h2>Escalation and support</h2>
+          <p>Use the <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a>. Include the safe incident envelope, affected version/environment, impact and actor classes, first/last observed time, reproducibility and redacted evidence.</p>
+          <p>For suspected vulnerabilities, choose a private security report and follow <a href="incident-response.html">Security Incident Response</a>. Do not open a public issue with exploit details, tenant data, credentials or customer content.</p>
+          <div class="docs-link-grid"><a class="docs-link-card" href="docs.html"><strong>User guide</strong><span>Configuration, preview, publication and acceptance.</span></a><a class="docs-link-card" href="widgets.html"><strong>Widget reference</strong><span>Source, surfaces and limits for every widget.</span></a><a class="docs-link-card" href="support.html"><strong>Support policy</strong><span>Channels, coverage and response targets.</span></a></div>
+        </section>
+      </article>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="docs.html">User guide</a><a href="widgets.html">Widgets</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true"><button class="lightbox-close" type="button">Close</button><img src="" alt=""></div>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

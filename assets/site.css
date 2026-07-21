@@ -2532,6 +2532,279 @@ a {
   padding: 2px 6px;
 }
 
+.docs-article pre {
+  overflow-x: auto;
+  margin: 18px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f7faff;
+  padding: 16px;
+}
+
+.docs-article pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.docs-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.docs-link-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff, #f7fbff);
+  padding: 18px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(16, 32, 51, 0.05);
+}
+
+.docs-link-card:hover {
+  border-color: #79c9d9;
+  transform: translateY(-1px);
+}
+
+.docs-link-card strong {
+  color: var(--blue-dark);
+  font-size: 17px;
+}
+
+.docs-link-card span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.numbered-checklist {
+  counter-reset: guide-step;
+  display: grid;
+  gap: 12px;
+  padding-left: 0 !important;
+  list-style: none;
+}
+
+.numbered-checklist > li {
+  counter-increment: guide-step;
+  position: relative;
+  min-height: 48px;
+  padding: 12px 14px 12px 58px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fbfdff;
+}
+
+.numbered-checklist > li::before {
+  content: counter(guide-step);
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #e7f9fd;
+  color: #006079;
+  font-weight: 900;
+}
+
+.docs-screenshot-pair {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(0, 1.35fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.docs-screenshot-pair figure {
+  margin-top: 0;
+}
+
+.docs-screenshot-pair figure img {
+  max-height: 640px;
+  object-fit: contain;
+}
+
+.glossary-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.glossary-list div {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.glossary-list div:last-child {
+  border-bottom: 0;
+}
+
+.glossary-list dt {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.glossary-list dd {
+  margin: 0;
+}
+
+.docs-sidebar-button {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.docs-sidebar li a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.docs-sidebar li a span {
+  color: #006079;
+  font-size: 12px;
+}
+
+.widget-search {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.widget-search input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #a9b8ca;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px 13px;
+  color: var(--ink);
+  font: inherit;
+}
+
+.widget-search input:focus {
+  outline: 3px solid rgba(0, 127, 159, 0.2);
+  border-color: #007f9f;
+}
+
+.widget-search-status {
+  color: #006079 !important;
+  font-weight: 800;
+}
+
+.widget-category-heading {
+  margin-bottom: 14px;
+}
+
+.widget-category-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.widget-category-visual img {
+  max-height: 480px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.widget-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.widget-card {
+  scroll-margin-top: 96px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff, #fbfdff);
+  padding: 18px;
+}
+
+.widget-card[hidden],
+.widget-category[hidden] {
+  display: none;
+}
+
+.widget-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+}
+
+.widget-card header a {
+  color: #6b7c93;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.widget-card h3 {
+  margin: 5px 0 10px;
+  font-size: 20px;
+}
+
+.widget-card > p {
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.widget-type {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 999px;
+  background: #e7f9fd;
+  padding: 4px 8px;
+  color: #006079;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.widget-card dl {
+  display: grid;
+  gap: 0;
+  margin: 14px 0 0;
+}
+
+.widget-card dl div {
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr);
+  gap: 10px;
+  border-top: 1px solid #e7edf4;
+  padding: 9px 0;
+}
+
+.widget-card dt {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.widget-card dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.48;
+}
+
+.troubleshooting-table td:first-child {
+  width: 23%;
+  color: var(--ink);
+  font-weight: 800;
+}
+
 .vendor-page .section {
   max-width: 1320px;
   padding: 88px 28px;
@@ -3821,6 +4094,14 @@ a {
   .docs-sidebar ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .docs-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-link-card {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 520px) {
@@ -3850,6 +4131,10 @@ a {
     min-width: 0;
   }
 
+  .docs-article {
+    display: block;
+  }
+
   .docs-hero {
     display: block;
     overflow: hidden;
@@ -3869,7 +4154,15 @@ a {
   }
 
   .docs-article section {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
     padding: 22px;
+  }
+
+  .docs-article section + section {
+    margin-top: 22px;
   }
 
   .docs-hero h1 {
@@ -3891,6 +4184,16 @@ a {
   .docs-article td,
   .docs-article tr {
     display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .docs-article table {
+    table-layout: fixed;
+    overflow: hidden;
   }
 
   .docs-article thead {
@@ -3903,6 +4206,29 @@ a {
 
   .docs-article td {
     border-bottom: 0;
+  }
+
+  .docs-screenshot-pair,
+  .widget-reference-grid,
+  .glossary-list div {
+    grid-template-columns: 1fr;
+  }
+
+  .widget-card {
+    padding: 16px;
+  }
+
+  .widget-card dl div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .docs-screenshot-pair figure img {
+    max-height: none;
+  }
+
+  .troubleshooting-table td:first-child {
+    width: auto;
   }
 }
 

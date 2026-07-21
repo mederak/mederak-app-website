@@ -77,6 +77,16 @@ export const products = {
   }
 };
 
+export const portalToolkitResourceLinks = [
+  { label: "Overview", href: "/apps/customer-portal-toolkit-for-jsm/" },
+  { label: "User guide", href: "/apps/customer-portal-toolkit-for-jsm/docs.html" },
+  { label: "Widget reference", href: "/apps/customer-portal-toolkit-for-jsm/widgets.html" },
+  { label: "Troubleshooting", href: "/apps/customer-portal-toolkit-for-jsm/troubleshooting.html" },
+  { label: "Security", href: "/apps/customer-portal-toolkit-for-jsm/security.html" },
+  { label: "Privacy", href: "/apps/customer-portal-toolkit-for-jsm/privacy.html" },
+  { label: "Support", href: "/apps/customer-portal-toolkit-for-jsm/support.html" }
+];
+
 export const excelResourceLinks = [
   { label: "Overview", href: "/apps/excel-to-jira-importer-updater/" },
   { label: "Import", href: "/import-excel-to-jira/" },

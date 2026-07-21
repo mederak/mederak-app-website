@@ -1,4 +1,4 @@
-import { canonicalRoutes, excelResourceLinks, products, site, toolResourceLinks } from "../data/site-structure.mjs";
+import { canonicalRoutes, excelResourceLinks, portalToolkitResourceLinks, products, site, toolResourceLinks } from "../data/site-structure.mjs";
 
 const pageLabels = new Map([
   ["/", "Home"],
@@ -7,6 +7,8 @@ const pageLabels = new Map([
   ["/service-level-agreement.html", "Service level agreement"],
   ["/import-excel-to-jira/", "Import Excel to Jira"],
   ["/apps/customer-portal-toolkit-for-jsm/docs.html", "Documentation"],
+  ["/apps/customer-portal-toolkit-for-jsm/widgets.html", "Widget reference"],
+  ["/apps/customer-portal-toolkit-for-jsm/troubleshooting.html", "Troubleshooting"],
   ["/apps/customer-portal-toolkit-for-jsm/privacy.html", "Privacy"],
   ["/apps/customer-portal-toolkit-for-jsm/terms.html", "Terms"],
   ["/apps/customer-portal-toolkit-for-jsm/security.html", "Security"],
@@ -123,6 +125,9 @@ function breadcrumbsForRoute(route, product) {
 
 function resourceLinksForRoute(route, product) {
   if (route.startsWith("/tools/")) return { label: "Free Jira CSV and Excel tools", links: toolResourceLinks };
+  if (product?.slug === "customer-portal-toolkit-for-jsm") {
+    return { label: "Customer Portal Toolkit resources", links: portalToolkitResourceLinks };
+  }
   if (product?.slug === "excel-to-jira-importer-updater" || route === "/import-excel-to-jira/") {
     return { label: "Excel to Jira resources", links: excelResourceLinks };
   }

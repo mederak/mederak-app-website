@@ -15,7 +15,7 @@ export const mediaRoots = [
   {
     product: "customer-portal-toolkit-for-jsm",
     root: "apps/customer-portal-toolkit-for-jsm/assets",
-    purpose: "Customer Portal Toolkit icons, Marketplace screenshots and product media."
+    purpose: "Customer Portal Toolkit icons, documentation screenshots and product media."
   },
   {
     product: "project-overview-status-hub-for-jira",

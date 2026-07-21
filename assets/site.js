@@ -130,3 +130,30 @@ carousels.forEach((carousel) => {
   });
   showSlide(activeIndex);
 });
+
+const widgetReferenceSearch = document.querySelector('#widget-reference-search');
+const widgetSearchStatus = document.querySelector('#widget-search-status');
+
+if (widgetReferenceSearch && widgetSearchStatus) {
+  const widgetCards = [...document.querySelectorAll('[data-widget-card]')];
+  const widgetGroups = [...document.querySelectorAll('[data-widget-group]')];
+
+  widgetReferenceSearch.addEventListener('input', () => {
+    const query = widgetReferenceSearch.value.trim().toLocaleLowerCase();
+    let visible = 0;
+
+    widgetCards.forEach((card) => {
+      const matches = !query || card.textContent.toLocaleLowerCase().includes(query);
+      card.hidden = !matches;
+      if (matches) visible += 1;
+    });
+
+    widgetGroups.forEach((group) => {
+      group.hidden = !group.querySelector('[data-widget-card]:not([hidden])');
+    });
+
+    widgetSearchStatus.textContent = query
+      ? `Showing ${visible} of 62 widget definitions.`
+      : 'Showing all 62 widget definitions.';
+  });
+}

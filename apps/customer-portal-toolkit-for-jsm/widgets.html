@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Widget Reference | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Complete reference for all 62 Customer Portal Toolkit widget contracts, including data sources, supported surfaces, use cases and safety limits.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/widgets.html">
+    <meta property="og:title" content="Customer Portal Toolkit Widget Reference">
+    <meta property="og:description" content="Browse all information, layout, metric, chart, AI and customer action widgets.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/widgets.html">
+    <meta property="og:image" content="https://mederak.app/apps/customer-portal-toolkit-for-jsm/assets/docs/customer-request-context.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Customer Portal Toolkit Widget Reference","description":"Reference for all 62 registered Customer Portal Toolkit widget contracts.","author":{"@type":"Organization","name":"Mederak Apps"},"publisher":{"@type":"Organization","name":"Mederak Apps"},"mainEntityOfPage":"https://mederak.app/apps/customer-portal-toolkit-for-jsm/widgets.html","dateModified":"2026-07-21"}</script>
+    <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="index.html">Product</a><a href="docs.html">User guide</a><a href="widgets.html" aria-current="page">Widgets</a><a href="troubleshooting.html">Troubleshooting</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Request early access</a></div></nav></header>
+    <main class="docs-page widget-reference-page">
+      <section class="docs-hero"><div><span class="eyebrow">Version 1.0 · Complete registry</span><h1>Widget Reference</h1><p class="lead">Every registered Customer Portal Toolkit widget, what it shows, when to use it, where it can render and what administrators must verify.</p><p class="lead secondary">The registry contains 62 contracts. The builder exposes 61 portal/customer widgets; Admin AI Configuration Assistant is admin-only.</p><p class="docs-meta"><strong>Updated July 21, 2026</strong> · Availability still depends on the installed version, project capabilities, Jira permissions and the selected portal area.</p></div><figure class="docs-hero-shot"><button class="image-zoom" type="button" data-lightbox-src="assets/docs/customer-request-context.png" aria-label="Open a customer request widget example"><img src="assets/docs/customer-request-context.png" width="1840" height="900" alt="Synthetic JSM request with a coordinated set of Customer Portal Toolkit widgets."></button><figcaption>A coordinated customer request view built from several independent widgets.</figcaption></figure></section>
+      <aside class="docs-sidebar"><nav aria-label="Widget categories"><h2>Widget categories</h2><ul><li><a href="#information-layout">Information and layout <span>33</span></a></li><li><a href="#metrics">Metrics and counters <span>14</span></a></li><li><a href="#charts">Charts <span>3</span></a></li><li><a href="#ai">Optional AI <span>3</span></a></li><li><a href="#actions">Customer actions <span>9</span></a></li></ul><a class="button secondary docs-sidebar-button" href="docs.html">Back to user guide</a></nav></aside>
+      <article class="docs-article">
+        <section id="find-widget">
+          <h2>Find a widget</h2>
+          <label class="widget-search"><span>Search by name, type, source or use case</span><input id="widget-reference-search" type="search" placeholder="For example: SLA, comment, Assets, trend…" autocomplete="off"></label>
+          <p id="widget-search-status" class="widget-search-status" role="status" aria-live="polite">Showing all 62 widget definitions.</p>
+          <div class="callout"><strong>Registry presence is not tenant capability.</strong> A widget can remain unavailable when a required field, API, plan, workflow, account type, license or permission is missing. Safe unavailable states are intentional and do not authorize a substitute data source.</div>
+        </section>
+        
+        <section class="widget-category" id="information-layout" data-widget-group>
+          <header class="widget-category-heading"><div><span class="eyebrow">33 definitions</span><h2>Information and layout</h2><p>Information and layout widgets turn authorized request data and configured content into a clearer customer view.</p></div></header>
+          <figure class="widget-category-visual">
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/customer-request-context.png" aria-label="Open information and layout example screenshot">
+              <img src="assets/docs/customer-request-context.png" alt="Synthetic JSM request preview with information, status, contact, SLA, explanation and process widgets." loading="lazy" decoding="async">
+            </button>
+            <figcaption>Information and layout widgets turn authorized request data and configured content into a clearer customer view.</figcaption>
+          </figure>
+          <div class="widget-reference-grid">
+            <article class="widget-card" id="jira-field" data-widget-card>
+              <header><div><span class="widget-type">jira-field</span><h3>Generic Jira Field</h3></div><a href="#jira-field" aria-label="Link to Generic Jira Field">#</a></header>
+              <p>Displays one customer-visible Jira field using a supported renderer and a customer-facing label.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>You need to surface a specific approved field without changing the Jira value.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Select a field exposed in the current project; missing or unsupported field types fail locally.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="multi-field-summary" data-widget-card>
+              <header><div><span class="widget-type">multi-field-summary</span><h3>Multi-field Summary</h3></div><a href="#multi-field-summary" aria-label="Link to Multi-field Summary">#</a></header>
+              <p>Groups several approved request fields into one compact summary.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need a concise overview such as status, priority and created date.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Keep the list short and confirm every selected field is customer-visible.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="assignee-card" data-widget-card>
+              <header><div><span class="widget-type">assignee-card</span><h3>Assignee Card</h3></div><a href="#assignee-card" aria-label="Link to Assignee Card">#</a></header>
+              <p>Shows the safe presentation of the current request assignee.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers benefit from knowing who is handling the request.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>The card cannot reveal identifiers or data Jira does not expose to the current user.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="team-card" data-widget-card>
+              <header><div><span class="widget-type">team-card</span><h3>Team Card</h3></div><a href="#team-card" aria-label="Link to Team Card">#</a></header>
+              <p>Presents an approved team or ownership field as a customer-friendly team card.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A service team or resolver group is more useful to customers than an individual name.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Map an appropriate current-project field and provide a safe empty-state label.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="reporter-card" data-widget-card>
+              <header><div><span class="widget-type">reporter-card</span><h3>Reporter Card</h3></div><a href="#reporter-card" aria-label="Link to Reporter Card">#</a></header>
+              <p>Shows the customer-safe presentation of the request reporter.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The requester identity helps clarify who raised a shared request.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Jira request access still controls whether the value is available.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="participants" data-widget-card>
+              <header><div><span class="widget-type">participants</span><h3>Participants</h3></div><a href="#participants" aria-label="Link to Participants">#</a></header>
+              <p>Lists safe names and avatars for authorized request participants.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need to understand who is included in a shared request.</dd></div>
+                <div><dt>Source</dt><dd>Request participants</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>IDs, email addresses and self links are stripped from the customer projection.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="organization" data-widget-card>
+              <header><div><span class="widget-type">organization</span><h3>Organization</h3></div><a href="#organization" aria-label="Link to Organization">#</a></header>
+              <p>Shows the request organization in a compact customer-safe presentation.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Organization membership is relevant to the request context.</dd></div>
+                <div><dt>Source</dt><dd>Organizations</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Availability depends on JSM organization data and the current user's access.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="status" data-widget-card>
+              <header><div><span class="widget-type">status</span><h3>Status</h3></div><a href="#status" aria-label="Link to Status">#</a></header>
+              <p>Displays the current Jira/JSM request status with an accessible status treatment.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The raw workflow state is already meaningful to customers.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Use Status Explanation as well when internal workflow wording needs customer context.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="status-explanation" data-widget-card>
+              <header><div><span class="widget-type">status-explanation</span><h3>Customer-friendly Status Explanation</h3></div><a href="#status-explanation" aria-label="Link to Customer-friendly Status Explanation">#</a></header>
+              <p>Adds reviewed plain-language text explaining what the current status means and what happens next.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Workflow labels alone do not set a clear expectation.</dd></div>
+                <div><dt>Source</dt><dd>Current request plus configured content</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Write and review localized explanations; do not present an SLA promise unless one exists.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="priority" data-widget-card>
+              <header><div><span class="widget-type">priority</span><h3>Priority</h3></div><a href="#priority" aria-label="Link to Priority">#</a></header>
+              <p>Shows the current request priority in a customer-friendly format.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Priority is intentionally visible and useful to the customer.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Confirm the project exposes the priority to the customer; avoid implying response guarantees.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="date" data-widget-card>
+              <header><div><span class="widget-type">date</span><h3>Date</h3></div><a href="#date" aria-label="Link to Date">#</a></header>
+              <p>Formats a selected approved date value for customer display.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A project-specific date should be easier to read than the raw Jira value.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Select the intended date field and verify timezone/empty-value behavior.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="due-date" data-widget-card>
+              <header><div><span class="widget-type">due-date</span><h3>Due Date</h3></div><a href="#due-date" aria-label="Link to Due Date">#</a></header>
+              <p>Displays the Jira due date with customer-friendly formatting.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The request has a meaningful customer-facing target date.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>A due date is not automatically an SLA commitment; explain the business meaning in the label.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="sla" data-widget-card>
+              <header><div><span class="widget-type">sla</span><h3>SLA</h3></div><a href="#sla" aria-label="Link to SLA">#</a></header>
+              <p>Shows a selected customer-visible SLA cycle, including safe running, paused or completed states.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>JSM exposes an SLA that the customer should understand.</dd></div>
+                <div><dt>Source</dt><dd>SLA</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires the SLA capability and a compatible field/cycle in the current project.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="time-remaining" data-widget-card>
+              <header><div><span class="widget-type">time-remaining</span><h3>Time Remaining</h3></div><a href="#time-remaining" aria-label="Link to Time Remaining">#</a></header>
+              <p>Presents the remaining time from an available customer-visible SLA cycle.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need a compact view of an active SLA countdown.</dd></div>
+                <div><dt>Source</dt><dd>SLA</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Handles missing, paused and completed cycles without inventing a duration.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="last-public-update" data-widget-card>
+              <header><div><span class="widget-type">last-public-update</span><h3>Last Public Update</h3></div><a href="#last-public-update" aria-label="Link to Last Public Update">#</a></header>
+              <p>Shows when the most recent public customer-visible comment was added.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need to know how recently the service team communicated publicly.</dd></div>
+                <div><dt>Source</dt><dd>Public comments</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Private comments are never requested or considered.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="last-status-change" data-widget-card>
+              <header><div><span class="widget-type">last-status-change</span><h3>Last Status Change</h3></div><a href="#last-status-change" aria-label="Link to Last Status Change">#</a></header>
+              <p>Shows the latest safe request status-change timestamp.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The age of the current workflow state is useful context.</dd></div>
+                <div><dt>Source</dt><dd>Issue history</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>The widget remains unavailable when a safe status timestamp cannot be derived.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="request-age" data-widget-card>
+              <header><div><span class="widget-type">request-age</span><h3>Request Age</h3></div><a href="#request-age" aria-label="Link to Request Age">#</a></header>
+              <p>Shows how long the current request has existed.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Elapsed request age helps orient the customer.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Treat age as context, not as a response or resolution commitment.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="service" data-widget-card>
+              <header><div><span class="widget-type">service</span><h3>Service</h3></div><a href="#service" aria-label="Link to Service">#</a></header>
+              <p>Displays the authorized service associated with the request.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A named service helps customers connect the request to the affected business service.</dd></div>
+                <div><dt>Source</dt><dd>Services</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Availability varies by JSM plan, project setup and request field data.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="assets-object-card" data-widget-card>
+              <header><div><span class="widget-type">assets-object-card</span><h3>Assets Object Card</h3></div><a href="#assets-object-card" aria-label="Link to Assets Object Card">#</a></header>
+              <p>Shows a bounded customer-safe projection of a linked Jira Assets object.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A device, application or configuration item is relevant to the request.</dd></div>
+                <div><dt>Source</dt><dd>Assets</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires Assets and an approved linked object/field; arbitrary object data is not returned.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="related-issues" data-widget-card>
+              <header><div><span class="widget-type">related-issues</span><h3>Related Issues</h3></div><a href="#related-issues" aria-label="Link to Related Issues">#</a></header>
+              <p>Lists only related requests that the current user is separately authorized to access.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need permitted links to a small set of related requests.</dd></div>
+                <div><dt>Source</dt><dd>Related issues</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Every target is authorized as the current user; hidden targets are omitted without existence disclosure.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="related-incident" data-widget-card>
+              <header><div><span class="widget-type">related-incident</span><h3>Related Incident</h3></div><a href="#related-incident" aria-label="Link to Related Incident">#</a></header>
+              <p>Shows an authorized incident related to the current request as a focused card.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A customer request is tied to a permitted incident that explains wider impact.</dd></div>
+                <div><dt>Source</dt><dd>Related issues</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>The linked incident must pass a separate current-user authorization check.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="related-problem" data-widget-card>
+              <header><div><span class="widget-type">related-problem</span><h3>Related Problem</h3></div><a href="#related-problem" aria-label="Link to Related Problem">#</a></header>
+              <p>Shows an authorized problem related to the current request as a focused card.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A known underlying problem is relevant and accessible to the customer.</dd></div>
+                <div><dt>Source</dt><dd>Related issues</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Unauthorized linked items are not named or hinted at.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="knowledge-article" data-widget-card>
+              <header><div><span class="widget-type">knowledge-article</span><h3>Linked Knowledge Article</h3></div><a href="#knowledge-article" aria-label="Link to Linked Knowledge Article">#</a></header>
+              <p>Links to an approved knowledge article associated with the request.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A customer-facing article can help explain or resolve the issue.</dd></div>
+                <div><dt>Source</dt><dd>Confluence/JSM knowledge</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires the knowledge-base capability and a link the current context may expose.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="working-hours" data-widget-card>
+              <header><div><span class="widget-type">working-hours</span><h3>Working Hours</h3></div><a href="#working-hours" aria-label="Link to Working Hours">#</a></header>
+              <p>Presents configured or service-desk working hours in a readable schedule.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need to understand service availability windows.</dd></div>
+                <div><dt>Source</dt><dd>Service desk</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires compatible service-desk data; keep timezone and holiday wording explicit.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="static-text" data-widget-card>
+              <header><div><span class="widget-type">static-text</span><h3>Static Text</h3></div><a href="#static-text" aria-label="Link to Static Text">#</a></header>
+              <p>Publishes localized, sanitized administrator-written content.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>You need guidance, policy text, contact details or context that does not depend on a request value.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Portal-header use may be public; never include secrets or request-specific content.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="heading" data-widget-card>
+              <header><div><span class="widget-type">heading</span><h3>Heading</h3></div><a href="#heading" aria-label="Link to Heading">#</a></header>
+              <p>Adds a localized semantic heading that structures a panel.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A group of widgets needs a clear customer-facing section title.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Keep heading levels and wording meaningful; do not use headings only for visual size.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="callout" data-widget-card>
+              <header><div><span class="widget-type">callout</span><h3>Callout</h3></div><a href="#callout" aria-label="Link to Callout">#</a></header>
+              <p>Highlights a localized information, success, warning or critical message.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A customer should notice an important instruction or service notice.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Choose a truthful severity and keep public-header messages explicitly public-safe.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="link" data-widget-card>
+              <header><div><span class="widget-type">link</span><h3>Link</h3></div><a href="#link" aria-label="Link to Link">#</a></header>
+              <p>Displays a configured, localized link using restricted safe URL protocols.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need a clear route to approved documentation or a portal resource.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Use descriptive link text and verify the target; arbitrary protocols and endpoints are rejected.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="button" data-widget-card>
+              <header><div><span class="widget-type">button</span><h3>Button</h3></div><a href="#button" aria-label="Link to Button">#</a></header>
+              <p>Presents a configured link as a prominent button without performing a Jira mutation.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A safe external or portal destination is the primary next step.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>This is a navigation control, not an action widget; use action widgets for Jira changes.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="divider" data-widget-card>
+              <header><div><span class="widget-type">divider</span><h3>Divider</h3></div><a href="#divider" aria-label="Link to Divider">#</a></header>
+              <p>Adds a quiet visual separator between content groups.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A long panel needs visual structure without another heading.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Decorative only; it has no independent content or appearance configuration.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="spacer" data-widget-card>
+              <header><div><span class="widget-type">spacer</span><h3>Spacer</h3></div><a href="#spacer" aria-label="Link to Spacer">#</a></header>
+              <p>Adds controlled vertical spacing between layout elements.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A small amount of breathing room improves scanning.</dd></div>
+                <div><dt>Source</dt><dd>Configuration</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and portal header</dd></div>
+                <div><dt>Configure or check</dt><dd>Use sparingly; excessive spacing harms mobile and keyboard reading flow.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="progress-bar" data-widget-card>
+              <header><div><span class="widget-type">progress-bar</span><h3>Progress Bar</h3></div><a href="#progress-bar" aria-label="Link to Progress Bar">#</a></header>
+              <p>Shows a bounded visual progress value derived from approved request data.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A request has a meaningful, explainable completion measure.</dd></div>
+                <div><dt>Source</dt><dd>Current request</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Provide a text equivalent and never infer progress from unsupported workflow assumptions.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="process-timeline" data-widget-card>
+              <header><div><span class="widget-type">process-timeline</span><h3>Process Timeline</h3></div><a href="#process-timeline" aria-label="Link to Process Timeline">#</a></header>
+              <p>Presents configured process steps and the current position as an accessible journey.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers benefit from understanding the expected request lifecycle.</dd></div>
+                <div><dt>Source</dt><dd>Current request plus configured steps</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Keep steps aligned with the real workflow and review them after workflow changes.</dd></div>
+              </dl>
+            </article></div>
+        </section>
+        <section class="widget-category" id="metrics" data-widget-group>
+          <header class="widget-category-heading"><div><span class="eyebrow">14 definitions</span><h2>Metrics and counters</h2><p>Metrics return generalized presentations with privacy, sample and freshness context—not matching request rows.</p></div></header>
+          <figure class="widget-category-visual">
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/privacy-treated-service-context.png" aria-label="Open metrics and counters example screenshot">
+              <img src="assets/docs/privacy-treated-service-context.png" alt="Synthetic request view with privacy-treated counters, historical baseline, trend, sample and freshness." loading="lazy" decoding="async">
+            </button>
+            <figcaption>Metrics return generalized presentations with privacy, sample and freshness context—not matching request rows.</figcaption>
+          </figure>
+          <div class="widget-reference-grid">
+            <article class="widget-card" id="open-issues-counter" data-widget-card>
+              <header><div><span class="widget-type">open-issues-counter</span><h3>Open Issues Counter</h3></div><a href="#open-issues-counter" aria-label="Link to Open Issues Counter">#</a></header>
+              <p>Shows a privacy-treated count or generalized presentation of open requests in the current project.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Explain current service workload without exposing request rows.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Default query excludes Done; privacy thresholds, freshness and differencing controls apply.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="new-issues-counter" data-widget-card>
+              <header><div><span class="widget-type">new-issues-counter</span><h3>New Issues Counter</h3></div><a href="#new-issues-counter" aria-label="Link to New Issues Counter">#</a></header>
+              <p>Shows a privacy-treated view of recently created requests.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Provide recent demand context, typically over a bounded seven-day window.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Use a legitimate cohort and customer-safe wording; no matching request list is returned.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="similar-issues-counter" data-widget-card>
+              <header><div><span class="widget-type">similar-issues-counter</span><h3>Similar Issues Counter</h3></div><a href="#similar-issues-counter" aria-label="Link to Similar Issues Counter">#</a></header>
+              <p>Shows a privacy-treated count for a configured project-bound similarity/query definition.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Tell customers that comparable demand exists without identifying other requests.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>The query is not a free-text search over customer content and may be suppressed for small cohorts.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="current-load-level" data-widget-card>
+              <header><div><span class="widget-type">current-load-level</span><h3>Current Load Level</h3></div><a href="#current-load-level" aria-label="Link to Current Load Level">#</a></header>
+              <p>Converts a safe aggregate into a qualitative current workload level.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A simple Low/Moderate/High message is more useful than an exact count.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Document thresholds and avoid presenting the level as a response-time promise.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="historical-comparison" data-widget-card>
+              <header><div><span class="widget-type">historical-comparison</span><h3>Historical Comparison</h3></div><a href="#historical-comparison" aria-label="Link to Historical Comparison">#</a></header>
+              <p>Compares a prepared metric with a prior safe baseline.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers need context such as above, near or below the recent baseline.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires stored snapshots and sufficient sample; it can remain unavailable while history is building.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="trend-indicator" data-widget-card>
+              <header><div><span class="widget-type">trend-indicator</span><h3>Trend Indicator</h3></div><a href="#trend-indicator" aria-label="Link to Trend Indicator">#</a></header>
+              <p>Shows the direction of a prepared historical metric with context and freshness.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A rising, stable or falling service trend helps explain current conditions.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Trend is descriptive, not predictive; include sample/freshness and a text label.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="typical-first-response" data-widget-card>
+              <header><div><span class="widget-type">typical-first-response</span><h3>Typical First Response Time</h3></div><a href="#typical-first-response" aria-label="Link to Typical First Response Time">#</a></header>
+              <p>Shows a privacy-treated historical first-response duration.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Set realistic context about past service behavior without promising an individual response.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires the semantic metric engine, safe sample and freshness; it is not an SLA guarantee.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="typical-resolution" data-widget-card>
+              <header><div><span class="widget-type">typical-resolution</span><h3>Typical Resolution Time</h3></div><a href="#typical-resolution" aria-label="Link to Typical Resolution Time">#</a></header>
+              <p>Shows a privacy-treated historical resolution duration.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Give customers historical resolution context for comparable requests.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires accepted resolution semantics; never relabel a generic issue count as a duration.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="percentile-response" data-widget-card>
+              <header><div><span class="widget-type">percentile-response</span><h3>Percentile Response Time</h3></div><a href="#percentile-response" aria-label="Link to Percentile Response Time">#</a></header>
+              <p>Shows a configured response-time percentile from safe historical samples.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Communicate distribution context beyond an average.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Explain the percentile and sample; the value remains contextual, not a promise.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="organization-requests" data-widget-card>
+              <header><div><span class="widget-type">organization-requests</span><h3>Organization Requests Summary</h3></div><a href="#organization-requests" aria-label="Link to Organization Requests Summary">#</a></header>
+              <p>Shows a privacy-treated project aggregate constrained to an organization the current user belongs to.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A customer organization needs generalized context about its requests.</dd></div>
+                <div><dt>Source</dt><dd>Organization requests</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Membership is verified as the current user; missing or unverified organization fails closed.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="customer-requests" data-widget-card>
+              <header><div><span class="widget-type">customer-requests</span><h3>Customer Requests Summary</h3></div><a href="#customer-requests" aria-label="Link to Customer Requests Summary">#</a></header>
+              <p>Shows a privacy-treated aggregate constrained to the current customer account.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A customer needs generalized context about their own request activity.</dd></div>
+                <div><dt>Source</dt><dd>Customer requests</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires an authenticated customer account; anonymous or missing account context fails closed.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="sla-success-rate" data-widget-card>
+              <header><div><span class="widget-type">sla-success-rate</span><h3>SLA Success Rate</h3></div><a href="#sla-success-rate" aria-label="Link to SLA Success Rate">#</a></header>
+              <p>Shows a privacy-treated historical percentage for an accepted SLA definition.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Provide historical service-level context across a sufficiently large sample.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Requires a valid SLA metric, safe sample and freshness; it is not a guarantee for the current request.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="custom-jql-counter" data-widget-card>
+              <header><div><span class="widget-type">custom-jql-counter</span><h3>Custom JQL Counter</h3></div><a href="#custom-jql-counter" aria-label="Link to Custom JQL Counter">#</a></header>
+              <p>Runs a validated, project-bound administrator query and returns only a privacy-treated scalar presentation.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A supported preset cannot express the required legitimate cohort.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Use supported variables and fields only; no arbitrary endpoint or matching issue rows are exposed.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="visual-query-counter" data-widget-card>
+              <header><div><span class="widget-type">visual-query-counter</span><h3>Visual Query Counter</h3></div><a href="#visual-query-counter" aria-label="Link to Visual Query Counter">#</a></header>
+              <p>Builds a project-bound count using a controlled visual rule editor instead of raw JQL.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Administrators need a safer guided way to define a cohort.</dd></div>
+                <div><dt>Source</dt><dd>Aggregate query</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Rules use allowlisted fields/operators/values and the same privacy, cost and freshness controls.</dd></div>
+              </dl>
+            </article></div>
+        </section>
+        <section class="widget-category" id="charts" data-widget-group>
+          <header class="widget-category-heading"><div><span class="eyebrow">3 definitions</span><h2>Charts</h2><p>Charts use prepared privacy-treated snapshots and always include a text equivalent.</p></div></header>
+          <figure class="widget-category-visual">
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/privacy-treated-service-context.png" aria-label="Open charts example screenshot">
+              <img src="assets/docs/privacy-treated-service-context.png" alt="Accessible historical trend displayed inside a synthetic customer request." loading="lazy" decoding="async">
+            </button>
+            <figcaption>Charts use prepared privacy-treated snapshots and always include a text equivalent.</figcaption>
+          </figure>
+          <div class="widget-reference-grid">
+            <article class="widget-card" id="mini-line-chart" data-widget-card>
+              <header><div><span class="widget-type">mini-line-chart</span><h3>Mini Line Chart</h3></div><a href="#mini-line-chart" aria-label="Link to Mini Line Chart">#</a></header>
+              <p>Displays a short prepared time series as an accessible line chart.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Direction over time is more useful than one scalar value.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Uses stored snapshots only in customer runtime and includes a text equivalent.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="mini-bar-chart" data-widget-card>
+              <header><div><span class="widget-type">mini-bar-chart</span><h3>Mini Bar Chart</h3></div><a href="#mini-bar-chart" aria-label="Link to Mini Bar Chart">#</a></header>
+              <p>Displays a short prepared series or bounded buckets as an accessible bar chart.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Customers should compare a small set of safe periods or categories.</dd></div>
+                <div><dt>Source</dt><dd>Historical metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Keep bucket labels clear; suppressed/no-data states never invent demonstration values.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="donut-chart" data-widget-card>
+              <header><div><span class="widget-type">donut-chart</span><h3>Donut Chart</h3></div><a href="#donut-chart" aria-label="Link to Donut Chart">#</a></header>
+              <p>Shows a bounded privacy-treated composition with an accessible text summary.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A small number of safe categories explains the makeup of a cohort.</dd></div>
+                <div><dt>Source</dt><dd>Historical/aggregate metrics</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Avoid too many slices and ensure every category passed privacy controls.</dd></div>
+              </dl>
+            </article></div>
+        </section>
+        <section class="widget-category" id="ai" data-widget-group>
+          <header class="widget-category-heading"><div><span class="eyebrow">3 definitions</span><h2>Optional AI</h2><p>AI is optional, administrator-controlled and backed by deterministic fallback. One AI contract is admin-only.</p></div></header>
+          <figure class="widget-category-visual">
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/builder-overview.png" aria-label="Open optional ai example screenshot">
+              <img src="assets/docs/builder-overview.png" alt="Customer Portal Toolkit administrator builder used to configure optional widgets." loading="lazy" decoding="async">
+            </button>
+            <figcaption>AI is optional, administrator-controlled and backed by deterministic fallback. One AI contract is admin-only.</figcaption>
+          </figure>
+          <div class="widget-reference-grid">
+            <article class="widget-card" id="ai-summary" data-widget-card>
+              <header><div><span class="widget-type">ai-summary</span><h3>Customer-safe AI Summary</h3></div><a href="#ai-summary" aria-label="Link to Customer-safe AI Summary">#</a></header>
+              <p>Optionally summarizes bounded public request data already authorized for the current actor.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A concise, labeled overview can help customers understand a long customer-visible request.</dd></div>
+                <div><dt>Source</dt><dd>Forge LLM</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Off by default; requires global and widget opt-in, budget, validation and deterministic fallback.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="plain-language-explanation" data-widget-card>
+              <header><div><span class="widget-type">plain-language-explanation</span><h3>Plain-language Explanation</h3></div><a href="#plain-language-explanation" aria-label="Link to Plain-language Explanation">#</a></header>
+              <p>Optionally rewrites bounded authorized context into simpler customer language.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>Technical status or request context needs a plain-language aid.</dd></div>
+                <div><dt>Source</dt><dd>Forge LLM</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details and side panel</dd></div>
+                <div><dt>Configure or check</dt><dd>Treat output as assistance, not authoritative Jira state or legal, HR, security, financial or safety advice.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="admin-ai-assistant" data-widget-card>
+              <header><div><span class="widget-type">admin-ai-assistant</span><h3>Admin AI Configuration Assistant</h3></div><a href="#admin-ai-assistant" aria-label="Link to Admin AI Configuration Assistant">#</a></header>
+              <p>Defines an optional admin-only assistance contract for supported configuration tasks.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>An administrator wants help drafting supported customer-facing configuration where the released admin surface provides it.</dd></div>
+                <div><dt>Source</dt><dd>Forge LLM</dd></div>
+                <div><dt>Surfaces</dt><dd>Administrator only; no customer portal location</dd></div>
+                <div><dt>Configure or check</dt><dd>This is the 62nd registry contract, not a portal widget. It never publishes itself or executes Jira actions.</dd></div>
+              </dl>
+            </article></div>
+        </section>
+        <section class="widget-category" id="actions" data-widget-group>
+          <header class="widget-category-heading"><div><span class="eyebrow">9 definitions</span><h2>Customer actions</h2><p>Actions require confirmation and repeat permission, workflow and published-policy checks on the server.</p></div></header>
+          <figure class="widget-category-visual">
+            <button class="image-zoom" type="button" data-lightbox-src="assets/docs/permission-checked-action.png" aria-label="Open customer actions example screenshot">
+              <img src="assets/docs/permission-checked-action.png" alt="Permission-checked public update confirmation dialog in a synthetic customer request." loading="lazy" decoding="async">
+            </button>
+            <figcaption>Actions require confirmation and repeat permission, workflow and published-policy checks on the server.</figcaption>
+          </figure>
+          <div class="widget-reference-grid">
+            <article class="widget-card" id="edit-fields" data-widget-card>
+              <header><div><span class="widget-type">edit-fields</span><h3>Edit Allowed Fields</h3></div><a href="#edit-fields" aria-label="Link to Edit Allowed Fields">#</a></header>
+              <p>Lets a customer edit one configured allowlisted request field after fresh server validation.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A supported scalar field should be safely editable from the request view.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>The server rejects missing, extra, incompatible or oversized field input; Jira validation remains authoritative.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="add-public-comment" data-widget-card>
+              <header><div><span class="widget-type">add-public-comment</span><h3>Add Public Comment</h3></div><a href="#add-public-comment" aria-label="Link to Add Public Comment">#</a></header>
+              <p>Lets the current customer add a required public comment of up to 10,000 characters.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A clear customer-visible update is the intended next action.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>Always public; private/internal comment APIs are not used.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="add-attachment" data-widget-card>
+              <header><div><span class="widget-type">add-attachment</span><h3>Add Attachment</h3></div><a href="#add-attachment" aria-label="Link to Add Attachment">#</a></header>
+              <p>Uploads one supported local file from 1 to 256 KiB as the current customer.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A small supporting file is needed on the request.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>Filename, MIME type, base64 and size are bounded; retest customer attachment permission.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="add-participant" data-widget-card>
+              <header><div><span class="widget-type">add-participant</span><h3>Add Participant</h3></div><a href="#add-participant" aria-label="Link to Add Participant">#</a></header>
+              <p>Lets a customer choose an administrator-approved participant label backed by a tenant-bound server token.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A known approved participant may be added to the request.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities plus tenant-hosted policy</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>The browser never receives or submits a raw account ID; execution resolves and rechecks the published token server-side.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="confirm-resolution" data-widget-card>
+              <header><div><span class="widget-type">confirm-resolution</span><h3>Confirm Resolution</h3></div><a href="#confirm-resolution" aria-label="Link to Confirm Resolution">#</a></header>
+              <p>Offers only a current customer-visible transition that matches the published allowlist.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The workflow exposes an approved transition for confirming resolution.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>Available transitions are intersected with the live current-user workflow immediately before execution.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="request-reopen" data-widget-card>
+              <header><div><span class="widget-type">request-reopen</span><h3>Request Reopen</h3></div><a href="#request-reopen" aria-label="Link to Request Reopen">#</a></header>
+              <p>Offers an approved current customer transition for reopening or requesting reopening.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The service workflow explicitly permits this customer transition.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>There is no privileged bypass; a missing current transition leaves the action disabled.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="escalate-request" data-widget-card>
+              <header><div><span class="widget-type">escalate-request</span><h3>Escalate Request</h3></div><a href="#escalate-request" aria-label="Link to Escalate Request">#</a></header>
+              <p>Offers an approved customer-visible workflow transition labelled as escalation.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>The current workflow has a real permitted escalation path.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>The label does not create elevated authority; only the live allowed transition can run.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="customer-transition" data-widget-card>
+              <header><div><span class="widget-type">customer-transition</span><h3>Customer-accessible Transition</h3></div><a href="#customer-transition" aria-label="Link to Customer-accessible Transition">#</a></header>
+              <p>Presents a generic select of current customer transitions intersected with configured transition IDs.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A project needs a supported transition that does not fit the named action widgets.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>Only server-attested current transitions appear; workflow changes require retesting.</dd></div>
+              </dl>
+            </article>
+            <article class="widget-card" id="custom-safe-action" data-widget-card>
+              <header><div><span class="widget-type">custom-safe-action</span><h3>Custom Safe Action</h3></div><a href="#custom-safe-action" aria-label="Link to Custom Safe Action">#</a></header>
+              <p>Runs a closed registered safe operation; version 1.0 supports a configured public-comment body only.</p>
+              <dl>
+                <div><dt>Use it when</dt><dd>A reviewed fixed operation fits the closed safe-action contract.</dd></div>
+                <div><dt>Source</dt><dd>Action capabilities</dd></div>
+                <div><dt>Surfaces</dt><dd>Request details, side panel and request action</dd></div>
+                <div><dt>Configure or check</dt><dd>No arbitrary URL, HTTP method, headers, payload, script or code can be configured.</dd></div>
+              </dl>
+            </article></div>
+        </section>
+        <section id="common-runtime-rules">
+          <h2>Rules shared by every widget</h2>
+          <ul>
+            <li>The backend derives site, environment, actor, project, request, request type, module and license from trusted Forge/Jira context.</li>
+            <li>A portal location is checked again at runtime; registry compatibility alone is not authorization.</li>
+            <li>Missing values, capabilities or source failures stay local to the widget and do not expose privileged data.</li>
+            <li>Customer aggregate widgets never return matching request rows, issue keys, summaries, people, comments, organizations or field values from other requests.</li>
+            <li>Actions require an authenticated current customer, active license, visible published widget, current Jira/JSM permission, compatible workflow, confirmation, idempotency and rate limits.</li>
+            <li>New widgets use the compact borderless JSM-native appearance unless an administrator explicitly selects another validated preset.</li>
+          </ul>
+          <p>For configuration workflow, preview, publication and acceptance, return to the <a href="docs.html">complete user guide</a>. For a missing or disabled widget, use <a href="troubleshooting.html">Troubleshooting</a>.</p>
+        </section>
+      </article>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="docs.html">User guide</a><a href="widgets.html">Widgets</a><a href="troubleshooting.html">Troubleshooting</a><a href="security.html">Security</a><a href="support.html">Support</a></div></div></footer>
+    <div class="lightbox" id="image-lightbox" aria-hidden="true"><button class="lightbox-close" type="button">Close</button><img src="" alt=""></div>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>
