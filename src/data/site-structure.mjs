@@ -7,6 +7,23 @@ export const site = {
 };
 
 export const products = {
+  "customer-portal-toolkit-for-jsm": {
+    slug: "customer-portal-toolkit-for-jsm",
+    shortName: "Customer Portal Toolkit",
+    name: "Customer Portal Toolkit for JSM",
+    icon: "/apps/customer-portal-toolkit-for-jsm/assets/app-icon.png",
+    favicon: "/apps/customer-portal-toolkit-for-jsm/assets/favicon.png",
+    home: "/apps/customer-portal-toolkit-for-jsm/",
+    docs: "/apps/customer-portal-toolkit-for-jsm/docs.html",
+    privacy: "/apps/customer-portal-toolkit-for-jsm/privacy.html",
+    terms: "/apps/customer-portal-toolkit-for-jsm/terms.html",
+    security: "/apps/customer-portal-toolkit-for-jsm/security.html",
+    support: "/apps/customer-portal-toolkit-for-jsm/support.html",
+    marketplace: "https://mederak.atlassian.net/servicedesk",
+    ctaLabel: "Request early access",
+    stylesheet: "/assets/site.css",
+    script: "/assets/site.js"
+  },
   "excel-to-jira-importer-updater": {
     slug: "excel-to-jira-importer-updater",
     shortName: "Excel to Jira",

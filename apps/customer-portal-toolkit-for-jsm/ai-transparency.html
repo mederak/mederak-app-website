@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Transparency | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="AI transparency statement for the optional Atlassian-hosted Forge LLM features in Customer Portal Toolkit for JSM.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/ai-transparency.html">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Contact</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Last updated: July 21, 2026 · Forge LLM Preview</span>
+      <h1>AI Transparency</h1>
+      <p class="lead">Customer Portal Toolkit can use Atlassian-hosted Forge LLM for bounded summaries or explanations. AI is optional, administrator-controlled and not required for core portal content or actions.</p>
+
+      <div class="legal-grid"><div class="legal-card"><b>Default</b><p>Disabled installation-wide and per widget.</p></div><div class="legal-card"><b>Provider path</b><p>Atlassian Forge LLM; no direct vendor API key or external AI endpoint.</p></div><div class="legal-card"><b>Fallback</b><p>Deterministic output or a safe unavailable state.</p></div><div class="legal-card"><b>Human review</b><p>Required before relying on generated content.</p></div></div>
+
+      <h2>What AI may do</h2>
+      <p>Enabled AI widgets may create plain-language summaries or explanations from the bounded, authorized data supplied to that widget. Administrator-facing AI assistance may help draft supported configuration copy where present in the released version. AI does not independently publish configuration or execute Jira actions.</p>
+
+      <h2>Controls and availability</h2>
+      <ul><li>An authorized administrator must enable Forge LLM for the installation.</li><li>Each customer-facing AI widget must also be enabled and configured separately.</li><li>Core portal rendering, privacy controls and customer actions continue without AI.</li><li>If AI is disabled, unavailable, over budget, times out, trips a circuit or returns invalid output, the App uses deterministic fallback or a safe unavailable state.</li><li>Forge LLM is an Atlassian Preview service and may be limited, changed or withdrawn by Atlassian.</li></ul>
+
+      <h2>Input boundaries</h2>
+      <p>Input is minimized to data already authorized for the current actor and required by the selected feature. Private comments, attachment contents, credentials, secrets and data from other customers' requests are prohibited from the AI input path. Request content is treated as untrusted data and separated from App-owned instructions. Administrators cannot replace system instructions with arbitrary prompts.</p>
+
+      <h2>Model and provider</h2>
+      <p>The App uses the Forge LLM API and currently declares the Claude model family supported by Atlassian. Atlassian controls the hosted model service, model availability, moderation, routing and any underlying model-provider relationships. The App does not call Anthropic or another model provider directly. Customers should review current <a href="https://developer.atlassian.com/platform/forge/runtime-reference/forge-llms-api/">Forge LLM documentation</a>, Atlassian AI terms and Atlassian subprocessor disclosures for platform-level processing.</p>
+
+      <h2>Output safeguards</h2>
+      <p>Input/output sizes, budgets, timeout, retries and circuit behavior are bounded. Output is parsed through a strict schema, checked for unsafe markup/links and unsupported commitments, length-limited and labeled before display. These controls reduce risk but do not guarantee accuracy or suitability.</p>
+
+      <h2>Storage and logging</h2>
+      <ul><li>Validated AI output may be cached in installation-scoped Forge storage for up to 15 minutes using tenant, principal, configuration, source and locale dimensions.</li><li>Content-free usage aggregates such as token/result counts may be retained for 180 days.</li><li>Supporting execution leases last up to 30 seconds and circuit state up to 20 minutes.</li><li>The App does not log full prompts or completions.</li><li>Mederak Apps does not receive AI input or output in a vendor-hosted backend.</li></ul>
+      <p>Atlassian controls service-level retention, moderation and infrastructure logs for Forge LLM. We do not make an independent claim about model-provider training or platform retention beyond Atlassian's current official terms.</p>
+
+      <h2>Appropriate use</h2>
+      <p>AI output may be inaccurate, incomplete, biased or outdated. Users must verify operational facts in Jira or with the responsible service team. Output must not be treated as authoritative Jira state, an SLA guarantee, or the sole basis for legal, employment, security, financial, medical, safety or similarly high-impact decisions.</p>
+
+      <h2>Administrator responsibilities</h2>
+      <p>Before enabling AI, administrators should assess privacy, policy, residency, language, project suitability and Atlassian Preview terms; test with authorized data; confirm fallback behavior; and inform users where required. Questions can be submitted through <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a>.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="security.html">Security</a><a href="data-processing.html">Data processing</a><a href="data-residency.html">Residency</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

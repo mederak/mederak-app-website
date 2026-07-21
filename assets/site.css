@@ -3824,6 +3824,15 @@ a {
 }
 
 @media (max-width: 520px) {
+  .sample-table {
+    table-layout: fixed;
+  }
+
+  .sample-table th,
+  .sample-table td {
+    overflow-wrap: anywhere;
+  }
+
   .docs-page {
     display: block;
     width: 100%;

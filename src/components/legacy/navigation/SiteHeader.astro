@@ -9,6 +9,7 @@ const excel = products["excel-to-jira-importer-updater"];
 
 const vendorLinks = [
   { label: "Apps", href: "/apps/" },
+  { label: products["customer-portal-toolkit-for-jsm"].shortName, href: products["customer-portal-toolkit-for-jsm"].home },
   { label: products["project-overview-status-hub-for-jira"].shortName, href: products["project-overview-status-hub-for-jira"].home },
   { label: excel.name, href: excel.home },
   { label: products["worklog-rollup-for-jira"].shortName, href: products["worklog-rollup-for-jira"].home },
@@ -23,7 +24,7 @@ const productLinks = product ? [
   { label: "Docs", href: product.docs },
   { label: "Security", href: product.security },
   { label: "Support", href: product.support },
-  { label: "Try it for free", href: product.marketplaceOverview || product.marketplace, class: "button primary" }
+  { label: product.ctaLabel || "Try it for free", href: product.marketplaceOverview || product.marketplace, class: "button primary" }
 ] : [];
 
 const toolLinks = [

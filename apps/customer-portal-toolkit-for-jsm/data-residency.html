@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Residency | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Data residency statement for Customer Portal Toolkit for JSM and its Atlassian Forge-hosted storage and compute.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/data-residency.html">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Contact</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Verified against Atlassian documentation: July 21, 2026</span>
+      <h1>Data Residency</h1>
+      <p class="lead">Customer Portal Toolkit stores in-scope App data in Atlassian Forge hosted storage and does not use a vendor-hosted remote or external App database.</p>
+
+      <div class="legal-grid"><div class="legal-card"><b>Persistent data</b><p>Forge Custom Entity Store and KVS, scoped to the App installation.</p></div><div class="legal-card"><b>Remote storage</b><p>None.</p></div><div class="legal-card"><b>Hosted compute</b><p>Atlassian Forge functions, scheduled/async services and optional Forge LLM.</p></div><div class="legal-card"><b>Platform signal</b><p>The production version passes Runs on Atlassian eligibility.</p></div></div>
+
+      <h2>Forge hosted storage</h2>
+      <p>Atlassian states that Forge apps storing all in-scope End-User Data exclusively in persistent Forge hosted storage are eligible for pinned data residency. When an eligible App is installed on an Atlassian product pinned to a supported location, Forge hosted storage follows the host product's pinned location. If the host product is migrated between supported locations, Atlassian manages migration of eligible Forge hosted storage.</p>
+
+      <h2>Supported locations</h2>
+      <p>At the verification date, Atlassian lists Global, Australia, Canada, EU, Germany, India, Japan, Singapore, South Korea, Switzerland, United Kingdom and USA for Forge hosted storage. Atlassian may add, remove or change locations and underlying regions. The customer's authoritative status is the Atlassian Administration data residency view and current <a href="https://developer.atlassian.com/platform/forge/data-residency/">Forge data residency documentation</a>.</p>
+
+      <h2>Compute and supporting services</h2>
+      <p>Atlassian aims to execute Forge invocations in the same location as the host Atlassian product, but documents that some invocations may run elsewhere for platform capabilities, reliability, security or fraud prevention. Platform logging, metrics, async services, Marketplace operations and optional Preview services such as Forge LLM may have service-specific residency or availability behavior. Customers with strict requirements should assess the current Atlassian documentation before enabling optional AI.</p>
+
+      <h2>No vendor remote or egress</h2>
+      <p>The App manifest declares no Forge Remote, external fetch domain, third-party product analytics or End-User Data egress. Mederak Apps therefore does not choose a separate region for an App database and does not copy customer Jira content into vendor infrastructure. Public website and support processing are separate and described in <a href="subprocessors.html">Subprocessors</a>.</p>
+
+      <h2>Migration, backup and deletion</h2>
+      <p>Atlassian controls Forge realm pinning, migration, backup, recovery and underlying physical deletion. The App does not provide a customer-restorable backup or cross-site configuration export/import in version 1.0. Atlassian currently documents a 28-day hosted-storage retention period after uninstall, and reinstall does not automatically restore the previous installation's data. See <a href="uninstall-data-deletion.html">Uninstall and Data Deletion</a>.</p>
+
+      <h2>Limitations</h2>
+      <p>This statement does not promise support for every Atlassian location, government cloud, isolated cloud, plan, migration flow or Preview service. A Runs on Atlassian or PINNED signal is not a legal certification. The current Atlassian admin view and published platform documentation control the platform status for a specific site.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="security.html">Security</a><a href="data-processing.html">Data processing</a><a href="subprocessors.html">Subprocessors</a><a href="ai-transparency.html">AI</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

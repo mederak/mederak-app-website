@@ -13,6 +13,11 @@ export const mediaRoots = [
     purpose: "Excel to Jira screenshots, docs screenshots, icons, OG images and demo media."
   },
   {
+    product: "customer-portal-toolkit-for-jsm",
+    root: "apps/customer-portal-toolkit-for-jsm/assets",
+    purpose: "Customer Portal Toolkit icons, Marketplace screenshots and product media."
+  },
+  {
     product: "project-overview-status-hub-for-jira",
     root: "apps/project-overview-status-hub-for-jira/assets",
     purpose: "Project Overview screenshots, Marketplace graphics, icons and hero media."

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Security Practices | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Security architecture, authorization, data protection, scopes, secure development and vulnerability reporting for Customer Portal Toolkit for JSM.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/security.html">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Report an issue</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Last updated: July 21, 2026</span>
+      <h1>Security Practices</h1>
+      <p class="lead">Customer Portal Toolkit is designed as a Forge-hosted Jira Service Management Cloud app with trusted context, backend re-authorization, installation-scoped storage and privacy-treated disclosure.</p>
+
+      <div class="legal-grid"><div class="legal-card"><b>Hosting</b><p>Atlassian-hosted Forge compute and storage; no Forge Remote or vendor-hosted product backend.</p></div><div class="legal-card"><b>Tenant isolation</b><p>Forge installation scope plus tenant-bound storage keys and repositories.</p></div><div class="legal-card"><b>Authorization</b><p>Sensitive reads, publications and actions are checked again in the backend.</p></div><div class="legal-card"><b>Eligibility</b><p>The production version passes Forge Runs on Atlassian eligibility. Eligibility is rechecked after relevant platform-boundary changes.</p></div></div>
+
+      <h2>Platform architecture</h2>
+      <p>The App uses Jira Cloud, Jira Service Management APIs, Forge functions, Custom Entity Store, KVS, scheduled/async services, platform logging/metrics and optional Forge LLM. The manifest declares no remote, external fetch domain, third-party app analytics or End-User Data egress. Runs on Atlassian eligibility is a platform architecture signal, not a certification or guarantee against application defects.</p>
+
+      <h2>Authentication, trusted context and authorization</h2>
+      <ul><li>Atlassian authenticates users and invokes Forge modules.</li><li>Installation, environment, actor/account class, project, request, module/location and license context are derived from trusted Forge/Jira context rather than frontend payload authority claims.</li><li>Every sensitive read, configuration change, publication and customer action repeats the relevant backend authorization.</li><li>Current-request reads and customer mutations prefer the current user and current Jira/JSM permission model.</li><li>Reviewed app-principal aggregate paths accept only compiled, bounded, project-scoped plans and can return only privacy-treated presentations.</li><li>Permission or capability failure is handled as a safe unavailable state; the App does not use app authority to impersonate a customer mutation.</li></ul>
+
+      <h2>Anonymous and unlicensed access</h2>
+      <p>Anonymous or generic unlicensed output is restricted to explicitly public configuration-backed content on the supported portal header. This path has no request lookup, aggregate query, action, personalization, preference storage or AI. Customer request panels and actions require the supported authenticated JSM customer context and the relevant published policy.</p>
+
+      <h2>Configuration and query safety</h2>
+      <p>Configuration is runtime-schema validated, versioned and bounded. Administrators cannot supply arbitrary JavaScript, HTML, CSS, endpoints, methods, headers, payloads, JQL concatenation, templates or expressions. Conditions, transforms, field mappings, links and queries use typed values, allowlists and depth/size/cost limits. Aggregate queries remain project-bound and use enforced minimum cohort, generalization, freshness and differencing controls.</p>
+
+      <h2>Customer actions</h2>
+      <p>Actions use a closed allowlist and the current user's Jira/JSM permission and workflow. Immediately before mutation, the backend re-resolves the published widget and policy, validates the operation and bounded input, and applies confirmation, rate limits, atomic idempotency/replay protection and content-free pseudonymized audit. A stale preview is not authority to perform an action.</p>
+
+      <h2>Storage and data protection</h2>
+      <p>Durable configuration and records use Forge Custom Entity Store; short-lived cache, lease, budget, rate and idempotency state uses Forge KVS. Forge scopes hosted data per installation. Atlassian documents encryption and durability for hosted storage and provides data residency for eligible persistent Forge storage. Mederak Apps does not hold separate database credentials, customer API tokens or a copy of the App database.</p>
+
+      <h2>Frontend and input safety</h2>
+      <ul><li>Strict TypeScript and runtime schemas cover resolver inputs, stored records, upstream Jira responses and client outputs.</li><li>React renders plain values; supported rich content and links use controlled projections and restricted URL protocols.</li><li>No customer or tenant data is retained in module-level mutable state.</li><li>Configuration size, pagination, functions, jobs and payloads are bounded.</li><li>Partial failures are isolated so one unavailable widget does not disclose data or break sibling widgets.</li></ul>
+
+      <h2>Logging and monitoring</h2>
+      <p>Application logs use safe codes, coarse operation metadata and correlation identifiers. They are designed not to include request/customer content, field values, comments, attachments, credentials, tokens, account emails, private Jira response bodies or full AI prompts/completions. Content-free audit records record selected configuration and action events for 180 days. Platform infrastructure logs remain controlled by Atlassian.</p>
+
+      <h2>Scopes</h2>
+      <table class="sample-table"><thead><tr><th>Scope</th><th>Why it is requested</th></tr></thead><tbody>
+        <tr><td><code>storage:app</code></td><td>Store installation-scoped configuration, published versions, privacy-treated metrics, operational state and audits.</td></tr>
+        <tr><td><code>read:servicedesk-request</code></td><td>Read authorized JSM request and service context for supported portal widgets.</td></tr>
+        <tr><td><code>write:servicedesk-request</code></td><td>Perform allowlisted customer actions after backend permission and workflow checks.</td></tr>
+        <tr><td><code>read:jira-work</code></td><td>Read supported Jira project, issue, field, workflow and permission context.</td></tr>
+        <tr><td><code>write:jira-work</code></td><td>Perform supported allowlisted issue actions where the current user is authorized.</td></tr>
+        <tr><td><code>write:project.property:jira</code></td><td>Synchronize bounded project-level portal module visibility metadata.</td></tr>
+        <tr><td><code>write:app-data:jira</code></td><td>Synchronize bounded app-level portal module visibility metadata.</td></tr>
+      </tbody></table>
+
+      <h2>Optional AI</h2>
+      <p>Forge LLM is disabled by default at installation and widget level. Inputs are minimized to data already authorized for the current actor. Private comments, attachments, credentials and cross-customer request data are prohibited from the AI path. Output is bounded, schema/content validated and labeled; a deterministic fallback remains available. See <a href="ai-transparency.html">AI Transparency</a>.</p>
+
+      <h2>Secure development and maintenance</h2>
+      <p>Release validation includes formatting, linting, strict type checking, unit/integration/security tests, coverage gates, production build, dependency audit, Forge lint, environment deployment/installation checks, tenant acceptance where applicable and a separate Forge eligibility check. Manifest, scope, storage, dependency, egress, remote and Preview changes receive explicit security/capability review. Mederak Apps monitors Atlassian Marketplace security obligations and prioritizes remediation according to applicable Atlassian security timelines.</p>
+
+      <h2>Vulnerability reporting</h2>
+      <p>Report suspected vulnerabilities through <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a> and put <strong>Security report</strong> in the summary. In the first message, include a safe summary, affected App version/site, potential impact and a way to contact you. Do not include credentials, customer data or exploit material that could expose others; we will arrange a safer exchange if needed. Do not test against a customer or tenant you do not own or have written permission to assess.</p>
+      <p>Incident handling is described in <a href="incident-response.html">Security Incident Response</a>. Security questions may also be submitted through the same channel.</p>
+
+      <h2>Assurance boundary</h2>
+      <p>This page describes current design and verified release practices. It is not a claim of ISO, SOC 2, Cloud Fortified, FedRAMP, HIPAA or another certification. No certification is claimed unless it is expressly listed here in the future.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Customer Portal Toolkit for JSM by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="data-processing.html">Data processing</a><a href="subprocessors.html">Subprocessors</a><a href="data-residency.html">Residency</a><a href="incident-response.html">Incident response</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

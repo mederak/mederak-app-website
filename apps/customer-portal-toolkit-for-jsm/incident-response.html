@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Security Incident Response | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Vulnerability reporting, incident triage, containment, remediation and customer notification process for Customer Portal Toolkit for JSM.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/incident-response.html">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Report an issue</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Last updated: July 21, 2026</span>
+      <h1>Security Incident Response</h1>
+      <p class="lead">Report a suspected vulnerability or security incident through <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a> and put <strong>Security report</strong> in the summary.</p>
+
+      <h2>Safe reporting</h2>
+      <p>In the initial ticket, provide a safe description, affected App version/site, potential impact, reproduction outline and contact details. Do not include credentials, access tokens, private customer content or exploit material that could expose another user. We will arrange a safer channel for sensitive evidence if needed.</p>
+
+      <h2>Coordinated disclosure</h2>
+      <ul><li>Test only systems and tenants you own or have written permission to assess.</li><li>Do not access, change, retain or disclose another person's data.</li><li>Avoid service disruption, automated high-volume testing, social engineering and privacy-control circumvention.</li><li>Give Mederak Apps reasonable time to investigate and remediate before public disclosure.</li><li>Comply with Atlassian's applicable testing and Marketplace rules.</li></ul>
+
+      <h2>Handling process</h2>
+      <ol><li><strong>Acknowledge and protect evidence:</strong> record a safe case identifier, reporter contact and available technical context.</li><li><strong>Triage:</strong> assess exploitability, scope, confidentiality, integrity, availability, tenant isolation and customer impact.</li><li><strong>Contain:</strong> disable or constrain a feature, configuration or version where necessary to reduce active risk.</li><li><strong>Investigate:</strong> reproduce safely, identify affected revisions/tenants/data categories and determine the root cause.</li><li><strong>Remediate:</strong> develop, review and test a fix or mitigation and follow the required Forge/Marketplace release process.</li><li><strong>Notify:</strong> inform Atlassian, regulators and affected customers where required by contract, Marketplace policy or law.</li><li><strong>Review:</strong> document lessons, control improvements and follow-up verification for a material incident.</li></ol>
+
+      <h2>Severity and remediation</h2>
+      <p>Severity considers realistic exploitability and impact to customer data, authorization, tenant isolation and service availability. Confirmed vulnerabilities are prioritized according to applicable Atlassian Marketplace security requirements and security bug-fix timelines. A report may be reclassified as evidence develops.</p>
+
+      <h2>Customer notification</h2>
+      <p>If a confirmed incident affects customer data or materially affects security, Mederak Apps will notify affected customers without undue delay and as required by applicable law or contract. Notice will include the nature of the incident, affected data or features, mitigation, customer actions and contact details to the extent reasonably known and safe to disclose.</p>
+
+      <h2>Atlassian platform incidents</h2>
+      <p>Because the App runs on Atlassian Forge, some incidents may originate in Jira, JSM, Forge, Marketplace or Atlassian-managed services. Mederak Apps will coordinate with Atlassian where appropriate and communicate the confirmed App-specific impact. Atlassian platform restoration remains under Atlassian's control.</p>
+
+      <h2>No bug bounty promise</h2>
+      <p>Mederak Apps does not currently advertise a public paid bug bounty or claim enrollment in Atlassian's Marketplace Security Bug Bounty program for this App. Any recognition or reward requires a separate written agreement.</p>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Security reports: <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a></p></div><div class="footer-links"><a href="index.html">Product</a><a href="security.html">Security</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>

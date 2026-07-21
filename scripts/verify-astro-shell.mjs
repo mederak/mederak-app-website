@@ -29,6 +29,9 @@ function count(source, pattern) {
 }
 
 function expectedFavicon(relative) {
+  if (relative.startsWith("apps/customer-portal-toolkit-for-jsm/")) {
+    return "/apps/customer-portal-toolkit-for-jsm/assets/favicon.png";
+  }
   if (relative === "import-excel-to-jira/index.html" || relative.startsWith("apps/excel-to-jira-importer-updater/")) {
     return "/apps/excel-to-jira-importer-updater/assets/favicon.png";
   }

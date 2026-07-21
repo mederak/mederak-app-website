@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation | Customer Portal Toolkit for JSM</title>
+    <meta name="description" content="Installation, configuration, publishing, feature and limitation guide for Customer Portal Toolkit for Jira Service Management.">
+    <link rel="canonical" href="https://mederak.app/apps/customer-portal-toolkit-for-jsm/docs.html">
+    <link rel="icon" type="image/png" href="/apps/customer-portal-toolkit-for-jsm/assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site.css"><script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
+  </head>
+  <body class="status-hub-page">
+    <header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><img src="assets/app-icon.png" alt=""><span>Customer Portal Toolkit</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span><span>Menu</span></button><div class="nav-links" id="main-menu"><a href="../../index.html">Home</a><a href="../index.html">Apps</a><a href="index.html">Product</a><a href="docs.html">Docs</a><a href="security.html">Security</a><a href="support.html">Support</a><a class="button primary" href="https://mederak.atlassian.net/servicedesk">Request early access</a></div></nav></header>
+    <main class="content-page">
+      <span class="eyebrow">Version 1.0 documentation · Updated July 21, 2026</span>
+      <h1>Customer Portal Toolkit documentation</h1>
+      <p class="lead">This guide explains how Jira Service Management administrators install, configure, preview and publish supported customer portal content.</p>
+
+      <h2>Product scope</h2>
+      <p>Customer Portal Toolkit is a Jira Service Management Cloud app. It provides an administrator builder and renders configured content on supported customer portal surfaces, including request details, the request side panel, the portal header and request actions. Availability depends on the customer's JSM plan, project type, request type, fields, workflow, permissions and Atlassian APIs.</p>
+
+      <h2>Installation</h2>
+      <ol><li>A Jira administrator installs the current Marketplace version on the intended Jira Cloud site and reviews the requested scopes and data disclosures.</li><li>Open <strong>Customer Portal Toolkit</strong> from global administration or a supported project's settings.</li><li>Review the installation-wide AI, product analytics and two-person publication settings. They are disabled by default.</li><li>Select a JSM project and inspect detected request types, fields, workflow, SLA and other capabilities.</li><li>Apply a starter template or create a layout, preview it with authorized test data, resolve validation errors and publish.</li><li>Complete a controlled customer acceptance test before using the configuration broadly.</li></ol>
+
+      <h2>Configuration scopes</h2>
+      <p>Configuration can be maintained at global, project and request-type scope. Narrower scopes inherit from their parent and may apply bounded overrides. Drafts are editable; a published version is the configuration read by the portal runtime. Publication uses revision checks so one administrator does not silently overwrite another administrator's newer work.</p>
+
+      <h2>Widget and data behavior</h2>
+      <ul><li><strong>Current-request widgets</strong> read supported request fields, public activity, participants, organizations, SLA, service and related metadata only when the current actor and JSM API permit it.</li><li><strong>Aggregate widgets</strong> use compiled, project-bound queries and return only privacy-treated counts, buckets, ranges, percentages, durations or short series. They do not return matching requests or cross-request content.</li><li><strong>Action widgets</strong> support a closed set of operations. The backend rechecks the published policy, current user's permissions and current workflow immediately before mutation.</li><li><strong>Public header widgets</strong> can show explicitly public configuration-backed content to anonymous or generic unlicensed visitors. They cannot read a request, run aggregates, execute actions, personalize content or use AI.</li><li><strong>AI widgets</strong> require installation-wide and per-widget opt-in and use Atlassian-hosted Forge LLM. Core portal behavior does not depend on AI.</li></ul>
+
+      <h2>Preview and publication</h2>
+      <p>The builder can preview supported customer, project-agent and project-administrator audiences, locations, locales and device sizes. Preview is a configuration tool, not proof that every tenant capability is available. Validate the published result in the real JSM customer portal with an authorized test account.</p>
+      <p>When two-person publication is enabled, a different eligible administrator must approve the exact draft revision within 24 hours.</p>
+
+      <h2>Security and privacy settings</h2>
+      <ul><li>Use the smallest audience and scope that meets the business need.</li><li>Keep aggregate privacy minimums at or above the enforced minimum of five.</li><li>Use synthetic or authorized data for previews and support reproductions.</li><li>Do not place credentials, tokens, secrets or unnecessary sensitive data in widget copy, links or support tickets.</li><li>Review <a href="privacy.html">Privacy</a>, <a href="security.html">Security</a>, <a href="data-processing.html">Data Processing</a> and <a href="ai-transparency.html">AI Transparency</a> before rollout.</li></ul>
+
+      <h2>Known limitations</h2>
+      <ul><li>Jira Server and Jira Data Center are not supported.</li><li>The app does not replace the JSM portal or provide arbitrary row-level customization of JSM's native My requests table.</li><li>Feature availability varies by JSM plan, tenant, project type, account class, workflow and Atlassian API support.</li><li>Some aggregate metrics are prepared asynchronously and may show a safe unavailable or stale state while refreshing.</li><li>Forge LLM is an optional Preview platform capability and may be unavailable, limited or changed by Atlassian.</li><li>Version 1.0 does not provide a file-based configuration export/import or a customer-restorable app backup.</li><li>Registry presence and documentation do not override a missing tenant capability or permission.</li></ul>
+
+      <h2>Troubleshooting</h2>
+      <ol><li>Confirm the app version and that installation is current.</li><li>Confirm the user, project, request type, location and device match the published visibility policy.</li><li>Check Jira/JSM permissions and whether the required field, SLA, Assets or workflow capability exists.</li><li>Open the builder preview and resolve any validation or capability warning.</li><li>If the problem remains, contact <a href="https://mederak.atlassian.net/servicedesk">Mederak Apps Service Desk</a> with the site hostname, safe timestamps, location, actor class and reproduction steps. Do not send customer request content or credentials.</li></ol>
+    </main>
+    <footer class="footer"><div class="footer-inner"><div><a class="brand logo-brand" href="../../index.html"><img src="../../assets/mederak-apps-logo.png" alt="Mederak Apps"></a><p>Jira Service Management Cloud app by Mederak Apps.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="security.html">Security</a><a href="data-processing.html">Data processing</a><a href="data-residency.html">Residency</a><a href="ai-transparency.html">AI</a><a href="support.html">Support</a></div></div></footer>
+    <script src="../../assets/site.js"></script>
+  </body>
+</html>
