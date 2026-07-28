@@ -89,7 +89,7 @@ export const portalToolkitResourceLinks = [
 
 export const excelResourceLinks = [
   { label: "Overview", href: "/apps/excel-to-jira-importer-updater/" },
-  { label: "Import", href: "/import-excel-to-jira/" },
+  { label: "How to import Excel to Jira", href: "/import-excel-to-jira/" },
   { label: "Update", href: "/apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/" },
   { label: "CSV vs Excel", href: "/apps/excel-to-jira-importer-updater/jira-csv-import-vs-excel-import/" },
   { label: "Hierarchy", href: "/apps/excel-to-jira-importer-updater/import-epics-stories-subtasks-from-excel-to-jira/" },

@@ -49,6 +49,20 @@ function extractAttribute(tag, attributeName) {
   return match ? match[1] : "";
 }
 
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function sitemapLastmod(content, url) {
+  const match = content.match(
+    new RegExp(
+      `<url>\\s*<loc>${escapeRegex(url)}</loc>\\s*<lastmod>([^<]+)</lastmod>\\s*</url>`,
+      "i"
+    )
+  );
+  return match ? match[1] : "";
+}
+
 function collectJsonValues(value) {
   if (Array.isArray(value)) {
     return value.flatMap(collectJsonValues);
@@ -161,6 +175,7 @@ assert(
 const rootSitemap = read("sitemap.xml");
 const rootSitemapUrls = Array.from(rootSitemap.matchAll(/<loc>([^<]+)<\/loc>/gi)).map((match) => match[1]);
 const rootSitemapUrlSet = new Set(rootSitemapUrls);
+const today = new Date().toISOString().slice(0, 10);
 assert(
   /<urlset\b[^>]*xmlns=["']http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9["']/i.test(rootSitemap),
   "sitemap.xml must be a sitemap.org XML urlset"
@@ -190,6 +205,31 @@ assert(
   !excelProductSitemap.includes(`${canonicalOrigin}/apps/excel-to-jira-importer-updater/import-excel-to-jira/`),
   "apps/excel-to-jira-importer-updater/sitemap.xml must not include the redirected duplicate Excel import guide"
 );
+
+const priorityLastmodUrls = [
+  `${canonicalOrigin}/`,
+  `${canonicalOrigin}/apps/`,
+  `${canonicalOrigin}/import-excel-to-jira/`,
+  `${canonicalOrigin}/apps/excel-to-jira-importer-updater/`,
+  `${canonicalOrigin}/apps/excel-to-jira-importer-updater/docs.html`
+];
+
+for (const url of priorityLastmodUrls) {
+  const lastmod = sitemapLastmod(rootSitemap, url);
+  assert(Boolean(lastmod), `sitemap.xml must include lastmod for ${url}`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(lastmod), `sitemap.xml has invalid lastmod for ${url}: ${lastmod}`);
+  assert(lastmod <= today, `sitemap.xml has a future lastmod for ${url}: ${lastmod}`);
+}
+
+for (const url of [
+  `${canonicalOrigin}/apps/excel-to-jira-importer-updater/`,
+  `${canonicalOrigin}/apps/excel-to-jira-importer-updater/docs.html`
+]) {
+  assert(
+    sitemapLastmod(excelProductSitemap, url) === sitemapLastmod(rootSitemap, url),
+    `Excel product sitemap lastmod must match sitemap.xml for ${url}`
+  );
+}
 
 const keyCanonicals = new Map([
   ["index.html", `${canonicalOrigin}/`],

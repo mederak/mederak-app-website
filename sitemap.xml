@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mederak.app/</loc></url>
+  <url><loc>https://mederak.app/</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://mederak.app/trust-center.html</loc></url>
   <url><loc>https://mederak.app/service-level-agreement.html</loc></url>
-  <url><loc>https://mederak.app/apps/</loc></url>
+  <url><loc>https://mederak.app/apps/</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/</loc></url>
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/docs.html</loc></url>
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/widgets.html</loc></url>
@@ -19,7 +19,7 @@
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/incident-response.html</loc></url>
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/uninstall-data-deletion.html</loc></url>
   <url><loc>https://mederak.app/apps/customer-portal-toolkit-for-jsm/service-level-agreement.html</loc></url>
-  <url><loc>https://mederak.app/import-excel-to-jira/</loc></url>
+  <url><loc>https://mederak.app/import-excel-to-jira/</loc><lastmod>2026-07-09</lastmod></url>
   <url><loc>https://mederak.app/tools/jira-csv-import-error-explainer/</loc></url>
   <url><loc>https://mederak.app/tools/jira-csv-excel-readiness-checker/</loc></url>
   <url><loc>https://mederak.app/tools/jira-csv-import-date-format/</loc></url>
@@ -45,7 +45,7 @@
   <url><loc>https://mederak.app/apps/project-overview-status-hub-for-jira/data-processing.html</loc></url>
   <url><loc>https://mederak.app/apps/project-overview-status-hub-for-jira/incident-response.html</loc></url>
   <url><loc>https://mederak.app/apps/project-overview-status-hub-for-jira/service-level-agreement.html</loc></url>
-  <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/</loc></url>
+  <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/</loc><lastmod>2026-07-14</lastmod></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/update-jira-issues-from-excel/</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/jira-csv-import-vs-excel-import/</loc></url>
@@ -54,7 +54,7 @@
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/review-jira-changes-before-import/</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/excel-to-jira-template/</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/fill-excel-from-jira/</loc></url>
-  <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/docs.html</loc></url>
+  <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/docs.html</loc><lastmod>2026-07-28</lastmod></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/privacy.html</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/security.html</loc></url>
   <url><loc>https://mederak.app/apps/excel-to-jira-importer-updater/support.html</loc></url>
