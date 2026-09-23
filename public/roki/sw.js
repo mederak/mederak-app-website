@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v11-header-info";
+const VERSION = "chess-coach-pwa-v12-about-rook";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
