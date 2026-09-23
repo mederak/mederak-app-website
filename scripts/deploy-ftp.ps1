@@ -20,6 +20,7 @@ $ExcludedDirectories = @()
 $ExcludedFiles = @(".DS_Store")
 $ExcludedPathPrefixes = @()
 $ExcludedExtensions = @()
+$AlwaysUploadPathPrefixes = @("chess-coach/")
 $EnsuredRemoteDirectories = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 
 Add-Type -Language CSharp -TypeDefinition @"
@@ -460,7 +461,8 @@ function Invoke-Deploy {
 
     $localFiles = @(Get-LocalDeployFiles)
     $localRemotePaths = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
-    foreach ($file in $localFiles) {
+    $uploadFiles = @($localFiles | Sort-Object @{ Expression = { if ($_.RelativePath -eq "chess-coach/index.html") { 1 } else { 0 } } }, RelativePath)
+    foreach ($file in $uploadFiles) {
         [void]$localRemotePaths.Add($file.RemotePath)
     }
 
@@ -485,12 +487,20 @@ function Invoke-Deploy {
         $remoteFileSizes[$remoteFile.Path] = $remoteFile.Size
     }
 
-    foreach ($file in $localFiles) {
+    foreach ($file in $uploadFiles) {
         if ($file.RemoteDirectory -ne $RemoteRoot) {
             Ensure-FtpDirectory -RemotePath $file.RemoteDirectory -Credential $credential
         }
 
-        $needsUpload = -not $remoteFileSizes.ContainsKey($file.RemotePath) -or $remoteFileSizes[$file.RemotePath] -ne $file.Length
+        $alwaysUpload = $false
+        foreach ($prefix in $AlwaysUploadPathPrefixes) {
+            if ($file.RelativePath.StartsWith($prefix, [StringComparison]::OrdinalIgnoreCase)) {
+                $alwaysUpload = $true
+                break
+            }
+        }
+
+        $needsUpload = $alwaysUpload -or -not $remoteFileSizes.ContainsKey($file.RemotePath) -or $remoteFileSizes[$file.RemotePath] -ne $file.Length
         if ($needsUpload) {
             if ($DryRun) {
                 Write-Host "DRY upload $($file.RelativePath)"
