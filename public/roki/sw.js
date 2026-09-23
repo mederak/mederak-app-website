@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v22-board-wipe";
+const VERSION = "chess-coach-pwa-v23-history-visible";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
