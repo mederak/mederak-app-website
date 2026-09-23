@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v1";
+const VERSION = "chess-coach-pwa-v4-roki-mobile";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
