@@ -54,6 +54,14 @@ for (const file of walk(root)) {
   const relative = path.relative(root, file).replace(/\\/g, "/");
   const html = fs.readFileSync(file, "utf8");
   const isErrorPage = ["403.html", "404.html", "500.html"].includes(relative);
+  const isStandaloneApp = relative.startsWith("chess-coach/");
+
+  if (isStandaloneApp) {
+    if (count(html, /<link\b[^>]*rel=["']canonical["']/gi) !== 1) failures.push(`${relative}: expected one canonical link`);
+    if (count(html, /<link\b[^>]*rel=["']icon["']/gi) < 1) failures.push(`${relative}: expected a favicon link`);
+    if (html.includes("localhost")) failures.push(`${relative}: contains localhost`);
+    continue;
+  }
 
   if (count(html, /<header\b[^>]*class=["'][^"']*\btopbar\b/gi) !== 1) failures.push(`${relative}: expected one site header`);
   if (count(html, /<footer\b[^>]*class=["'][^"']*\bfooter\b/gi) !== 1) failures.push(`${relative}: expected one site footer`);

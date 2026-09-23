@@ -3,7 +3,7 @@ import path from "node:path";
 import { createPageContext } from "./page-context.mjs";
 
 const projectRoot = process.cwd();
-const ignoredDirectories = new Set([".git", "dist", "node_modules", "src"]);
+const ignoredDirectories = new Set([".git", "dist", "node_modules", "public", "src"]);
 
 function walk(directory) {
   const entries = fs.readdirSync(directory, { withFileTypes: true });
