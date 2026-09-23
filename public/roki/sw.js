@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v24-adaptive-learning";
+const VERSION = "chess-coach-pwa-v27-learning-dashboard";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
