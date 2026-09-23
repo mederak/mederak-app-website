@@ -1,2 +1,2 @@
-:HL["/chess-coach/_next/static/css/c25796bba78254ab.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"cVSoWSyFnj2gU69J9sP-F"}
+:HL["/chess-coach/_next/static/css/1e8fb7e6095bc105.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"I62uAggHmk0czHUYkd0Ed"}
