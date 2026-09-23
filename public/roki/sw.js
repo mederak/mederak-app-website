@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v9-roki-address";
+const VERSION = "chess-coach-pwa-v10-about-modal";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
