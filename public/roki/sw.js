@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v19-board-return";
+const VERSION = "chess-coach-pwa-v20-position-reveal";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
