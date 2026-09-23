@@ -54,7 +54,7 @@ for (const file of walk(root)) {
   const relative = path.relative(root, file).replace(/\\/g, "/");
   const html = fs.readFileSync(file, "utf8");
   const isErrorPage = ["403.html", "404.html", "500.html"].includes(relative);
-  const isStandaloneApp = relative.startsWith("chess-coach/");
+  const isStandaloneApp = (relative.startsWith("chess-coach/") || relative.startsWith("roki/"));
 
   if (isStandaloneApp) {
     if (count(html, /<link\b[^>]*rel=["']canonical["']/gi) !== 1) failures.push(`${relative}: expected one canonical link`);

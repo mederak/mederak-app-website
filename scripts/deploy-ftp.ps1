@@ -20,7 +20,7 @@ $ExcludedDirectories = @()
 $ExcludedFiles = @(".DS_Store")
 $ExcludedPathPrefixes = @()
 $ExcludedExtensions = @()
-$AlwaysUploadPathPrefixes = @("chess-coach/")
+$AlwaysUploadPathPrefixes = @("chess-coach/", "roki/")
 $EnsuredRemoteDirectories = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 
 Add-Type -Language CSharp -TypeDefinition @"
@@ -461,7 +461,7 @@ function Invoke-Deploy {
 
     $localFiles = @(Get-LocalDeployFiles)
     $localRemotePaths = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
-    $uploadFiles = @($localFiles | Sort-Object @{ Expression = { if ($_.RelativePath -eq "chess-coach/index.html") { 1 } else { 0 } } }, RelativePath)
+    $uploadFiles = @($localFiles | Sort-Object @{ Expression = { if ($_.RelativePath -in @("chess-coach/index.html", "roki/index.html")) { 1 } else { 0 } } }, RelativePath)
     foreach ($file in $uploadFiles) {
         [void]$localRemotePaths.Add($file.RemotePath)
     }

@@ -1,12 +1,10 @@
 Options -Indexes
+RewriteEngine On
+RewriteRule ^(?:index\.html)?$ /roki/ [R=301,L]
 AddType application/wasm .wasm
 AddType application/manifest+json .webmanifest
-
 <IfModule mod_headers.c>
-  <Files "sw.js">
+  <FilesMatch "^(sw\.js|manifest\.webmanifest|index\.html)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
-  </Files>
-  <FilesMatch "\.(wasm|js|css|png|woff2)$">
-    Header set X-Content-Type-Options "nosniff"
   </FilesMatch>
 </IfModule>
