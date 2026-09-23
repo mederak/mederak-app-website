@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v14-header-install";
+const VERSION = "chess-coach-pwa-v15-good-move";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
