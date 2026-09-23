@@ -1,4 +1,4 @@
-const VERSION = "chess-coach-pwa-v16-training-history";
+const VERSION = "chess-coach-pwa-v17-history-icons";
 const scopeUrl = new URL(self.registration.scope);
 const appRoot = scopeUrl.pathname;
 
