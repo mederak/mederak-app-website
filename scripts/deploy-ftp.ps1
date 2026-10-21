@@ -214,6 +214,35 @@ function Invoke-SiteBuild {
     }
 }
 
+# This unrelated site is managed separately. Never traverse or mutate its subtree.
+$ProtectedRemoteDirectory = "/www/ogrod-pelen-ciepla"
+
+function Test-ProtectedRemotePath {
+    param([string]$RemotePath, [switch]$IncludeAncestors)
+
+    # Compare path segments, including encoded/dot variants, conservatively.
+    $decoded = $RemotePath
+    do {
+        $previous = $decoded
+        $decoded = [Uri]::UnescapeDataString($decoded)
+    } while ($decoded -ne $previous)
+    $segments = New-Object "System.Collections.Generic.List[string]"
+    foreach ($segment in $decoded.Replace("\", "/").Split("/")) {
+        if ($segment -eq "" -or $segment -eq ".") { continue }
+        if ($segment -eq "..") {
+            if ($segments.Count -gt 0) { $segments.RemoveAt($segments.Count - 1) }
+        }
+        else { $segments.Add($segment) }
+    }
+    $path = "/" + ($segments -join "/")
+    $protected = $ProtectedRemoteDirectory
+    if ($path.Equals($protected, [StringComparison]::OrdinalIgnoreCase) -or
+        $path.StartsWith("$protected/", [StringComparison]::OrdinalIgnoreCase)) { return $true }
+    if ($IncludeAncestors -and ($path -eq "/" -or
+        $protected.StartsWith("$path/", [StringComparison]::OrdinalIgnoreCase))) { return $true }
+    return $false
+}
+
 function ConvertTo-FtpUri {
     param([Parameter(Mandatory = $true)][string]$RemotePath)
 
@@ -227,6 +256,15 @@ function New-FtpRequest {
         [Parameter(Mandatory = $true)][string]$Method,
         [Parameter(Mandatory = $true)][System.Net.NetworkCredential]$Credential
     )
+
+    $destructiveContainerOperation = $Method -in @(
+        [System.Net.WebRequestMethods+Ftp]::DeleteFile,
+        [System.Net.WebRequestMethods+Ftp]::RemoveDirectory,
+        [System.Net.WebRequestMethods+Ftp]::Rename
+    )
+    if (Test-ProtectedRemotePath -RemotePath $RemotePath -IncludeAncestors:$destructiveContainerOperation) {
+        throw "FTP operation blocked for protected path: $RemotePath"
+    }
 
     $request = [System.Net.FtpWebRequest]::Create((ConvertTo-FtpUri -RemotePath $RemotePath))
     $request.Credentials = $Credential
@@ -357,6 +395,8 @@ function Get-RemoteTree {
         [Parameter(Mandatory = $true)][System.Net.NetworkCredential]$Credential
     )
 
+    if (Test-ProtectedRemotePath -RemotePath $RemotePath) { return }
+
     $items = @()
     foreach ($line in (Get-FtpListDetails -RemotePath $RemotePath -Credential $Credential)) {
         $entry = ConvertFrom-FtpListLine -Line $line
@@ -365,6 +405,7 @@ function Get-RemoteTree {
         }
 
         $childPath = "$RemotePath/$($entry.Name)" -replace "/+", "/"
+        if (Test-ProtectedRemotePath -RemotePath $childPath) { continue }
         $items += [pscustomobject]@{
             Path = $childPath
             Name = $entry.Name
@@ -396,6 +437,7 @@ function Get-LocalDeployFiles {
     Get-ChildItem -LiteralPath $BuildRoot -Recurse -File -Force |
         Where-Object {
             $relative = Get-RelativeDeployPath -FullName $_.FullName
+            if (Test-ProtectedRemotePath -RemotePath "$RemoteRoot/$relative") { return $false }
             $topDirectory = $relative.Split("/")[0]
             if ($ExcludedDirectories -contains $topDirectory) { return $false }
             if ($ExcludedFiles -contains $_.Name) { return $false }
@@ -471,6 +513,7 @@ function Invoke-Deploy {
     $remoteDirectories = @($remoteItems | Where-Object { $_.IsDirectory } | Sort-Object { $_.Path.Length } -Descending)
 
     foreach ($remoteFile in $remoteFiles) {
+        if (Test-ProtectedRemotePath -RemotePath $remoteFile.Path -IncludeAncestors) { continue }
         if (-not $localRemotePaths.Contains($remoteFile.Path)) {
             if ($DryRun) {
                 Write-Host "DRY delete file $($remoteFile.Path)"
@@ -513,6 +556,7 @@ function Invoke-Deploy {
     }
 
     foreach ($remoteDirectory in $remoteDirectories) {
+        if (Test-ProtectedRemotePath -RemotePath $remoteDirectory.Path -IncludeAncestors) { continue }
         $hasLocalFileBelow = $false
         foreach ($path in $localRemotePaths) {
             if ($path.StartsWith("$($remoteDirectory.Path)/", [StringComparison]::OrdinalIgnoreCase)) {

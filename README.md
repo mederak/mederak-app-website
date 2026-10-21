@@ -58,6 +58,12 @@ The deploy script runs `git diff --check`, requires a clean working tree,
 builds `dist/`, validates the generated SEO surface, and uploads only the
 generated static files.
 
+`/www/ogrod-pelen-ciepla` is managed separately and protected by the deploy script.
+Its subtree is not traversed, uploaded to, overwritten or deleted. Destructive
+operations on its ancestors are blocked too. Keep this protection when reverting
+website content. Run `pwsh -NoProfile -File scripts/test-deploy-protection.ps1`
+to check protection without network access.
+
 ## SEO verification
 
 Verify that `https://mederak.app` is the canonical and sitemap domain:
