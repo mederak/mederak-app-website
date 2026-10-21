@@ -33,7 +33,7 @@
         "@type": "Article",
         "headline": "How to import Excel to Jira",
         "description": "A practical guide to importing Excel workbooks into Jira Cloud, including native CSV import, manual copy-paste, dedicated Excel import workflows, mapping, hierarchy, updates and review.",
-        "dateModified": "2026-07-09",
+        "dateModified": "2026-10-21",
         "author": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
         "publisher": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
         "mainEntityOfPage": "https://mederak.app/import-excel-to-jira/"
@@ -203,6 +203,16 @@
 
       <h2>How to review changes before Jira is updated</h2>
       <p>Review is the safety step. Before importing, check planned created issues, updated issues, skipped rows and validation errors. A good review catches missing summaries, invalid users, unsupported parent relationships, duplicated rows, date problems and values that need cleanup before Jira changes are made.</p>
+      <h3 id="first-import-checklist">Run a small test import before the full workbook</h3>
+      <p>In Excel to Jira Importer &amp; Updater, use a few representative rows from your Excel or CSV file to check the mapping before importing the rest. A test import creates or updates real Jira issues, so choose rows and a target project you are authorized to change.</p>
+      <ol>
+        <li><strong>Check the planned action.</strong> Added rows create new issues; Updated rows change matched existing issues; Skipped rows are not imported. If a row you intended to update appears as Added, stop and check the matching setup before importing.</li>
+        <li><strong>Inspect the final Jira values.</strong> Check Summary, issue type, mapped fields and any parent relationship. Fix rows marked Missing data or Other errors. Do not assume that a valid row contains the values you intended.</li>
+        <li><strong>Review again after changes.</strong> If you change the file, worksheet, mapping, issue structure or duplicate/update settings, run review again before confirming the import.</li>
+        <li><strong>Import only the test rows.</strong> Select the importable rows you have checked. Rows with blocking errors must be fixed before they can be imported.</li>
+        <li><strong>Check the result in Jira.</strong> Read the import report and open the created or updated issues using the available issue keys. Confirm the values and relationships before reviewing the remaining rows; check matching and duplicate handling before uploading the same data again.</li>
+      </ol>
+      <p>Follow the <a href="../apps/excel-to-jira-importer-updater/docs.html#review">review and validation instructions</a> for the app's controls, or <a href="../apps/excel-to-jira-importer-updater/#admin-request">send a trial request to your Jira administrator</a> if you cannot install the app yourself.</p>
       <figure class="media-card screenshot-card">
         <button class="image-zoom" type="button" data-lightbox-src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" aria-label="Open Jira import review screenshot">
           <img src="../apps/excel-to-jira-importer-updater/assets/screen-07-validate.png" width="1920" height="1080" alt="Review Jira import changes before creating or updating issues from Excel" loading="lazy" decoding="async">
