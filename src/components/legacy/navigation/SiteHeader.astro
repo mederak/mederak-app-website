@@ -55,6 +55,8 @@ const brandText = product && context.section === "product" ? product.name : "";
           href={link.href}
           aria-current={isCurrent(link.href) ? "page" : undefined}
           data-config-url={link.configUrl}
+          data-analytics-event={link.href === excel.marketplace || link.href === excel.marketplaceOverview ? "marketplace_trial_click_nav" : undefined}
+          data-product={link.href === excel.marketplace || link.href === excel.marketplaceOverview ? excel.slug : undefined}
         >{link.label}</a>
       ))}
     </div>
