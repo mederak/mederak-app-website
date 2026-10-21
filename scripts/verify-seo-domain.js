@@ -23,6 +23,12 @@ function walk(directory) {
       continue;
     }
 
+    // Source checks must not count the generated site a second time after build.
+    // An explicit dist check still walks and validates every generated file.
+    if (root === projectRoot && directory === root && entry.isDirectory() && entry.name === "dist") {
+      continue;
+    }
+
     const fullPath = path.join(directory, entry.name);
     if (entry.isDirectory()) {
       files.push(...walk(fullPath));
