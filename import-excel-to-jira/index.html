@@ -33,7 +33,7 @@
         "@type": "Article",
         "headline": "How to import Excel to Jira",
         "description": "A practical guide to importing Excel workbooks into Jira Cloud, including native CSV import, manual copy-paste, dedicated Excel import workflows, mapping, hierarchy, updates and review.",
-        "dateModified": "2026-10-21",
+        "dateModified": "2026-10-29",
         "author": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
         "publisher": {"@type": "Organization", "name": "Mederak Apps", "url": "https://mederak.app/"},
         "mainEntityOfPage": "https://mederak.app/import-excel-to-jira/"
@@ -219,6 +219,30 @@
         </button>
         <figcaption>Validate and review workbook rows before the final Jira import.</figcaption>
       </figure>
+
+      <section aria-labelledby="review-update-example">
+        <h3 id="review-update-example">Review an Excel update before changing existing Jira work</h3>
+        <p><strong>Prepared example — not a recording of a completed import.</strong></p>
+        <p>Already have the work items in Jira and the next changes in Excel? Start with two disposable issues in a test project, not your production backlog.</p>
+        <p>Keep one row per issue. Replace the example keys below with two real test keys. Upload the workbook, select its sheet and header, and map the issue identifier, Summary and Description. Leave unrelated fields unmapped.</p>
+        <p>Before confirming, review which existing issues each row targets and the proposed changes. Stop if a row targets the wrong issue or is classified as a new issue when you intend an update. Correct the input or mapping and review again.</p>
+        <p>After an authorized import, check the report and open both issues to verify the result. For a repeat upload, inspect the review again; do not assume that unchanged input always has a particular status or that repeating an import has no side effects.</p>
+        <p><strong>Synthetic input specification, not a ready-to-run workbook:</strong></p>
+        <ol>
+          <li>
+            <p><strong>Issue key:</strong> <code>REPLACE_<wbr>WITH_<wbr>TEST_<wbr>KEY_1</code><br>
+            <strong>Summary:</strong> Prepare release checklist<br>
+            <strong>Description:</strong> Synthetic example: checklist includes an owner and rollback review.</p>
+          </li>
+          <li>
+            <p><strong>Issue key:</strong> <code>REPLACE_<wbr>WITH_<wbr>TEST_<wbr>KEY_2</code><br>
+            <strong>Summary:</strong> Review import mapping<br>
+            <strong>Description:</strong> Synthetic example: mapping already approved.</p>
+          </li>
+        </ol>
+        <p>The second row should match its issue's existing values if testing unchanged-input behavior. Adjust the example to the existing baseline rather than changing Jira just to make the example work.</p>
+        <p><a class="button" href="https://mederak.app/apps/excel-to-jira-importer-updater/docs.html">Read the workflow documentation</a></p>
+      </section>
 
       <h2>Common mistakes when importing Excel to Jira</h2>
       <ul>
