@@ -37,6 +37,29 @@
       <p>A repeat upload needs stable identity. In many cases that is a Jira issue key such as <code>PROJ-124</code>. In other setups it can be another supported row identity from the previous import. The important rule is that every update candidate should have a clear target before you confirm changes.</p>
       <table class="sample-table"><thead><tr><th>Excel column</th><th>Use</th><th>Review question</th></tr></thead><tbody><tr><td>Issue Key</td><td>Match the row to an existing Jira issue</td><td>Does the issue still exist and belong to this project?</td></tr><tr><td>External ID</td><td>Match repeated workbook versions</td><td>Is this ID stable across versions?</td></tr><tr><td>Summary</td><td>Update text if intentionally mapped</td><td>Should Excel replace the current Jira summary?</td></tr><tr><td>Priority or Due Date</td><td>Bulk field cleanup</td><td>Are values valid for the target Jira configuration?</td></tr></tbody></table>
 
+      <section id="change-epics-on-existing-stories" aria-labelledby="change-epics-heading">
+        <h2 id="change-epics-heading">Change epics on existing Jira stories</h2>
+        <p>Use one row per existing Story. The <strong>Jira Issue Key</strong> column identifies the Story to update. The <strong>Parent Epic</strong> column contains the Jira issue key of its target Epic. All stories and target epics must already exist in the Jira project you select for the import.</p>
+        <p>These three pairs are fictional. Replace the keys with ones from your project before uploading the sample, and use row 1 as the header row.</p>
+        <table class="sample-table">
+          <thead>
+            <tr><th scope="col">Jira Issue Key</th><th scope="col">Parent Epic</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>DEMO-21</code></td><td><code>DEMO-11</code></td></tr>
+            <tr><td><code>DEMO-22</code></td><td><code>DEMO-12</code></td></tr>
+            <tr><td><code>DEMO-23</code></td><td><code>DEMO-13</code></td></tr>
+          </tbody>
+        </table>
+        <p><a class="button" href="../../../downloads/excel-to-jira-change-story-epics.xlsx" download>Download the story epic update sample (XLSX)</a></p>
+        <ol>
+          <li>In <strong>Issue structure</strong>, select <strong>Simple: one Jira issue per Excel row</strong>. Open <strong>Optional flat import settings</strong>, set <strong>Parent issue key</strong> to <strong>Parent Epic</strong>, and turn on <strong>Change epics on existing stories</strong>. This option is off by default.</li>
+          <li>In <strong>Field mapping</strong>, open <strong>How should Jira issues be recognized later?</strong> Select <strong>Jira issue key column</strong> and choose <strong>Jira Issue Key</strong>, the column containing the Story keys. Leave all Jira field mappings empty for this parent-only update.</li>
+          <li>Open <strong>Review changes</strong>. If all three stories match and each target differs from the current parent, expect <strong>three updates to Parent and zero new issues</strong>. Check the current and proposed Parent on each row before importing. If the review shows any creates, go back and confirm the issue recognition method and Story key column.</li>
+        </ol>
+        <p>A <strong>Jira issue key</strong> identifies an issue directly in Jira. An <strong>External ID</strong> identifies a row in your workbook and can match it to a Jira issue through records from an earlier import. If the app suggests an External ID column, explicitly select <strong>Jira issue key column</strong> for this workflow.</p>
+      </section>
+
       <h2>Review creates, updates, skipped rows and errors</h2>
       <p>For update work, the review should separate rows that will update an existing issue from rows that would create new issues, rows that are skipped and rows blocked by errors. This helps catch stale issue keys, duplicate workbook rows, invalid users, invalid dates and values that no longer match Jira field options.</p>
       <figure class="media-card screenshot-card"><button class="image-zoom" type="button" data-lightbox-src="../assets/screen-update-mode-duplicates.png" aria-label="Open duplicate and update mode screenshot"><img src="../assets/screen-update-mode-duplicates.png" width="1680" height="945" alt="Duplicate handling and update mode review before Jira changes" loading="lazy" decoding="async"></button><figcaption>Review matching and duplicate handling before a repeat import changes Jira.</figcaption></figure>
