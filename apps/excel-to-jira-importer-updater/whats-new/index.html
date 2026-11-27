@@ -7,7 +7,7 @@
     <meta name="description" content="See recent customer-visible improvements in Excel to Jira Importer &amp; Updater for Jira Cloud, based on Marketplace production release notes.">
     <link rel="canonical" href="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
     <meta property="og:title" content="Excel to Jira Importer - Product Updates">
-    <meta property="og:description" content="Version 1.33.1 adds an option to change epics on existing Jira stories from a spreadsheet.">
+    <meta property="og:description" content="Version 1.33.2 fixes Reporter validation when updating existing Jira issues.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/">
     <meta property="og:image" content="https://mederak.app/apps/excel-to-jira-importer-updater/assets/og-excel-to-jira-importer-updater.png">
@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="/apps/excel-to-jira-importer-updater/assets/favicon.png">
     <link rel="stylesheet" href="../assets/site.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Mederak Apps","item":"https://mederak.app/"},{"@type":"ListItem","position":2,"name":"Excel to Jira Importer & Updater","item":"https://mederak.app/apps/excel-to-jira-importer-updater/"},{"@type":"ListItem","position":3,"name":"What's New","item":"https://mederak.app/apps/excel-to-jira-importer-updater/whats-new/"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Excel to Jira Importer - What's New","description":"Customer-visible release notes for Excel to Jira Importer & Updater for Jira Cloud.","dateModified":"2026-11-26","isPartOf":{"@type":"SoftwareApplication","name":"Excel to Jira Importer and Updater","applicationCategory":"BusinessApplication","operatingSystem":"Jira Cloud","url":"https://mederak.app/apps/excel-to-jira-importer-updater/"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Excel to Jira Importer - What's New","description":"Customer-visible release notes for Excel to Jira Importer & Updater for Jira Cloud.","dateModified":"2026-11-27","isPartOf":{"@type":"SoftwareApplication","name":"Excel to Jira Importer and Updater","applicationCategory":"BusinessApplication","operatingSystem":"Jira Cloud","url":"https://mederak.app/apps/excel-to-jira-importer-updater/"}}</script>
     <script src="/assets/analytics-config.js"></script><script src="/assets/analytics.js" defer></script>
   </head>
   <body>
@@ -32,11 +32,11 @@
       <section class="release-summary-panel" aria-labelledby="release-summary">
         <div>
           <span class="eyebrow">Latest Marketplace release</span>
-          <h2 id="release-summary">Version 1.33.1, published November 26, 2026</h2>
-          <p>Assign or move existing stories to epics in the same Jira project from a spreadsheet column.</p>
+          <h2 id="release-summary">Version 1.33.2, published November 27, 2026</h2>
+          <p>Update existing issues and change story epics in Jira projects where Reporter is required.</p>
         </div>
         <div class="release-focus-card" aria-label="Latest release focus">
-          <strong>See each story's current and proposed epic before importing.</strong>
+          <strong>The existing Reporter is kept when no Reporter column is mapped.</strong>
         </div>
       </section>
 
@@ -52,6 +52,16 @@
 
       <h2>Marketplace release history</h2>
       <div class="release-timeline">
+        <article class="release-entry">
+          <div class="release-meta"><strong>1.33.2</strong><span>November 27, 2026</span></div>
+          <div class="release-body">
+            <h3>Reporter validation on existing issue updates</h3>
+            <ul>
+              <li>Fixed a validation error when updating existing issues, including changing a story's epic, in projects where Reporter is required. When no Reporter column is mapped, the existing Reporter is kept.</li>
+            </ul>
+          </div>
+        </article>
+
         <article class="release-entry">
           <div class="release-meta"><strong>1.33.1</strong><span>November 26, 2026</span></div>
           <div class="release-body">
